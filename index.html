@@ -37,15 +37,16 @@
     }
     
     :root {
-      /* Tillerstead Brand Colors */
-      --color-primary: #1ac87a;
+      /* Tillerstead Brand Colors - Updated Theme */
+      --color-primary: #10d97f;
       --color-primary-strong: #0fa868;
       --color-bg: #020617;
       --color-surface: #0b1224;
       --color-text: #ffffff;
       --color-text-muted: #e2e8f0;
       --color-text-subtle: #cbd5e1;
-      --color-accent: #d8b25a;
+      --color-accent: #e8c870;
+      --color-accent-strong: #d8b25a;
       
       /* Spacing */
       --space-4: 1rem;
@@ -79,8 +80,8 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle at 20% 50%, rgba(26, 200, 122, 0.15), transparent 50%),
-                  radial-gradient(circle at 80% 50%, rgba(216, 178, 90, 0.1), transparent 50%);
+      background: radial-gradient(circle at 20% 50%, rgba(16, 217, 127, 0.18), transparent 50%),
+                  radial-gradient(circle at 80% 50%, rgba(232, 200, 112, 0.12), transparent 50%);
       animation: gradientShift 15s ease infinite;
       z-index: 0;
     }
@@ -111,7 +112,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: var(--space-4);
-      text-shadow: 0 4px 12px rgba(26, 200, 122, 0.3);
+      text-shadow: 0 4px 12px rgba(16, 217, 127, 0.35);
     }
     
     .tagline {
@@ -369,14 +370,14 @@
       <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
         <!-- Construction Cone -->
         <g class="cone">
-          <path d="M60 20 L80 80 L40 80 Z" fill="#d8b25a" opacity="0.9"/>
-          <path d="M60 20 L80 80 L40 80 Z" fill="none" stroke="#1ac87a" stroke-width="2"/>
+          <path d="M60 20 L80 80 L40 80 Z" fill="#e8c870" opacity="0.9"/>
+          <path d="M60 20 L80 80 L40 80 Z" fill="none" stroke="#10d97f" stroke-width="2"/>
           <!-- Stripes on cone -->
           <rect x="42" y="50" width="36" height="5" fill="#ffffff" opacity="0.3"/>
           <rect x="44" y="65" width="32" height="5" fill="#ffffff" opacity="0.3"/>
         </g>
         <!-- Base -->
-        <rect x="35" y="80" width="50" height="8" rx="4" fill="#1ac87a"/>
+        <rect x="35" y="80" width="50" height="8" rx="4" fill="#10d97f"/>
         <!-- Tool (hammer) -->
         <g transform="translate(85, 30) rotate(45)">
           <rect x="0" y="0" width="6" height="30" rx="2" fill="#cbd5e1"/>
