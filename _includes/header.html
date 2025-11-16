@@ -1,24 +1,26 @@
-<header class="site-header" role="banner">
+<header class="site-header ts-header ts-theme" role="banner">
   <div class="site-header-inner container">
     <!-- Brand -->
-    <a
-      class="site-logo"
-      href="{{ '/' | relative_url }}"
-      aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Return to homepage"
-    >
-      <img
-        src="{{ '/assets/img/logo.png' | relative_url }}"
-        alt="{{ site.title | default: 'Tillerstead LLC' }}"
-        class="site-logo-img"
-        width="160"
-        height="auto"
-        fetchpriority="high"
-      />
-      <!-- Accessible text fallback (not visible) -->
-      <span class="site-logo-text sr-only">
-        {{ site.title | default: 'Tillerstead LLC' }}
-      </span>
-    </a>
+    <div class="ts-brand">
+      <a
+        class="site-logo"
+        href="{{ '/' | relative_url }}"
+        aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Return to homepage"
+      >
+        <img
+          src="{{ '/assets/img/logo.png' | relative_url }}"
+          alt="{{ site.title | default: 'Tillerstead LLC' }}"
+          class="site-logo-img"
+          width="160"
+          height="auto"
+          fetchpriority="high"
+        />
+        <!-- Accessible text fallback (not visible) -->
+        <span class="site-logo-text sr-only">
+          {{ site.title | default: 'Tillerstead LLC' }}
+        </span>
+      </a>
+    </div>
     
     <!-- Primary navigation -->
     <nav
@@ -36,18 +38,6 @@
           {% elsif item.match and page.url contains item.match %}
             {% assign is_current = true %}
           {% endif %}
-<header class="site-header ts-header ts-theme" role="banner">
-  <div class="site-header-inner">
-    <div class="ts-brand">
-      <a class="site-logo" href="{{ '/' | relative_url }}" aria-label="{{ site.title | default: 'Tillerstead LLC' }}">
-        <!-- Primary logo with PNG fallback via CSS background -->
-        <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="{{ site.title | default: 'Tillerstead LLC' }}" class="site-logo-img" width="160">
-        <!-- Accessible text fallback (not visible) -->
-        <span class="site-logo-text sr-only">
-          {{ site.title | default: 'Tillerstead LLC' }}
-        </span>
-      </a>
-    </div>
 
           <li>
             <a
@@ -87,12 +77,6 @@
             <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
         </span>
-      <a class="ts-call-btn" href="tel:{{ site.company.phone_link | default: '+16096659350' }}" aria-label="Call Tillerstead">
-        {{ site.company.phone_display | default: '(609) 665-9350' }}
-      </a>
-
-      <button class="ts-burger" id="ts-burger" aria-controls="ts-main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <svg width="22" height="14" viewBox="0 0 24 14" aria-hidden="true"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 2h20M2 7h20M2 12h20"/></svg>
       </button>
     </div>
   </div>
