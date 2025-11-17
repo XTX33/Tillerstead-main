@@ -12,6 +12,12 @@
 /* Import boss-level enhancements */
 @import url('boss-enhancements.css');
 
+/* Import premium hero styles */
+@import url('premium-hero.css');
+
+/* Import premium form & CTA styles */
+@import url('premium-forms.css');
+
 /* ============================================
    Token Compatibility Mappings
    Maps new token names to existing --ts-* names
