@@ -65,9 +65,9 @@
      =========================== */
   
   /* Sacred geometry tile pattern - dark mode optimized */
-  --bg-pattern: url("../assets/patterns/sacred-geometry-tile.webp");
-  --bg-pattern-fallback: url("../assets/patterns/sacred-geometry-tile.png");
-  --bg-pattern-svg: url("../assets/patterns/sacred-geometry-tile.svg");
+  --bg-pattern: url("/assets/img/patterns/sacred-geometry-tile.webp");
+  --bg-pattern-fallback: url("/assets/img/patterns/sacred-geometry-tile.png");
+  --bg-pattern-svg: url("/assets/img/patterns/sacred-geometry-tile.svg");
   
   /* Pattern display properties */
   --bg-pattern-size: 200px;
@@ -91,6 +91,11 @@
   --font-size-3xl: 2rem;
   --font-size-4xl: 2.5rem;
   --font-size-5xl: 3rem;
+
+  /* Line Heights */
+  --line-height-base: 1.65;
+  --line-height-tight: 1.35;
+  --line-height-relaxed: 1.85;
 
   /* Heading Sizes (responsive with clamp) */
   --heading-1: clamp(2.75rem, 4vw, 3.5rem);
@@ -146,8 +151,10 @@
   /* ===========================
      Layout
      =========================== */
-  
+
   --shell-width: 1140px;
+  --section-padding-y: clamp(3rem, 6vw, 5rem);
+  --section-gap: clamp(1.5rem, 3vw, 2.5rem);
   --focus-ring: 0 0 0 3px rgba(34, 197, 94, 0.45);
 }
 

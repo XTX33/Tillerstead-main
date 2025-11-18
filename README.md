@@ -70,10 +70,17 @@ npm run watch:css
 This compiles `src/scss/theme.scss` into `assets/css/theme-compiled.css`.
 
 ### SCSS Structure
-- `src/scss/_common.scss` - Base styles, reset, typography  
+- `src/scss/_common.scss` - Base styles, reset, typography
 - `src/scss/components/` - UI components (buttons, cards, header, footer, etc.)
 - `src/scss/layouts/` - Page and section layouts
 - `src/scss/utilities/` - Spacing and text utilities
+
+### Theme building blocks
+
+- **`components/_hero.scss`** – token-driven hero with pattern overlays, CTA pairs, and KPI grid.
+- **`components/_cards.scss`** – shared card shell powering plan cards, reviews, services, and about sections.
+- **`layouts/_sections.scss`** – global section spacing, eyebrows, and CTA alignment for any page.
+- **`src/styles/tokens.css`** – master list of color, spacing, and typography tokens consumed by every module.
 
 See `src/scss/README.md` for detailed documentation.
 

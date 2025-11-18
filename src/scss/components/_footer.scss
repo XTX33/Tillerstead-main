@@ -5,23 +5,22 @@
 .site-footer {
   background: linear-gradient(
     180deg,
-    rgba(15, 23, 42, 0.6) 0%,
-    rgba(11, 18, 36, 0.9) 100%
+    rgba(15, 23, 42, 0.8) 0%,
+    rgba(5, 11, 21, 0.95) 100%
   );
   border-top: 1px solid rgba(26, 200, 122, 0.15);
-  padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(1.5rem, 4vw, 2.5rem);
   margin-top: clamp(3rem, 6vw, 5rem);
+  color: var(--color-text);
 }
 
 .footer-inner {
   max-width: var(--shell-width);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
-  display: flex;
-  gap: var(--space-6);
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .footer-name {
@@ -30,6 +29,71 @@
   font-size: 1.05rem;
   display: block;
   margin-bottom: 0.5rem;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.footer-logo-img {
+  width: 56px;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.footer-col {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.footer-heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-subtle);
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible,
+.footer-links [aria-current="page"] {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.footer-address,
+.footer-contact,
+.footer-area,
+.footer-tagline {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.footer-bottom {
+  max-width: var(--shell-width);
+  margin: var(--space-5) auto 0;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  display: flex;
+  justify-content: center;
 }
 
 .footer-small,

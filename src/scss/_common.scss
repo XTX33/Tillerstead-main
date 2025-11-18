@@ -26,11 +26,15 @@ body {
 body {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
+  line-height: var(--line-height-base, 1.65);
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.nav-open {
+  overflow: hidden;
 }
 
 /* ============================================
@@ -54,6 +58,13 @@ h6 { font-size: var(--heading-6); }
 p {
   margin: 0 0 1rem;
   color: var(--color-text);
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
 }
 
 a {
@@ -83,18 +94,13 @@ ul, ol {
   color: var(--color-text-muted);
 }
 
-.unstyled,
-.list-reset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 /* ============================================
    Utility Classes
    ============================================ */
 
-.container {
+.container,
+.ts-container,
+.ts-section-inner {
   max-width: var(--shell-width);
   margin: 0 auto;
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
@@ -102,6 +108,20 @@ ul, ol {
 
 .section {
   padding: clamp(2rem, 5vw, 3rem) 0;
+}
+
+.ts-list-reset,
+.list-reset,
+.unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
 }
 
 .center {

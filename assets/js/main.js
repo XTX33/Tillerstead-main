@@ -116,12 +116,16 @@
   ========================= */
   const THEME_KEY = "ts:theme";
   const themeBtn = $(".theme-toggle");
+  const DEFAULT_THEME = "dark";
 
-  const getSystemPref = () =>
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
+  const getStoredTheme = () => {
+    try {
+      const value = localStorage.getItem(THEME_KEY);
+      return value === "light" || value === "dark" ? value : null;
+    } catch (_) {
+      return null;
+    }
+  };
 
   const applyTheme = (theme) => {
     const isLight = theme === "light";
@@ -129,25 +133,8 @@
     themeBtn?.setAttribute("aria-pressed", String(isLight));
   };
 
-  let saved = null;
-  try {
-    saved = localStorage.getItem(THEME_KEY);
-  } catch (_) {
-    saved = null;
-  }
-
-  applyTheme(saved || getSystemPref());
-
-  if (!saved && window.matchMedia) {
-    const mq = window.matchMedia("(prefers-color-scheme: light)");
-    mq.addEventListener?.("change", (e) => {
-      applyTheme(e.matches ? "light" : "dark");
-      // Reapply contrast system after system theme change
-      if (typeof window.applyContrast === "function") {
-        window.applyContrast();
-      }
-    });
-  }
+  const savedTheme = getStoredTheme();
+  applyTheme(savedTheme || DEFAULT_THEME);
 
   themeBtn?.addEventListener("click", () => {
     const isLight = document.documentElement.classList.toggle("light");

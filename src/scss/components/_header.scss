@@ -103,6 +103,7 @@
     position: absolute;
     top: 100%;
     right: 1rem;
+    left: 1rem;
     flex-direction: column;
     background: var(--color-surface-elevated);
     padding: 1rem;
@@ -110,9 +111,11 @@
     box-shadow: var(--shadow-lift);
     border: 1px solid rgba(26, 200, 122, 0.2);
     min-width: 240px;
-    
+    z-index: 900;
+
     &.active,
-    &[aria-expanded="true"] {
+    &[aria-expanded="true"],
+    &.is-open {
       display: flex;
     }
   }

@@ -2,20 +2,49 @@
    Card Components
    ============================================ */
 
-.cards {
+%card-shell {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-med), box-shadow var(--transition-med);
+}
+
+.cards,
+.ts-card-grid {
   display: grid;
   gap: clamp(1.5rem, 3vw, 2rem);
 }
 
+.ts-card,
 .card {
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(148, 163, 184, 0.22);
-  background: var(--color-bg);
-  padding: clamp(1.6rem, 3vw, 2.1rem);
-  box-shadow: var(--shadow-soft);
-  transition: var(--transition-med);
-  
-  &:hover {
+  @extend %card-shell;
+  display: grid;
+  gap: var(--space-3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ts-card:hover,
+  .card:hover,
+  .plan-card:hover,
+  .who-card:hover,
+  .plan-card-compact:hover,
+  .review-card:hover,
+  .review-cta:hover,
+  .plans-module:hover,
+  .plans-how-it-works:hover,
+  .plans-scope:hover,
+  .plans-cta:hover,
+  .services-cta:hover,
+  .about-card:hover,
+  .about-cta:hover,
+  .why-item:hover,
+  .process-step:hover,
+  .gc-card:hover,
+  .process-card:hover,
+  .expect-card:hover,
+  .docs-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-lift);
   }
@@ -107,11 +136,299 @@
 .process-card,
 .expect-card,
 .docs-card {
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: var(--color-bg);
-  padding: clamp(1.6rem, 3vw, 2.2rem);
-  box-shadow: var(--shadow-soft);
+  @extend %card-shell;
   display: grid;
   gap: var(--space-3);
+}
+
+/* ============================================
+   Homepage & Services grids
+   ============================================ */
+
+.plans-grid,
+.who-grid,
+.scope-grid,
+.why-grid,
+.process-grid,
+.reviews-grid,
+.plans-grid-compact {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+@media (min-width: 960px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .scope-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 720px) {
+  .who-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+.plan-card {
+  @extend %card-shell;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: linear-gradient(180deg, rgba(10, 18, 36, 0.96), rgba(10, 18, 36, 0.85));
+}
+
+.plan-card--featured {
+  border-color: rgba(26, 200, 122, 0.45);
+  box-shadow: 0 24px 60px rgba(26, 200, 122, 0.25);
+}
+
+.plan-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.plan-title {
+  margin: 0;
+}
+
+.plan-tag {
+  margin: 0;
+  color: var(--color-text-subtle);
+  font-size: var(--font-size-sm);
+}
+
+.plan-tag--featured {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.plan-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.plan-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--color-text-muted);
+}
+
+.plan-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(26, 200, 122, 0.15);
+}
+
+.plan-footnote {
+  margin-top: auto;
+  font-size: 0.95rem;
+  color: var(--color-text-subtle);
+}
+
+.plans-bottom,
+.scopes-cta-row {
+  margin-top: clamp(2rem, 5vw, 3rem);
+  display: grid;
+  gap: var(--space-3);
+  justify-items: center;
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .scopes-cta-row {
+    grid-template-columns: 1.5fr auto;
+    text-align: left;
+    justify-items: start;
+  }
+}
+
+.who-card {
+  @extend %card-shell;
+  background: var(--color-surface);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.who-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.why-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.why-item {
+  @extend %card-shell;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75));
+}
+
+.scope-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-elevated);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.scope-card figure {
+  margin: 0;
+}
+
+.scope-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.scope-body {
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.process-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.process-step {
+  @extend %card-shell;
+  background: rgba(10, 18, 36, 0.85);
+}
+
+.reviews-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.review-card {
+  @extend %card-shell;
+  gap: var(--space-4);
+}
+
+.review-body {
+  font-size: 1.05rem;
+  line-height: var(--line-height-relaxed);
+  color: var(--color-heading);
+}
+
+.review-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-subtle);
+}
+
+.review-cta {
+  @extend %card-shell;
+  margin-top: var(--space-5);
+}
+
+/* ============================================
+   Services & plan modules
+   ============================================ */
+
+.service-section + .service-section {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.service-section h2 {
+  margin-bottom: var(--space-3);
+}
+
+.service-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.plans-module {
+  @extend %card-shell;
+  margin-top: var(--space-8);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.plans-grid-compact {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.plan-card-compact {
+  @extend %card-shell;
+  background: rgba(10, 18, 36, 0.92);
+}
+
+.plan-card-compact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+.plans-how-it-works,
+.plans-scope,
+.plans-cta,
+.services-cta {
+  @extend %card-shell;
+  background: rgba(15, 23, 42, 0.9);
+  gap: var(--space-3);
+}
+
+.plans-note {
+  font-size: 0.9rem;
+  color: var(--color-text-subtle);
+}
+
+.plans-cta a,
+.services-cta a {
+  font-weight: 600;
+}
+
+/* ============================================
+   About page
+   ============================================ */
+
+.about-grid {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+
+@media (min-width: 880px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.about-card,
+.about-cta {
+  @extend %card-shell;
+  background: rgba(10, 18, 36, 0.95);
+}
+
+.about-cta {
+  margin-top: var(--space-6);
 }
