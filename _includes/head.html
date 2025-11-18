@@ -124,5 +124,5 @@ otherwise fall back to global defaults from _config.yml
   {% endfor %}
 {% endif %}
 
-<!-- Loading screen: inline for immediate execution -->
-<script src="{{ '/assets/js/loading-screen.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"></script>
+<!-- Loading screen: DISABLED - was causing 10 second blank page due to font loading issues -->
+<!-- <script src="{{ '/assets/js/loading-screen.js' | relative_url }}?v={{ site.version | default: site.github.build_revision | default: '10' }}"></script> -->
