@@ -12,12 +12,24 @@
      NAV: mobile drawer
   ========================= */
   const navToggle = $(".nav-toggle");
-  const nav = $("#site-nav");
   const header = $(".site-header");
+  const navShell = header?.querySelector("[data-nav-container]");
+  const nav = header?.querySelector("#site-nav");
+  const navClose = header?.querySelector("[data-nav-close]");
+  const navOverlay = header?.querySelector("[data-nav-overlay]");
   let lastFocus = null;
-  const BP_DESKTOP = 768; // Updated to match new CSS breakpoint (mobile/tablet <768px, desktop ≥768px)
+  const BP_DESKTOP = 920; // matches SCSS breakpoint for drawer
 
-  const isNavOpen = () => !!nav && nav.classList.contains("is-open");
+  const isNavOpen = () => !!navShell && navShell.classList.contains("is-open");
+
+  const syncAria = (open) => {
+    nav?.setAttribute("aria-expanded", String(open));
+    navToggle?.setAttribute("aria-expanded", String(open));
+    navToggle?.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu",
+    );
+  };
 
   const onKeydownEsc = (e) => {
     if (e.key === "Escape" && isNavOpen()) {
@@ -29,12 +41,14 @@
   const trapFocus = (e) => {
     if (!isNavOpen() || e.key !== "Tab") return;
 
-    const focusables = $$(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-      nav,
-    ).filter((el) => el.offsetParent !== null);
+    const focusables =
+      nav &&
+      $$(
+        'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        nav,
+      ).filter((el) => el.offsetParent !== null);
 
-    if (!focusables.length) return;
+    if (!focusables || !focusables.length) return;
 
     const first = focusables[0];
     const last = focusables[focusables.length - 1];
@@ -50,16 +64,16 @@
 
   const outsideClick = (e) => {
     if (!isNavOpen()) return;
-    if (header?.contains(e.target) || nav?.contains(e.target)) return;
+    if (header?.contains(e.target)) return;
     closeNav();
   };
 
   const openNav = () => {
-    if (!nav) return;
+    if (!nav || !navShell) return;
     lastFocus = document.activeElement;
+    navShell.classList.add("is-open");
     nav.classList.add("is-open");
-    navToggle?.setAttribute("aria-expanded", "true");
-    navToggle?.setAttribute("aria-label", "Close navigation menu");
+    syncAria(true);
     document.body.classList.add("nav-open");
 
     const firstLink = $("a, button", nav);
@@ -71,10 +85,10 @@
   };
 
   const closeNav = () => {
-    if (!nav) return;
+    if (!nav || !navShell) return;
+    navShell.classList.remove("is-open");
     nav.classList.remove("is-open");
-    navToggle?.setAttribute("aria-expanded", "false");
-    navToggle?.setAttribute("aria-label", "Open navigation menu");
+    syncAria(false);
     document.body.classList.remove("nav-open");
 
     document.removeEventListener("keydown", trapFocus);
@@ -87,6 +101,9 @@
   navToggle?.addEventListener("click", () => {
     isNavOpen() ? closeNav() : openNav();
   });
+
+  navClose?.addEventListener("click", closeNav);
+  navOverlay?.addEventListener("click", closeNav);
 
   // Close nav on link click (mobile only)
   if (nav) {
