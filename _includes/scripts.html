@@ -39,13 +39,57 @@
 <!-- Tillerstead mobile nav script (namespaced, safe) -->
 <script>
   (function(){
-    const burger = document.getElementById('ts-burger') || document.getElementById('nav-toggle');
-    const nav = document.getElementById('ts-main-nav') || document.getElementById('site-nav');
-    if(!burger || !nav) return;
-    burger.addEventListener('click', ()=> {
-      const expanded = nav.getAttribute('aria-expanded') === 'true';
-      nav.setAttribute('aria-expanded', String(!expanded));
-      burger.setAttribute('aria-expanded', String(!expanded));
+    const header = document.querySelector('.site-header');
+    if(!header) return;
+
+    const toggle = header.querySelector('#nav-toggle');
+    const navContainer = header.querySelector('[data-nav-container]');
+    const nav = header.querySelector('#site-nav');
+    const closeBtn = header.querySelector('[data-nav-close]');
+    const overlay = header.querySelector('[data-nav-overlay]');
+    if(!toggle || !nav || !navContainer) return;
+
+    const focusableSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let lastFocused = null;
+
+    const isOpen = () => navContainer.classList.contains('is-open');
+
+    const setState = (open) => {
+      navContainer.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-open', open);
+      nav.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-expanded', String(open));
+
+      if(open) {
+        lastFocused = document.activeElement;
+        const focusable = nav.querySelector(focusableSelectors);
+        if(focusable) {
+          focusable.focus({ preventScroll: true });
+        }
+      } else if(lastFocused && typeof lastFocused.focus === 'function') {
+        lastFocused.focus();
+      }
+    };
+
+    const toggleNav = () => setState(!isOpen());
+    const closeNav = () => setState(false);
+
+    toggle.addEventListener('click', toggleNav);
+    closeBtn?.addEventListener('click', closeNav);
+    overlay?.addEventListener('click', closeNav);
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if(window.matchMedia('(max-width: 920px)').matches) {
+          closeNav();
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if(event.key === 'Escape' && isOpen()) {
+        closeNav();
+      }
     });
   })();
 </script>
