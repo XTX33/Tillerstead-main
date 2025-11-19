@@ -23,33 +23,62 @@
     </div>
     
     <!-- Primary navigation -->
-    <nav
-      id="site-nav"
-      class="site-nav"
-      aria-label="Primary navigation"
-    >
-      <ul class="site-menu">
-        {% assign nav_items = site.data.navigation.primary %}
-        {% for item in nav_items %}
-          {% assign is_current = false %}
+    <div class="site-nav-shell" data-nav-container>
+      <div class="site-nav-backdrop" data-nav-overlay aria-hidden="true"></div>
+      <nav
+        id="site-nav"
+        class="site-nav"
+        aria-label="Primary navigation"
+        aria-expanded="false"
+      >
+        <div class="site-nav-drawer-header">
+          <p class="nav-drawer-label">Menu</p>
+          <button
+            type="button"
+            class="nav-close"
+            data-nav-close
+            aria-label="Close navigation menu"
+          >
+            <span class="nav-close-label">Close</span>
+            <span class="nav-close-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </span>
+          </button>
+        </div>
+        <ul class="site-menu">
+          {% assign nav_items = site.data.navigation.primary %}
+          {% for item in nav_items %}
+            {% assign is_current = false %}
 
-          {% if item.exact and page.url == item.exact %}
-            {% assign is_current = true %}
-          {% elsif item.match and page.url contains item.match %}
-            {% assign is_current = true %}
-          {% endif %}
+            {% if item.exact and page.url == item.exact %}
+              {% assign is_current = true %}
+            {% elsif item.match and page.url contains item.match %}
+              {% assign is_current = true %}
+            {% endif %}
 
-          <li>
-            <a
-              href="{{ item.url | relative_url }}"
-              {% if is_current %}aria-current="page"{% endif %}
-            >
-              {{ item.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
+            <li>
+              <a
+                href="{{ item.url | relative_url }}"
+                {% if is_current %}aria-current="page"{% endif %}
+              >
+                {{ item.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
 
     <!-- Header actions -->
     <div class="site-header-actions">

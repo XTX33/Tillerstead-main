@@ -49,6 +49,38 @@
   margin: 0 auto;
 }
 
+.site-nav-shell {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 920px) {
+    justify-content: flex-end;
+  }
+}
+
+.site-nav-backdrop {
+  display: none;
+
+  @media (max-width: 920px) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.65);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-med);
+    z-index: 900;
+
+    .site-nav-shell.is-open & {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
 /* ============================================
    Brand / Logo
    ============================================ */
@@ -97,28 +129,95 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  
-  @media (max-width: 920px) {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 1rem;
-    left: 1rem;
-    flex-direction: column;
-    background: var(--color-surface-elevated);
-    padding: 1rem;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lift);
-    border: 1px solid rgba(26, 200, 122, 0.2);
-    min-width: 240px;
-    z-index: 900;
 
-    &.active,
-    &[aria-expanded="true"],
-    &.is-open {
-      display: flex;
+  @media (max-width: 920px) {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(85vw, 340px);
+    max-width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(10, 18, 34, 0.98) 0%,
+      rgba(5, 10, 20, 0.98) 100%
+    );
+    padding: clamp(1rem, 5vw, 2rem);
+    box-shadow: -12px 0 32px rgba(2, 6, 23, 0.45);
+    border-left: 1px solid rgba(26, 200, 122, 0.25);
+    transform: translateX(110%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 320ms ease, opacity 220ms ease;
+    z-index: 1200;
+
+    .site-nav-shell.is-open & {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
     }
   }
+}
+
+.site-nav-drawer-header {
+  display: none;
+
+  @media (max-width: 920px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  }
+}
+
+.nav-drawer-label {
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(226, 232, 240, 0.8);
+  margin: 0;
+}
+
+.nav-close {
+  display: none;
+
+  @media (max-width: 920px) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    &:focus-visible {
+      outline: var(--focus-ring);
+      outline-offset: 3px;
+    }
+  }
+}
+
+.nav-close-label {
+  font-size: 0.85rem;
+}
+
+.nav-close-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
 }
 
 .site-menu {
@@ -139,7 +238,7 @@
     margin: 0;
     padding: 0;
   }
-  
+
   a {
     display: block;
     color: var(--color-text-muted);
@@ -184,7 +283,8 @@
     @media (max-width: 920px) {
       width: 100%;
       padding: 0.75rem 1rem;
-      
+      font-size: 1.05rem;
+
       &[aria-current="page"]::after {
         display: none;
       }
@@ -274,4 +374,8 @@
     padding: 0.5rem 1rem;
     font-size: 0.875rem;
   }
+}
+
+body.nav-open {
+  overflow: hidden;
 }
