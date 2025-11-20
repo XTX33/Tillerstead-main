@@ -217,6 +217,21 @@
       observer.observe(el)
     })
 
+    // Ensure first-view content is visible even if the observer lags
+    const revealVisibleContent = () => {
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect()
+        if (rect.top <= viewportHeight * 0.9 && rect.bottom >= 0) {
+          el.classList.add('is-visible')
+        }
+      })
+    }
+
+    revealVisibleContent()
+    window.addEventListener('load', revealVisibleContent, { once: true })
+    window.addEventListener('resize', revealVisibleContent)
+
     // Add CSS for fade-in animation if not present
     if (!document.getElementById('fade-in-styles')) {
       const style = document.createElement('style')
@@ -230,6 +245,13 @@
         .fade-in-element.is-visible {
           opacity: 1;
           transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .fade-in-element {
+            opacity: 1;
+            transform: none;
+            transition: none;
+          }
         }
       `
       document.head.appendChild(style)

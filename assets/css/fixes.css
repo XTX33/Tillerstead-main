@@ -34,6 +34,7 @@
   display: block;
   max-width: 150px;
   width: clamp(120px, 14vw, 150px);
+  max-height: 52px;
   height: auto;
   margin: 0;
   /* Ensure visibility - override any potential hiding rules */
@@ -59,14 +60,15 @@
 .site-footer .footer-brand,
 .ts-footer .footer-brand {
   display: inline-flex;
-  flex-direction: column;
+  align-items: center;
   gap: var(--ts-space-2, 0.5rem);
   color: inherit;
   text-decoration: none;
   /* Fallback background for logo */
-  background: url('../img/logo/tillerstead-logo-stacked.svg') no-repeat top center;
-  background-size: contain;
-  min-height: 110px; /* Ensure background shows if img fails */
+  background: url('../img/logo/tillerstead-logo-header.svg') no-repeat left center;
+  background-size: 120px;
+  min-height: 72px; /* Ensure background shows if img fails */
+  padding: 0.25rem 0;
 }
 
 /* Responsive breakpoints for logo sizing */
