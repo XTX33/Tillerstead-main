@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,8 +12,7 @@
       content="Tillerstead LLC builds reliable tile assemblies, remodeling projects, and proactive property maintenance plans for South Jersey homeowners, landlords, and small commercial spaces."
     >
     <meta name="theme-color" content="#050a16">
-    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,10 +25,9 @@
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="header" id="top">
       <div class="container header__inner">
-        <a class="brand" href="#top" aria-label="Tillerstead LLC homepage">
-          <img src="/assets/img/logo.png" width="132" height="28" alt="Tillerstead LLC">
-          <span>Tillerstead LLC</span>
-        </a>
+        <div class="brand" aria-label="Tillerstead LLC homepage">
+          {% include logo-main.html %}
+        </div>
         <nav class="nav" id="site-nav" aria-label="Main navigation">
           <ul>
             <li><a href="#services">Services</a></li>
@@ -46,6 +47,8 @@
       <section class="section hero" aria-labelledby="hero-title">
         <div class="container hero__grid">
           <div class="hero__content">
+            {% include logo-hero.html %}
+
             <p class="eyebrow">Property care, done right</p>
             <h1 id="hero-title">Property Maintenance &amp; Remodeling in South Jersey</h1>
             <p class="lead">
@@ -253,6 +256,7 @@
 
     <footer class="footer" role="contentinfo">
       <div class="container">
+        {% include logo-footer.html %}
         <p>&copy; <span id="year"></span> Tillerstead LLC — Property Maintenance, Remodeling &amp; Tile in South Jersey.</p>
       </div>
     </footer>

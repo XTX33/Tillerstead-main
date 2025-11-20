@@ -52,7 +52,7 @@ company:
   email: "info@tillerstead.com"
 
 # Optional: global defaults for OG/social
-logo: /assets/img/logo.png
+logo: /assets/img/logo/tillerstead-logo-header.svg
 default_og_image: /assets/img/og.jpg
 
 # Cache-busting helper

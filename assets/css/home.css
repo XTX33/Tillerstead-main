@@ -94,6 +94,40 @@ a:focus-visible {
   font-size: 0.95rem;
 }
 
+.ts-logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ts-logo-img {
+  display: block;
+  height: 40px;
+  max-width: 100%;
+}
+
+.ts-logo-hero {
+  margin-bottom: 1.25rem;
+  max-width: 360px;
+}
+
+.ts-logo-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ts-logo-footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.ts-logo-footer-img {
+  display: block;
+  max-width: 220px;
+  height: auto;
+}
+
 .nav ul {
   display: flex;
   gap: 1.25rem;
@@ -429,6 +463,16 @@ p {
 
 .footer span {
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .ts-logo-img {
+    height: 32px;
+  }
+
+  .ts-logo-hero {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 900px) {
