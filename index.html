@@ -1,311 +1,254 @@
 ---
-layout: null
+layout: default
+title: Property Maintenance & Remodeling in South Jersey | Tillerstead LLC
+description: Tillerstead LLC builds reliable tile assemblies, remodeling projects, and proactive property maintenance plans for South Jersey homeowners, landlords, and small commercial spaces.
+body_class: page-home
+hide_hero: true
+is_home: true
+styles:
+  - /assets/css/home.css
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Property Maintenance &amp; Remodeling in South Jersey | Tillerstead LLC</title>
-    <meta
-      name="description"
-      content="Tillerstead LLC builds reliable tile assemblies, remodeling projects, and proactive property maintenance plans for South Jersey homeowners, landlords, and small commercial spaces."
-    >
-    <meta name="theme-color" content="#050a16">
-    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600&display=swap"
-      rel="stylesheet"
-    >
-    <link rel="stylesheet" href="/assets/css/home.css">
-  </head>
-  <body class="page">
-    <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="header" id="top">
-      <div class="container header__inner">
-        <div class="brand" aria-label="Tillerstead LLC homepage">
-          {% include logo-main.html %}
-        </div>
-        <nav class="nav" id="site-nav" aria-label="Main navigation">
-          <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#plans">Maintenance Plans</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <button class="menu" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          Menu
-        </button>
-        <a class="phone" href="tel:+16096659350">(609) 665-9350</a>
+<section class="section hero" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__content">
+      {% include logo-hero.html %}
+
+      <p class="eyebrow">Property care, done right</p>
+      <h1 id="hero-title">Property Maintenance &amp; Remodeling in South Jersey</h1>
+      <p class="lead">
+        Owner-led tile, remodeling, and maintenance work built with waterproof assemblies, documented change
+        orders, and ongoing care plans for shore homes, rentals, and small commercial spaces.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Start a project</a>
+        <a class="btn btn--ghost" href="{{ '/services/' | relative_url }}">Explore services</a>
+        <a class="btn btn--ghost" href="tel:+16096659350">Call (609) 665-9350</a>
       </div>
-    </header>
-
-    <main id="main">
-      <section class="section hero" aria-labelledby="hero-title">
-        <div class="container hero__grid">
-          <div class="hero__content">
-            {% include logo-hero.html %}
-
-            <p class="eyebrow">Property care, done right</p>
-            <h1 id="hero-title">Property Maintenance &amp; Remodeling in South Jersey</h1>
-            <p class="lead">
-              Owner-led tile, remodeling, and maintenance work built with waterproof assemblies, documented change
-              orders, and ongoing care plans for shore homes, rentals, and small commercial spaces.
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn--primary" href="#contact">Start a project</a>
-              <a class="btn btn--ghost" href="tel:+16096659350">Call (609) 665-9350</a>
-            </div>
-            <ul class="hero__meta">
-              <li>NJ Licensed HIC #13VH10808800</li>
-              <li>Atlantic, Ocean &amp; Cape May Counties</li>
-              <li>Tile assemblies, remodeling, and maintenance</li>
-            </ul>
-          </div>
-          <div class="hero__panel" aria-label="Highlighted capabilities">
-            <div class="pill">Owner-operated</div>
-            <p class="hero__panel-eyebrow">What clients count on</p>
-            <h2>Waterproof builds, transparent communication, and recurring care</h2>
-            <p>
-              From tile showers and kitchen updates to monthly inspections, we treat every property as if it were our
-              own and keep you informed with documented scope, photos, and predictable scheduling.
-            </p>
-            <dl class="stat-list">
-              <div>
-                <dt>12+</dt>
-                <dd>years of tile and remodeling experience</dd>
-              </div>
-              <div>
-                <dt>30+</dt>
-                <dd>recurring maintenance clients cared for each season</dd>
-              </div>
-            </dl>
-          </div>
+      <ul class="hero__meta">
+        <li>NJ Licensed HIC #13VH10808800</li>
+        <li>Atlantic, Ocean &amp; Cape May Counties</li>
+        <li>Tile assemblies, remodeling, and maintenance</li>
+      </ul>
+    </div>
+    <div class="hero__panel" aria-label="Highlighted capabilities">
+      <div class="pill">Owner-operated</div>
+      <p class="hero__panel-eyebrow">What clients count on</p>
+      <h2>Waterproof builds, transparent communication, and recurring care</h2>
+      <p>
+        From tile showers and kitchen updates to monthly inspections, we treat every property as if it were our own and
+        keep you informed with documented scope, photos, and predictable scheduling.
+      </p>
+      <dl class="stat-list">
+        <div>
+          <dt>12+</dt>
+          <dd>years of tile and remodeling experience</dd>
         </div>
-      </section>
-
-      <section id="services" class="section" aria-labelledby="services-title">
-        <div class="container">
-          <div class="section__intro">
-            <p class="eyebrow">What we deliver</p>
-            <h2 id="services-title">Craftsmanship built to handle shore life</h2>
-            <p>
-              We combine waterproof tile assemblies, clean remodeling finishes, and a maintenance mindset to keep
-              rentals, second homes, and storefronts on schedule.
-            </p>
-          </div>
-          <div class="card-grid">
-            <article class="card">
-              <h3>Tile &amp; Stone</h3>
-              <p>Showers, backsplashes, heated floors, and large-format installs built on certified waterproof systems.</p>
-              <ul>
-                <li>Shower &amp; bath rebuilds</li>
-                <li>Waterproofing &amp; membranes</li>
-                <li>Stone &amp; slab work</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Remodeling</h3>
-              <p>Kitchen and bath updates, drywall, trim, flooring, and finish carpentry coordinated start to finish.</p>
-              <ul>
-                <li>Design collaboration</li>
-                <li>Material sourcing</li>
-                <li>Detailed schedules</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Maintenance</h3>
-              <p>Recurring visits with checklists, seasonal tune-ups, and documented repairs handled in one visit.</p>
-              <ul>
-                <li>Monthly walkthroughs</li>
-                <li>Punch list repairs</li>
-                <li>Emergency coordination</li>
-              </ul>
-            </article>
-          </div>
+        <div>
+          <dt>30+</dt>
+          <dd>recurring maintenance clients cared for each season</dd>
         </div>
-      </section>
+      </dl>
+    </div>
+  </div>
+</section>
 
-      <section id="plans" class="section section--muted" aria-labelledby="plans-title">
-        <div class="container">
-          <div class="section__intro">
-            <p class="eyebrow">Stay ahead of issues</p>
-            <h2 id="plans-title">Monthly property care plans</h2>
-            <p>
-              Choose the cadence that fits your property portfolio. Every visit includes photo documentation, a punch
-              list, and proactive recommendations before problems escalate.
-            </p>
-          </div>
-          <div class="plan-grid">
-            <article class="plan-card">
-              <header>
-                <p class="plan-card__eyebrow">Included every visit</p>
-                <h3>Core checklist</h3>
-              </header>
-              <ul>
-                <li>Moisture, leak, and HVAC inspections</li>
-                <li>Minor repairs completed on the spot</li>
-                <li>On-call support between visits</li>
-              </ul>
-            </article>
-            <article class="plan-card">
-              <header>
-                <p class="plan-card__eyebrow">Additional coverage</p>
-                <h3>Concierge add-ons</h3>
-              </header>
-              <ul>
-                <li>Vendor coordination &amp; key holder services</li>
-                <li>Storm prep and post-event inspections</li>
-                <li>Supply restocking &amp; turnover prep</li>
-              </ul>
-            </article>
-            <article class="plan-card plan-card--accent">
-              <header>
-                <p class="plan-card__eyebrow">How it works</p>
-                <h3>Transparent reporting</h3>
-              </header>
-              <p>
-                Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so
-                you can make decisions quickly—even when you are out of state.
-              </p>
-              <dl class="stat-list stat-list--compact">
-                <div>
-                  <dt>&lt;24 hrs</dt>
-                  <dd>response time for maintenance clients</dd>
-                </div>
-                <div>
-                  <dt>100%</dt>
-                  <dd>of change orders delivered in writing</dd>
-                </div>
-              </dl>
-            </article>
-          </div>
-        </div>
-      </section>
+<section id="services" class="section" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section__intro">
+      <p class="eyebrow">What we deliver</p>
+      <h2 id="services-title">Craftsmanship built to handle shore life</h2>
+      <p>
+        We combine waterproof tile assemblies, clean remodeling finishes, and a maintenance mindset to keep rentals,
+        second homes, and storefronts on schedule.
+      </p>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <h3>Tile &amp; Stone</h3>
+        <p>Showers, backsplashes, heated floors, and large-format installs built on certified waterproof systems.</p>
+        <ul>
+          <li>Shower &amp; bath rebuilds</li>
+          <li>Waterproofing &amp; membranes</li>
+          <li>Stone &amp; slab work</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Remodeling</h3>
+        <p>Kitchen and bath updates, drywall, trim, flooring, and finish carpentry coordinated start to finish.</p>
+        <ul>
+          <li>Design collaboration</li>
+          <li>Material sourcing</li>
+          <li>Detailed schedules</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Maintenance</h3>
+        <p>Recurring visits with checklists, seasonal tune-ups, and documented repairs handled in one visit.</p>
+        <ul>
+          <li>Monthly walkthroughs</li>
+          <li>Punch list repairs</li>
+          <li>Emergency coordination</li>
+        </ul>
+      </article>
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ '/services/' | relative_url }}">View full services</a>
+      <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">See recent projects</a>
+    </div>
+  </div>
+</section>
 
-      <section id="process" class="section" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section__intro">
-            <p class="eyebrow">How we work</p>
-            <h2 id="process-title">A calm, documented build process</h2>
-          </div>
-          <ol class="process">
-            <li>
-              <h3>Listen &amp; inspect</h3>
-              <p>We start with goals, budget, and a thorough site review to prevent surprises.</p>
-            </li>
-            <li>
-              <h3>Plan &amp; document</h3>
-              <p>Scopes outline materials, lead times, waterproofing details, and exact change-order language.</p>
-            </li>
-            <li>
-              <h3>Build &amp; maintain</h3>
-              <p>We execute the project, keep daily notes, and transition you to a maintenance cadence.</p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <section class="section section--highlight" aria-labelledby="assurance-title">
-        <div class="container assurance">
+<section id="plans" class="section section--muted" aria-labelledby="plans-title">
+  <div class="container">
+    <div class="section__intro">
+      <p class="eyebrow">Stay ahead of issues</p>
+      <h2 id="plans-title">Monthly property care plans</h2>
+      <p>
+        Choose the cadence that fits your property portfolio. Every visit includes photo documentation, a punch list, and
+        proactive recommendations before problems escalate.
+      </p>
+    </div>
+    <div class="plan-grid">
+      <article class="plan-card">
+        <header>
+          <p class="plan-card__eyebrow">Included every visit</p>
+          <h3>Core checklist</h3>
+        </header>
+        <ul>
+          <li>Moisture, leak, and HVAC inspections</li>
+          <li>Minor repairs completed on the spot</li>
+          <li>On-call support between visits</li>
+        </ul>
+      </article>
+      <article class="plan-card">
+        <header>
+          <p class="plan-card__eyebrow">Additional coverage</p>
+          <h3>Concierge add-ons</h3>
+        </header>
+        <ul>
+          <li>Vendor coordination &amp; key holder services</li>
+          <li>Storm prep and post-event inspections</li>
+          <li>Supply restocking &amp; turnover prep</li>
+        </ul>
+      </article>
+      <article class="plan-card plan-card--accent">
+        <header>
+          <p class="plan-card__eyebrow">How it works</p>
+          <h3>Transparent reporting</h3>
+        </header>
+        <p>
+          Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so you
+          can make decisions quickly—even when you are out of state.
+        </p>
+        <dl class="stat-list stat-list--compact">
           <div>
-            <p class="eyebrow">Why owners choose us</p>
-            <h2 id="assurance-title">Accountability stays with the craftsman on site</h2>
-            <p>
-              You work directly with the owner every step of the way. That means quick answers, clean job sites, and a
-              single point of contact for everything from tile setting to recurring maintenance.
-            </p>
+            <dt>&lt;24 hrs</dt>
+            <dd>response time for maintenance clients</dd>
           </div>
-          <ul class="assurance__list">
-            <li>Change orders acknowledged in writing</li>
-            <li>Daily site photos &amp; cleanliness checks</li>
-            <li>Licensed &amp; insured NJ Home Improvement Contractor</li>
-          </ul>
-        </div>
-      </section>
+          <div>
+            <dt>100%</dt>
+            <dd>of change orders delivered in writing</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="{{ '/services/#maintenance' | relative_url }}">See maintenance coverage</a>
+      <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Request a plan walkthrough</a>
+    </div>
+  </div>
+</section>
 
-      <section id="contact" class="section" aria-labelledby="contact-title">
-        <div class="container contact">
-          <div class="contact__copy">
-            <p class="eyebrow">Let's talk</p>
-            <h2 id="contact-title">Ready to schedule a walkthrough?</h2>
-            <p>
-              Tell us about your remodel, tile project, or maintenance needs and we’ll coordinate a visit. Serving
-              Atlantic County with regular trips to Ocean and Cape May Counties.
-            </p>
-            <div class="contact__actions">
-              <a class="btn btn--primary" href="mailto:info@tillerstead.com">info@tillerstead.com</a>
-              <a class="btn btn--ghost" href="tel:+16096659350">Call (609) 665-9350</a>
-            </div>
-          </div>
-          <div class="contact__panel">
-            <h3>Business details</h3>
-            <ul>
-              <li><strong>License:</strong> NJ HIC #13VH10808800</li>
-              <li><strong>Address:</strong> 325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</li>
-              <li><strong>Email:</strong> info@tillerstead.com</li>
-              <li><strong>Phone:</strong> (609) 665-9350</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+<section id="process" class="section" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section__intro">
+      <p class="eyebrow">How we work</p>
+      <h2 id="process-title">A calm, documented build process</h2>
+    </div>
+    <ol class="process">
+      <li>
+        <h3>Listen &amp; inspect</h3>
+        <p>We start with goals, budget, and a thorough site review to prevent surprises.</p>
+      </li>
+      <li>
+        <h3>Plan &amp; document</h3>
+        <p>Scopes outline materials, lead times, waterproofing details, and exact change-order language.</p>
+      </li>
+      <li>
+        <h3>Build &amp; maintain</h3>
+        <p>We execute the project, keep daily notes, and transition you to a maintenance cadence.</p>
+      </li>
+    </ol>
+  </div>
+</section>
 
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        {% include logo-footer.html %}
-        <p>&copy; <span id="year"></span> Tillerstead LLC — Property Maintenance, Remodeling &amp; Tile in South Jersey.</p>
+<section class="section section--highlight" aria-labelledby="assurance-title">
+  <div class="container assurance">
+    <div>
+      <p class="eyebrow">Why owners choose us</p>
+      <h2 id="assurance-title">Accountability stays with the craftsman on site</h2>
+      <p>
+        You work directly with the owner every step of the way. That means quick answers, clean job sites, and a single
+        point of contact for everything from tile setting to recurring maintenance.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="{{ '/reviews/' | relative_url }}">Read client reviews</a>
+        <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View portfolio highlights</a>
       </div>
-    </footer>
+    </div>
+    <ul class="assurance__list">
+      <li>Change orders acknowledged in writing</li>
+      <li>Daily site photos &amp; cleanliness checks</li>
+      <li>Licensed &amp; insured NJ Home Improvement Contractor</li>
+    </ul>
+  </div>
+</section>
 
-    <script>
-      (function () {
-        const menuButton = document.getElementById('menu-toggle');
-        const nav = document.getElementById('site-nav');
-        if (!menuButton || !nav) return;
-        menuButton.addEventListener('click', () => {
-          const expanded = menuButton.getAttribute('aria-expanded') === 'true';
-          menuButton.setAttribute('aria-expanded', String(!expanded));
-          nav.classList.toggle('is-open');
-        });
-      })();
+<section id="contact" class="section" aria-labelledby="contact-title">
+  <div class="container contact">
+    <div class="contact__copy">
+      <p class="eyebrow">Let's talk</p>
+      <h2 id="contact-title">Ready to schedule a walkthrough?</h2>
+      <p>
+        Tell us about your remodel, tile project, or maintenance needs and we’ll coordinate a visit. Serving Atlantic
+        County with regular trips to Ocean and Cape May Counties.
+      </p>
+      <div class="contact__actions">
+        <a class="btn btn--primary" href="mailto:info@tillerstead.com">info@tillerstead.com</a>
+        <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Go to the contact page</a>
+      </div>
+    </div>
+    <div class="contact__panel">
+      <h3>Business details</h3>
+      <ul>
+        <li><strong>License:</strong> NJ HIC #13VH10808800</li>
+        <li><strong>Address:</strong> 325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</li>
+        <li><strong>Email:</strong> info@tillerstead.com</li>
+        <li><strong>Phone:</strong> (609) 665-9350</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-      (function () {
-        const yearEl = document.getElementById('year');
-        if (yearEl) {
-          yearEl.textContent = new Date().getFullYear();
-        }
-      })();
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "HomeAndConstructionBusiness",
-        "name": "Tillerstead LLC",
-        "image": "https://tillerstead.com/assets/img/og.jpg",
-        "url": "https://tillerstead.com/",
-        "telephone": "+1-609-665-9350",
-        "email": "info@tillerstead.com",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
-          "addressLocality": "Galloway",
-          "addressRegion": "NJ",
-          "postalCode": "08205",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Atlantic County", "Ocean County", "Cape May County"],
-        "serviceType": [
-          "Tile installation and waterproofing",
-          "Kitchen and bathroom remodeling",
-          "Monthly property maintenance"
-        ]
-      }
-    </script>
-  </body>
-</html>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Tillerstead LLC",
+    "image": "https://tillerstead.com/assets/img/og.jpg",
+    "url": "https://tillerstead.com/",
+    "telephone": "+1-609-665-9350",
+    "email": "info@tillerstead.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "325 E. Jimmie Leeds Road, Suite 7-333",
+      "addressLocality": "Galloway",
+      "addressRegion": "NJ",
+      "postalCode": "08205",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Atlantic County", "Ocean County", "Cape May County"],
+    "serviceType": ["Tile installation and waterproofing", "Kitchen and bathroom remodeling", "Monthly property maintenance"]
+  }
+</script>
