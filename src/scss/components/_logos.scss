@@ -1,0 +1,68 @@
+/* ============================================
+   Logo Treatments
+   ============================================ */
+
+.ts-logo-link,
+.ts-logo-footer,
+.ts-logo-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ts-logo-svg,
+.ts-logo-svg-full,
+.site-logo-img,
+.footer-logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: clamp(140px, 22vw, 240px);
+}
+
+.site-logo-img {
+  max-width: clamp(148px, 16vw, 180px);
+}
+
+.footer-logo-img {
+  max-width: clamp(136px, 20vw, 200px);
+}
+
+.ts-logo-mark {
+  stroke: var(--color-accent, #8b6f47);
+  fill: none;
+}
+
+.ts-logo-tile {
+  fill: var(--color-dark-primary, #0f172a);
+}
+
+.ts-logo-word {
+  fill: var(--color-primary, #00a86b);
+  font-family: var(--font-sans);
+  letter-spacing: 0.5px;
+}
+
+.ts-logo-tag {
+  fill: var(--color-text, #e2e8f0);
+  font-family: var(--font-sans);
+}
+
+.home-logo {
+  text-align: center;
+  padding: var(--space-6) 0 var(--space-2);
+}
+
+.home-logo__inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(26, 200, 122, 0.08), rgba(139, 111, 71, 0.12));
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--shadow-soft);
+}

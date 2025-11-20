@@ -10,12 +10,11 @@
          href="{{ '/' | relative_url }}"
          aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Return to homepage"
          rel="home">
-        <img src="{{ '/assets/img/logo/tillerstead-logo-header.svg' | relative_url }}"
-             alt="{{ site.title | default: 'Tillerstead LLC' }}"
-             class="site-logo-img ts-logo-img"
-             width="160"
-             height="52"
-             decoding="async">
+        <svg class="site-logo-img" viewBox="0 0 660 240" role="img" aria-labelledby="headerLogoTitle headerLogoDesc">
+          <title id="headerLogoTitle">{{ site.title | default: 'Tillerstead LLC' }}</title>
+          <desc id="headerLogoDesc">Tillerstead logo showing tile mark and wordmark.</desc>
+          <use href="#logo-full" />
+        </svg>
         <span class="sr-only">{{ site.title }}</span>
       </a>
     </div>
