@@ -60,6 +60,7 @@
 .hero-main {
   display: grid;
   gap: var(--space-5);
+  max-width: 820px;
 }
 
 .hero-eyebrow {
@@ -100,6 +101,7 @@
   font-size: 1.125rem;
   line-height: var(--line-height-relaxed);
   color: var(--color-text-muted);
+  max-width: 72ch;
 }
 
 .hero-cred {

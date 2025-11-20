@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "build:css": "sass src/scss/theme.scss:assets/css/theme-compiled.css --no-source-map --style=compressed",
     "watch:css": "sass src/scss/theme.scss:assets/css/theme-compiled.css --watch --no-source-map",
-    "build": "npm run build:css"
+    "build": "npm run build:css",
+    "build:site": "npm run build:css && vendor/gems/jekyll/bin/jekyll build"
   },
   "devDependencies": {
     "eslint": "8.57.0",

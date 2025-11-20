@@ -8,6 +8,26 @@
   position: relative;
 }
 
+/* Main wrapper tuning
+   Prevents double padding around heroes and page content while keeping
+   consistent vertical rhythm for every page. */
+.site-main.ts-section {
+  padding: 0;
+}
+
+.site-main > .hero,
+.site-main > .ts-hero {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.site-main > .page-content.section {
+  padding: clamp(2.25rem, 5vw, 3.5rem) 0 clamp(2.75rem, 6vw, 4.5rem);
+}
+
+.site-main > .page-content .container {
+  max-width: min(var(--shell-width), 1180px);
+}
+
 .ts-section--muted {
   background: var(--color-surface-elevated);
 }

@@ -6,6 +6,11 @@
   padding: clamp(2rem, 5vw, 3rem) 0;
 }
 
+.page-content .container {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
 .page-header {
   margin-bottom: var(--space-6);
 }
@@ -20,6 +25,16 @@
   font-size: 1.125rem;
   color: var(--color-text-muted);
   max-width: 65ch;
+}
+
+.page-content .lead,
+.page-content .intro,
+.page-content .section-intro {
+  max-width: 78ch;
+}
+
+.page-content .lead {
+  margin-bottom: var(--space-5);
 }
 
 /* Full-width pages (like homepage) */
