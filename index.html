@@ -1,60 +1,50 @@
 ---
 layout: default
-title: Tile, Remodeling & Property Maintenance in South Jersey | Tillerstead LLC
-description: Tillerstead LLC provides reliable tile assemblies, organized remodeling projects, and consistent property maintenance for South Jersey homeowners, landlords, and small commercial spaces.
+title: Tillerstead LLC | Tile Installation, Remodeling & Property Care in South Jersey
+description: Licensed NJ home improvement contractor specializing in waterproof tile assemblies, organized remodels, and monthly property maintenance for Atlantic, Ocean & Cape May Counties.
 body_class: page-home
 is_home: true
 
 # Unified hero configuration
-hero_eyebrow: "South Jersey"
-hero_title: "Remodeling, Tile & Property Maintenance"
+hero_eyebrow: "Licensed NJ Home Improvement Contractor"
+hero_title: "Precision Tile & Dependable Remodeling for South Jersey"
 hero_summary: >
-  Owner-led tile, remodeling, and monthly property care with certified waterproof assemblies, documented scopes & change orders, and optional design consultations — built for shore homes, rentals, and small commercial spaces.
+  I deliver waterproof tile assemblies, clean finish work, and reliable property maintenance for homeowners, landlords, and small businesses across Atlantic, Cape May, and Ocean Counties. Every project is documented, transparent, and built to earn your trust.
 hero_primary_url: "/contact/"
-hero_primary_label: "Book a consultation"
-hero_secondary_url: "/services/"
-hero_secondary_label: "Explore services"
+hero_primary_label: "Request a consultation"
+hero_secondary_url: "/portfolio/"
+hero_secondary_label: "View recent work"
 hero_kpis:
-  - label: "Licensed"
-    text: "NJ Home Improvement Contractor #13VH10808800"
-  - label: "Service Area"
-    text: "Atlantic, Ocean & Cape May Counties"
-  - label: "Specialty"
-    text: "Waterproof tile builds & organized remodeling"
-  - label: "Maintenance"
-    text: "Recurring inspections with proactive reporting"
+  - label: "Documentation"
+    text: "100% documented scopes, waterproofing details & change orders"
+  - label: "Response time"
+    text: "<24 hours for active clients"
+  - label: "Licensing"
+    text: "NJ HIC #13VH10808800"
+hero_bg_pattern: "sacred-tile"
 ---
 {% comment %} Hero rendered by unified-hero include via front-matter above {% endcomment %}
 
 <section class="hero hero--center" aria-labelledby="home-hero-title" data-animate="reveal">
   <div class="container hero__grid hero__grid--centered">
     <div class="hero__content hero__content--center">
-      <div class="hero__logo">
+      <div class="hero__logo" aria-label="Tillerstead LLC logo">
         {% include logo-hero.html %}
       </div>
-      <p class="eyebrow">Owner-led remodels & tile for shore life</p>
-      <h1 id="home-hero-title">Sure-built craftsmanship for shore life</h1>
+      <p class="eyebrow">Licensed NJ Home Improvement Contractor</p>
+      <h1 id="home-hero-title">Precision Tile, Remodeling & Property Care in South Jersey</h1>
       <p class="lead">
-        Waterproof tile assemblies, clean remodeling finishes, and recurring property care for rentals, second homes, and boutique commercial spaces in South Jersey.
+        Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
       </p>
+      <ul class="hero__stats" aria-label="Credentials and guarantees">
+        <li><strong>Documentation:</strong> 100% written scopes, waterproofing details & change orders</li>
+        <li><strong>Response time:</strong> &lt;24 hours for active clients</li>
+        <li><strong>Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
+      </ul>
       <div class="hero__actions hero__actions--center">
-        <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Book a consultation</a>
+        <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
         <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
       </div>
-      <dl class="hero__stats">
-        <div>
-          <dt>100% documented</dt>
-          <dd>Scopes, waterproof assemblies & change orders</dd>
-        </div>
-        <div>
-          <dt>&lt;24 hrs</dt>
-          <dd>Response time for maintenance clients</dd>
-        </div>
-        <div>
-          <dt>Licensed</dt>
-          <dd>NJ HIC #13VH10808800</dd>
-        </div>
-      </dl>
     </div>
   </div>
 </section>
@@ -65,25 +55,27 @@ hero_kpis:
     <div class="container">
       <div class="gallery-strip__inner">
         <div class="gallery-strip__copy">
-          <p class="eyebrow">Documented detail</p>
-          <h2 id="gallery-strip-title">A glimpse at recent installs</h2>
-          <p>Large-format marble, brass-inlay niches, and waterproof assemblies photographed in Atlantic City, Margate, and Stone Harbor.</p>
+          <p class="eyebrow">Recent projects</p>
+          <h2 id="gallery-strip-title">Quality tile work & remodels across South Jersey</h2>
+          <p>Custom tile installations, waterproof showers, and precision remodeling for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties.</p>
           <div class="hero__actions hero__actions--center">
-            <a class="btn btn--primary" href="{{ '/portfolio/' | relative_url }}">See the portfolio</a>
-            <a class="btn btn--ghost" href="{{ '/services/' | relative_url }}">Explore services</a>
+            <a class="btn btn--primary" href="{{ '/portfolio/' | relative_url }}">View full portfolio</a>
+            <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Request a quote</a>
           </div>
         </div>
         <div class="gallery-strip__grid">
-          {% assign preview_items = gallery_strip | slice: 0, 5 %}
+          {% assign preview_items = gallery_strip | slice: 0, 6 %}
           {% for item in preview_items %}
             <figure class="gallery-strip__item">
               <img src="{{ item.file | relative_url }}"
-                   alt="{{ item.alt | default: item.title | escape }}"
+                   alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}"
                    loading="lazy"
-                   decoding="async">
+                   decoding="async"
+                   width="400"
+                   height="300">
               <figcaption>
                 {% if item.title %}<strong>{{ item.title }}</strong>{% endif %}
-                {% if item.category %}<span>&bull; {{ item.category }}</span>{% endif %}
+                {% if item.location %}<span>&bull; {{ item.location }}</span>{% endif %}
               </figcaption>
             </figure>
           {% endfor %}
@@ -93,8 +85,13 @@ hero_kpis:
   </section>
 {% endif %}
 
-<!-- Services overview (standardized include) -->
-{% include services-section.html %}
+<!-- Services overview (standardized include; customized params for homepage SEO & reduced repetition) -->
+{% include services-section.html 
+  eyebrow="Core capabilities" 
+  heading="Tile, Remodeling & Property Maintenance Expertise" 
+  summary="Precision tile installations, documented waterproofing, organized remodeling, and proactive property maintenance programs built for South Jersey coastal conditions. All work is owner-operated, fully documented, and designed for long-term durability." 
+  cta_services_label="Browse all services" 
+  cta_portfolio_label="See recent projects" %}
 
 
 <section id="plans" class="section section--muted" aria-labelledby="plans-title" data-animate="reveal">
@@ -103,7 +100,7 @@ hero_kpis:
       <p class="eyebrow">Property care programs</p>
       <h2 id="plans-title">Monthly maintenance plans for shore properties</h2>
       <p>
-        Choose a cadence that matches your portfolio. Each visit delivers photo documentation, a punch list, and proactive recommendations before small issues become headline repairs.
+        Choose a cadence that matches your portfolio. Each visit delivers photo documentation, a detailed checklist, and proactive recommendations before small issues become costly repairs. Owner-operated service means direct accountability and fast response.
       </p>
     </div>
     <div class="plan-grid">
@@ -135,8 +132,7 @@ hero_kpis:
           <h3>Transparent reporting</h3>
         </header>
         <p>
-          Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so you
-          can make decisions quickly—even when you are out of state.
+          Each maintenance cycle ships with a written report, timestamped photos, and next-step recommendations so you can make decisions quickly—even when you are out of state. All change orders are delivered in writing for full transparency.
         </p>
         <dl class="stat-list stat-list--compact">
           <div>
@@ -161,20 +157,20 @@ hero_kpis:
   <div class="container">
     <div class="section__intro">
       <p class="eyebrow">How we work</p>
-      <h2 id="process-title">A calm, documented build process</h2>
+      <h2 id="process-title">Documented craftsmanship from walk-through to closeout</h2>
     </div>
     <ol class="process">
       <li>
-        <h3>Listen &amp; inspect</h3>
-        <p>We start with goals, budget, and a thorough site review to prevent surprises.</p>
+        <h3>Walk-through & Assessment</h3>
+        <p>Start with a free on-site consultation to review your goals, budget, and property conditions. I identify any underlying issues so your project is built on solid information from day one.</p>
       </li>
       <li>
-        <h3>Plan &amp; document</h3>
-        <p>Scopes outline materials, lead times, waterproofing details, and exact change-order language.</p>
+        <h3>Written Scope & Approval</h3>
+        <p>Receive a detailed written scope covering materials, timelines, waterproofing assemblies, and clear change-order terms. You always know what’s included, when it’s coming, and why.</p>
       </li>
       <li>
-        <h3>Build &amp; maintain</h3>
-        <p>We execute the project, keep daily notes, and transition you to a maintenance cadence.</p>
+        <h3>Execution & Closeout</h3>
+        <p>Work proceeds with daily photo updates and on-site cleanliness. At completion, you get a final checklist and can opt into a maintenance plan to keep everything performing and looking its best.</p>
       </li>
     </ol>
   </div>
@@ -183,16 +179,15 @@ hero_kpis:
 <section class="section section--highlight" aria-labelledby="assurance-title" data-animate="reveal">
   <div class="container assurance">
     <div>
-      <p class="eyebrow">Why owners choose us</p>
-      <h2 id="assurance-title">Accountability stays with the craftsman on site</h2>
+      <p class="eyebrow">Owner-operated accountability</p>
+      <h2 id="assurance-title">Direct communication with the craftsman on every project</h2>
       <p>
-        You work directly with the owner every step of the way. That means quick answers, clean job sites, and a single
-        point of contact for everything from tile setting to recurring maintenance.
+        No project managers, no middlemen—just transparent collaboration from consultation through final walkthrough. You get responsive answers, meticulous documentation, and the peace of mind that comes from working with a licensed professional who stands behind every detail. All work is performed and overseen by the owner for maximum accountability.
       </p>
       <ul class="assurance__list">
-        <li>Written scopes &amp; change orders—no surprises</li>
-        <li>Daily site photos &amp; cleanliness checks</li>
-        <li>Licensed &amp; insured NJ Home Improvement Contractor</li>
+        <li>Documented scopes with waterproofing specifications & change-order terms</li>
+        <li>Daily progress photos & maintained job-site cleanliness</li>
+        <li>Licensed NJ HIC #13VH10808800, fully insured</li>
       </ul>
       <div class="hero__actions">
         <a class="btn btn--primary" href="{{ '/reviews/' | relative_url }}">Read client reviews</a>
@@ -211,26 +206,31 @@ hero_kpis:
 <section id="contact" class="section" aria-labelledby="contact-title" data-animate="reveal">
   <div class="container contact">
     <div class="contact__copy">
-      <p class="eyebrow">Let's talk</p>
-      <h2 id="contact-title">Ready to schedule a walkthrough?</h2>
+      <p class="eyebrow">Get started</p>
+      <h2 id="contact-title">Schedule a consultation</h2>
       <p>
-        Tell us about your remodel, tile project, or maintenance needs and we’ll coordinate a visit. Serving Atlantic
-        County with regular trips to Ocean and Cape May Counties. Most consultations are scheduled within 3 business days.
+        Request a site visit to discuss your tile installation, remodel, or property maintenance needs. Serving Atlantic, Ocean, and Cape May Counties—most consultations are scheduled within 3 business days.
       </p>
-      <p class="text-muted">No-pressure consultations. You’ll receive a written scope with timeline and budget ranges.</p>
+      <p class="text-muted">You'll receive a detailed written scope including materials, timelines, waterproofing specs, and transparent pricing. All work is owner-operated and fully documented.</p>
       <div class="contact__actions">
         <a class="btn btn--primary" href="mailto:info@tillerstead.com">info@tillerstead.com</a>
-        <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Go to the contact page</a>
+        <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Full contact form</a>
       </div>
     </div>
     <div class="contact__panel">
-      <h3>Business details</h3>
-      <ul>
-        <li><strong>License:</strong> NJ HIC #13VH10808800</li>
-        <li><strong>Address:</strong> 325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</li>
-        <li><strong>Email:</strong> info@tillerstead.com</li>
-        <li><strong>Phone:</strong> (609) 862-8808</li>
-      </ul>
+      <h3>Company details</h3>
+      <dl>
+        <dt>Name:</dt>
+        <dd>Tillerstead LLC</dd>
+        <dt>License:</dt>
+        <dd>NJ HIC #13VH10808800</dd>
+        <dt>Address:</dt>
+        <dd>325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</dd>
+        <dt>Email:</dt>
+        <dd><a href="mailto:info@tillerstead.com">info@tillerstead.com</a></dd>
+        <dt>Phone:</dt>
+        <dd><a href="tel:+16098628808">(609) 862-8808</a></dd>
+      </dl>
     </div>
   </div>
 </section>
@@ -246,4 +246,3 @@ hero_kpis:
     }
   }
 </style>
-
