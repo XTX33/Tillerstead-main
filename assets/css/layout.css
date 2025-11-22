@@ -53,9 +53,9 @@ main.site-main {
 
 .container,
 .ts-section-inner {
-  max-width: var(--ts-shell-width);
+  max-width: min(100vw, 1440px);
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: clamp(2rem, 6vw, 3.5rem);
 }
 
 .section,
@@ -242,7 +242,7 @@ article figcaption {
 }
 
 .site-main > .page-content .container {
-  max-width: min(var(--ts-shell-width), 1180px);
+  max-width: min(100vw, 1320px);
 }
 
 /* ============================================
