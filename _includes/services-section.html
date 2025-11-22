@@ -14,7 +14,7 @@ Usage examples:
 {% assign cta_portfolio_label = include.cta_portfolio_label | default: 'See recent projects' %}
 <section id="services" class="section" aria-labelledby="services-title" aria-describedby="services-summary" itemscope itemtype="https://schema.org/OfferCatalog">
   <meta itemprop="name" content="Services Overview">
-  <div class="container">
+  <div class="container" style="background: var(--color-bg); border-radius: 2rem; box-shadow: var(--shadow-soft);">
     <header class="section__intro">
       <p class="eyebrow">{{ eyebrow }}</p>
       <h2 id="services-title">{{ heading }}</h2>
@@ -22,9 +22,9 @@ Usage examples:
     </header>
     {% assign services = site.data.services.services | default: site.data.services %}
     {% if services and services.size > 0 %}
-      <div class="service-grid" role="list" aria-label="Primary service offerings">
+      <div class="service-grid" role="list" aria-label="Primary service offerings" style="background: var(--color-bg); border-radius: 1.5rem;">
         {% for s in services %}
-          <article class="service-card" role="listitem" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" aria-labelledby="service-{{ s.id | default: forloop.index }}-title">
+          <article class="service-card" role="listitem" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service" aria-labelledby="service-{{ s.id | default: forloop.index }}-title" style="background: var(--color-bg); border-radius: 1.25rem; box-shadow: var(--shadow-soft);">
             <meta itemprop="name" content="{{ s.name }}">
             {% if s.description %}<meta itemprop="description" content="{{ s.description }}">{% endif %}
             <header class="service-card__header">
@@ -32,14 +32,20 @@ Usage examples:
               <div class="service-card__icon" aria-hidden="true" data-icon="{{ service_icon }}">
                 {% case service_icon %}
                   {% when 'tile' %}
-                    <!-- Industry-standard tile trowel SVG icon -->
-                    <svg viewBox="0 0 40 40" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                      <!-- Trowel blade -->
-                      <path d="M10 30 L30 10 L34 14 L14 34 Z" fill="#d8b25a" stroke="#a9967a" stroke-width="2"/>
-                      <!-- Trowel handle -->
-                      <rect x="6" y="32" width="8" height="4" rx="2" fill="#009b6b" stroke="#0fa868" stroke-width="1.5"/>
-                      <!-- Trowel grip accent -->
-                      <circle cx="10" cy="34" r="1.2" fill="#a9967a" />
+                    <!-- Diamond tile pattern SVG icon -->
+                    <svg viewBox="0 0 768 768" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                      <g>
+                        <polygon points="384,96 480,144 384,192 288,144" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="192,192 288,240 192,288 96,240" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="576,192 672,240 576,288 480,240" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="288,336 384,384 288,432 192,384" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="480,336 576,384 480,432 384,384" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="96,384 192,432 96,480 0,432" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="672,384 768,432 672,480 576,432" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="384,576 480,624 384,672 288,624" fill="#fff" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="192,480 288,528 192,576 96,528" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                        <polygon points="576,480 672,528 576,576 480,528" fill="#7fd3f7" stroke="#4a4037" stroke-width="32"/>
+                      </g>
                     </svg>
                   {% when 'remodeling' %}
                     <svg viewBox="0 0 34 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">

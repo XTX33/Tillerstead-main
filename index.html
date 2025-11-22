@@ -25,10 +25,10 @@ hero_bg_pattern: "sacred-tile"
 ---
 {% comment %} Hero rendered by unified-hero include via front-matter above {% endcomment %}
 
-<section class="hero hero--center" aria-labelledby="home-hero-title" data-animate="reveal" style="background: var(--gradient-surface-alt); border-radius: 2.5rem; box-shadow: var(--shadow-lift);">
+<section class="hero hero--center" aria-labelledby="home-hero-title" data-animate="reveal" style="background: var(--color-bg); border-radius: 2.5rem; box-shadow: var(--shadow-lift);">
   <div class="container hero__grid hero__grid--centered">
     <div class="hero__content hero__content--center">
-      <div class="hero__logo" aria-label="Tillerstead LLC logo" style="border-radius: 1.5rem; box-shadow: var(--shadow-soft); background: var(--gradient-primary);">
+      <div class="hero__logo" aria-label="Tillerstead LLC logo" style="border-radius: 1.5rem; box-shadow: var(--shadow-soft); background: var(--color-bg);">
         {% include logo-hero.html %}
       </div>
       <p class="eyebrow text-primary" style="color: var(--color-primary);">Licensed NJ Home Improvement Contractor</p>
@@ -36,7 +36,7 @@ hero_bg_pattern: "sacred-tile"
       <p class="lead text-muted">
         Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
       </p>
-      <ul class="hero__stats" aria-label="Credentials and guarantees" style="background: var(--gradient-surface-alt); border-radius: 1.25rem; box-shadow: var(--shadow-soft); padding: 1rem 2rem;">
+      <ul class="hero__stats" aria-label="Credentials and guarantees" style="background: var(--color-bg); border-radius: 1.25rem; box-shadow: var(--shadow-soft); padding: 1rem 2rem;">
         <li><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details & change orders</li>
         <li><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
         <li><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
@@ -63,10 +63,10 @@ hero_bg_pattern: "sacred-tile"
             <a class="btn btn--ghost" href="{{ '/contact/' | relative_url }}">Request a quote</a>
           </div>
         </div>
-        <div class="gallery-strip__grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; border-radius: 1.25rem; background: var(--gradient-section); box-shadow: var(--shadow-soft);">
+        <div class="gallery-strip__grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; border-radius: 1.25rem; background: var(--color-bg); box-shadow: var(--shadow-soft);">
           {% assign preview_items = gallery_strip | slice: 0, 4 %}
           {% for item in preview_items %}
-            <figure class="gallery-strip__item" style="border-radius: 1rem; box-shadow: var(--shadow-soft); background: var(--gradient-surface-alt);">
+            <figure class="gallery-strip__item" style="border-radius: 1rem; box-shadow: var(--shadow-soft); background: var(--color-bg);">
               <img src="{{ item.file | relative_url }}"
                    alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}"
                    loading="lazy"
