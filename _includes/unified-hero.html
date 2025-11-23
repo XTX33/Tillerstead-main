@@ -1,28 +1,27 @@
-
 <!-- Modern Unified Hero Section for Tillerstead LLC -->
 <header class="hero hero--center" aria-label="Tillerstead LLC Hero">
-	<div class="container">
-		<figure class="hero__logo" aria-label="Tillerstead LLC full logo">
-			{% include logo-hero.html %}
-		</figure>
-		<div class="hero__cred-bar">
-			<span class="eyebrow cred-eyebrow">LICENSED NJ HOME IMPROVEMENT CONTRACTOR</span>
-		</div>
-		<h1 class="heading-1 text-primary hero-title">Precision Tile, Remodeling &amp; Property Care in South Jersey</h1>
-		<p class="lead text-muted hero-lead">
-			Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
-		</p>
-		<section class="hero__stats" aria-label="Credentials and guarantees">
-			<ul class="hero__stats-list">
-				<li><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details &amp; change orders</li>
-				<li><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
-				<li><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
-				<li><strong class="text-accent">Warranty:</strong> 2-year labor warranty on all installations</li>
-			</ul>
-		</section>
-		<nav class="hero__actions hero__actions--center" aria-label="Primary actions">
-			<a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
-			<a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
-		</nav>
-	</div>
+  <div class="container hero__content hero__content--center">
+    <figure class="hero__logo" aria-label="Tillerstead LLC full logo">
+      {% include logo-hero.html %}
+    </figure>
+    <div class="hero__cred-bar">
+      <span class="eyebrow hero__cred-badge">LICENSED NJ HOME IMPROVEMENT CONTRACTOR</span>
+    </div>
+    <h1 class="heading-1 text-primary hero__title">Precision Tile, Remodeling &amp; Property Care in South Jersey</h1>
+    <p class="lead text-muted hero__lead">
+      Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
+    </p>
+    <section class="hero__stats-panel" aria-label="Credentials and guarantees">
+      <ul class="hero__stats-list">
+        <li><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details &amp; change orders</li>
+        <li><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
+        <li><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
+        <li><strong class="text-accent">Warranty:</strong> 2-year labor warranty on all installations</li>
+      </ul>
+    </section>
+    <nav class="hero__actions hero__actions--center" aria-label="Primary actions">
+      <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
+      <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
+    </nav>
+  </div>
 </header>

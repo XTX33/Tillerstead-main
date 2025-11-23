@@ -1,16 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" role="img" aria-labelledby="tillerstead-logo-title tillerstead-logo-desc">
-  <title id="tillerstead-logo-title">Tillerstead logo</title>
-  <desc id="tillerstead-logo-desc">Evergreen tile T with brass grout outlines above the Tillerstead wordmark.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 160" role="img" aria-label="Tillerstead logo">
   <style>
-    .tile{fill:#0d3b2c;stroke:#c99a3f;stroke-width:16;stroke-linejoin:miter;stroke-linecap:square}
-    .word{fill:#0d3b2c;font:800 90px 'Inter','Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:2.5px;text-anchor:middle}
+    .logo-tile{fill:#0d3b2c;stroke:#c99a3f;stroke-width:10;stroke-linejoin:round;stroke-linecap:round}
+    .logo-word{fill:#0d3b2c;font:800 48px 'Inter','Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:1.4px}
   </style>
-  <g transform="translate(126 70)">
-    <rect class="tile" x="0" y="0" width="120" height="120" rx="4"/>
-    <rect class="tile" x="134" y="0" width="120" height="120" rx="4"/>
-    <rect class="tile" x="268" y="0" width="120" height="120" rx="4"/>
-    <rect class="tile" x="134" y="134" width="120" height="120" rx="4"/>
-    <rect class="tile" x="134" y="268" width="120" height="120" rx="4"/>
+  <g class="logo-mark" transform="translate(18 18)">
+    <rect class="logo-tile" x="0" y="0" width="42" height="42" rx="6" />
+    <rect class="logo-tile" x="56" y="0" width="42" height="42" rx="6" />
+    <rect class="logo-tile" x="112" y="0" width="42" height="42" rx="6" />
+    <rect class="logo-tile" x="56" y="56" width="42" height="42" rx="6" />
+    <rect class="logo-tile" x="56" y="112" width="42" height="42" rx="6" />
   </g>
-  <text x="320" y="620" class="word">TILLERSTEAD</text>
+  <text class="logo-word" x="220" y="92">TILLERSTEAD</text>
 </svg>

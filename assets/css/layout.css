@@ -279,9 +279,10 @@ article figcaption {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--ts-space-3);
+  gap: var(--ts-space-4);
   min-height: 4rem;
   padding-block: clamp(0.7rem, 2vw, 0.95rem);
+  padding-inline: clamp(1rem, 3vw, 1.5rem);
 }
 
 .site-nav-shell {
@@ -296,13 +297,21 @@ article figcaption {
   gap: var(--ts-space-3);
   text-decoration: none;
   flex-shrink: 0;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--ts-radius-lg);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 236, 225, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow-soft);
 }
 
 .site-logo-img,
 .site-logo-svg {
-  width: clamp(100px, 14vw, 148px);
+  width: clamp(118px, 22vw, 164px);
   max-height: 52px;
   height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(12, 42, 32, 0.16));
+  border-radius: var(--ts-radius-md);
 }
 
 .site-header-actions {
