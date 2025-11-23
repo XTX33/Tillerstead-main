@@ -1,28 +1,27 @@
-
 <!-- Modern Unified Hero Section for Tillerstead LLC -->
 <header class="hero hero--center" aria-label="Tillerstead LLC Hero">
-	<div class="container">
-		<figure class="hero__logo" aria-label="Tillerstead LLC full logo">
-			{% include logo-hero.html %}
-		</figure>
-		<div class="hero__cred-bar" style="margin: 1.5rem auto 2.5rem; display: flex; justify-content: center;">
-			<span class="eyebrow" style="background: var(--color-surface-elevated); border-radius: var(--radius-pill); padding: 0.5rem 2rem; font-weight: 600; letter-spacing: 0.08em; color: var(--color-primary); border: 1.5px solid var(--color-accent-soft);">LICENSED NJ HOME IMPROVEMENT CONTRACTOR</span>
-		</div>
-		<h1 class="heading-1 text-primary" style="text-shadow: 0 2px 8px rgba(26,200,122,0.12);">Precision Tile, Remodeling &amp; Property Care in South Jersey</h1>
-		<p class="lead text-muted" style="margin-top: 1.5rem;">
-			Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
-		</p>
-		<section class="hero__stats" aria-label="Credentials and guarantees" style="background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%); border-radius: 1.25rem; box-shadow: var(--shadow-soft); padding: 1.5rem 2.5rem; margin: 2rem auto 0; max-width: 600px;">
-			<ul style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; list-style: none; margin: 0; padding: 0;">
-				<li><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details &amp; change orders</li>
-				<li><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
-				<li><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
-				<li><strong class="text-accent">Warranty:</strong> 2-year labor warranty on all installations</li>
-			</ul>
-		</section>
-		<nav class="hero__actions hero__actions--center" aria-label="Primary actions">
-			<a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
-			<a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
-		</nav>
-	</div>
+  <div class="container hero__content hero__content--center">
+    <figure class="hero__logo" aria-label="Tillerstead LLC full logo">
+      {% include logo-hero.html %}
+    </figure>
+    <div class="hero__cred-bar">
+      <span class="eyebrow hero__cred-badge">LICENSED NJ HOME IMPROVEMENT CONTRACTOR</span>
+    </div>
+    <h1 class="heading-1 text-primary hero__title">Precision Tile, Remodeling &amp; Property Care in South Jersey</h1>
+    <p class="lead text-muted hero__lead">
+      Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.
+    </p>
+    <section class="hero__stats-panel" aria-label="Credentials and guarantees">
+      <ul class="hero__stats-list">
+        <li><strong class="text-accent">Documentation:</strong> 100% written scopes, waterproofing details &amp; change orders</li>
+        <li><strong class="text-accent">Response time:</strong> &lt;24 hours for active clients</li>
+        <li><strong class="text-accent">Licensing:</strong> NJ HIC #13VH10808800, fully insured</li>
+        <li><strong class="text-accent">Warranty:</strong> 2-year labor warranty on all installations</li>
+      </ul>
+    </section>
+    <nav class="hero__actions hero__actions--center" aria-label="Primary actions">
+      <a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">Request a consultation</a>
+      <a class="btn btn--ghost" href="{{ '/portfolio/' | relative_url }}">View recent work</a>
+    </nav>
+  </div>
 </header>

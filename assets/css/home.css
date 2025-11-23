@@ -22,7 +22,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
 }
 
 .hero--center {
@@ -30,7 +30,7 @@
   background: var(--gradient-surface);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-lift);
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
 }
 
 .hero--center::before,
@@ -86,14 +86,14 @@
 
 .hero__logo {
   position: relative;
-  width: min(420px, 70vw);
+  width: min(360px, 64vw);
   margin-inline: auto;
-  padding: clamp(0.85rem, 2vw, 1.5rem);
+  padding: clamp(0.65rem, 1.6vw, 1.25rem);
   border-radius: var(--radius-xl);
   background: linear-gradient(165deg, rgba(255, 255, 255, 0.97), rgba(246, 242, 232, 0.94));
   border: 1px solid rgba(255, 255, 255, 0.7);
   box-shadow:
-    0 24px 45px rgba(6, 20, 14, 0.18),
+    0 18px 36px rgba(6, 20, 14, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
   isolation: isolate;
   overflow: hidden;
@@ -125,6 +125,55 @@
 .hero__logo .ts-logo-hero {
   display: flex;
   justify-content: center;
+}
+
+.hero__cred-bar {
+  margin: 1.25rem auto 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__cred-badge {
+  background: var(--color-surface-elevated);
+  padding: 0.5rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-accent-soft);
+  letter-spacing: 0.08em;
+}
+
+.hero__title {
+  text-shadow: 0 2px 8px rgba(26, 200, 122, 0.12);
+  margin: 0 auto;
+  max-width: 32ch;
+}
+
+.hero__lead {
+  margin: 1.25rem auto 0;
+  max-width: 58ch;
+}
+
+.hero__stats-panel {
+  background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  padding: 1.35rem 1.65rem;
+  margin: 1.75rem auto 0;
+  max-width: 620px;
+}
+
+.hero__stats-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 640px) {
+  .hero__stats-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hero__actions--center {
