@@ -28,25 +28,25 @@
 
   "icons": [
     {
-      "src": "/assets/img/logo/tillerstead-logo-stacked.svg",
+      "src": "/assets/img/logo/tillerstead-logo-mark.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/assets/img/logo/tillerstead-logo-full.svg",
+      "src": "/assets/img/logo/tillerstead-logo-mark.svg",
       "sizes": "256x256",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/assets/img/logo/tillerstead-logo-header.svg",
+      "src": "/assets/img/logo/tillerstead-logo-mark.svg",
       "sizes": "384x384",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/assets/img/logo/tillerstead-logo-stacked.svg",
+      "src": "/assets/img/logo/tillerstead-logo-mark.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

@@ -6,7 +6,7 @@ Breadcrumb Navigation Component
 - Accessible with proper ARIA labels and semantic markup
 {%- endcomment -%}
 
-{%- if page.url == "/" or page.breadcrumb == false -%}
+{%- if page.url == "/" or page.url == "/index.html" or page.is_home == true or page.layout == "home" or page.breadcrumb == false -%}
   {%- comment -%}Breadcrumbs hidden on home or when disabled{%- endcomment -%}
 {%- else -%}
   {%- assign path = page.url | replace: 'index.html', '' -%}

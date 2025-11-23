@@ -26,7 +26,7 @@
       BreadcrumbList JSON-LD (lightweight; avoids duplication with inline microdata)
       Generated only for non-home pages.
       {%- endcomment -%}
-      {%- if page.url != '/' and page.breadcrumb != false -%}
+      {%- if page.url != '/' and page.url != '/index.html' and page.is_home != true and page.layout != 'home' and page.breadcrumb != false -%}
         {%- assign crumb_position = 1 -%}
         {%- assign path = page.url | replace: 'index.html', '' -%}
         {%- assign segments = path | split: '/' -%}
