@@ -2,6 +2,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <style>
+      .tile-frame{fill:var(--logo-frame-fill,transparent);stroke:var(--logo-trim,var(--color-accent,#d8b15c));stroke-width:8;stroke-linejoin:round}
+      .tile-frame-inner{fill:none;stroke:var(--logo-trim,var(--color-accent,#d8b15c));stroke-width:3;stroke-linejoin:round;stroke-dasharray:14 8;opacity:.85}
+      .tile{fill:var(--logo-tile-fill,var(--color-primary,#0bbf84));stroke:var(--logo-grout,#d8b15c);stroke-width:6;stroke-linejoin:bevel}
+      .tile-soft{fill:var(--logo-tile-soft,rgba(11,191,132,0.22));stroke:var(--logo-grout,#d8b15c);stroke-width:5;stroke-linejoin:round}
+      .tile-inlay{fill:var(--logo-inlay,rgba(244,167,64,0.35));stroke:var(--logo-grout,#d8b15c);stroke-width:3;stroke-linejoin:round}
+      .tile-detail{fill:var(--logo-trim,var(--color-accent,#d8b15c));opacity:.88}
+      .word-main{fill:var(--color-primary,#00a86b);font:700 46px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:.5px}
+      .word-sub{fill:var(--color-primary,#00a86b);font:500 18px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;opacity:.9}
+      .word-sub-small{font-size:16px}
+      .mono-fill{fill:currentColor}
+      .mono-stroke{stroke:currentColor;stroke-linejoin:miter}
+      .logo-mark-color{--logo-frame-fill:rgba(244,167,64,0.06);--logo-tile-soft:rgba(11,191,132,0.18);--logo-inlay:rgba(244,167,64,0.42)}
+      .logo-mark-mono{--logo-frame-fill:transparent;--logo-tile-fill:currentColor;--logo-tile-soft:currentColor;--logo-grout:currentColor;--logo-trim:currentColor;--logo-inlay:currentColor}
       .tile{fill:#0d3b2c;stroke:#c99a3f;stroke-linejoin:miter;stroke-linecap:square}
       .mark-thick{stroke-width:10}
       .mark-std{stroke-width:8}
@@ -11,9 +24,37 @@
       .mono-fill{fill:currentColor}
       .mono-stroke{stroke:currentColor;stroke-linejoin:miter;stroke-linecap:square}
     </style>
+
+    <!-- Reusable Tile Cross Mark -->
+    <g id="tile-cross">
+      <rect class="tile-frame" x="8" y="8" width="144" height="144" rx="16" />
+      <rect class="tile-frame tile-frame-inner" x="18" y="18" width="124" height="124" rx="12" />
+
+      <!-- Cross tiles -->
+      <rect class="tile" x="24" y="24" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="24" width="32" height="32" />
+      <rect class="tile" x="104" y="24" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="64" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="104" width="32" height="32" />
+
+      <!-- Inlay + trim flourishes -->
+      <path class="tile-inlay" d="M80 64l20-12v24l-20 12-20-12V52z" />
+      <path class="tile-inlay" d="M80 92l14 8v18l-14 8-14-8v-18z" />
+      <path class="tile-detail" d="M26 18h18l-10 10h-8z" />
+      <path class="tile-detail" d="M134 18h-18l10 10h8z" />
+      <path class="tile-detail" d="M26 152h18l-10-10h-8z" />
+      <path class="tile-detail" d="M134 152h-18l10-10h8z" />
+    </g>
   </defs>
 
   <!-- Tile Mark -->
+  <symbol id="logo-mark" viewBox="0 0 160 160">
+    <use href="#tile-cross" class="logo-mark-color" />
+  </symbol>
+
+  <!-- Tile Mark Monochrome -->
+  <symbol id="logo-mark-mono" viewBox="0 0 160 160">
+    <use href="#tile-cross" class="logo-mark-mono" />
   <symbol id="logo-mark" viewBox="0 0 180 180">
     <g transform="translate(22 22)">
       <rect class="tile mark-thick" x="0" y="0" width="36" height="36" rx="3"/>
@@ -37,6 +78,8 @@
 
   <!-- Full Horizontal Logo -->
   <symbol id="logo-full" viewBox="0 0 660 240">
+    <g transform="translate(20 26)">
+      <use href="#tile-cross" class="logo-mark-color" />
     <g transform="translate(20 22)">
       <rect class="tile mark-std" x="0" y="0" width="42" height="42" rx="3"/>
       <rect class="tile mark-std" x="52" y="0" width="42" height="42" rx="3"/>
@@ -51,6 +94,12 @@
 
   <!-- Full Horizontal Logo Monochrome -->
   <symbol id="logo-full-mono" viewBox="0 0 660 240">
+    <g transform="translate(20 26)">
+      <use href="#tile-cross" class="logo-mark-mono" />
+    </g>
+    <text x="210" y="82" class="mono-fill" font-size="46" font-weight="700" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">TILLERSTEAD</text>
+    <text x="210" y="122" class="mono-fill" font-size="18" font-weight="500" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Tile • Remodeling • Property Maintenance</text>
+    <text x="210" y="150" class="mono-fill" font-size="16" font-weight="500" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">NJ Licensed HIC #13VH10808800</text>
     <g transform="translate(20 22)">
       <rect class="mono-fill mono-stroke mark-std" x="0" y="0" width="42" height="42" rx="3"/>
       <rect class="mono-fill mono-stroke mark-std" x="52" y="0" width="42" height="42" rx="3"/>
@@ -65,6 +114,8 @@
 
   <!-- Stacked Logo -->
   <symbol id="logo-stacked" viewBox="-12 -12 284 332">
+    <g transform="translate(65 20)">
+      <use href="#tile-cross" class="logo-mark-color" />
     <g transform="translate(64 16)">
       <rect class="tile mark-std" x="0" y="0" width="36" height="36" rx="3"/>
       <rect class="tile mark-std" x="44" y="0" width="36" height="36" rx="3"/>
@@ -79,6 +130,12 @@
 
   <!-- Stacked Logo Monochrome -->
   <symbol id="logo-stacked-mono" viewBox="-12 -12 284 332">
+    <g transform="translate(65 20)">
+      <use href="#tile-cross" class="logo-mark-mono" />
+    </g>
+    <text x="130" y="190" class="mono-fill" text-anchor="middle" font-size="32" font-weight="700" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">TILLERSTEAD</text>
+    <text x="130" y="220" class="mono-fill" text-anchor="middle" font-size="14" font-weight="500" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">Tile • Remodeling • Property Maintenance</text>
+    <text x="130" y="244" class="mono-fill" text-anchor="middle" font-size="12" font-weight="500" font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">NJ Licensed HIC #13VH10808800</text>
     <g transform="translate(64 16)">
       <rect class="mono-fill mono-stroke mark-std" x="0" y="0" width="36" height="36" rx="3"/>
       <rect class="mono-fill mono-stroke mark-std" x="44" y="0" width="36" height="36" rx="3"/>

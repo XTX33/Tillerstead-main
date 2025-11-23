@@ -1,3 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Tillerstead tile cross mark">
+  <defs>
+    <style>
+      .tile-frame{fill:var(--logo-frame-fill,transparent);stroke:var(--logo-trim,var(--color-accent,#d8b15c));stroke-width:8;stroke-linejoin:round}
+      .tile-frame-inner{fill:none;stroke:var(--logo-trim,var(--color-accent,#d8b15c));stroke-width:3;stroke-linejoin:round;stroke-dasharray:14 8;opacity:.85}
+      .tile{fill:var(--logo-tile-fill,var(--color-primary,#0bbf84));stroke:var(--logo-grout,#d8b15c);stroke-width:6;stroke-linejoin:bevel}
+      .tile-soft{fill:var(--logo-tile-soft,rgba(11,191,132,0.22));stroke:var(--logo-grout,#d8b15c);stroke-width:5;stroke-linejoin:round}
+      .tile-inlay{fill:var(--logo-inlay,rgba(244,167,64,0.35));stroke:var(--logo-grout,#d8b15c);stroke-width:3;stroke-linejoin:round}
+      .tile-detail{fill:var(--logo-trim,var(--color-accent,#d8b15c));opacity:.88}
+      .logo-mark-color{--logo-frame-fill:rgba(244,167,64,0.06);--logo-tile-soft:rgba(11,191,132,0.18);--logo-inlay:rgba(244,167,64,0.42)}
+    </style>
+
+    <g id="tile-cross">
+      <rect class="tile-frame" x="8" y="8" width="144" height="144" rx="16" />
+      <rect class="tile-frame tile-frame-inner" x="18" y="18" width="124" height="124" rx="12" />
+      <rect class="tile" x="24" y="24" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="24" width="32" height="32" />
+      <rect class="tile" x="104" y="24" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="64" width="32" height="32" />
+      <rect class="tile tile-soft" x="64" y="104" width="32" height="32" />
+      <path class="tile-inlay" d="M80 64l20-12v24l-20 12-20-12V52z" />
+      <path class="tile-inlay" d="M80 92l14 8v18l-14 8-14-8v-18z" />
+      <path class="tile-detail" d="M26 18h18l-10 10h-8z" />
+      <path class="tile-detail" d="M134 18h-18l10 10h8z" />
+      <path class="tile-detail" d="M26 152h18l-10-10h-8z" />
+      <path class="tile-detail" d="M134 152h-18l10-10h8z" />
+    </g>
+  </defs>
+
+  <use href="#tile-cross" class="logo-mark-color" />
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Tillerstead tile T mark">
   <style>
     .tile{fill:#0d3b2c;stroke:#c99a3f;stroke-linejoin:miter;stroke-linecap:square;stroke-width:10}
