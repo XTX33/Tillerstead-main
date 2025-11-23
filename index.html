@@ -26,7 +26,7 @@ hero_kpis:
 hero_bg_pattern: "sacred-tile"
 ---
 {% comment %} Hero rendered by unified-hero include via front-matter above {% endcomment %}
-<section class="ts-hero" aria-label="Tillerstead LLC Hero">
+<section class="ts-hero parchment-bg celtic-border sicilian-accent" aria-label="Tillerstead LLC Hero">
   <div class="container ts-hero__content">
     <div class="ts-hero__main">
       <span class="ts-hero__eyebrow">Licensed NJ Home Improvement Contractor</span>
@@ -58,12 +58,12 @@ hero_bg_pattern: "sacred-tile"
         <a class="btn btn--ghost" href="/contact/">Request a Quote</a>
       </nav>
     </header>
-    <ul class="ts-gallery__grid" role="list">
+    <ul class="ts-gallery__grid gallery" role="list">
       {% assign preview_items = gallery_strip | slice: 0, 4 %}
       {% for item in preview_items %}
       <li class="ts-gallery__card">
         <figure class="ts-gallery__figure">
-          <img src="{{ item.file | relative_url }}" alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}" loading="lazy" decoding="async" width="400" height="300" class="ts-gallery__img">
+          <img src="{{ item.file | relative_url }}" alt="{{ item.alt | default: item.title | escape }} in {{ item.location | default: 'South Jersey' }}" loading="lazy" decoding="async" width="400" height="300" class="ts-gallery__img" style="object-fit:cover;aspect-ratio:4/3;">
           <figcaption class="ts-gallery__caption">
             {% if item.title %}<strong class="ts-gallery__title">{{ item.title }}</strong>{% endif %}
             {% if item.location %}<span class="ts-gallery__location">&bull; {{ item.location }}</span>{% endif %}

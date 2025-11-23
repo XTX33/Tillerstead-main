@@ -360,12 +360,12 @@
   }
 }
 
-.deliver__intro {
+/* ============================================
    GALLERY STRIP
    ============================================ */
 
 .gallery-strip {
-  padding: clamp(2rem, 5vw, 3rem) 0;
+  padding: clamp(2rem, 5vw, 3rem);
   margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
@@ -530,6 +530,8 @@
   background: #fff;
   color: var(--color-text);
   border-color: rgba(16, 35, 61, 0.15);
+}
+
 .gallery-strip__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
