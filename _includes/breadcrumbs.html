@@ -6,14 +6,21 @@ Breadcrumb Navigation Component
 - Accessible with proper ARIA labels and semantic markup
 {%- endcomment -%}
 
-{%- if page.url == "/" or page.url == "/index.html" or page.is_home == true or page.layout == "home" or page.breadcrumb == false -%}
+{%- assign is_home_page = page.url == "/" or page.url == "/index.html" or page.is_home == true or page.layout == "home" -%}
+{%- if is_home_page or page.breadcrumb == false -%}
   {%- comment -%}Breadcrumbs hidden on home or when disabled{%- endcomment -%}
 {%- else -%}
-  {%- assign path = page.url | replace: 'index.html', '' -%}
+  {%- assign path = page.url | default: '' | replace: 'index.html', '' -%}
   {%- assign segments = path | split: '/' -%}
+  {%- assign clean_segments = '' | split: '' -%}
+  {%- for segment in segments -%}
+    {%- unless segment == '' -%}
+      {%- assign clean_segments = clean_segments | push: segment -%}
+    {%- endunless -%}
+  {%- endfor -%}
 
   <style data-inline-breadcrumbs>
-    .breadcrumbs{display:flex;align-items:center;font-size:.88rem;margin:0 0 1rem;color:var(--color-text-muted,#4b5563);}
+    .breadcrumbs{display:flex;align-items:center;font-size:.88rem;margin:0 0 1rem;color:var(--color-text-muted,#4b5563);} 
     .breadcrumbs-list{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;list-style:none;margin:0;padding:0;}
     .breadcrumbs-list li{display:flex;align-items:center;gap:.35rem;}
     .breadcrumbs-list li+li::before{content:"/";opacity:.45;}
@@ -47,11 +54,7 @@ Breadcrumb Navigation Component
       {%- assign current_path = "" -%}
 
       <!-- Path segment breadcrumbs -->
-      {%- for segment in segments -%}
-        {%- if segment == "" -%}
-          {%- continue -%}
-        {%- endif -%}
-
+      {%- for segment in clean_segments -%}
         {%- assign current_path = current_path | append: "/" | append: segment -%}
         {%- assign is_last = forloop.last -%}
 

@@ -287,9 +287,37 @@
 .ts-process,
 .ts-deliver,
 .ts-assurance,
-.ts-contact {
+.ts-contact,
+.ts-portfolio {
   padding: clamp(2.75rem, 6vw, 4.5rem) 0;
   position: relative;
+}
+
+.page-home .ts-services,
+.page-home .ts-plans,
+.page-home .ts-process,
+.page-home .ts-deliver,
+.page-home .ts-assurance,
+.page-home .ts-contact,
+.page-home .ts-portfolio {
+  background: transparent;
+  border: none;
+}
+
+/* Unified home background: keep one solid field behind the cards */
+.page-home .site-main.ts-section,
+.page-home .site-main {
+  background: var(--color-bg);
+  box-shadow: none;
+}
+
+.page-home .section,
+.page-home .ts-section,
+.page-home .container,
+.page-home .ts-section-inner {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .ts-services .container,

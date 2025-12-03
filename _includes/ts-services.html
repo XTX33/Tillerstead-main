@@ -2,6 +2,11 @@
 {% assign services = include.services | default: page.services %}
 
 {% unless services %}
+  {%- comment -%}
+    Default services are defined here so the homepage and any page that omits a custom
+    services list still renders service cards. Each entry is a pipe-delimited string that
+    is split into icon, title, description, and URL when iterating below.
+  {%- endcomment -%}
   {% capture default_services %}
     paint|Finish painting & trim|Clean lines, cabinet refreshes, and durable interior repainting|/services/#paint;
     flooring|Resilient flooring installs|Vinyl plank, tile, subfloor prep, and clean transitions|/services/#flooring;
