@@ -12,7 +12,7 @@
     "build:css": "sass src/scss/theme.scss:assets/css/theme-compiled.css --no-source-map --style=compressed",
     "watch:css": "sass src/scss/theme.scss:assets/css/theme-compiled.css --watch --no-source-map",
     "build": "npm run build:css",
-    "build:site": "npm run build:css && bundle exec jekyll build",
+    "build:site": "npm run build:css && (bundle check || bundle install) && bundle exec jekyll build",
     "images:webp": "node scripts/convert-images-to-webp.js",
     "slugify": "node scripts/slugify.js"
   },
