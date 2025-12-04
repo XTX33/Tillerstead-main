@@ -17,11 +17,13 @@
     "slugify": "node scripts/slugify.js"
   },
   "devDependencies": {
+    "cheerio": "1.0.0-rc.12",
     "eslint": "8.57.0",
     "eslint-config-standard": "17.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.2.0",
+    "js-yaml": "4.1.0",
     "htmlhint": "1.1.4",
     "prettier": "3.3.2",
     "sass": "^1.77.8",

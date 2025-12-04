@@ -4,7 +4,7 @@ Homepage Reviews Highlights Include
 - Params: limit (default 3), eyebrow, title, summary, cta_url, cta_label
 Usage: {% include reviews-highlights.html limit=3 %}
 {% endcomment %}
-{% assign all = site.data.reviews | default: [] %}
+{% assign all = site.data.reviews.reviews | default: [] %}
 {% assign limit = include.limit | default: 3 %}
 {% assign items = all | slice: 0, limit %}
 <section class="section reviews" aria-labelledby="reviews-title">

@@ -1,51 +1,65 @@
-{% assign testimonials = include.testimonials | default: page.testimonials %}
-{% unless testimonials %}
-  {% assign testimonials = \
-    site.data.testimonials | default: [
-      {
-        'quote': 'Scheduling was clear, the scope was documented, and every update came with photos. Our rental stayed booked because the repairs were finished ahead of turnover.',
-        'name': 'Mara D., Property Owner',
-        'role': 'Longport, NJ'
-      },
-      {
-        'quote': 'Tile work and waterproofing were meticulous. Communication was steady, and the jobsite stayed clean even while the unit was occupied.',
-        'name': 'James R., HOA Board Member',
-        'role': 'Atlantic County'
-      },
-      {
-        'quote': 'As a landlord, I need fast response and proof of work. Tillerstead delivered both with organized maintenance visits and clear pricing.',
-        'name': 'Priya S., Landlord',
-        'role': 'Galloway, NJ'
-      }
-    ]
-  %}
-{% endunless %}
+{% comment %}
+Testimonials include
+- Reads from `include.reviews` when provided, otherwise `site.data.reviews.reviews`.
+- Optional params: heading, eyebrow, limit.
+- quote_html should be HTML-safe snippets sourced from Thumbtack via scripts/sync_thumbtack_reviews.js.
+{% endcomment %}
+
+{% assign reviews = include.reviews | default: site.data.reviews.reviews | default: [] %}
+{% if include.limit %}
+  {% assign reviews = reviews | slice: 0, include.limit %}
+{% endif %}
+
+{% assign heading = include.heading | default: 'Client testimonials' %}
+{% assign eyebrow = include.eyebrow | default: 'Verified reviews' %}
 
 <section class="ts-testimonials" aria-labelledby="ts-testimonials-title">
   <div class="container">
     <header class="ts-testimonials__header">
-      <span class="eyebrow eyebrow--on-dark">Trust & Proof</span>
-      <h2 id="ts-testimonials-title" class="heading-2">Documented workmanship for remodels and turnovers</h2>
-      <p class="lead">Owner-led communication, daily photos, and durable finishes keep residential remodels, small-business refreshes, and landlord turnovers on schedule from walkthrough to closeout.</p>
-      <h2 id="ts-testimonials-title" class="heading-2">Documented workmanship partners rely on</h2>
-      <p class="lead">Owner-led communication, daily photos, and durable finishes give landlords and homeowners confidence from the first walkthrough to the final punch list.</p>
+      {% if eyebrow %}<span class="eyebrow eyebrow--on-dark">{{ eyebrow }}</span>{% endif %}
+      <h2 id="ts-testimonials-title" class="heading-2">{{ heading }}</h2>
     </header>
-    <div class="ts-testimonials__grid" role="list">
-      {% for testimonial in testimonials %}
-        <article class="ts-testimonial" role="listitem">
-          <p class="ts-testimonial__quote">“{{ testimonial.quote }}”</p>
-          <div class="ts-testimonial__meta">
-            <span class="ts-testimonial__name">{{ testimonial.name }}</span>
-            <span class="ts-testimonial__role">{{ testimonial.role }}</span>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-    <div class="ts-testimonials__logos" aria-label="Trusted by property teams">
-      <div class="ts-testimonials__logo" aria-hidden="true">Shoreline Rentals</div>
-      <div class="ts-testimonials__logo" aria-hidden="true">Boardwalk Homes</div>
-      <div class="ts-testimonials__logo" aria-hidden="true">Atlantic Property Co.</div>
-      <div class="ts-testimonials__logo" aria-hidden="true">Harborview Holdings</div>
-    </div>
+
+    {% if reviews and reviews.size > 0 %}
+      <div class="ts-testimonials__grid" role="list">
+        {% for review in reviews %}
+          {% assign rating_value = review.rating | default: 5 %}
+          {% assign rating_max = review.rating_max | default: 5 %}
+          <article class="ts-testimonial" role="listitem" aria-label="Testimonial from {{ review.author | default: 'Client' }}">
+            <blockquote class="ts-testimonial__quote">
+              <div class="ts-testimonial__quote-text">{{ review.quote_html | markdownify }}</div>
+            </blockquote>
+
+            <div class="ts-testimonial__rating" aria-label="Rated {{ rating_value }} out of {{ rating_max }} stars">
+              <span class="sr-only">Rated {{ rating_value }} out of {{ rating_max }} stars</span>
+              <div class="ts-testimonial__stars" aria-hidden="true">
+                {% for i in (1..rating_max) %}
+                  <span class="ts-testimonial__star{% if i <= rating_value %} ts-testimonial__star--filled{% endif %}">
+                    {% if i <= rating_value %}★{% else %}☆{% endif %}
+                  </span>
+                {% endfor %}
+              </div>
+            </div>
+
+            <footer class="ts-testimonial__meta" aria-label="Review details">
+              <p class="ts-testimonial__byline">
+                {% if review.author %}<span class="ts-testimonial__author">{{ review.author }}</span>{% endif %}
+                {% if review.location %}<span class="ts-testimonial__location"> · {{ review.location }}</span>{% endif %}
+                {% if review.job_type %}<span class="ts-testimonial__job"> · {{ review.job_type }}</span>{% endif %}
+              </p>
+              {% if review.badges and review.badges.size > 0 %}
+                <ul class="ts-testimonial__badges" aria-label="Review badges">
+                  {% for badge in review.badges %}
+                    <li class="ts-testimonial__badge">{{ badge }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </footer>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="ts-testimonials__empty">Reviews will appear here once they are synced.</p>
+    {% endif %}
   </div>
 </section>

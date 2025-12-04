@@ -1,47 +1,37 @@
 ---
 layout: default
-description: "Reviews from South Jersey general contractors, remodelers, and homeowners who rely on Tillerstead LLC for steady workmanship and clear communication."
+title: "Reviews & Testimonials"
+description: "Verified tile, remodel, and property-upkeep reviews for Tillerstead in South Jersey."
 body_class: page-reviews
-hero_eyebrow: Client Feedback
-hero_title: What Our Clients Say
+hero_eyebrow: Verified Client Feedback
+hero_title: Reviews & Testimonials
 hero_summary: >
-  Hear from South Jersey homeowners, landlords, and general contractors who have trusted Tillerstead with their property maintenance, remodeling, and tile work.
-hero_bg_pattern: "sacred-tile"
-hero_kpis:
-  - label: "Trust"
-    text: "Built on honest communication and dependable work"
-  - label: "Quality"
-    text: "Consistent craftsmanship that lasts"
-  - label: "Service"
-    text: "Respectful of your property and schedule"
----
+  Real reviews pulled from live platforms like Thumbtack so you can see how Tillerstead works with homeowners,
+  landlords, and project partners across South Jersey.
 
-<main class="ts-section ts-surface page-reviews" aria-label="Client reviews" role="main" tabindex="-1">
-  <div class="container">
-    <section class="reviews-grid" aria-label="Reviews grid">
-      {% for review in site.data.reviews %}
-      <article class="ts-card review-card card card--review" role="region" aria-labelledby="review-{{ forloop.index }}-name">
-        <blockquote class="review-body">{{ review.text }}</blockquote>
-        <footer class="review-meta">
-          <span class="review-name" id="review-{{ forloop.index }}-name">{{ review.name }}</span>
-          {% if review.project %}&middot; <span class="review-project">{{ review.project }}</span>{% endif %}
-          {% if review.source %}&middot; <span class="review-source">{{ review.source }}</span>{% endif %}
-        </footer>
-      </article>
-      {% endfor %}
-    </section>
+<header class="section-header" aria-label="Reviews intro">
+  <p class="eyebrow">Live social proof</p>
+  <h2 class="heading-2">What to expect when you hire Tillerstead</h2>
+  <p class="lead">
+    These testimonials pull directly from public sources like Thumbtack to keep the feedback transparent and current.
+    Run <code>node scripts/sync_thumbtack_reviews.js</code> to refresh the data file before publishing.
+  </p>
+</header>
 
-    <aside class="review-cta" aria-label="Share your experience">
-      <h2>Have We Worked Together?</h2>
-      <p>
-        If we've completed tile work, drywall repairs, or a maintenance visit at your property,
-        your review helps future clients understand what to expect.
-      </p>
-      <p>
-        You can share feedback by emailing
-        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
-        or replying to your invoice link.
-      </p>
-    </aside>
+{% include ts-testimonials.html
+  heading="What clients say about Tillerstead"
+  eyebrow="Verified Reviews"
+%}
+
+<section class="review-cta" aria-label="See more reviews">
+  <div class="ts-card card card--review">
+    <h3>See the latest on Thumbtack</h3>
+    <p>
+      Thumbtack hosts badges, photos, and fresh ratings as projects are completed. Visit the live profile for the most
+      up-to-date details, or run the sync script to pull them here.
+    </p>
+    <a class="btn btn--primary" href="https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199" target="_blank" rel="noopener">
+      View Thumbtack profile
+    </a>
   </div>
-</main>
+</section>
