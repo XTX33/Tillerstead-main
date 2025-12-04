@@ -12,6 +12,17 @@
     "no-unused-vars": "warn",
     "no-console": "off"
   },
+  "overrides": [
+    {
+      "files": ["scripts/**/*.js"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
   "ignorePatterns": [
     "node_modules/",
     "vendor/",

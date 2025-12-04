@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-env node */
 /**
  * Sync live Thumbtack reviews into _data/reviews.yml.
  * Run locally with: `node scripts/sync_thumbtack_reviews.js`
