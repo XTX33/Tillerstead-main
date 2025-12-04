@@ -517,7 +517,8 @@ article figcaption {
   align-items: center;
   font-size: 1rem;
   font-weight: 600;
-  color: var(--ts-text-muted);
+  color: var(--ts-text);
+  line-height: 1.5;
   /* WCAG AAA touch target */
   padding: 0.75rem 0.5rem;
   min-height: 44px;
@@ -530,7 +531,7 @@ article figcaption {
 
 .site-menu a:hover,
 .site-menu a:focus-visible {
-  color: var(--ts-text);
+  color: var(--ts-primary-strong);
   background: rgba(16, 35, 61, 0.08);
   padding-left: 0.75rem;
 }

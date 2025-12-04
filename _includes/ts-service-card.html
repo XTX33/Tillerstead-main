@@ -1,58 +1,12 @@
-{% assign icon = include.icon | default: 'home' %}
-{% capture icon_svg %}
-  {% case icon %}
-  {% when 'paint' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M6 18.5h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M24.5 5.5H11.8c-.64 0-1.23.32-1.59.85L6 12.5v9c0 .83.67 1.5 1.5 1.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-      <path d="M18.5 23c0-1.93 1.57-3.5 3.5-3.5S25.5 21.07 25.5 23 23.93 26.5 22 26.5H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% when 'trim' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M5.5 25.5h21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M9 25.5V8.5c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v17" stroke="currentColor" stroke-width="2"></path>
-      <path d="M9 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M13 5.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% when 'flooring' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <rect x="6" y="6" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <rect x="17" y="6" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <rect x="6" y="17" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <path d="M17 17h9v9h-9z" stroke="currentColor" stroke-width="2"></path>
-    </svg>
-  {% when 'tile' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <rect x="6" y="6" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <rect x="17" y="6" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <rect x="11.5" y="11.5" width="9" height="9" rx="1.2" stroke="currentColor" stroke-width="2"></rect>
-      <path d="M6 17h5.5m9 0H26" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% when 'waterproof' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M16 4c-2.5 4.3-7 7.5-7 12.4A7 7 0 0 0 16 23a7 7 0 0 0 7-6.6C23 11.5 18.5 8.3 16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-      <path d="M12 18.5c.4 1.2 1.8 2 4 2 2.2 0 3.6-.8 4-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% when 'remodeling' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M6 24.5h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M8.5 24.5V11a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1v13.5" stroke="currentColor" stroke-width="2"></path>
-      <path d="M11 6.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M13 15.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% when 'maintenance' %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M16 6.5a5 5 0 0 0-4.2 7.6l-3.3 3.3a1.2 1.2 0 0 0 0 1.7l3.1 3.1a1.2 1.2 0 0 0 1.7 0l3.3-3.3A5 5 0 1 0 16 6.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
-      <path d="M18.5 18.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% else %}
-    <svg class="ts-service-card__icon-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
-      <path d="M7 23.5h18M7 8.5h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-      <path d="M9.5 8.5v16M22.5 8.5v16" stroke="currentColor" stroke-width="2"></path>
-      <path d="M11.5 12h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-    </svg>
-  {% endcase %}
-{% endcapture %}
+{%- comment -%}
+  Service card component. Icons render through `ts-service-icon.html` to keep markup centralized.
+  Add or update service definitions in `_data/services.yml` or pass a custom `services` array into
+  `ts-services.html` include. Each service can provide icon, title/name, description, tagline, details, and url.
+{%- endcomment -%}
+{%- assign icon_name = include.icon | default: 'home' -%}
+{%- capture icon_svg -%}
+  {%- include ts-service-icon.html icon=icon_name -%}
+{%- endcapture -%}
 
 <article class="ts-card ts-service-card" role="listitem">
   <div class="ts-service-card__header">
@@ -63,17 +17,17 @@
     </div>
   </div>
   <p class="ts-service-card__desc">{{ include.description }}</p>
-  {% if include.details %}
+  {%- if include.details -%}
     <ul class="ts-service-card__list">
-      {% for item in include.details %}
+      {%- for item in include.details -%}
         <li class="ts-service-card__item">{{ item }}</li>
-      {% endfor %}
+      {%- endfor -%}
     </ul>
-  {% endif %}
-  {% if include.url %}
+  {%- endif -%}
+  {%- if include.url -%}
     <a class="ts-service-card__cta" href="{{ include.url | relative_url }}" aria-label="Learn more about {{ include.title }}">
       <span>Learn more</span>
       <span aria-hidden="true">→</span>
     </a>
-  {% endif %}
+  {%- endif -%}
 </article>

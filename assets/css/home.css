@@ -32,7 +32,7 @@
   border-radius: 2rem;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-lift);
-  background: var(--color-surface);
+  background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%);
   padding: clamp(2rem, 4vw, 3rem);
   position: relative;
   overflow: visible;
@@ -52,7 +52,7 @@
 
 .page-home .hero-lead,
 .page-home .hero-note {
-  color: var(--color-text-muted);
+  color: var(--color-text);
 }
 
 .page-home .hero-title {
@@ -79,6 +79,23 @@
   .page-home .hero-actions {
     justify-content: center;
   }
+}
+
+.page-home .hero__stats-list li,
+.page-home .hero__stats-panel strong {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.page-home .hero__actions .btn.btn--ghost {
+  color: var(--color-primary-strong);
+  border-color: var(--color-primary);
+}
+
+.page-home .hero__actions .btn.btn--ghost:hover,
+.page-home .hero__actions .btn.btn--ghost:focus-visible {
+  color: var(--color-primary);
+  border-color: var(--color-primary-strong);
 }
 
 .hero-visual {
@@ -332,9 +349,16 @@
 
 /* Services */
 .ts-services {
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(135deg, #f8f6ee 0%, #ece7d9 100%);
+  border-top: none;
+  border-bottom: none;
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+
+.ts-services .container {
+  background: transparent;
+  box-shadow: none;
+  padding-inline: clamp(1.5rem, 5vw, 3rem);
 }
 
 .ts-services__header {
@@ -349,6 +373,7 @@
   display: grid;
   gap: clamp(1.5rem, 3vw, 2rem);
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  align-items: stretch;
 }
 
 
@@ -372,7 +397,8 @@
 }
 
 .ts-service-card {
-  background: linear-gradient(145deg, #ffffff 0%, #f1f4f9 100%);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
 }
 
 .ts-service-card__header {
@@ -387,9 +413,8 @@
   display: grid;
   place-items: center;
   border-radius: 0.9rem;
-  background: rgba(0, 166, 166, 0.12);
-  background: rgba(24, 178, 121, 0.14);
-  color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-primary-soft) 0%, rgba(122, 92, 28, 0.16) 100%);
+  color: var(--color-primary-strong);
 }
 
 .ts-service-card__eyebrow {
@@ -400,7 +425,7 @@
 }
 
 .ts-service-card h3 { margin: 0; color: var(--color-heading); }
-.ts-service-card p { margin: 0; color: var(--color-text-muted); }
+.ts-service-card p { margin: 0; color: var(--color-text); }
 
 .ts-service-card__desc { line-height: 1.6; }
 

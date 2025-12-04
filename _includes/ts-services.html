@@ -16,18 +16,20 @@
           {% assign service_title = parts[1] %}
           {% assign service_description = parts[2] %}
           {% assign service_url = parts[3] %}
+          {% assign service_details = '' %}
         {% else %}
           {% assign service_icon = raw.icon %}
-          {% assign service_title = raw.title %}
+          {% assign service_title = raw.title | default: raw.name %}
           {% assign service_description = raw.description %}
           {% assign service_url = raw.url %}
+          {% assign service_details = raw.details | default: raw.points %}
         {% endif %}
         {% include ts-service-card.html
           icon=service_icon
           title=service_title
           description=service_description
           tagline=raw.tagline
-          details=raw.details
+          details=service_details
           url=service_url %}
       {% endfor %}
     </div>
