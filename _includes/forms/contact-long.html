@@ -1,0 +1,182 @@
+{% assign form_name = include.form_name | default: 'contact' %}
+{% assign form_prefix = include.id_prefix | default: form_name %}
+{% assign form_classes = include.form_class | default: 'ts-form ts-card contact-form contact-form--long' %}
+{% assign default_action = include.action | default: page.url | default: '/contact/' %}
+{% assign form_action = default_action %}
+{% unless default_action contains 'mailto:' or default_action contains 'tel:' or default_action contains '://' %}
+  {% assign form_action = default_action | relative_url %}
+{% endunless %}
+{% assign submit_label = include.submit_label | default: 'Submit request' %}
+{% assign privacy_id = include.privacy_id | default: 'privacy-note' %}
+
+<form
+  name="{{ form_name }}"
+  id="{{ include.form_id | default: form_prefix | append: '-form' }}"
+  class="{{ form_classes }}"
+  method="post"
+  action="{{ form_action }}"
+  data-contact-form
+  data-contact-email="{{ site.company.email }}"
+  data-contact-phone="{{ site.company.phone_display }}"
+  data-netlify="true"
+  netlify-honeypot="_trap"
+  aria-describedby="{{ include.aria_describedby | default: form_prefix | append: '-intro ' | append: privacy_id }}"
+  aria-live="polite"
+>
+  <input type="hidden" name="form-name" value="{{ form_name }}">
+
+  <p class="sr-only">
+    <label for="{{ form_prefix }}-trap">Do not fill this field</label>
+    <input id="{{ form_prefix }}-trap" name="_trap" type="text" tabindex="-1" autocomplete="off">
+  </p>
+
+  <div class="form-grid">
+    <div class="form-field">
+      <label for="{{ form_prefix }}-name">Full name<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-name"
+        name="name"
+        type="text"
+        required
+        aria-required="true"
+        autocomplete="name"
+        placeholder="Your name"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-company">Company / organization</label>
+      <input
+        id="{{ form_prefix }}-company"
+        name="company"
+        type="text"
+        autocomplete="organization"
+        placeholder="GC, remodeling firm, or property team"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-email">Email<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-email"
+        name="email"
+        type="email"
+        required
+        aria-required="true"
+        autocomplete="email"
+        inputmode="email"
+        placeholder="you@example.com"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-phone">Phone<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-phone"
+        name="phone"
+        type="tel"
+        required
+        aria-required="true"
+        autocomplete="tel"
+        inputmode="tel"
+        placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-city">City / area<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-city"
+        name="city"
+        type="text"
+        required
+        aria-required="true"
+        autocomplete="address-level2"
+        placeholder="e.g., Galloway, Atlantic City, Brigantine"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-property-type">Property type</label>
+      <select id="{{ form_prefix }}-property-type" name="property_type">
+        <option value="">Select an option</option>
+        <option>Single-family home</option>
+        <option>Rental property / landlord</option>
+        <option>Multi-unit residential</option>
+        <option>Small commercial</option>
+        <option>Condo / townhouse</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-project-type">Project type</label>
+      <select id="{{ form_prefix }}-project-type" name="project_type">
+        <option value="">Select an option</option>
+        <option>Monthly Maintenance Plan</option>
+        <option>Kitchen or Bathroom Remodel</option>
+        <option>Tile Installation (shower, floor, backsplash)</option>
+        <option>Property Repairs & Maintenance</option>
+        <option>Waterproof shower rebuild</option>
+        <option>Flooring installation</option>
+        <option>Small commercial / tenant improvement</option>
+        <option>Other / not sure yet</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="{{ form_prefix }}-timeline">Ideal timeline</label>
+      <select id="{{ form_prefix }}-timeline" name="timeline">
+        <option value="">Select an option</option>
+        <option>ASAP / urgent</option>
+        <option>Within 30 days</option>
+        <option>1-3 months</option>
+        <option>3-6 months</option>
+        <option>Planning for future</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <label for="{{ form_prefix }}-details">Project details<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+    <textarea
+      id="{{ form_prefix }}-details"
+      name="details"
+      rows="6"
+      required
+      aria-required="true"
+      placeholder="Share property details, goals, and timelines. Include location, property type, and any specific concerns."
+    ></textarea>
+  </div>
+
+  <div class="form-field">
+    <label for="{{ form_prefix }}-photos">Link to plans, photos, or bid package (optional)</label>
+    <input
+      id="{{ form_prefix }}-photos"
+      name="photos"
+      type="url"
+      inputmode="url"
+      placeholder="Link to Google Drive, PlanGrid, Dropbox, etc."
+    >
+  </div>
+
+  <div class="form-field">
+    <label for="{{ form_prefix }}-request-type">Request type<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+    <select id="{{ form_prefix }}-request-type" name="request_type" required aria-required="true">
+      <option value="">Select a request focus</option>
+      <option>Design & Tile Consultation</option>
+      <option>Site Visit / Estimate</option>
+      <option>Monthly Property Maintenance Plan</option>
+      <option>General Contractor / Trade Partner Collaboration</option>
+      <option>Subcontracting Inquiry</option>
+      <option>Other / Not Sure Yet</option>
+    </select>
+  </div>
+
+  <p class="form-note" id="{{ privacy_id }}">
+    Your information stays with Tillerstead. It’s used only to coordinate your scope, prepare documentation, and keep you updated — never sold or shared.
+  </p>
+
+  <div class="form-status sr-only" aria-live="polite" id="{{ form_prefix }}-status" data-form-status></div>
+
+  <button type="submit" class="btn btn-primary" aria-describedby="{{ privacy_id }}">{{ submit_label }}</button>
+</form>

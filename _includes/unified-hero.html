@@ -7,6 +7,16 @@
 {% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
 {% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
+{% assign hero_primary_href = hero_primary_url %}
+{% assign hero_secondary_href = hero_secondary_url %}
+
+{% unless hero_primary_url contains 'mailto:' or hero_primary_url contains 'tel:' or hero_primary_url contains '://' %}
+  {% assign hero_primary_href = hero_primary_url | relative_url %}
+{% endunless %}
+
+{% unless hero_secondary_url contains 'mailto:' or hero_secondary_url contains 'tel:' or hero_secondary_url contains '://' %}
+  {% assign hero_secondary_href = hero_secondary_url | relative_url %}
+{% endunless %}
 {% assign hero_badge_class = include.badge_class | default: page.hero_badge_class | default: 'bg-accent text-surface' %}
 
 <header class="hero hero--center bg-surface-elevated shadow-lift unified-hero" aria-label="Page hero">
@@ -47,11 +57,11 @@
     {% endif %}
 
     <nav class="hero__actions hero__actions--center flex gap-4" aria-label="Primary actions">
-      {% if hero_primary_url %}
-        <a class="btn btn--primary rounded-lg px-5 py-2" href="{{ hero_primary_url | relative_url }}">{{ hero_primary_label }}</a>
+      {% if hero_primary_href %}
+        <a class="btn btn--primary rounded-lg px-5 py-2" href="{{ hero_primary_href }}">{{ hero_primary_label }}</a>
       {% endif %}
-      {% if hero_secondary_url %}
-        <a class="btn btn--ghost rounded-lg px-5 py-2" href="{{ hero_secondary_url | relative_url }}">{{ hero_secondary_label }}</a>
+      {% if hero_secondary_href %}
+        <a class="btn btn--ghost rounded-lg px-5 py-2" href="{{ hero_secondary_href }}">{{ hero_secondary_label }}</a>
       {% endif %}
     </nav>
   </div>

@@ -34,222 +34,52 @@ hero_kpis:
         Share your scope notes, photos, spec sheets, or schedule needs below. I personally review every request, follow up with any key questions, and prepare a clear written estimate with documentation requirements, pricing, and projected dates.
       </p>
 
-   <div class="contact-steps" aria-label="What happens after you send this form">
-  <h3>What Happens Next</h3>
-  <ol>
-          <li><strong>Review:</strong> I review your property details, maintenance needs, or project scope to confirm feasibility, material requirements, and scheduling options.</li>
-          <li><strong>Follow up:</strong> We’ll connect briefly by text, call, or email to confirm details, discuss options, and make sure the plan suits your goals and timeline.</li>
-          <li><strong>Proposal:</strong> You’ll receive a written estimate with itemized pricing, expected timeline, and the service agreement terms—clear, documented, and ready to schedule.</li>
+      <div class="contact-steps" aria-label="What happens after you send this form">
+        <h3>What Happens Next</h3>
+        <ol>
+          <li><strong>Review:</strong> I confirm feasibility, materials, and scheduling options for your property or project.</li>
+          <li><strong>Follow up:</strong> We’ll connect briefly by text, call, or email to discuss options and align on goals.</li>
+          <li><strong>Proposal:</strong> You’ll receive a written estimate with itemized pricing, expected timeline, and the service agreement terms.</li>
         </ol>
       </div>
-   <div class="what-you-can-expect" aria-label="What to expect from Tillerstead">
-  <h3>What You Can Expect</h3>
-  <ul>
-    <li>Transparent communication</li>
-    <li>Workmanship warranty on tile installations</li>
-    <li>Written documentation for all services</li>
-    <li>Respect for your home and schedule</li>
-  </ul>
-</div> 
+
+      <div class="what-you-can-expect" aria-label="What to expect from Tillerstead">
+        <h3>What You Can Expect</h3>
+        <ul>
+          <li>Transparent communication</li>
+          <li>Workmanship warranty on tile installations</li>
+          <li>Written documentation for all services</li>
+          <li>Respect for your home and schedule</li>
+        </ul>
+      </div>
     </header>
 
-    <form
-      name="contact"
-      id="contact-form"
-      class="contact-form"
-      data-contact-form
-      data-contact-email="{{ site.company.email }}"
-      data-contact-phone="{{ site.company.phone_display }}"
-      method="post"
-      action="{{ page.url | relative_url }}"
-      aria-describedby="form-intro"
-      aria-live="polite"
-      data-netlify="true"
-      netlify-honeypot="_trap"
-    >
-      <input type="hidden" name="form-name" value="contact">
-      <p class="sr-only">
-        <label for="_trap">Do not fill this field</label>
-        <input id="_trap" name="_trap" type="text" tabindex="-1" autocomplete="off">
-      </p>
-      <div class="form-grid">
-        <div class="form-field">
-          <label for="name">
-            Full name<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            aria-required="true"
-            autocomplete="name"
-            placeholder="Your name"
-          >
-        </div>
+    <div class="contact-body">
+      {% include forms/contact-long.html
+        form_name="contact"
+        id_prefix="contact"
+        action=page.url
+        aria_describedby="form-intro privacy-note"
+        privacy_id="privacy-note"
+      %}
 
-        <div class="form-field">
-          <label for="company">
-            Company / organization
-          </label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            autocomplete="organization"
-            placeholder="GC, remodeling firm, or property team"
-          >
-        </div>
-
-        <div class="form-field">
-          <label for="email">
-            Email<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            aria-required="true"
-            autocomplete="email"
-            placeholder="you@example.com"
-            inputmode="email"
-          >
-        </div>
-
-        <div class="form-field">
-          <label for="phone">
-            Phone<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            required
-            aria-required="true"
-            autocomplete="tel"
-            inputmode="tel"
-            placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}"
-          >
-        </div>
-
-        <div class="form-field">
-          <label for="city">
-            City / area<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="city"
-            name="city"
-            type="text"
-            required
-            aria-required="true"
-            autocomplete="address-level2"
-            placeholder="e.g., Galloway, Atlantic City, Brigantine"
-          >
-        </div>
-
-        <div class="form-field">
-          <label for="property-type">Property type</label>
-          <select id="property-type" name="property_type">
-            <option value="">Select an option</option>
-            <option>Single-family home</option>
-            <option>Rental property / landlord</option>
-            <option>Multi-unit residential</option>
-            <option>Small commercial</option>
-            <option>Condo / townhouse</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="project-type">Project type</label>
-          <select id="project-type" name="project_type">
-            <option value="">Select an option</option>
-            <option>Monthly Maintenance Plan</option>
-            <option>Kitchen or Bathroom Remodel</option>
-            <option>Tile Installation (shower, floor, backsplash)</option>
-            <option>Property Repairs & Maintenance</option>
-            <option>Waterproof shower rebuild</option>
-            <option>Flooring installation</option>
-            <option>Small commercial / tenant improvement</option>
-            <option>Other / not sure yet</option>
-          </select>
-        </div>
-
-        <div class="form-field">
-          <label for="timeline">Ideal timeline</label>
-          <select id="timeline" name="timeline">
-            <option value="">Select an option</option>
-            <option>ASAP / urgent</option>
-            <option>Within 30 days</option>
-            <option>1-3 months</option>
-            <option>3-6 months</option>
-            <option>Planning for future</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label for="details">
-          Project details<span class="sr-only"> (required)</span><span aria-hidden="true">*</span>
-        </label>
-        <textarea
-          id="details"
-          name="details"
-          rows="6"
-          required
-          placeholder="Share details about your property, maintenance needs, remodeling scope, or tile project. Include address/location, property type, timeline, and any specific concerns or requirements."
-        ></textarea>
-      </div>
-
-      <div class="form-field">
-        <label for="photos">Link to plans, photos, or bid package (optional)</label>
-        <input
-          id="photos"
-          name="photos"
-          type="url"
-          inputmode="url"
-          placeholder="Link to Google Drive, PlanGrid, Dropbox, etc."
-        >
-      </div>
-
-      <div class="form-field">
-        <label for="request-type">Request type<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
-        <select id="request-type" name="request_type" required aria-required="true">
-          <option value="">Select a request focus</option>
-          <option>Design & Tile Consultation</option>
-          <option>Site Visit / Estimate</option>
-          <option>Monthly Property Maintenance Plan</option>
-          <option>General Contractor / Trade Partner Collaboration</option>
-          <option>Subcontracting Inquiry</option>
-          <option>Other / Not Sure Yet</option>
-        </select>
-      </div>
-
-      <p class="form-note" id="privacy-note">
-        Your information stays with Tillerstead. It’s used only to coordinate your scope, prepare documentation,
-        and keep you updated — never sold or shared.
-      </p>
-      <div class="form-status sr-only" aria-live="polite" id="form-status" data-form-status></div>
-
-      <button type="submit" class="btn btn-primary" aria-describedby="privacy-note">Submit request</button>
-    </form>
-
-    <aside class="contact-alt">
-      <h3>Prefer to call or text?</h3>
-      <p>
-        You can also reach out directly at
-        <a href="tel:{{ site.company.phone_link | default: '+16098628808' }}">
-          {{ site.company.phone_display | default: '(609) 862-8808' }}
-        </a>
-        or email
-        <a href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}">
-          {{ site.company.email | default: 'info@tillerstead.com' }}
-        </a>
-      </p>
-      <p class="microcopy">
-        For the fastest and most reliable estimate, just text a few photos of the space, your ideal timeline, and what you’d like to accomplish. I review every message personally and will get back to you quickly with clear options and fair pricing.
-      </p>
-    </aside>
+      <aside class="contact-alt">
+        <h3>Prefer to call or text?</h3>
+        <p>
+          You can also reach out directly at
+          <a href="tel:{{ site.company.phone_link | default: '+16098628808' }}">
+            {{ site.company.phone_display | default: '(609) 862-8808' }}
+          </a>
+          or email
+          <a href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}">
+            {{ site.company.email | default: 'info@tillerstead.com' }}
+          </a>
+        </p>
+        <p class="microcopy">
+          For the fastest and most reliable estimate, just text a few photos of the space, your ideal timeline, and what you’d like to accomplish. I review every message personally and will get back to you quickly with clear options and fair pricing.
+        </p>
+      </aside>
+    </div>
   </div>
 </section>
 

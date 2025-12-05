@@ -6,57 +6,16 @@
       <h2 id="ts-contact-title" class="heading-2">Schedule a Consultation</h2>
       <p>Request a site visit for residential remodels, small-business refreshes, or turnover-ready property upkeep. Serving Atlantic, Ocean, and Cape May Counties—most consultations are scheduled within 3 business days.</p>
       <p class="text-muted">You'll receive a detailed written scope covering materials, timelines, waterproofing specs, and transparent pricing so landlords and owners can approve quickly. All work is owner-operated and fully documented.</p>
-      <p>Request a site visit to discuss your tile installation, remodel, or property maintenance needs. Serving Atlantic, Ocean, and Cape May Counties—most consultations are scheduled within 3 business days.</p>
-      <p class="text-muted">You'll receive a detailed written scope including materials, timelines, waterproofing specs, and transparent pricing. All work is owner-operated and fully documented.</p>
-      <form
-        class="ts-contact__form"
-        name="homepage-contact"
-        method="post"
-        action="/contact/"
-        data-netlify="true"
-        data-contact-form
-        data-contact-email="{{ site.company.email }}"
-        data-contact-phone="{{ site.company.phone_display }}"
-        netlify-honeypot="bot-field"
-        aria-describedby="ts-contact-title"
-      >
-        <input type="hidden" name="form-name" value="homepage-contact">
-        <p class="sr-only">
-          <label for="bot-field">Do not fill this field</label>
-          <input id="bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off">
-        </p>
-        <div class="ts-contact__fields">
-          <label class="ts-contact__field">
-            <span>Name</span>
-            <input type="text" name="name" required autocomplete="name" aria-required="true" placeholder="Your full name">
-          </label>
-          <label class="ts-contact__field">
-            <span>Email</span>
-            <input type="email" name="email" required autocomplete="email" aria-required="true" inputmode="email" placeholder="you@example.com">
-          </label>
-          <label class="ts-contact__field">
-            <span>Phone</span>
-            <input type="tel" name="phone" required autocomplete="tel" aria-required="true" inputmode="tel" placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}">
-          </label>
-          <label class="ts-contact__field">
-            <span>Property Type</span>
-            <select name="property_type" required aria-required="true" aria-label="Property type">
-              <option value="">Select an option</option>
-              <option>Single-family home</option>
-              <option>Rental property / landlord</option>
-              <option>Multi-unit residential</option>
-              <option>Small commercial</option>
-              <option>Condo / townhouse</option>
-            </select>
-          </label>
-          <label class="ts-contact__field ts-contact__field--full">
-            <span>Project details</span>
-            <textarea name="message" rows="4" required aria-required="true" placeholder="Share the scope, address or area, and timing."></textarea>
-          </label>
-        </div>
-        <div class="form-status sr-only" aria-live="polite" data-form-status></div>
-        <button type="submit" class="btn btn--primary ts-contact__submit">Send my request</button>
-      </form>
+      <div class="ts-contact__form">
+        {% include forms/contact-short.html
+          form_name="homepage-contact"
+          id_prefix="homepage-contact"
+          form_class="ts-form ts-card ts-contact__form ts-contact__form-inner"
+          action="/contact/"
+          submit_label="Send my request"
+          aria_describedby="ts-contact-title"
+        %}
+      </div>
     </div>
     <aside class="ts-contact__panel" aria-label="Company details">
       <h3>Company Details</h3>

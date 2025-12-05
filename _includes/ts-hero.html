@@ -8,6 +8,16 @@
 {% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
 {% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'See recent work' %}
+{% assign hero_primary_href = hero_primary_url %}
+{% assign hero_secondary_href = hero_secondary_url %}
+
+{% unless hero_primary_url contains 'mailto:' or hero_primary_url contains 'tel:' or hero_primary_url contains '://' %}
+  {% assign hero_primary_href = hero_primary_url | relative_url %}
+{% endunless %}
+
+{% unless hero_secondary_url contains 'mailto:' or hero_secondary_url contains 'tel:' or hero_secondary_url contains '://' %}
+  {% assign hero_secondary_href = hero_secondary_url | relative_url %}
+{% endunless %}
 
 <section class="hero hero--with-pattern" aria-label="Company overview hero">
   <div class="hero-surface">
@@ -18,10 +28,12 @@
         <p class="hero-lead">{{ hero_summary }}</p>
 
         <div class="hero-actions" role="group" aria-label="Primary actions">
-          <button class="btn btn--primary hero-cta" type="button" aria-label="{{ hero_primary_label }}" onclick="window.location.href='{{ hero_primary_url | relative_url }}'">
-            {{ hero_primary_label }}
-          </button>
-          <a class="btn btn--ghost" href="{{ hero_secondary_url | relative_url }}">{{ hero_secondary_label }}</a>
+          {% if hero_primary_href %}
+            <a class="btn btn--primary hero-cta" href="{{ hero_primary_href }}">{{ hero_primary_label }}</a>
+          {% endif %}
+          {% if hero_secondary_href %}
+            <a class="btn btn--ghost" href="{{ hero_secondary_href }}">{{ hero_secondary_label }}</a>
+          {% endif %}
         </div>
 
         <div class="hero-cred">

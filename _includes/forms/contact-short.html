@@ -1,0 +1,102 @@
+{% assign form_name = include.form_name | default: 'contact-short' %}
+{% assign form_prefix = include.id_prefix | default: form_name %}
+{% assign form_classes = include.form_class | default: 'ts-form ts-card contact-form contact-form--short' %}
+{% assign default_action = include.action | default: '/contact/' %}
+{% assign form_action = default_action %}
+{% unless default_action contains 'mailto:' or default_action contains 'tel:' or default_action contains '://' %}
+  {% assign form_action = default_action | relative_url %}
+{% endunless %}
+{% assign submit_label = include.submit_label | default: 'Send my request' %}
+
+<form
+  name="{{ form_name }}"
+  class="{{ form_classes }}"
+  method="post"
+  action="{{ form_action }}"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-contact-form
+  data-contact-email="{{ site.company.email }}"
+  data-contact-phone="{{ site.company.phone_display }}"
+  aria-describedby="{{ include.aria_describedby }}"
+>
+  <input type="hidden" name="form-name" value="{{ form_name }}">
+  {% if include.redirect %}
+    <input type="hidden" name="redirect" value="{{ include.redirect }}">
+  {% endif %}
+
+  <p class="sr-only">
+    <label for="{{ form_prefix }}-bot-field">Do not fill this field</label>
+    <input id="{{ form_prefix }}-bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off">
+  </p>
+
+  <div class="ts-form__fields form-grid form-grid--compact">
+    <div class="ts-form__field form-field">
+      <label for="{{ form_prefix }}-name">Name<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-name"
+        name="name"
+        type="text"
+        required
+        aria-required="true"
+        autocomplete="name"
+        placeholder="Your name"
+      >
+    </div>
+
+    <div class="ts-form__field form-field">
+      <label for="{{ form_prefix }}-email">Email<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <input
+        id="{{ form_prefix }}-email"
+        name="email"
+        type="email"
+        required
+        aria-required="true"
+        autocomplete="email"
+        inputmode="email"
+        placeholder="you@example.com"
+      >
+    </div>
+
+    <div class="ts-form__field form-field">
+      <label for="{{ form_prefix }}-phone">Phone</label>
+      <input
+        id="{{ form_prefix }}-phone"
+        name="phone"
+        type="tel"
+        autocomplete="tel"
+        inputmode="tel"
+        placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}"
+      >
+    </div>
+
+    <div class="ts-form__field form-field">
+      <label for="{{ form_prefix }}-project-type">Project type</label>
+      <select id="{{ form_prefix }}-project-type" name="project_type">
+        <option value="">Select an option</option>
+        <option>Maintenance Plan</option>
+        <option>Remodel</option>
+        <option>Tile Installation</option>
+        <option>Repairs</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="ts-form__field form-field ts-form__field--full">
+      <label for="{{ form_prefix }}-details">Project details<span class="sr-only"> (required)</span><span aria-hidden="true">*</span></label>
+      <textarea
+        id="{{ form_prefix }}-details"
+        name="details"
+        rows="4"
+        required
+        aria-required="true"
+        placeholder="Share location, goals, and timing."
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="ts-form__actions">
+    <div class="form-status sr-only" aria-live="polite" data-form-status></div>
+    <button type="submit" class="ts-btn ts-btn--primary btn btn--primary">{{ submit_label }}</button>
+  </div>
+</form>
