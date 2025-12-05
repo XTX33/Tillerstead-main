@@ -2,3 +2,28 @@
    Delegates to the compiled theme bundle generated during the design refresh. */
 @import url("./theme-compiled.css");
 
+/* === Contact form text visibility & contrast === */
+
+form input,
+form textarea,
+form select {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important; /* iOS Safari fix */
+  background-color: #fff !important;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #9ba3af !important;  /* soft gray */
+  opacity: 1 !important;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: 2px solid #9fbc3f;
+  box-shadow: 0 0 0 2px rgba(159, 188, 63, .45);
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
