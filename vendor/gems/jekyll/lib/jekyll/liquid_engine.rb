@@ -94,9 +94,10 @@ module Jekyll
         if body =~ /^if|unless|elsif|else|endif|endunless|for|endfor|assign/
           case body
           when /^include\s+(.+)$/
-            name = Regexp.last_match(1).strip
+            name, params = parse_include(Regexp.last_match(1).strip)
+            params_json = params.to_json
             # Always render includes, especially in <head>
-            "<%= render_include(#{name.dump}) %>"
+            "<%= render_include(#{name.dump}, #{params_json}) %>"
           when /^if\s+(.+)$/
             "<% if liquid_condition(#{Regexp.last_match(1).dump}) %>"
           when /^unless\s+(.+)$/
@@ -125,13 +126,31 @@ module Jekyll
         else
           # Always render includes and all tags
           if body =~ /^include\s+(.+)$/
-            name = Regexp.last_match(1).strip
-            "<%= render_include(#{name.dump}) %>"
+            name, params = parse_include(Regexp.last_match(1).strip)
+            params_json = params.to_json
+            "<%= render_include(#{name.dump}, #{params_json}) %>"
           else
             "{% #{body} %}"
           end
         end
       end
+    end
+
+    def parse_include(body)
+      parts = body.strip
+      name, params_string = parts.split(/\s+/, 2)
+      name = name.gsub(/^['"]|['"]$/, '')
+
+      params = {}
+      if params_string
+        params_string.scan(/(\w+)\s*=\s*("[^"]*"|'[^']*'|[^\s]+)/) do |key, value|
+          cleaned_value = value.to_s.strip
+          cleaned_value = cleaned_value[1..-2] if cleaned_value.start_with?("'", '"') && cleaned_value.end_with?("'", '"')
+          params[key] = cleaned_value
+        end
+      end
+
+      [name, params]
     end
   end
 
@@ -169,8 +188,16 @@ module Jekyll
       nil
     end
 
-    def render_include(name)
+    def render_include(name, params = {})
+      previous_include = @context['include']
+      @context['include'] = params
       @engine.render_include(name, @context)
+    ensure
+      if previous_include.nil?
+        @context.delete('include')
+      else
+        @context['include'] = previous_include
+      end
     end
   end
 
