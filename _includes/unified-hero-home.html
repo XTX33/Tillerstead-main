@@ -3,13 +3,7 @@
   <div class="container hero__content hero__content--center hero-home__content">
     <div class="hero-head-card" aria-label="Tillerstead brand">
       <div class="hero-head-card__logo">
-        <img src="{{ 'assets/img/logo/tillerstead-logo-header.svg' | relative_url }}"
-             alt="Tillerstead logo"
-             class="ts-logo ts-logo--hero"
-             width="320"
-             height="120"
-             loading="eager"
-             decoding="async">
+        {% include logo-main.html class="ts-logo-link--hero" img_class="ts-logo ts-logo--hero" %}
       </div>
       <p class="hero-head-card__tagline">Property Maintenance · Remodeling · Tile</p>
     </div>

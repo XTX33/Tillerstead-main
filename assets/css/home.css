@@ -270,8 +270,21 @@
 
 .hero-head-card__logo {
   display: flex;
+  align-items: center;
   justify-content: center;
-  width: min(100%, 360px);
+  width: min(100%, 380px);
+  padding: clamp(1rem, 3vw, 1.35rem) clamp(1.1rem, 3.4vw, 1.5rem);
+  border-radius: var(--radius-lg);
+}
+
+.hero-head-card__logo .ts-logo-link {
+  width: 100%;
+  justify-content: center;
+}
+
+.hero-head-card__logo .ts-logo {
+  max-width: clamp(210px, 58vw, 300px);
+  max-height: clamp(48px, 12vw, 64px);
 }
 
 .hero-head-card__tagline {

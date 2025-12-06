@@ -5,28 +5,42 @@
 /* Base logo sizing and aspect ratio control (used across header/hero/footer) */
 .ts-logo {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  max-width: clamp(200px, 34vw, 280px);
+  max-width: clamp(190px, 34vw, 260px);
+  max-height: clamp(44px, 10vw, 64px);
+  object-fit: contain;
 }
 
 /* Header logo keeps the wordmark balanced next to the CTA/menu */
 .ts-logo--header {
-  max-width: clamp(180px, 30vw, 240px);
+  max-width: clamp(170px, 32vw, 230px);
+  max-height: clamp(40px, 9vw, 56px);
+
+  @media (max-width: 540px) {
+    max-width: clamp(150px, 48vw, 200px);
+    max-height: 48px;
+  }
 }
 
 /* Hero logo can breathe a bit more inside the intro card */
 .ts-logo--hero {
-  max-width: clamp(220px, 42vw, 320px);
+  max-width: clamp(210px, 58vw, 300px);
+  max-height: clamp(48px, 12vw, 64px);
+  width: 100%;
   margin-inline: auto;
 }
 
 /* Footer logo is capped to prevent oversized marks on small screens */
 .ts-logo--footer {
-  max-width: clamp(180px, 50vw, 220px);
+  max-width: clamp(190px, 50vw, 240px);
+  max-height: clamp(48px, 10vw, 64px);
 }
 
 .ts-logo-link,
+.ts-logo-link--header,
+.ts-logo-link--footer,
+.ts-logo-link--hero,
 .ts-logo-footer,
 .ts-logo-hero {
   display: inline-flex;
@@ -42,9 +56,11 @@
 .site-logo-img,
 .footer-logo-img {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
   max-width: clamp(200px, 36vw, 320px);
+  max-height: clamp(48px, 12vw, 72px);
+  object-fit: contain;
 }
 
 .site-logo-img {

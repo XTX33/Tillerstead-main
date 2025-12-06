@@ -324,22 +324,35 @@ article figcaption {
 
 .ts-logo {
   display: block;
-  width: 100%;
+  width: auto;
   height: auto;
-  max-width: clamp(200px, 34vw, 280px);
+  max-width: clamp(190px, 34vw, 260px);
+  max-height: clamp(44px, 10vw, 64px);
+  object-fit: contain;
 }
 
 .ts-logo--header {
-  max-width: clamp(180px, 30vw, 240px);
+  max-width: clamp(170px, 32vw, 230px);
+  max-height: clamp(40px, 9vw, 56px);
 }
 
 .ts-logo--hero {
-  max-width: clamp(220px, 42vw, 320px);
+  max-width: clamp(210px, 58vw, 300px);
+  max-height: clamp(48px, 12vw, 64px);
+  width: 100%;
   margin-inline: auto;
 }
 
 .ts-logo--footer {
-  max-width: clamp(180px, 50vw, 220px);
+  max-width: clamp(190px, 50vw, 240px);
+  max-height: clamp(48px, 10vw, 64px);
+}
+
+@media (max-width: 540px) {
+  .ts-logo--header {
+    max-width: clamp(150px, 48vw, 200px);
+    max-height: 48px;
+  }
 }
 
 .site-header-actions {
