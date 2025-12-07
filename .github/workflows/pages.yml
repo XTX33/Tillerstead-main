@@ -1,5 +1,8 @@
 name: Deploy Jekyll site to GitHub Pages
 
+env:
+  PAGES_ARTIFACT_NAME: github-pages
+
 on:
   push:
     branches: ["main"]
@@ -51,6 +54,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
 
   deploy:
     # Deploy previews for internal PRs and production for default-branch pushes.
@@ -67,3 +71,4 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           preview: ${{ github.event_name == 'pull_request' }}
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}

@@ -6,7 +6,7 @@
       "version": "20"
     }
   },
-  "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install && npm install",
+  "postCreateCommand": "bundle config set --local path vendor/bundle && bundle install --jobs 4 && npm ci",
   "customizations": {
     "vscode": {
       "settings": {

@@ -34,12 +34,12 @@ A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a han
 
 ## Prerequisites
 - **Ruby & Bundler** for Jekyll (`bundle install`).
-- **Node.js & npm** for tooling (`npm install`).
-- **Sass** and **Sharp** are installed via `npm install`; no global installs required.
+- **Node.js & npm** for tooling (`npm ci` preferred for reproducibility).
+- **Sass** and **Sharp** are installed via `npm ci`; no global installs required.
 
 ## Local / Codespaces dev
-- **Codespaces:** Opening the repo in GitHub Codespaces auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `bundle install` + `npm install` after the container is created.
-- **Local machines:** Install Ruby 3.2 and Node 20, then run `bundle install && npm install` in the project root.
+- **Codespaces:** Opening the repo in GitHub Codespaces auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `bundle install` + `npm ci` after the container is created.
+- **Local machines:** Install Ruby 3.2 and Node 20, then run `bundle install && npm ci` in the project root.
 - **Run the dev server:** `npm run dev` serves Jekyll on `http://127.0.0.1:4000` with LiveReload (`4000`/`35729` forwarded in Codespaces).
 - **Build once:** `npm run build` compiles CSS and runs `bundle exec jekyll build`.
 - **Test locally:** `npm run test` rebuilds the site and runs an internal link/asset check to verify the generated `_site` output. External link checks are skipped to keep runs offline-friendly.
