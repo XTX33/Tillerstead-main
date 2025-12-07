@@ -548,11 +548,14 @@ body.nav-open { overflow: hidden; }
    ============================ */
 .ts-plans { padding-block: var(--section-padding-y); }
 .ts-plans__grid { display: grid; gap: var(--grid-gap); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-bottom: var(--space-5); }
-.ts-plan-card { background: linear-gradient(145deg, rgba(20, 38, 61, 0.9), rgba(12, 24, 38, 0.95)); border: 1px solid var(--color-border); }
+.ts-plan-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(236, 243, 248, 0.96));
+  border: 1px solid var(--color-border);
+}
 .ts-plan-card--accent { background: radial-gradient(circle at 15% 15%, rgba(201, 162, 74, 0.12), transparent 45%), var(--color-surface-elevated); border-color: var(--color-accent-soft); }
-.ts-plan-card ul { color: var(--color-text-muted); padding-left: 1.1rem; }
-.ts-plan-card__summary { color: var(--color-text-muted); line-height: var(--line-height-relaxed); }
-.ts-plan-stats { display: grid; gap: var(--space-3); margin-top: var(--space-3); color: var(--color-text-muted); }
+.ts-plan-card ul { color: var(--color-text); padding-left: 1.1rem; }
+.ts-plan-card__summary { color: var(--color-text); line-height: var(--line-height-relaxed); }
+.ts-plan-stats { display: grid; gap: var(--space-3); margin-top: var(--space-3); color: var(--color-text); }
 .ts-plan-stats dt { color: var(--color-heading); }
 
 .ts-plans__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; justify-content: center; }
