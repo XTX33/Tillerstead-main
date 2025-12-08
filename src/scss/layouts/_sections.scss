@@ -25,7 +25,7 @@
 }
 
 .site-main > .page-content .container {
-  max-width: min(var(--shell-width), 1180px);
+  max-width: var(--shell-width);
 }
 
 .ts-section--muted {
