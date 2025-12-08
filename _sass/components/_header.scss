@@ -11,16 +11,7 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.96) 100%
-  );
-  border-bottom: 1px solid var(--header-border);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  transition: box-shadow var(--transition-med), background var(--transition-med);
+  ...
 }
 
 .site-header.scrolled {
