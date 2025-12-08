@@ -65,7 +65,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--transition-med);
-    z-index: 0;
+    z-index: 1500;
 
     .site-nav-shell.is-open & {
       opacity: 1;
@@ -147,7 +147,7 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 320ms ease, opacity 220ms ease;
-    z-index: 2;
+    z-index: 1600;
 
     .site-nav-shell.is-open & {
       transform: translateX(0);

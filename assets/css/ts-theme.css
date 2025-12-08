@@ -372,7 +372,7 @@ body.nav-open { overflow: hidden; }
   .site-nav-shell { position: fixed; inset: 0; z-index: 1600; display: block; pointer-events: none; }
   .site-nav-shell.is-open,
   .site-nav-shell[data-open="true"] { pointer-events: auto; }
-  .site-nav-backdrop { display: block; position: fixed; inset: 0; background: linear-gradient(145deg, rgba(9, 14, 22, 0.78), rgba(9, 14, 22, 0.6)); backdrop-filter: blur(4px) saturate(140%); opacity: 0; pointer-events: none; transition: opacity 180ms ease; z-index: 0; }
+  .site-nav-backdrop { display: block; position: fixed; inset: 0; background: linear-gradient(145deg, rgba(9, 14, 22, 0.78), rgba(9, 14, 22, 0.6)); backdrop-filter: blur(4px) saturate(140%); opacity: 0; pointer-events: none; transition: opacity 180ms ease; z-index: 1500; }
   .site-nav-shell.is-open .site-nav-backdrop,
   .site-nav-shell[data-open="true"] .site-nav-backdrop { opacity: 1; pointer-events: auto; }
   .site-nav {
@@ -401,7 +401,7 @@ body.nav-open { overflow: hidden; }
     will-change: transform;
     transition: transform 220ms ease-out, opacity 200ms ease-out;
     color: #e9f6ff;
-    z-index: 2;
+    z-index: 1600;
   }
   .site-nav.is-open,
   .site-nav[data-open="true"] { transform: translateX(0); opacity: 1; pointer-events: auto; }
