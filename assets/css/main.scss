@@ -1,12 +1,8 @@
 ---
-# Jekyll needs this front matter or it won’t compile
 ---
 
 /* Base (variables + resets) */
 @import "base/tokens";
-
-/* Layout (page-wide structures) */
-@import "layout/grid";
 
 /* Components (header, nav, hero, cards, footer…) */
 @import "components/theme";
