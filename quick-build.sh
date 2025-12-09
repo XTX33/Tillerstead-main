@@ -1,7 +1,8 @@
 #!/bin/bash
 # Quick rebuild and preview
 
-cd /workspaces/Tillerstead
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
 
 # Clean
 echo "🧹 Cleaning..."
@@ -13,7 +14,7 @@ npm run build:css 2>&1 | grep -v "Deprecation Warning" || true
 
 # Build Jekyll
 echo "🏗️  Building Jekyll..."
-bundle exec jekyll build --quiet
+./scripts/run-jekyll.sh build
 
 # Check result
 if [ -f "_site/index.html" ]; then
