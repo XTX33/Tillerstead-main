@@ -12,7 +12,7 @@ if (!fs.existsSync(siteDir)) {
 const allowMissing = new Set(['/favicon.ico']);
 
 function isExternal(link) {
-  return /^(https?:)?\/\//i.test(link) || /\/?mailto:/i.test(link) || /\/?tel:/i.test(link) || link.startsWith('#');
+  return /^(https?:)?\/\//i.test(link) || /\/?mailto:/i.test(link) || /\/?tel:/i.test(link) || /\/?sms:/i.test(link) || link.startsWith('#');
 }
 
 function stripFragmentsAndQuery(ref) {
