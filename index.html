@@ -60,37 +60,41 @@ services:
     details: "Forensic tear-outs|Moisture + grout audits|Photo reports for insurance & GC teams"
 ---
 
-<div class="animate-in">
+<section class="animate-in pt-6 pb-8" aria-labelledby="services-heading">
   {% include ts-services.html
     summary="Professional tile and stone installation services specializing in custom showers, heated floors, natural stone surfaces, and waterproof assemblies. Every project combines technical expertise with meticulous craftsmanship for lasting beauty and durability." %}
-</div>
+</section>
 
-<div class="animate-in">
+<section class="animate-in pt-6 pb-8 bg-surface-elevated rounded-lg shadow-soft" aria-labelledby="plans-heading">
   {% include ts-plans.html
     summary="Choose a recurring maintenance rhythm with photo documentation, moisture checks, and minor repairs handled before they expand into costly issues." %}
-</div>
+</section>
 
-<div class="animate-in">{% include ts-process.html %}</div>
+<section class="animate-in pt-6 pb-8" aria-labelledby="process-heading">{% include ts-process.html %}</section>
 
-<div class="animate-in">{% include ts-deliver.html %}</div>
+<section class="animate-in pt-6 pb-8 bg-surface rounded-lg" aria-labelledby="deliver-heading">{% include ts-deliver.html %}</section>
 
-<div class="animate-in">{% include ts-assurance.html %}</div>
+<section class="animate-in pt-6 pb-8" aria-labelledby="assurance-heading">{% include ts-assurance.html %}</section>
 
-<div class="animate-in">
+<section class="animate-in pt-8 pb-10 bg-gradient rounded-lg shadow-lift" aria-labelledby="portfolio-heading">
   {% include portfolio-highlights.html
     eyebrow="Featured Work"
     title="Custom Tile & Stone Projects Across South Jersey"
     summary="From elegant marble bathrooms to precision-laid large-format tile, each project showcases our commitment to expert craftsmanship, proper waterproofing, and timeless design." %}
-</div>
+</section>
 
-<div class="animate-in">
+<section class="animate-in pt-6 pb-8" aria-labelledby="reviews-heading">
   {% include reviews-highlights.html
     limit=3
     title="What partners and homeowners say"
     summary="Consistent workmanship, clean jobsites, and communication you can rely on for every scope." %}
-</div>
+</section>
 
+<section class="animate-in pt-6 pb-8" aria-labelledby="blog-heading">{% include blog-highlights.html %}</section>
 
-<div class="animate-in">{% include blog-highlights.html %}</div>
+<section class="animate-in pt-8 pb-12 bg-surface-elevated rounded-lg shadow-soft" aria-labelledby="contact-heading">{% include ts-contact.html %}</section>
 
-<div class="animate-in">{% include ts-contact.html %}</div>
+{% comment %}
+Performance: hint lazy loading for below-the-fold images via global attribute defaults in includes.
+Ensure scripts are deferred via _includes/scripts.html and critical fonts are preloaded in _includes/head.html.
+{% endcomment %}

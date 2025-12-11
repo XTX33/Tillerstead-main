@@ -70,7 +70,8 @@
       {% if hero_project %}
         <figure class="ts-hero__project">
           <img src="{{ hero_project.src | default: '/assets/img/marble-bath.jpg' | relative_url }}"
-               alt="{{ hero_project.alt | default: 'Custom tile shower installation with brass fixtures' }}">
+            alt="{{ hero_project.alt | default: 'Custom tile shower installation with brass fixtures' }}"
+            loading="eager" fetchpriority="high" decoding="async" width="1200" height="800">
           {% if hero_project.caption %}
             <figcaption>{{ hero_project.caption }}</figcaption>
           {% endif %}
