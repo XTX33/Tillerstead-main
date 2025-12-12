@@ -131,10 +131,12 @@
 
   // Backdrop
   if (navOverlay) {
-    navOverlay.addEventListener("click", (e) => {
+    const closeViaEvent = (e) => {
       e.stopPropagation();
       closeNav();
-    });
+    };
+    navOverlay.addEventListener("click", closeViaEvent);
+    navOverlay.addEventListener("touchstart", closeViaEvent, { passive: true });
   }
 
   // Close nav when a link is clicked (mobile)
@@ -165,6 +167,16 @@
       }
     });
   }
+
+  // Ensure initial ARIA state reflects closed nav on load
+  try {
+    if (navShell && nav) {
+      navShell.classList.remove("is-open");
+      nav.classList.remove("is-open");
+      document.body.classList.remove("nav-open");
+      syncAria(false);
+    }
+  } catch (_) { /* noop */ }
   /* =========================
      HIGH CONTRAST MODE TOGGLE
      - Adds html.high-contrast class

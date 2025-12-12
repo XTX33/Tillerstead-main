@@ -6,19 +6,22 @@
       <h2 id="ts-contact-title" class="heading-2">Get Your Free South Jersey Estimate</h2>
       <p><strong>Serving Atlantic, Ocean & Cape May Counties</strong> with professional tile installation, bathroom remodeling, and property maintenance. Most consultations scheduled within 24-48 hours—emergency service available.</p>
       <p class="text-muted">You'll receive a detailed written proposal covering materials, timelines, waterproofing specs, and transparent pricing. Licensed HIC #13VH10808800, fully insured, owner-operated. <strong>No pressure, no hidden fees, no surprises.</strong></p>
+      {% assign form_endpoint = site.forms.endpoint | default: 'https://formsubmit.co/info@tillerstead.com' %}
+      {% assign form_redirect = site.forms.redirect_path | default: '/success/?form=contact' %}
+      {% assign redirect_url = site.url | append: form_redirect %}
       <form
         class="ts-contact__form"
         name="homepage-contact"
         method="post"
-        action="/contact/"
-        data-netlify="true"
-        data-contact-form
-        data-contact-email="{{ site.company.email }}"
-        data-contact-phone="{{ site.company.phone_display }}"
+        action="{{ form_endpoint }}"
         netlify-honeypot="bot-field"
         aria-describedby="ts-contact-title"
       >
         <input type="hidden" name="form-name" value="homepage-contact">
+        <input type="hidden" name="_subject" value="{{ site.forms.subject | default: 'New Tillerstead LLC inquiry' }}">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="{{ redirect_url }}">
         <p class="sr-only">
           <label for="bot-field">Do not fill this field</label>
           <input id="bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off">

@@ -1,15 +1,21 @@
+{% assign form_endpoint = site.forms.endpoint | default: 'https://formsubmit.co/info@tillerstead.com' %}
+{% assign form_redirect = site.forms.redirect_path | default: '/success/?form=contact' %}
+{% assign redirect_url = site.url | append: form_redirect %}
 <form
   name="{{ include.form_name | default: 'contact-long' }}"
   id="{{ include.form_id | default: 'contact-form-long' }}"
   class="contact-form contact-form--long"
   method="post"
-  action="/success/"             <!-- Netlify form endpoint redirect -->
-  data-netlify="true"
+  action="{{ form_endpoint }}"
   netlify-honeypot="_trap"
   aria-describedby="{{ include.aria_describedby | default: 'form-intro' }}"
   aria-live="polite"
 >
   <input type="hidden" name="form-name" value="{{ include.form_name | default: 'contact-long' }}">
+  <input type="hidden" name="_subject" value="{{ site.forms.subject | default: 'New Tillerstead LLC inquiry' }}">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="{{ redirect_url }}">
 
   <p class="sr-only">
     <label for="_trap">Do not fill this field</label>

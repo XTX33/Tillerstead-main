@@ -97,3 +97,10 @@ ux:
     - "Design consultations to align look, budget, and timeline"
     - "Transparent scheduling and material lead times"
     - "Monthly property care plans with photo reports"
+# Form submission defaults
+forms:
+  endpoint: "https://formsubmit.co/info@tillerstead.com"
+  guide_endpoint: "https://formsubmit.co/info@tillerstead.com"
+  redirect_path: "/success/?form=contact"
+  guide_redirect_path: "/download/nj-tile-guide/thank-you/"
+  subject: "New Tillerstead LLC inquiry from tillerstead.com"

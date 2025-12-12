@@ -6,7 +6,15 @@
 {% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
 {% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
-{% assign hero_project = include.hero_project | default: page.hero_project_image %}
+{% assign hero_project_raw = include.hero_project | default: page.hero_project_image %}
+{% assign hero_project_src = hero_project_raw.src | default: hero_project_raw | default: page.hero_image | default: site.hero_default_image | default: site.default_og_image | default: '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' %}
+{% assign hero_project_alt = hero_project_raw.alt | default: page.hero_image_alt | default: 'Custom tile shower installation with brass fixtures' %}
+{% assign hero_project_caption = hero_project_raw.caption | default: hero_project_raw.description | default: page.hero_image_caption %}
+
+{% assign hero_project_img = hero_project_src %}
+{% unless hero_project_img contains '://' %}
+  {% assign hero_project_img = hero_project_img | relative_url %}
+{% endunless %}
 
 {% assign primary_href = hero_primary_url %}
 {% unless primary_href contains '://' or primary_href contains 'mailto:' or primary_href contains 'tel:' or primary_href | slice: 0, 1 == '#' %}
@@ -77,11 +85,11 @@
 
     <aside class="ts-hero__aside" aria-label="Tile specialist highlights">
       <figure class="ts-hero__project">
-        <img src="{{ hero_project.src | default: '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' | relative_url }}"
-          alt="{{ hero_project.alt | default: 'Custom tile shower installation with brass fixtures' }}"
+        <img src="{{ hero_project_img }}"
+          alt="{{ hero_project_alt }}"
           loading="eager" fetchpriority="high" decoding="async" width="1200" height="800">
-        {% if hero_project.caption %}
-          <figcaption>{{ hero_project.caption }}</figcaption>
+        {% if hero_project_caption %}
+          <figcaption>{{ hero_project_caption }}</figcaption>
         {% endif %}
       </figure>
 
