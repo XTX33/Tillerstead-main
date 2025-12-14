@@ -1,38 +1,31 @@
-﻿{% assign hero_badge = include.badge | default: page.hero_badge | default: 'Licensed NJ Home Improvement Contractor' %}
-{% assign hero_badge = include.badge | default: page.hero_badge | default: 'Licensed NJ Home Improvement Contractor' %}
-{% assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed & Documented' %}
-{% assign hero_title = include.title | default: page.hero_title | default: page.title | default: site.title %}
-{% assign hero_summary = include.summary | default: page.hero_summary | default: page.description | default: site.tagline %}
-{% assign hero_primary_url = include.primary_url | default: page.hero_primary_url | default: '/contact/' %}
-{% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
-{% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
-{% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
-{% assign hero_project_raw = include.hero_project | default: page.hero_project_image %}
-{% assign hero_project_src = hero_project_raw.src | default: hero_project_raw | default: page.hero_image | default: site.hero_default_image | default: site.default_og_image | default: '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' %}
-{% assign hero_project_alt = hero_project_raw.alt | default: page.hero_image_alt | default: 'Custom tile shower installation with brass fixtures' %}
-{% assign hero_project_caption = hero_project_raw.caption | default: hero_project_raw.description | default: page.hero_image_caption %}
+{%- assign hero_title = include.title | default: page.hero_title | default: page.title | default: site.title -%}
+{%- assign hero_summary = include.summary | default: page.hero_summary | default: page.description | default: site.tagline -%}
+{%- assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed & Documented' -%}
+{%- assign hero_badge = include.badge | default: page.hero_badge | default: 'NJ HIC #13VH10808800' -%}
 
-{% assign hero_project_img = hero_project_src %}
-{% unless hero_project_img contains '://' %}
-  {% assign hero_project_img = hero_project_img | relative_url %}
-{% endunless %}
-{% assign hero_project = include.hero_project | default: page.hero_project_image %}
+{%- assign hero_primary_url = include.primary_url | default: page.hero_primary_url | default: '/contact/' -%}
+{%- assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' -%}
+{%- assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' -%}
+{%- assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' -%}
 
-{% assign primary_href = hero_primary_url %}
-{% unless primary_href contains '://' or primary_href contains 'mailto:' or primary_href contains 'tel:' or primary_href | slice: 0, 1 == '#' %}
-  {% assign primary_href = primary_href | relative_url %}
-{% endunless %}
+{%- assign hero_project = include.hero_project | default: page.hero_project_image -%}
+{%- assign hero_project_src = hero_project.src | default: hero_project | default: page.hero_image | default: site.hero_default_image | default: site.default_og_image | default: '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' -%}
+{%- assign hero_project_alt = hero_project.alt | default: page.hero_image_alt | default: 'Featured tile installation' -%}
+{%- assign hero_project_caption = hero_project.caption | default: page.hero_image_caption -%}
 
-{% assign secondary_href = hero_secondary_url %}
-{% unless secondary_href contains '://' or secondary_href contains 'mailto:' or secondary_href contains 'tel:' or secondary_href | slice: 0, 1 == '#' %}
-  {% assign secondary_href = secondary_href | relative_url %}
-{% endunless %}
+{%- assign hero_project_img = hero_project_src -%}
+{%- unless hero_project_img contains '://' -%}
+  {%- assign hero_project_img = hero_project_img | relative_url -%}
+{%- endunless -%}
+
+{%- assign hero_bullets = include.bullets | default: include.hero_bullets | default: page.hero_bullets | default: page.services -%}
+{%- assign hero_facts = include.facts | default: page.hero_facts -%}
 
 <section class="ts-hero ts-hero--home" aria-labelledby="home-hero-title">
   <div class="ts-hero__inner">
     <div class="ts-hero__body">
       <div class="ts-hero__brand">
-        {% include logo-main.html class="ts-logo-link ts-logo-link--hero" img_class="ts-logo ts-logo--hero" variant="header" %}
+        {% include logo-main.html class="ts-logo-link ts-logo-link--hero" img_class="ts-logo ts-logo--hero" variant="inverse" %}
         <p class="ts-hero__tagline">Tile, remodel, and maintenance craftsmanship</p>
       </div>
 
@@ -40,39 +33,25 @@
         <p class="ts-hero__badge">{{ hero_badge }}</p>
       {% endif %}
 
-      {% if hero_eyebrow %}<p class="ts-hero__eyebrow">{{ hero_eyebrow }}</p>{% endif %}
+      {% if hero_eyebrow %}
+        <p class="ts-hero__eyebrow">{{ hero_eyebrow }}</p>
+      {% endif %}
 
-        <h1 id="home-hero-title" class="ts-hero__title">{{ hero_title }}</h1>
       <h1 id="home-hero-title" class="ts-hero__title">{{ hero_title }}</h1>
 
       {% if hero_summary %}
         <p class="ts-hero__lede">{{ hero_summary }}</p>
       {% endif %}
 
-      {% assign hero_bullets = include.hero_bullets | default: page.hero_bullets | default: page.services %}
       {% if hero_bullets %}
         <ul class="ts-hero__bullets" role="list">
           {% for bullet in hero_bullets limit:4 %}
-            {% assign bullet_icon = bullet.icon | default: bullet.icon_key | default: bullet.service_icon %}
-            {% assign bullet_title = bullet.title | default: bullet.hero_title | default: bullet.tagline | default: bullet.name %}
-            {% assign bullet_detail = bullet.detail | default: bullet.summary | default: bullet.description %}
+            {% assign bullet_title = bullet.title | default: bullet.name | default: bullet.service %}
+            {% assign bullet_detail = bullet.summary | default: bullet.description %}
             <li class="ts-hero__bullet">
-              <span class="ts-hero__bullet-icon" aria-hidden="true">
-                {% include ts-service-icon.html icon=bullet_icon class="ts-hero__bullet-mark" %}
-              </span>
-              <div class="ts-hero__bullet-copy">
-                <strong class="ts-hero__bullet-title">{{ bullet_title }}</strong>
-                {% if bullet_detail %}
-                  <span class="ts-hero__bullet-text">{{ bullet_detail }}</span>
-                {% endif %}
-              </div>
-      {% if page.services %}
-        <ul class="ts-hero__bullets">
-          {% for service in page.services limit:4 %}
-            <li>
-              {{ service.title }}
-              {% if service.description %}
-                <span>{{ service.description }}</span>
+              <strong class="ts-hero__bullet-title">{{ bullet_title }}</strong>
+              {% if bullet_detail %}
+                <span class="ts-hero__bullet-text">{{ bullet_detail }}</span>
               {% endif %}
             </li>
           {% endfor %}
@@ -80,13 +59,17 @@
       {% endif %}
 
       <div class="ts-hero__actions">
-        {% if hero_primary_url %}<a class="btn btn--primary" href="{{ primary_href }}">{{ hero_primary_label }}</a>{% endif %}
-        {% if hero_secondary_url %}<a class="btn btn--ghost" href="{{ secondary_href }}">{{ hero_secondary_label }}</a>{% endif %}
+        {% if hero_primary_url %}
+          <a class="btn btn--primary" href="{{ hero_primary_url | relative_url }}">{{ hero_primary_label }}</a>
+        {% endif %}
+        {% if hero_secondary_url %}
+          <a class="btn btn--ghost" href="{{ hero_secondary_url | relative_url }}">{{ hero_secondary_label }}</a>
+        {% endif %}
       </div>
 
       <p class="ts-hero__trust-line">
         <strong>Licensed NJ HIC #{{ site.company.hic }}</strong>
-        &middot; TCNA-guided waterproofing &amp; layout math
+        &middot; TCNA-aligned processes
         &middot; Serving Atlantic, Ocean &amp; Cape May Counties
       </p>
     </div>
@@ -94,24 +77,15 @@
     <aside class="ts-hero__aside" aria-label="Tile specialist highlights">
       <figure class="ts-hero__project">
         <img src="{{ hero_project_img }}"
-          alt="{{ hero_project_alt | default: 'Marble bathroom floor finish by Tillerstead' }}"
-          loading="eager" fetchpriority="high" decoding="async" width="1200" height="800">
+             alt="{{ hero_project_alt }}"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
         {% if hero_project_caption %}
           <figcaption>{{ hero_project_caption }}</figcaption>
         {% endif %}
       </figure>
-      {% if hero_project %}
-        <figure class="ts-hero__project">
-          <img src="{{ hero_project.src | default: '/assets/img/marble-bath.jpg' | relative_url }}"
-            alt="{{ hero_project.alt | default: 'Custom tile shower installation with brass fixtures' }}"
-            loading="eager" fetchpriority="high" decoding="async" width="1200" height="800">
-          {% if hero_project.caption %}
-            <figcaption>{{ hero_project.caption }}</figcaption>
-          {% endif %}
-        </figure>
-      {% endif %}
 
-      {% assign hero_facts = include.facts | default: page.hero_facts %}
       {% if hero_facts %}
         <ul class="ts-hero__facts">
           {% for fact in hero_facts %}
@@ -124,22 +98,22 @@
       {% else %}
         <ul class="ts-hero__facts">
           <li class="ts-hero__fact">
-            <p class="ts-hero__fact-label">TCNA + ANSI</p>
-            <p class="ts-hero__fact-body">Flood tests, slope math, mortar coverage logs, and photos you can reference years later.</p>
+            <p class="ts-hero__fact-label">TCNA &amp; ANSI</p>
+            <p class="ts-hero__fact-body">Flood tests, mortar coverage logs, slope math, and documentation you can reference years later.</p>
           </li>
           <li class="ts-hero__fact">
-            <p class="ts-hero__fact-label">Partnership ready</p>
-            <p class="ts-hero__fact-body">Homeowners, landlords, and GC teams trust us with demo-proof scopes, clear schedules, and respectful job-sites.</p>
+            <p class="ts-hero__fact-label">Owner-led teams</p>
+            <p class="ts-hero__fact-body">Structured scopes, transparent pricing, and respectful, low-impact crews on every site.</p>
           </li>
           <li class="ts-hero__fact">
             <p class="ts-hero__fact-label">Service area</p>
-            <p class="ts-hero__fact-body">Atlantic, Ocean, and Cape May Counties with rapid communication and honest change-order control.</p>
+            <p class="ts-hero__fact-body">Atlantic, Ocean &amp; Cape May Counties with clear schedules and waterproof assemblies.</p>
           </li>
         </ul>
       {% endif %}
 
       <p class="ts-hero__note">
-        Laser-level layouts, intentional grout joints, and waterproof assemblies that do not crack, swell, or surprise you later.
+        Laser-leveled layouts, intentional grout joints, and waterproof systems that stay solid for decades.
       </p>
     </aside>
   </div>

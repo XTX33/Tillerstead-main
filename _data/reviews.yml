@@ -1,26 +1,10 @@
-# _data/reviews.yml
-# Live reviews are synced from the Thumbtack service page via scripts/sync_thumbtack_reviews.js.
-# Use a top-level list so this file format matches other review files that are lists.
-- id: "thumbtack-sample"
-  source: "Thumbtack"
-  platform: "Thumbtack"
-  rating: 5
-  rating_max: 5
-  quote_html: "<p>Sample review text…</p>"
-  author: "Sample Client"
-  location: "Absecon, NJ"
-  job_type: "Shower tile"
-  date: "2025-01-01"
-  badges:
-    - "Top Pro"
-  url: "https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199"
 reviews:
   - id: "thumbtack-sample"
     source: "Thumbtack"
     platform: "Thumbtack"
     rating: 5
     rating_max: 5
-    quote_html: "<p>Sample review text…</p>"
+    quote_html: "<p>Sample review text</p>"
     author: "Sample Client"
     location: "Absecon, NJ"
     job_type: "Shower tile"

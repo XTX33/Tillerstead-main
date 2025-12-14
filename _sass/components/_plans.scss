@@ -1,108 +1,34 @@
-/* ============================================
-   Plans Section Styles
-   Clean spacing and balanced card layout
-   ============================================ */
-
-
-// Plans Section Root
 .ts-plans {
-  padding: var(--section-padding-y) 0;
-  background: var(--ts-color-background);
-  position: relative;
-  z-index: 1;
+  margin: clamp(3rem, 6vw, 4.5rem) 0;
 }
 
-
-// Header Styling
 .ts-plans__header {
-  display: grid;
-  gap: var(--ts-spacing-md);
-  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   text-align: center;
-}
-
-
-// Responsive Grid
-.ts-plans__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  align-items: stretch;
-}
-
-
-// Plan Card
-.ts-plan-card {
-  background: var(--ts-color-surface);
-  border: 1.5px solid var(--ts-color-border);
-  border-radius: var(--ts-radius-xl);
-  box-shadow: var(--ts-shadow-medium);
-  padding: clamp(1.25rem, 3vw, 2rem);
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.ts-plan-card:focus-within,
-.ts-plan-card:hover {
-  box-shadow: var(--ts-shadow-large);
-  border-color: var(--ts-color-primary);
-  transform: translateY(-4px) scale(1.01);
-  z-index: 2;
-}
-
-
-// Card Body
-.ts-plan-card__body {
-  display: grid;
-  gap: var(--ts-spacing-md);
-  flex: 1 1 auto;
-}
-
-
-// Card Summary
-.ts-plan-card__summary {
-  color: var(--ts-color-muted);
-  margin: 0 0 0.5rem 0;
-  font-size: 1.05em;
-  line-height: 1.5;
-}
-
-
-// Feature List
-.ts-plans {
-  padding: var(--section-padding-y) 0;
-}
-
-.ts-plans__header {
-  display: grid;
-  gap: var(--ts-spacing-sm);
-  margin-bottom: clamp(1rem, 3vw, 2rem);
+  margin-bottom: var(--ts-spacing-xl);
 }
 
 .ts-plans__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  gap: clamp(1.25rem, 3vw, 2rem);
-  align-items: start;
+  gap: var(--ts-spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
 .ts-plan-card {
-  background: var(--ts-color-surface);
+  background: var(--ts-color-surface-elevated);
   border: 1px solid var(--ts-color-border);
   border-radius: var(--ts-radius-lg);
-  box-shadow: var(--ts-shadow-soft);
-  padding: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
   display: flex;
-  min-height: 100%;
+  flex-direction: column;
+  gap: var(--ts-spacing-md);
+  box-shadow: var(--ts-shadow-soft);
+  min-width: 0;
 }
 
-.ts-plan-card__body {
-  display: grid;
-  gap: var(--ts-spacing-sm);
+.ts-plan-card h3 {
+  margin: 0;
+  font-size: var(--heading-4);
+  color: var(--ts-color-heading);
 }
 
 .ts-plan-card__summary {
@@ -114,136 +40,41 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0.75rem;
-}
-
-
-.ts-plan-card ul li {
-  position: relative;
-  padding-left: 1.5rem;
-  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   color: var(--ts-color-text);
 }
 
-
-  gap: 0.5rem;
+.ts-plan-card__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--ts-color-primary);
 }
 
-.ts-plan-card ul li {
-  position: relative;
-  padding-left: 1.25rem;
+.ts-plan-card__cta {
+  margin-top: auto;
 }
 
-.ts-plan-card ul li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 0.6em;
-  height: 0.6em;
-  border-radius: 50%;
-  background: var(--ts-color-primary);
-  box-shadow: 0 0 0 3px var(--ts-color-primary-soft);
-  outline: 2px solid transparent;
-  transform: translateY(-50%);
+.ts-plan-card__cta .btn {
+  width: 100%;
 }
 
-
-// Accent Card (Best Value)
 .ts-plan-card--accent {
-  background: var(--ts-color-surface-elevated);
   border-color: var(--ts-color-primary);
-  box-shadow: var(--ts-shadow-large);
-  position: relative;
-}
-
-
-// Improved Best Value Badge for accessibility and clarity
-.ts-plan-card--accent {
-  // ...existing code...
-}
-
-.ts-plan-card--accent::after {
-  content: "Best Value";
-  position: absolute;
-  top: 1rem;
-  right: -2.25rem;
-  background: linear-gradient(90deg, var(--ts-color-primary) 60%, var(--ts-color-accent, #2dd4bf) 100%);
-  color: #fff;
-  font-size: 0.95em;
-  font-weight: 800;
-  padding: 0.45em 1.75em;
-  border-radius: 2em;
-  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.10);
-  transform: rotate(10deg);
-  letter-spacing: 0.07em;
-  z-index: 3;
-  pointer-events: none;
-  border: 2px solid #fff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.10);
-}
-
-// Visually hidden label for screen readers
-.ts-plan-card--accent .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  border: 0;
-}
-
-
-// Actions
-.ts-plans__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ts-spacing-md);
-  margin-top: clamp(1.5rem, 4vw, 2rem);
-  justify-content: center;
-}
-
-
-@media (min-width: 768px) {
-  .ts-plans__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(1.5rem, 2.5vw, 2.5rem);
-  }
-}
-
-
-  top: 0.45rem;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--ts-color-primary);
-  box-shadow: 0 0 0 3px var(--ts-color-primary-soft);
-}
-
-.ts-plan-card--accent {
-  background: var(--ts-color-surface-elevated);
-  border-color: var(--ts-color-primary);
+  box-shadow: var(--ts-shadow-lift);
 }
 
 .ts-plans__actions {
+  margin-top: var(--ts-spacing-lg);
   display: flex;
   flex-wrap: wrap;
   gap: var(--ts-spacing-sm);
-  margin-top: clamp(1rem, 3vw, 1.5rem);
+  justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 640px) {
   .ts-plans__grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(1.25rem, 2.5vw, 2rem);
-  }
-}
-
-@media (min-width: 1024px) {
-  .ts-plans__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
   }
 }

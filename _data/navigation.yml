@@ -24,8 +24,8 @@ primary:
     url: /contact/
     match: /contact/
 
-# Items that only appear in footer / legal
 secondary:
+  - id: portfolio
     title: Portfolio
     url: /portfolio/
     match: /portfolio/
@@ -49,9 +49,6 @@ secondary:
     title: Contact
     url: /contact/
     match: /contact/
-
-# Items that only appear in footer / legal
-secondary:
   - id: blog
     title: Blog
     url: /blog/

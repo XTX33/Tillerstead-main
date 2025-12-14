@@ -5,13 +5,13 @@
 <meta http-equiv="x-dns-prefetch-control" content="on">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-<!-- Performance: DNS prefetch for external resources -->
+<!-- Prefetch external resources -->
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-{%- assign meta_description = page.description | default: site.description | default: 'Tillerstead LLC provides monthly property maintenance, remodeling, and waterproof tile installations for South Jersey homeowners, landlords, and small commercial spaces.' -%}
+{%- assign meta_description = page.description | default: site.description | default: 'Tillerstead offers tile, stone, and waterproofing services with NJ HIC licensed pros.' -%}
 <meta name="description" content="{{ meta_description | escape }}">
 
 {%- assign meta_keywords = page.keywords | default: site.keywords -%}
@@ -21,9 +21,8 @@
 
 <meta name="author" content="{{ site.company.owner | default: 'Tillerstead LLC' }}">
 <meta name="geo.region" content="US-NJ">
-<meta name="geo.placename" content="{{ site.company.address_locality | default: 'Atlantic County' }}, New Jersey">
+<meta name="geo.placename" content="{{ site.company.address_locality | default: 'Atlantic County' }}, NJ">
 <meta name="format-detection" content="telephone=no">
-{%- comment -%} License meta removed to avoid UI and SEO clutter {%- endcomment -%}
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, nofollow">
@@ -31,94 +30,36 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 {% endif %}
 
-<!-- Canonical URL -->
 {% if site.url %}
   <link rel="canonical" href="{{ page.url | replace: 'index.html','' | absolute_url }}">
 {% endif %}
 
-<!-- Theme / Icons -->
-<!-- Theme / Icons -->
+<!-- Theme / icons -->
 <meta name="theme-color" content="#000080" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-
-<!-- SVG favicon (scales well across devices) -->
 <link rel="icon" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" type="image/svg+xml" sizes="any">
-
-<!-- PNG favicons (legacy & wide support) -->
 <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/logo/tillerstead-icon-16.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/logo/tillerstead-icon-32.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/img/logo/tillerstead-icon-48.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/logo/tillerstead-icon-192.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/img/logo/tillerstead-icon-512.png' | relative_url }}">
-
-<!-- Apple touch icons -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-icon-180.png' | relative_url }}">
 <link rel="apple-touch-icon" sizes="152x152" href="{{ '/assets/img/logo/tillerstead-icon-152.png' | relative_url }}">
 <link rel="apple-touch-icon" sizes="120x120" href="{{ '/assets/img/logo/tillerstead-icon-120.png' | relative_url }}">
-
-<!-- Legacy favicon & manifest -->
+<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
 <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
 
-<!-- Safari pinned tab / mask icon (uses SVG with a tint color) -->
-<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
-
-<!-- Windows tile -->
-<meta name="msapplication-TileColor" content="#1cb394">
-<meta name="msapplication-TileImage" content="{{ '/assets/img/logo/tillerstead-icon-192.png' | relative_url }}">
-
-<!-- Optional: theme-specific PNG fallbacks for older browsers -->
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/logo/tillerstead-icon-light-32.png' | relative_url }}" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/logo/tillerstead-icon-dark-32.png' | relative_url }}" media="(prefers-color-scheme: dark)">
-
-<!-- Alternate / full logo SVGs for tools that might request them -->
-<link rel="alternate" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-logo-full.svg' | relative_url }}" title="Tillerstead Logo">
-
-<meta name="theme-color" content="#0b1421" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" sizes="any">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}">
-<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
-<link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
-{% include ts-icon-sprite.html %}
-
-<!-- Performance: Preload critical assets -->
-<link rel="preload" as="image" href="{{ '/assets/img/logo/tillerstead-logo-header.svg' | relative_url }}" fetchpriority="high">
-<link rel="preload" as="style" href="{{ '/assets/css/main.css' | relative_url }}">
-
-{% comment %}
-  Preload hero image for improved LCP across pages.
-  Priority order:
-  1) Use page.hero_project.src when provided in front-matter
-  2) For homepage, use default bathroom marble floor finish
-{% endcomment %}
-{% assign preload_hero = nil %}
-{% if page.hero_project and page.hero_project.src %}
-  {% assign preload_hero = page.hero_project.src %}
-{% elsif page.url == '/' or page.is_home %}
-  {% assign preload_hero = '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' %}
-{% endif %}
-{% if preload_hero %}
-  {% assign preload_hero_webp = preload_hero | replace: '.jpg', '.webp' %}
-  <link rel="preload"
-        as="image"
-        href="{{ preload_hero | relative_url }}"
-        imagesrcset="{{ preload_hero_webp | relative_url }} 1x"
-        imagesizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-        fetchpriority="high">
-{% endif %}
-{% assign hero_preload_image = page.hero_image | default: site.hero_default_image | default: site.default_og_image %}
-{% if (page.is_home or page.hero_image) and hero_preload_image %}
+<!-- Hero image preloads -->
+{%- assign hero_preload_image = page.hero_image | default: site.hero_default_image | default: site.default_og_image -%}
+{% if hero_preload_image %}
   <link rel="preload" as="image" href="{{ hero_preload_image | relative_url }}" fetchpriority="high">
-{% if page.is_home or page.hero_image %}
-  <link rel="preload" as="image" href="{{ page.hero_image | default: '/assets/img/hero-bg.jpg' | relative_url }}" fetchpriority="high">
 {% endif %}
 
-<!-- Open Graph / Social -->
+<!-- Open Graph & Twitter cards -->
 {%- assign og_title = page.seo_title | default: page.title | default: site.title -%}
 {%- assign og_description = meta_description -%}
-{%- assign og_image = page.og_image | default: site.default_og_image | default: '/assets/img/og.jpg' -%}
-
+{%- assign og_image = page.og_image | default: hero_preload_image | default: '/assets/img/og.jpg' -%}
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ og_title | truncate: 60 }}">
 <meta property="og:description" content="{{ og_description | escape | truncate: 160 }}">
@@ -129,7 +70,7 @@
   <meta property="og:url" content="{{ site.url }}{{ og_url }}">
 {% endif %}
 <meta property="og:image" content="{{ og_image | absolute_url }}">
-<meta property="og:image:alt" content="Tillerstead LLC - Property Maintenance, Remodeling & Tile in South Jersey">
+<meta property="og:image:alt" content="{{ site.title | default: 'Tillerstead LLC' }} - Tile & Stone">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -137,7 +78,7 @@
 <meta name="twitter:title" content="{{ og_title | truncate: 70 }}">
 <meta name="twitter:description" content="{{ og_description | escape | truncate: 160 }}">
 <meta name="twitter:image" content="{{ og_image | absolute_url }}">
-<meta name="twitter:image:alt" content="Tillerstead LLC - Property Maintenance, Remodeling & Tile in South Jersey">
+<meta name="twitter:image:alt" content="{{ site.title | default: 'Tillerstead LLC' }} - Tile & Stone">
 
 <!-- Business contact microdata -->
 <meta property="business:contact_data:street_address" content="{{ site.company.address_line | default: '' }}">
@@ -151,19 +92,15 @@
 {% endif %}
 
 <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<!-- Preload primary font weights for faster LCP -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 {% if site.fonts and site.fonts.local_preload %}
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-600.woff2' | relative_url }}" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-700.woff2' | relative_url }}" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/montserrat-700.woff2' | relative_url }}" crossorigin>
 {% endif %}
 
-<!-- Styles (compiled Sass) -->
+<!-- Styles -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" media="screen">
-
 {% if page.styles %}
   {% for style in page.styles %}
     <link rel="stylesheet" href="{{ style | relative_url }}" media="screen">
@@ -177,3 +114,5 @@
     </script>
   {% endfor %}
 {% endif %}
+
+{% include ts-icon-sprite.html %}

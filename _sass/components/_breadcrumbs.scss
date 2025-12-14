@@ -1,283 +1,79 @@
-/* ============================================
-   Breadcrumb Navigation Component
-   Modern, accessible breadcrumb styles
-   ============================================ */
+/* ==========================================================================
+   Breadcrumbs navigation
+   Lightweight, responsive path indicators
+   ========================================================================== */
 
 .breadcrumbs-bar {
   width: 100%;
-  background: var(--ts-color-surface-elevated, #fff);
+  background: var(--ts-color-surface);
   border-bottom: 1px solid var(--ts-color-border);
-  box-shadow: inset 0 -1px 0 rgba(20, 33, 28, 0.08);
-  margin: 0 0 var(--ts-spacing-md, 1.25rem);
-  padding-block: var(--ts-spacing-xs, 0.5rem);
-  position: relative;
-  z-index: 5;
-
-  @media (max-width: 640px) {
-    margin-bottom: var(--ts-spacing-sm, 0.75rem);
-    padding-block: var(--ts-spacing-xxs, 0.4rem);
-  }
-}
-
-.breadcrumbs-bar + .hero {
-  margin-top: 0;
-}
-
-.breadcrumbs-bar .ts-breadcrumbs {
-  border: none;
-  padding-block: var(--ts-spacing-xs, 0.5rem);
+  box-shadow: inset 0 -1px 0 rgba(15, 23, 42, 0.08);
+  padding: 0.5rem clamp(1rem, 4vw, 2rem);
+  margin-bottom: var(--ts-spacing-lg, 2rem);
 }
 
 .ts-breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
   align-items: center;
-  flex-wrap: nowrap;
-  max-width: var(--shell-width);
+  font-size: 0.9rem;
+  color: var(--ts-color-muted, rgba(15, 23, 42, 0.7));
+  max-width: var(--shell-width, 1200px);
   margin: 0 auto;
-  padding: 0 clamp(0.5rem, 2vw, 1.2rem);
-  position: relative;
-  width: 100%;
-  font-family: inherit;
-  background: transparent;
-
-  /* Hide on homepage (handled by layout logic) */
-.ts-breadcrumbs {
-  display: flex;
-  align-items: center;
-  max-width: var(--shell-width);
-  margin: 0 auto;
-  padding: var(--ts-spacing-sm) clamp(1.25rem, 3vw, 2rem);
-  position: relative;
-
-  /* Hidden on homepage (handled by layout logic) */
-  .page-home & {
-    display: none;
-  }
-
-  nav[aria-label="Breadcrumb"] & {
-    width: 100%;
-  }
-
-  /* Style ordered list */
-  /* Style both direct ol elements and those with classes */
-  ol,
-  .ts-breadcrumbs__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 0.25rem;
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  /* Style all list items */
-  li,
-  .ts-breadcrumbs__item {
-  display: inline-flex;
-  align-items: center;
-  color: var(--color-text-muted);
-  white-space: nowrap;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 0;
-
-  &:not(:last-child)::after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    width: 1.1em;
-    height: 1em;
-    margin: 0 0.2em 0 0.3em;
-    background: none;
-    mask: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l4 4-4 4" stroke="%2399A1A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/1em 1em no-repeat;
-    -webkit-mask: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4l4 4-4 4" stroke="%2399A1A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/1em 1em no-repeat;
-    background-color: var(--color-border-strong, #99A1A8);
-    opacity: 0.7;
-    content-visibility: auto;
-  }
-  }
-}
-
-
-
-.ts-breadcrumbs__link,
-.ts-crumb-link {
-  color: var(--color-text-link, var(--color-primary));
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
-    display: inline-flex;
-    align-items: center;
-    color: var(--color-text-muted);
-
-    &:not(:last-child)::after {
-      content: "/";
-      margin-left: var(--space-2);
-      color: var(--color-border-strong);
-      font-weight: 400;
-      opacity: 0.6;
-    }
-  }
 }
 
 .ts-breadcrumbs__link,
 .ts-crumb-link {
-  color: var(--color-text-muted);
+  color: var(--ts-color-primary, #0ea5e9);
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
-  transition: var(--transition-fast);
-  border-radius: var(--radius-sm);
-  padding: 0.25rem 0.5rem;
-  align-items: center;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-  box-shadow: none;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--color-primary);
-    background: var(--color-primary-soft);
-    text-decoration: underline;
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-primary-outline, var(--color-primary));
-    outline-offset: 2px;
-  }
-
-  &:active {
-    color: var(--color-primary-dark, var(--color-primary));
-    background: var(--color-primary-xsoft, var(--color-primary-soft));
-    box-shadow: 0 0 0 2px var(--color-primary-xsoft, var(--color-primary-soft));
-  }
+  transition: color var(--transition-fast);
 }
 
+.ts-breadcrumbs__link:hover,
+.ts-breadcrumbs__link:focus-visible,
+.ts-crumb-link:hover,
+.ts-crumb-link:focus-visible {
+  text-decoration: underline;
+  color: var(--ts-color-primary-dark, #0284c7);
+}
 
-
-    text-decoration: none;
-  }
-
-  &:focus-visible {
-    outline: var(--focus-ring);
-    outline-offset: 2px;
-  }
+.ts-breadcrumbs__separator {
+  font-weight: 600;
+  color: rgba(15, 23, 42, 0.45);
 }
 
 .ts-breadcrumbs__current,
 .ts-crumb-current {
-  color: var(--color-heading);
   font-weight: 600;
-  padding: 0.25rem 0.85rem;
+  color: var(--ts-color-heading, #0f172a);
+}
+
+.ts-breadcrumbs__item {
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(90deg, var(--color-primary-xsoft, #eaf6f2) 60%, var(--color-surface, #fff) 100%);
-  border-radius: var(--radius-pill, 999px);
-  cursor: default;
-  pointer-events: none;
+  gap: 0.25rem;
+}
+
+.ts-breadcrumbs__link:focus-visible,
+.ts-breadcrumbs__current {
   outline: none;
-  box-shadow: 0 1px 4px 0 rgba(20,33,28,0.04);
-  font-size: 1em;
-  letter-spacing: 0.01em;
-  transition: background 0.2s;
 }
 
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .ts-crumb-link {
-    color: var(--color-text-link, var(--color-primary));
-    text-decoration: none;
-    font-weight: 500;
-    transition: color var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
-    border-radius: var(--radius-pill, 999px);
-    padding: 0.22rem 0.7rem;
-    display: inline-flex;
-    align-items: center;
-    outline: none;
-    background: transparent;
-    cursor: pointer;
-    box-shadow: none;
-    font-size: 1em;
-    letter-spacing: 0.01em;
-
-    &:hover,
-    &:focus-visible {
-      color: var(--color-primary);
-      background: var(--color-primary-xsoft, #eaf6f2);
-      text-decoration: underline;
-      outline: none;
-      box-shadow: 0 0 0 2px var(--color-primary-outline, var(--color-primary));
-      outline-offset: 2px;
-    }
-
-    &:active {
-      color: var(--color-primary-dark, var(--color-primary));
-      background: var(--color-primary-xsoft, var(--color-primary-soft));
-      box-shadow: 0 0 0 2px var(--color-primary-xsoft, var(--color-primary-soft));
-    }
+@media (max-width: 640px) {
+  .breadcrumbs-bar {
+    padding: 0.4rem 1rem;
   }
-}
 
-@media (prefers-color-scheme: dark) {
   .ts-breadcrumbs {
-    background: var(--color-bg-dark, #181a1b);
-  }
-  .ts-breadcrumbs__link,
-  .ts-crumb-link {
-    color: var(--color-primary-light, #aeefff);
-  }
-  .ts-breadcrumbs__current,
-  .ts-crumb-current {
-    color: var(--color-heading-dark, #fff);
-    background: var(--color-bg-accent-dark, #222);
+    font-size: 0.8rem;
+    gap: 0.25rem;
   }
 }
 
-
-
-/* Accessibility: Hide breadcrumbs on print */
 @media print {
-  .ts-breadcrumbs {
-    display: none !important;
-  }
-}
-
-/* Performance: Only render visible breadcrumbs */
-.ts-breadcrumbs {
-  content-visibility: auto;
-  contain-intrinsic-size: 40px 20px;
-}
-  padding: 0.25rem 0.5rem;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .ts-breadcrumbs {
-    padding: var(--ts-spacing-xs) clamp(0.9rem, 4vw, 1.4rem);
-  }
-
-  .ts-breadcrumbs__item,
-  .ts-breadcrumbs li {
-    font-size: var(--font-size-xs);
-  }
-
-  .ts-breadcrumbs__link,
-  .ts-crumb-link {
-    padding: 0.2rem 0.4rem;
-  }
-}
-
-/* Accessibility: Hide breadcrumbs on print */
-@media print {
+  .breadcrumbs-bar,
   .ts-breadcrumbs {
     display: none;
   }

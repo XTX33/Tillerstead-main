@@ -112,4 +112,3 @@ forms:
   redirect_path: "/success/?form=contact"
   guide_redirect_path: "/download/nj-tile-guide/thank-you/"
   subject: "New Tillerstead LLC inquiry from tillerstead.com"
-    - "Monthly property care plans with photo reports"
