@@ -44,7 +44,7 @@ echo ""
 echo "Scanning for ERB-like tags (<% ... %>) — listing occurrences for manual review"
 git grep -n --full-name -E '<%[^=]' || true
 
-echo "Done. Please review .bak files for backups and run 'bundle exec jekyll build --trace' to verify."
+echo "Done. Please review .bak files for backups and run './scripts/run-jekyll.sh build --trace' to verify."
 #!/bin/bash
 # fix-liquid-closers.sh
 # 

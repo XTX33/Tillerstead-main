@@ -18,14 +18,16 @@
 /* Component Layer - Reusable UI elements */
 @import "components/buttons";
 @import "components/cards";
+@import "components/plans";
 @import "components/forms";
 @import "components/header";
 @import "components/footer";
 @import "components/hero";
+@import "components/deliver";
 @import "components/breadcrumbs";
 
 /* Utilities Layer - Helper classes */
 @import "utilities/helpers";
 
-/* Legacy Theme Support - Backwards compatibility */
-@import "components/theme";
+/* Theme Layer - Brand-specific surfaces */
+@import "theme/tillerstead";

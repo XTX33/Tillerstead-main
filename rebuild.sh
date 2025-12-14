@@ -3,6 +3,9 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
 echo "🧹 Cleaning old build..."
 rm -rf _site
 rm -f assets/css/main.css
@@ -13,7 +16,7 @@ npm run build:css
 
 echo ""
 echo "🏗️  Building Jekyll site..."
-bundle exec jekyll build
+./scripts/run-jekyll.sh build
 
 echo ""
 echo "✅ Build complete!"

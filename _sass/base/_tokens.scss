@@ -7,59 +7,69 @@
   color-scheme: light;
 
   /* ===========================
-     Color Tokens (Light theme)
+     Brand Palette
      =========================== */
-  --ts-emerald: #0f6a64;
-  --ts-emerald-soft: #17a39b;
-  --ts-gold: #d4af37;
-  --ts-gold-soft: #f4d778;
-  --ts-parchment: #f5f1e8;
-  --ts-ink: #0f1a22;
-  --ts-navy: #0c1520;
+  --ts-emerald: #0b6b5c;
+  --ts-emerald-soft: #16a384;
+  --ts-emerald-deep: #084c3d;
+  --ts-gold: #c89d4f;
+  --ts-gold-soft: #e4c980;
+  --ts-parchment: #f7f1e3;
+  --ts-parchment-deep: #ede4cf;
+  --ts-stone: #2f3533;
+  --ts-ink: #1c231f;
   --ts-white: #ffffff;
 
+  /* ===========================
+     Surface & Text
+     =========================== */
   --ts-color-bg: var(--ts-parchment);
-  --ts-color-surface: #ffffff;
-  --ts-color-surface-muted: #f8f6f0;
-  --ts-color-surface-elevated: #fdfcf9;
-  --ts-color-surface-highlight: #f0ede3;
-
-  --ts-color-text: var(--ts-navy);
-  --ts-color-muted: color-mix(in srgb, var(--ts-navy) 65%, #5d6a75);
-  --ts-color-heading: var(--ts-navy);
-  --ts-color-accent: var(--ts-gold);
-  --ts-color-accent-strong: color-mix(in srgb, var(--ts-gold) 85%, #b8941e);
-  --ts-color-accent-soft: rgba(212, 175, 55, 0.12);
+  --ts-color-surface: #fbf7ee;
+  --ts-color-surface-muted: #f0e7d6;
+  --ts-color-surface-elevated: #ffffff;
+  --ts-color-surface-highlight: #fefbf4;
+  --ts-color-text: #1f2b24;
+  --ts-color-muted: color-mix(in srgb, var(--ts-color-text) 62%, #6f756f);
+  --ts-color-text-subtle: color-mix(in srgb, var(--ts-color-text) 48%, #8e958d);
+  --ts-color-heading: #14231d;
   --ts-color-primary: var(--ts-emerald);
-  --ts-color-primary-strong: color-mix(in srgb, var(--ts-emerald) 88%, #0a4b47);
-  --ts-color-primary-soft: rgba(15, 106, 100, 0.14);
-  --ts-color-border: rgba(15, 26, 34, 0.12);
-  --ts-color-border-strong: rgba(15, 26, 34, 0.32);
-  --ts-color-divider: rgba(15, 26, 34, 0.14);
-
-  /* Semantic state colors */
-  --ts-color-error: #ef4444;
-  --ts-color-error-dark: #dc2626;
-  --ts-color-success: #10b981;
-  --ts-color-warning: #f59e0b;
-  --ts-footer-link: #63f0a0;
-  --ts-footer-link-hover: #bdfcc8;
-  --ts-footer-success: #c0ffd1;
-
-  /* Gradients & textures */
-  --ts-gradient-primary: linear-gradient(135deg, var(--ts-emerald-soft) 0%, var(--ts-emerald) 100%);
-  --ts-gradient-accent: linear-gradient(135deg, var(--ts-gold) 0%, var(--ts-emerald) 100%);
-  --ts-gradient-surface: radial-gradient(circle at 18% 22%, rgba(212, 175, 55, 0.08), transparent 36%),
-                         radial-gradient(circle at 82% 8%, rgba(23, 163, 155, 0.10), transparent 40%),
-                         var(--ts-parchment);
-  --ts-gradient-section: linear-gradient(180deg, #ffffff 0%, var(--ts-parchment) 55%, #ffffff 100%);
-  --ts-bg-pattern: radial-gradient(circle at 25% 20%, rgba(212, 175, 55, 0.08) 0, rgba(212, 175, 55, 0.08) 8px, transparent 12px),
-                   radial-gradient(circle at 70% 10%, rgba(23, 163, 155, 0.08) 0, rgba(23, 163, 155, 0.08) 10px, transparent 16px);
-  --ts-bg-pattern-size: 220px 220px;
-  --ts-bg-pattern-opacity: 0.10;
+  --ts-color-primary-strong: var(--ts-emerald-deep);
+  --ts-color-primary-soft: rgba(11, 107, 92, 0.14);
+  --ts-color-accent: var(--ts-gold);
+  --ts-color-accent-strong: #9d7936;
+  --ts-color-accent-soft: rgba(200, 157, 79, 0.18);
+  --ts-color-border: rgba(28, 35, 31, 0.16);
+  --ts-color-border-strong: rgba(28, 35, 31, 0.38);
+  --ts-color-divider: rgba(28, 35, 31, 0.18);
 
   /* ===========================
-     Typography Tokens
+     Semantic States
+     =========================== */
+  --ts-color-error: #c2462e;
+  --ts-color-error-dark: #992f19;
+  --ts-color-success: #1f8a62;
+  --ts-color-warning: #d8862a;
+  --ts-footer-link: #6be1a1;
+  --ts-footer-link-hover: #bdfcc8;
+  --ts-footer-success: #c9ffd6;
+
+  /* ===========================
+     Texture & Atmosphere
+     =========================== */
+  --ts-gradient-primary: linear-gradient(135deg, #1ab699 0%, var(--ts-emerald) 60%, var(--ts-emerald-deep) 100%);
+  --ts-gradient-accent: linear-gradient(135deg, var(--ts-gold) 0%, var(--ts-emerald) 100%);
+  --ts-gradient-surface: radial-gradient(circle at 18% 22%, rgba(200, 157, 79, 0.08), transparent 36%),
+                         radial-gradient(circle at 82% 8%, rgba(22, 163, 149, 0.12), transparent 40%),
+                         var(--ts-parchment);
+  --ts-gradient-section: linear-gradient(180deg, #ffffff 0%, var(--ts-parchment) 55%, #fefbf4 100%);
+  --ts-bg-pattern: radial-gradient(circle at 12% 18%, rgba(11, 107, 92, 0.08) 0, transparent 32px),
+                   radial-gradient(circle at 80% 12%, rgba(200, 157, 79, 0.06) 0, transparent 28px);
+  --ts-bg-pattern-size: 220px 220px;
+  --ts-bg-pattern-opacity: 0.14;
+  --ts-color-overlay: rgba(9, 17, 15, 0.7);
+
+  /* ===========================
+     Typography
      =========================== */
   --font-heading: "Montserrat", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -76,31 +86,31 @@
   --font-size-4xl: 2.75rem;
   --font-size-5xl: 3.25rem;
 
-  --heading-1: clamp(2.45rem, 4vw, 3.6rem);
-  --heading-2: clamp(2rem, 3vw, 2.9rem);
-  --heading-3: clamp(1.45rem, 2.2vw, 2rem);
+  --heading-1: clamp(2.45rem, 4vw, 3.75rem);
+  --heading-2: clamp(2rem, 3vw, 3rem);
+  --heading-3: clamp(1.45rem, 2.2vw, 2.1rem);
   --heading-4: clamp(1.2rem, 1.7vw, 1.45rem);
+  --heading-5: clamp(1.05rem, 1.6vw, 1.25rem);
+  --heading-6: clamp(0.92rem, 1.4vw, 1.05rem);
   --line-height-base: 1.65;
   --line-height-tight: 1.2;
   --line-height-relaxed: 1.85;
 
   /* ===========================
-     Spacing Scale (8px baseline)
+     Spacing (8px base)
      =========================== */
-  --ts-spacing-xs: 0.5rem;    /* 8px */
-  --ts-spacing-sm: 0.75rem;   /* 12px */
-  --ts-spacing-md: 1.25rem;   /* 20px */
-  --ts-spacing-lg: 2rem;      /* 32px */
-  --ts-spacing-xl: 3rem;      /* 48px */
-  --ts-spacing-2xl: 4rem;     /* 64px */
-  --ts-spacing-3xl: 5rem;     /* 80px */
-  
-  /* Contextual spacing */
+  --ts-spacing-xs: 0.5rem;
+  --ts-spacing-sm: 0.75rem;
+  --ts-spacing-md: 1.25rem;
+  --ts-spacing-lg: 2rem;
+  --ts-spacing-xl: 3rem;
+  --ts-spacing-2xl: 4rem;
+  --ts-spacing-3xl: 5rem;
   --hero-padding-mobile: 3rem;
   --hero-padding-desktop: 6rem;
 
   /* ===========================
-     Radius & Shadow
+     Radius & Shadows
      =========================== */
   --radius-base: 16px;
   --radius-large: 24px;
@@ -111,26 +121,22 @@
   --ts-radius-pill: 999px;
   --ts-radius-card: var(--ts-radius-lg);
 
-  /* Shadow colors */
-  --ts-color-shadow-light: rgba(0, 0, 0, 0.08);
-  --ts-color-shadow-medium: rgba(0, 0, 0, 0.15);
-  --ts-color-shadow: rgba(12, 24, 34, 0.16);
-  --ts-color-overlay: rgba(9, 14, 22, 0.75);
-  
-  /* Shadow presets */
+  --ts-color-shadow-light: rgba(15, 28, 24, 0.08);
+  --ts-color-shadow-medium: rgba(20, 30, 27, 0.18);
+  --ts-color-shadow: rgba(12, 24, 18, 0.2);
   --ts-shadow-soft: 0 14px 32px var(--ts-color-shadow);
-  --ts-shadow-lift: 0 18px 38px rgba(12, 24, 34, 0.2);
-  --ts-shadow-header: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --ts-shadow-header-scrolled: 0 2px 18px rgba(0, 0, 0, 0.12);
+  --ts-shadow-lift: 0 18px 38px rgba(12, 24, 18, 0.24);
+  --ts-shadow-header: 0 8px 28px rgba(14, 24, 21, 0.12);
+  --ts-shadow-header-scrolled: 0 12px 32px rgba(14, 24, 21, 0.18);
   --ts-shadow-drawer: -24px 0 64px rgba(0, 0, 0, 0.15), -8px 0 24px rgba(0, 0, 0, 0.1);
-  --ts-shadow-glow: 0 0 0 3px rgba(15, 106, 100, 0.32);
-  --ts-shadow-glow-accent: 0 0 0 3px rgba(212, 175, 55, 0.35);
-  --focus-ring: 0 0 0 3px rgba(212, 175, 55, 0.45);
+  --ts-shadow-glow: 0 0 0 3px rgba(11, 107, 92, 0.32);
+  --ts-shadow-glow-accent: 0 0 0 3px rgba(200, 157, 79, 0.35);
+  --focus-ring: 0 0 0 3px rgba(200, 157, 79, 0.45);
   --transition-fast: 160ms ease;
   --transition-med: 240ms ease;
 
   /* ===========================
-     Layout
+     Layout Metrics
      =========================== */
   --shell-width: 1320px;
   --section-padding-y: clamp(var(--ts-spacing-xl), 6vw, var(--ts-spacing-3xl));
@@ -139,54 +145,99 @@
   --grid-gap: clamp(1rem, 3vw, 1.6rem);
 
   /* ===========================
-     Header & Footer Colors
+     Header & Footer
      =========================== */
-  --header-bg: rgba(255, 255, 255, 0.95);
-  --header-border: rgba(15, 106, 100, 0.15);
-  --footer-bg: #0c1520;
-  --footer-text: #e6efff;
-  --footer-text-muted: #b8c9dd;
-  --footer-link: #8fe29e;
-  --footer-link-hover: #bdfcc8;
-  --footer-border: rgba(230, 239, 255, 0.12);
+  --header-bg: rgba(251, 247, 238, 0.9);
+  --header-border: rgba(11, 107, 92, 0.25);
+  --footer-bg: #111c18;
+  --footer-text: #e1f0e7;
+  --footer-text-muted: #9fb4a5;
+  --footer-link: #84f5b7;
+  --footer-link-hover: #c7ffde;
+  --footer-border: rgba(133, 203, 172, 0.15);
+
+  /* ===========================
+     Legacy Alias Support
+     =========================== */
+  --color-bg: var(--ts-color-bg);
+  --color-surface: var(--ts-color-surface);
+  --color-surface-muted: var(--ts-color-surface-muted);
+  --color-surface-elevated: var(--ts-color-surface-elevated);
+  --color-surface-highlight: var(--ts-color-surface-highlight);
+  --color-text: var(--ts-color-text);
+  --color-text-muted: var(--ts-color-muted);
+  --color-text-subtle: var(--ts-color-text-subtle);
+  --color-heading: var(--ts-color-heading);
+  --color-primary: var(--ts-color-primary);
+  --color-primary-strong: var(--ts-color-primary-strong);
+  --color-primary-soft: var(--ts-color-primary-soft);
+  --color-accent: var(--ts-color-accent);
+  --color-accent-strong: var(--ts-color-accent-strong);
+  --color-accent-soft: var(--ts-color-accent-soft);
+  --color-border: var(--ts-color-border);
+  --color-border-strong: var(--ts-color-border-strong);
+  --color-divider: var(--ts-color-divider);
+  --gradient-primary: var(--ts-gradient-primary);
+  --gradient-accent: var(--ts-gradient-accent);
+  --gradient-surface: var(--ts-gradient-surface);
+  --shadow-soft: var(--ts-shadow-soft);
+  --shadow-lift: var(--ts-shadow-lift);
+  --bg-pattern: var(--ts-bg-pattern);
+  --bg-pattern-size: var(--ts-bg-pattern-size);
+  --bg-pattern-opacity: var(--ts-bg-pattern-opacity);
+
+  --space-1: var(--ts-spacing-xs);
+  --space-2: var(--ts-spacing-sm);
+  --space-3: var(--ts-spacing-md);
+  --space-4: var(--ts-spacing-lg);
+  --space-5: var(--ts-spacing-xl);
+  --space-6: var(--ts-spacing-2xl);
+  --space-7: calc(var(--ts-spacing-2xl) + 1rem);
+  --space-8: var(--ts-spacing-3xl);
+
+  --radius-sm: var(--ts-radius-sm);
+  --radius-md: var(--ts-radius-md);
+  --radius-lg: var(--ts-radius-lg);
+  --radius-xl: var(--ts-radius-xl);
 }
 
 html[data-theme="dark"] {
   color-scheme: dark;
-  --ts-color-bg: #0b1421;
-  --ts-color-surface: #0f1a2c;
-  --ts-color-surface-elevated: #12202f;
-  --ts-color-surface-muted: #101c2e;
-  --ts-color-surface-highlight: #163044;
+  --ts-color-bg: #081310;
+  --ts-color-surface: #0e1815;
+  --ts-color-surface-elevated: #12211b;
+  --ts-color-surface-muted: #0d1a16;
+  --ts-color-surface-highlight: #152520;
 
-  --ts-color-text: #e1edf7;
-  --ts-color-muted: #b6c8d8;
-  --ts-color-heading: #f8feff;
+  --ts-color-text: #e1efe7;
+  --ts-color-muted: #a8c0b2;
+  --ts-color-text-subtle: #8da196;
+  --ts-color-heading: #f8fffb;
   --ts-color-primary: var(--ts-emerald-soft);
-  --ts-color-primary-strong: color-mix(in srgb, var(--ts-emerald) 92%, #0a4b47);
-  --ts-color-primary-soft: rgba(23, 163, 155, 0.18);
+  --ts-color-primary-strong: color-mix(in srgb, var(--ts-emerald-soft) 80%, #042621);
+  --ts-color-primary-soft: rgba(26, 182, 153, 0.18);
   --ts-color-accent: var(--ts-gold-soft);
   --ts-color-accent-strong: var(--ts-gold);
-  --ts-color-accent-soft: rgba(212, 175, 55, 0.18);
-  --ts-color-border: rgba(182, 200, 214, 0.28);
-  --ts-color-border-strong: rgba(182, 200, 214, 0.45);
-  --ts-color-divider: rgba(182, 200, 214, 0.32);
+  --ts-color-accent-soft: rgba(200, 157, 79, 0.22);
+  --ts-color-border: rgba(143, 176, 163, 0.4);
+  --ts-color-border-strong: rgba(143, 176, 163, 0.6);
+  --ts-color-divider: rgba(143, 176, 163, 0.45);
 
-  --ts-gradient-primary: linear-gradient(135deg, var(--ts-emerald-soft) 0%, var(--ts-emerald) 100%);
-  --ts-gradient-accent: linear-gradient(135deg, var(--ts-gold) 0%, var(--ts-emerald) 100%);
-  --ts-gradient-surface: radial-gradient(circle at 18% 22%, rgba(212, 175, 55, 0.06), transparent 36%),
-                         radial-gradient(circle at 82% 8%, rgba(23, 163, 155, 0.12), transparent 40%),
-                         #0b1421;
-  --ts-gradient-section: linear-gradient(180deg, #101e32 0%, #0f1a2c 55%, #101e32 100%);
-  --ts-bg-pattern-opacity: 0.16;
+  --ts-gradient-primary: linear-gradient(135deg, #1ab699 0%, #0f4b3f 100%);
+  --ts-gradient-accent: linear-gradient(135deg, var(--ts-gold) 0%, var(--ts-emerald-soft) 100%);
+  --ts-gradient-surface: radial-gradient(circle at 18% 22%, rgba(200, 157, 79, 0.08), transparent 36%),
+                         radial-gradient(circle at 82% 8%, rgba(26, 182, 153, 0.16), transparent 40%),
+                         #07110f;
+  --ts-gradient-section: linear-gradient(180deg, #0f1f19 0%, #0c1814 55%, #0f1f19 100%);
+  --ts-bg-pattern-opacity: 0.22;
 
-  --ts-shadow-soft: 0 16px 32px rgba(3, 10, 22, 0.35);
-  --ts-shadow-lift: 0 22px 44px rgba(3, 10, 22, 0.4);
-  --ts-shadow-glow: 0 0 0 3px rgba(23, 163, 155, 0.38);
-  --ts-shadow-glow-accent: 0 0 0 3px rgba(212, 175, 55, 0.4);
-  --focus-ring: 0 0 0 3px rgba(212, 175, 55, 0.55);
+  --ts-shadow-soft: 0 16px 32px rgba(0, 0, 0, 0.45);
+  --ts-shadow-lift: 0 22px 44px rgba(0, 0, 0, 0.55);
+  --ts-shadow-glow: 0 0 0 3px rgba(26, 182, 153, 0.4);
+  --ts-shadow-glow-accent: 0 0 0 3px rgba(200, 157, 79, 0.4);
+  --focus-ring: 0 0 0 3px rgba(200, 157, 79, 0.6);
 
-  /* Header & Footer (dark theme) */
-  --header-bg: rgba(15, 26, 44, 0.95);
-  --header-border: rgba(23, 163, 155, 0.25);
+  --header-bg: rgba(10, 21, 17, 0.92);
+  --header-border: rgba(26, 182, 153, 0.25);
+  --footer-bg: #040906;
 }

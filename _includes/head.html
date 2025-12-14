@@ -23,9 +23,7 @@
 <meta name="geo.region" content="US-NJ">
 <meta name="geo.placename" content="{{ site.company.address_locality | default: 'Atlantic County' }}, New Jersey">
 <meta name="format-detection" content="telephone=no">
-{% if site.company.hic %}
-  <meta name="license" content="New Jersey Home Improvement Contractor License #{{ site.company.hic }}">
-{% endif %}
+{%- comment -%} License meta removed to avoid UI and SEO clutter {%- endcomment -%}
 
 {% if page.noindex %}
   <meta name="robots" content="noindex, nofollow">
@@ -45,6 +43,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}">
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
 <link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
+{% include ts-icon-sprite.html %}
 
 <!-- Performance: Preload critical assets -->
 <link rel="preload" as="image" href="{{ '/assets/img/logo/tillerstead-logo-header.svg' | relative_url }}" fetchpriority="high">
@@ -93,6 +92,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Preload primary font weights for faster LCP -->
+{% if site.fonts and site.fonts.local_preload %}
+  <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-600.woff2' | relative_url }}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-700.woff2' | relative_url }}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/montserrat-700.woff2' | relative_url }}" crossorigin>
+{% endif %}
 
 <!-- Styles (compiled Sass) -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" media="screen">

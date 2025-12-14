@@ -32,21 +32,25 @@
   {% endcase %}
 {% endcapture %}
 
-<article class="card card--service" role="listitem">
-  <div class="card-header">
-    <span class="card-icon" aria-hidden="true">{{ icon_svg | strip }}</span>
+<article class="card card--service ts-service-card" role="listitem">
+  <header class="card-header">
+    <span class="ts-service-card__icon" aria-hidden="true">{{ icon_svg | strip }}</span>
     <div>
-      <span class="card-eyebrow">{{ include.tagline | default: 'Reliable finish work' }}</span>
+      <p class="ts-service-card__tagline">{{ include.tagline | default: 'Documented scope &amp; math' }}</p>
       <h3 class="card-title">{{ include.title }}</h3>
     </div>
-  </div>
+  </header>
 
   <p class="card-desc">{{ include.description }}</p>
 
   {% if include.details %}
-    <ul class="card-points">
+    <ul class="ts-service-card__points">
       {% assign detail_items = include.details %}
-      {% if detail_items contains ',' %}
+      {% if detail_items contains '|' %}
+        {% assign detail_items = detail_items | split: '|' %}
+      {% elsif detail_items contains ';' %}
+        {% assign detail_items = detail_items | split: ';' %}
+      {% elsif detail_items contains ',' %}
         {% assign detail_items = detail_items | split: ',' %}
       {% endif %}
       {% for item in detail_items %}
@@ -56,9 +60,9 @@
   {% endif %}
 
   {% if include.url %}
-    <a class="card-link" href="{{ include.url | relative_url }}" aria-label="Learn more about {{ include.title }}">
+    <a class="ts-service-card__link" href="{{ include.url | relative_url }}" aria-label="Learn more about {{ include.title }}">
       <span>Learn more</span>
-      <span aria-hidden="true">→</span>
+      <span aria-hidden="true">&rarr;</span>
     </a>
   {% endif %}
 </article>

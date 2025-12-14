@@ -102,7 +102,7 @@ if [ "$BACKUP" = true ]; then
 fi
 
 echo "Next steps:"
-echo "  1. Run: bundle exec jekyll build"
+echo "  1. Run: ./scripts/run-jekyll.sh build"
 echo "  2. Test the site locally"
 echo "  3. Check that main.css is being generated"
 echo ""

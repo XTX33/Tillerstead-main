@@ -3,9 +3,257 @@
    Modern hero sections with variants
    ============================================ */
 
-/* Base Hero */
-.hero,
+/* ============================================
+   New Tile-first hero shell
+   ============================================ */
+
 .ts-hero {
+  position: relative;
+  padding: var(--section-padding-y) 0;
+}
+
+.ts-hero__inner {
+  position: relative;
+  background: var(--ts-color-surface);
+  border-radius: var(--ts-radius-xl);
+  border: 1px solid var(--ts-color-border);
+  box-shadow: var(--ts-shadow-lift);
+  padding: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  overflow: hidden;
+}
+
+.ts-hero__inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--ts-bg-pattern);
+  background-size: var(--ts-bg-pattern-size);
+  opacity: var(--ts-bg-pattern-opacity);
+  pointer-events: none;
+}
+
+.ts-hero__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ts-spacing-md);
+}
+
+.ts-hero__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.ts-hero__tagline {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ts-color-text-subtle);
+}
+
+.ts-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--ts-radius-pill);
+  border: 1px solid var(--ts-color-border);
+  background: var(--ts-color-surface-elevated);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ts-hero__eyebrow {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ts-color-primary);
+  margin: 0;
+}
+
+.ts-hero__title {
+  margin: 0;
+  font-size: var(--heading-1);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: var(--line-height-tight);
+  color: var(--ts-color-heading);
+  text-wrap: balance;
+}
+
+.ts-hero__lede {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: var(--line-height-relaxed);
+  color: var(--ts-color-muted);
+  margin: 0;
+  max-width: 64ch;
+}
+
+.ts-hero__bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--ts-spacing-sm);
+}
+
+.ts-hero__bullets li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-weight: 600;
+  color: var(--ts-color-heading);
+  line-height: 1.35;
+}
+
+.ts-hero__bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 2px;
+  background: var(--ts-color-primary);
+  box-shadow: 0 0 0 4px rgba(11, 107, 92, 0.18);
+}
+
+.ts-hero__bullets span {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--ts-color-muted);
+}
+
+.ts-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ts-spacing-sm);
+  align-items: center;
+}
+
+.ts-hero__actions .btn {
+  min-width: 220px;
+}
+
+.ts-hero__trust-line {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--ts-color-text-subtle);
+}
+
+.ts-hero__trust-line strong {
+  color: var(--ts-color-heading);
+}
+
+.ts-hero__aside {
+  position: relative;
+  background: radial-gradient(circle at 20% 20%, rgba(26, 182, 153, 0.12), transparent 60%),
+              var(--ts-color-surface-muted);
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid var(--ts-color-border);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  box-shadow: var(--ts-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ts-spacing-md);
+}
+
+.ts-hero__project {
+  margin: 0;
+  border-radius: var(--ts-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--ts-color-border);
+  box-shadow: var(--ts-shadow-soft);
+  background: var(--ts-color-surface-elevated);
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  figcaption {
+    padding: var(--ts-spacing-sm) var(--ts-spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--ts-color-text);
+  }
+}
+
+.ts-hero__facts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ts-spacing-md);
+}
+
+.ts-hero__fact {
+  padding: var(--ts-spacing-md);
+  border-radius: var(--ts-radius-lg);
+  border: 1px solid var(--ts-color-border);
+  background: var(--ts-color-surface-elevated);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.ts-hero__fact-label {
+  margin: 0 0 0.25rem;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ts-color-primary);
+}
+
+.ts-hero__fact-body {
+  margin: 0;
+  color: var(--ts-color-text);
+  line-height: 1.5;
+}
+
+.ts-hero__note {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--ts-color-muted);
+}
+
+@media (max-width: 960px) {
+  .ts-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .ts-hero__inner {
+    padding: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .ts-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ts-hero__actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* ============================================
+   Legacy hero styles
+   ============================================ */
+
+/* Base Hero */
+.hero {
   padding: var(--section-padding-y) 0;
   position: relative;
 }
@@ -43,8 +291,7 @@
 }
 
 /* Hero Inner Content */
-.hero-inner,
-.ts-hero-inner {
+.hero-inner {
   max-width: var(--shell-width);
   margin: 0 auto;
   padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
@@ -80,8 +327,7 @@
 }
 
 /* Hero Title */
-.hero-title,
-.ts-hero-title {
+.hero-title {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-family: var(--font-heading);
   font-weight: 700;
@@ -92,8 +338,7 @@
 }
 
 /* Hero Lead Text */
-.hero-lead,
-.ts-hero-lead {
+.hero-lead {
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   line-height: var(--line-height-relaxed);
   color: var(--ts-color-muted);
@@ -291,13 +536,11 @@
 }
 
 @media (max-width: 640px) {
-  .hero-title,
-  .ts-hero-title {
+  .hero-title {
     font-size: clamp(2rem, 8vw, 2.75rem);
   }
   
-  .hero-lead,
-  .ts-hero-lead {
+  .hero-lead {
     font-size: 1.05rem;
   }
   

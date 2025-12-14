@@ -1,57 +1,113 @@
-{% assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed NJ Home Improvement Contractor' %}
-{% assign hero_title = include.title | default: page.hero_title | default: 'Precision Tile, Remodeling & Property Care in South Jersey' %}
-{% assign hero_summary = include.summary | default: page.hero_summary | default: 'Tillerstead LLC delivers waterproof tile assemblies, organized remodels, and proactive maintenance for homes, rentals, and businesses in Atlantic, Ocean, and Cape May Counties. Every project is documented, transparent, and built to earn your trust.' %}
+{% assign hero_badge = include.badge | default: page.hero_badge | default: 'Licensed NJ Home Improvement Contractor' %}
+{% assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed & Documented' %}
+{% assign hero_title = include.title | default: page.hero_title | default: page.title | default: site.title %}
+{% assign hero_summary = include.summary | default: page.hero_summary | default: page.description | default: site.tagline %}
 {% assign hero_primary_url = include.primary_url | default: page.hero_primary_url | default: '/contact/' %}
-{% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Get Free NJ Estimate' %}
-{% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: 'tel:+16098628808' %}
-{% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'Call (609) 862-8808' %}
+{% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
+{% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
+{% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
+{% assign hero_project = include.hero_project | default: page.hero_project_image %}
+
+{% assign primary_href = hero_primary_url %}
+{% unless primary_href contains '://' or primary_href contains 'mailto:' or primary_href contains 'tel:' or primary_href | slice: 0, 1 == '#' %}
+  {% assign primary_href = primary_href | relative_url %}
+{% endunless %}
+
+{% assign secondary_href = hero_secondary_url %}
+{% unless secondary_href contains '://' or secondary_href contains 'mailto:' or secondary_href contains 'tel:' or secondary_href | slice: 0, 1 == '#' %}
+  {% assign secondary_href = secondary_href | relative_url %}
+{% endunless %}
 
 <section class="ts-hero ts-hero--home" aria-labelledby="home-hero-title">
   <div class="ts-hero__inner">
-    <header class="ts-hero__brand">
-      {% include logo-main.html
-         class="ts-logo-link--hero"
-         img_class="ts-logo ts-logo--hero"
-         variant="dark" %}
-      <p class="ts-hero__tagline">
-        Property Maintenance · Remodeling · Tile
-      </p>
-    </header>
+    <div class="ts-hero__body">
+      <div class="ts-hero__brand">
+        {% include logo-main.html
+           class="ts-logo-link ts-logo-link--hero"
+           img_class="ts-logo ts-logo--hero"
+           variant="header" %}
+        <p class="ts-hero__tagline">Tile, remodel, and maintenance craftsmanship</p>
+      </div>
 
-    <div class="ts-hero__badge">
-      <span class="ts-hero__badge-label">
-        {{ hero_eyebrow | upcase }}
-      </span>
-    </div>
+      {% if hero_badge %}
+        <p class="ts-hero__badge">{{ hero_badge }}</p>
+      {% endif %}
 
-    <div class="ts-hero__copy">
-      <h1 id="home-hero-title" class="ts-hero__title">
-        {{ hero_title }}
-      </h1>
+      {% if hero_eyebrow %}<p class="ts-hero__eyebrow">{{ hero_eyebrow }}</p>{% endif %}
 
-      <p class="ts-hero__lede">
-        {{ hero_summary }}
-      </p>
+      <h1 id="home-hero-title" class="ts-hero__title">{{ hero_title }}</h1>
+
+      {% if hero_summary %}
+        <p class="ts-hero__lede">{{ hero_summary }}</p>
+      {% endif %}
 
       {% if page.services %}
-      <ul class="ts-hero__bullets">
-        {% for service in page.services %}
-        <li>{{ service.title }}: {{ service.description }}</li>
-        {% endfor %}
-      </ul>
+        <ul class="ts-hero__bullets">
+          {% for service in page.services limit:4 %}
+            <li>
+              {{ service.title }}
+              {% if service.description %}
+                <span>{{ service.description }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       {% endif %}
 
       <div class="ts-hero__actions">
-        <a class="ts-btn ts-btn--primary" href="{{ hero_primary_url | relative_url }}">
-          {{ hero_primary_label }}
-        </a>
-        <a class="ts-btn ts-btn--ghost" href="{{ hero_secondary_url | relative_url }}">
-          {{ hero_secondary_label }}
-        </a>
+        {% if hero_primary_url %}<a class="btn btn--primary" href="{{ primary_href }}">{{ hero_primary_label }}</a>{% endif %}
+        {% if hero_secondary_url %}<a class="btn btn--ghost" href="{{ secondary_href }}">{{ hero_secondary_label }}</a>{% endif %}
       </div>
+
       <p class="ts-hero__trust-line">
-        <strong>Licensed NJ HIC #13VH10808800</strong> • Serving Atlantic, Ocean & Cape May Counties • Same-day response
+        <strong>Licensed NJ HIC #{{ site.company.hic }}</strong>
+        &middot; TCNA-guided waterproofing &amp; layout math
+        &middot; Serving Atlantic, Ocean &amp; Cape May Counties
       </p>
     </div>
+
+    <aside class="ts-hero__aside" aria-label="Tile specialist highlights">
+      {% if hero_project %}
+        <figure class="ts-hero__project">
+          <img src="{{ hero_project.src | default: '/assets/img/marble-bath.jpg' | relative_url }}"
+            alt="{{ hero_project.alt | default: 'Custom tile shower installation with brass fixtures' }}"
+            loading="eager" fetchpriority="high" decoding="async" width="1200" height="800">
+          {% if hero_project.caption %}
+            <figcaption>{{ hero_project.caption }}</figcaption>
+          {% endif %}
+        </figure>
+      {% endif %}
+
+      {% assign hero_facts = include.facts | default: page.hero_facts %}
+      {% if hero_facts %}
+        <ul class="ts-hero__facts">
+          {% for fact in hero_facts %}
+            <li class="ts-hero__fact">
+              {% if fact.label %}<p class="ts-hero__fact-label">{{ fact.label }}</p>{% endif %}
+              {% if fact.text %}<p class="ts-hero__fact-body">{{ fact.text }}</p>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <ul class="ts-hero__facts">
+          <li class="ts-hero__fact">
+            <p class="ts-hero__fact-label">TCNA + ANSI</p>
+            <p class="ts-hero__fact-body">Flood tests, slope math, mortar coverage logs, and photos you can reference years later.</p>
+          </li>
+          <li class="ts-hero__fact">
+            <p class="ts-hero__fact-label">Partnership ready</p>
+            <p class="ts-hero__fact-body">Homeowners, landlords, and GC teams trust us with demo-proof scopes, clear schedules, and respectful job-sites.</p>
+          </li>
+          <li class="ts-hero__fact">
+            <p class="ts-hero__fact-label">Service area</p>
+            <p class="ts-hero__fact-body">Atlantic, Ocean, and Cape May Counties with rapid communication and honest change-order control.</p>
+          </li>
+        </ul>
+      {% endif %}
+
+      <p class="ts-hero__note">
+        Laser-level layouts, intentional grout joints, and waterproof assemblies that do not crack, swell, or surprise you later.
+      </p>
+    </aside>
   </div>
 </section>

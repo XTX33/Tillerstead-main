@@ -12,7 +12,7 @@ primary:
     url: /portfolio/
     match: /portfolio/
   - id: gc
-    title: For Contractors
+    title: Contractors
     url: /for-general-contractors/
     match: /for-general-contractors/
   - id: reviews

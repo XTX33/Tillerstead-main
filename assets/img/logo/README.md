@@ -1,70 +1,167 @@
-# Logo Assets
+```md
+# Tillerstead LLC – Public Website (Jekyll)
 
-Optimized SVG logos using design tokens (CSS variables) so palette changes propagate automatically via `tokens.css`.
+This repository contains the source for **Tillerstead.com**, the public website for  
+**Tillerstead LLC** — a licensed South Jersey tile, waterproofing, and remodeling contractor  
+serving Atlantic, Ocean, and Cape May Counties.
 
-## Files
-- `tillerstead-logo-full.svg` – Full horizontal logo with tagline & license.
-- `tillerstead-logo-header.svg` – Compact horizontal for header.
-- `tillerstead-logo-mark.svg` – Tile T mark only.
-- `tillerstead-logo-stacked.svg` – Stacked arrangement for vertical spaces.
-- `tillerstead-favicon.svg` – Favicon base mark.
-- `tillerstead-logo-sprite.svg` – Symbol sprite (includes monochrome variants).
+The site is built on **Jekyll** and deployed through **GitHub Pages** with a structured design  
+system, reusable components, and optimized SVG branding assets.
 
-## Token Usage
-Each logo references:
-- `--color-primary` (emerald wordmark)
-- `--color-accent` (brass stroke between tiles)
-- `--color-dark-primary` (tile fills)
+---
 
-Fallbacks are included so usage outside main CSS still renders.
+## ⚒️ Project Overview
 
-## Sprite Symbols
-| Symbol ID | Description | Variant |
-|-----------|-------------|---------|
-| `logo-mark` | Tile T mark | Color |
-| `logo-mark-mono` | Tile T mark | Monochrome |
-| `logo-full` | Horizontal wordmark + tagline | Color |
-| `logo-full-mono` | Horizontal wordmark + tagline | Monochrome |
-| `logo-stacked` | Stacked mark + tagline | Color |
-| `logo-stacked-mono` | Stacked mark + tagline | Monochrome |
+Tillerstead.com provides:
 
-## Referencing the Sprite
-Use an external reference (cache-friendly):
-```html
-<svg role="img" aria-label="Tillerstead"><use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-full" /></svg>
+- Professional service pages for tile, waterproofing, remodeling, and repair scopes  
+- A structured case & portfolio system using Jekyll Collections  
+- Visual documentation of real South Jersey tile installations  
+- High-quality logo assets and responsive UI elements  
+- A lightweight, fast, SEO-optimized static site
+
+---
+
+## 🏗️ Tech Stack
+
+- **Jekyll** (GitHub Pages-compatible)
+- **SCSS** with component-based structure (`_sass/`)
+- **Liquid** templating (`_includes/`, `_layouts/`)
+- **SVG symbol sprite** for all branding
+- **Tokens.css** for centralized color & spacing variables
+- **Responsive design** for all mobile/tablet/desktop breakpoints
+
+---
+
+## 📂 Repository Structure
+
 ```
 
-Monochrome (inherits current text color):
-```html
-<svg class="text-primary" role="img" aria-label="Tillerstead"><use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-full-mono" /></svg>
+.
+├── _layouts/        # Page layouts (default, page, post, service, portfolio)
+├── _includes/       # Components (header, footer, nav, hero, cards, logos)
+├── _sass/           # SCSS design system, tokens, components
+├── _cases/          # Case studies (Jekyll collection)
+├── _posts/          # Blog posts
+├── assets/
+│   ├── css/         # Main SCSS entry points (compiled by Pages)
+│   ├── js/          # Interactive behavior (header/nav)
+│   └── img/
+│       └── logo/    # Optimized SVG branding assets + logo sprite
+├── _config.yml      # Site configuration
+└── README.md        # This file
+
 ```
 
-Mark only:
-```html
-<svg role="img" aria-label="Tillerstead mark" width="40" height="40"><use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-mark" /></svg>
+---
+
+## 🎨 Branding & Logo Assets
+
+All Tillerstead logo files are stored in:
+
 ```
 
-## Inline Embedding (Optional)
-To eliminate the external request, include the inline sprite once near the top of `body` (just after opening tag):
+assets/img/logo/
+
+```
+
+Optimized, token-aware SVGs allow color and theme changes to propagate automatically through  
+the site’s design system.
+
+### Primary Logo Files
+
+- `tillerstead-logo-header.svg` – Primary horizontal logo for the site header  
+- `tillerstead-logo-header-dark.svg` – Header logo for dark backgrounds  
+- `tillerstead-logo-full.svg` – Full logo with tagline + NJ HIC license  
+- `tillerstead-logo-stacked.svg` – Vertical/stacked version  
+- `tillerstead-logo-mark.svg` – Tile “T” mark  
+- `tillerstead-logo-mark-with-word.svg` – Compact lockup  
+- `tillerstead-inverse.svg` – Light-on-dark inverse logo  
+- `tillerstead-favicon.svg` – Base mark for favicon and app icons  
+- `tillerstead-logo-sprite.svg` – Complete SVG symbol sprite (recommended for UI)
+
+A detailed guide lives at:
+
+```
+
+assets/img/logo/README.md
+
+````
+
+---
+
+## 🧩 Using the SVG Sprite
+
+You can reference logos from the sprite like this (cached external reference):
+
+```html
+<svg role="img" aria-label="Tillerstead LLC">
+  <use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-full"></use>
+</svg>
+````
+
+Monochrome (inherits text color):
+
+```html
+<svg class="text-primary">
+  <use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-full-mono"></use>
+</svg>
+```
+
+Mark-only:
+
+```html
+<svg width="40" height="40">
+  <use href="/assets/img/logo/tillerstead-logo-sprite.svg#logo-mark"></use>
+</svg>
+```
+
+For inline usage, include:
+
 ```liquid
 {% include logo-sprite-inline.html %}
 ```
-Then reference symbols with fragment-only `#id`:
-```html
-<svg role="img" aria-label="Tillerstead"><use href="#logo-full" /></svg>
+
+---
+
+## 🧪 Local Development
+
+Install Jekyll:
+
+```bash
+bundle install
 ```
-Avoid embedding both external and inline versions simultaneously; choose one strategy per page to prevent duplicate IDs.
 
-## Accessibility
-- Provide `role="img"` + `aria-label` or `<title>` for each usage instance (symbols intentionally have no titles to avoid duplicate announcements).
-- Monochrome variants use `currentColor` for both stroke and fill.
+Run the dev server:
 
-## Editing Guidelines
-1. Prefer updating token values in `assets/styles/tokens.css`.
-2. Keep font stack consistent: system-ui for performance.
-3. Maintain minimal style blocks—avoid inline `fill` attributes unless necessary.
-4. Run `htmlhint` only for embedded snippets; SVGs are not processed by current lint script.
+```bash
+bundle exec jekyll serve
+```
 
-## Future Enhancements
-- Add dark-mode invert variant if needed (could be implemented by parent applying a class that overrides `--color-dark-primary`).
-- Provide pinned base64-encoded small mark for critical inline usage (favicon / LCP).
+Then open:
+
+```
+http://localhost:4000
+```
+
+---
+
+## 🚀 Deployment
+
+The site deploys automatically via **GitHub Pages** on updates to the `main` branch.
+
+No manual build steps are required—GitHub handles SCSS compilation and static generation.
+
+---
+
+## 🛡️ License & Ownership
+
+All branding, logos, trademarks, and service descriptions are the property of **Tillerstead LLC**.
+Code for the public site is open for review but not for reuse without written permission.
+
+---
+
+## 🤝 Contributions
+
+This is primarily a closed-brand repository; PRs are limited to internal improvements, bug fixes,
+and accessibility updates.

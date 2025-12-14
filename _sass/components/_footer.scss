@@ -233,3 +233,131 @@
     text-align: center;
   }
 }
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.footer-nav-title {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  opacity: 0.9;
+}
+
+.footer-nav-title--spaced {
+  margin-top: 16px;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li + li {
+  margin-top: 8px;
+}
+
+.footer-list--inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.footer-list--inline li + li {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+<style>
+.footer-nav-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.footer-acc {
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: .75rem;
+
+  summary.footer-nav-title {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  summary.footer-nav-title::-webkit-details-marker { display: none; }
+
+  summary.footer-nav-title::after {
+    content: "▾";
+    opacity: .8;
+    margin-left: .75rem;
+    transform: rotate(0deg);
+    transition: transform .2s ease;
+  }
+
+  &[open] summary.footer-nav-title::after {
+    transform: rotate(180deg);
+  }
+}
+
+/* Tap targets */
+.footer-link,
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .45rem 0;
+}
+
+/* Social list */
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1rem;
+  padding-left: 0;
+  list-style: none;
+  margin: .25rem 0 0;
+}
+
+.footer-social-link {
+  text-decoration: none;
+}
+
+.footer-social-icon {
+  flex: 0 0 auto;
+}
+
+/* CTA */
+.footer-cta-row { margin: .75rem 0 0; }
+.footer-cta { width: 100%; justify-content: center; }
+
+/* Desktop: show as columns, not accordion */
+@media (min-width: 900px) {
+  .footer-nav-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .footer-acc {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  /* Make details behave like normal blocks */
+  .footer-acc > summary {
+    cursor: default;
+  }
+  .footer-acc > summary::after { content: ""; }
+  .footer-acc[open] > summary::after { content: ""; }
+}
+</style>

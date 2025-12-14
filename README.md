@@ -10,21 +10,20 @@
 
 ## Ruby environment (Windows via RubyInstaller)
 - Install [RubyInstaller 3.1+ with MSYS2](https://rubyinstaller.org/downloads/) and select option 3 to run `ridk install` when prompted so the DevKit and build tooling are configured.
-- From a PowerShell terminal in the project root, run `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1`. The helper locates your RubyInstaller installation, sources `ridk`/`setrbvars`, and installs Bundler `2.4.19` if it is missing.
-- Re-run `scripts/activate-ruby.ps1` any time you open a fresh shell so the Ruby toolchain is on your `PATH` before invoking Bundler or Jekyll.
+- From a PowerShell terminal in the project root, run `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1`. The helper locates your RubyInstaller installation and ensures the Ruby toolchain is on `PATH` for the vendored Jekyll executable.
+- Re-run `scripts/activate-ruby.ps1` any time you open a fresh shell so the Ruby toolchain is on your `PATH` before invoking the build scripts.
 - If Ruby is installed in a non-standard directory, provide the path manually: `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1 -RubyRoot 'D:\Tools\Ruby32-x64'`.
 
 ### Typical workflow
 ```powershell
-# Activate Ruby (installs Bundler on first run)
+# Activate Ruby so the vendored Jekyll binary is available
 powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1
 
-# Install Ruby gems / Node dependencies once
-bundle install
+# Install Node dependencies once
 npm install
 
 # Build the site
-npm run build        # runs Sass build + bundle exec jekyll build
+npm run build        # runs Sass build + vendored Jekyll build
 ```
 
 If `scripts/activate-ruby.ps1` cannot find RubyInstaller it will stop with a helpful message that includes the download URL. Once activated, the terminal echoes the Ruby version so you know the environment is ready.
@@ -41,26 +40,25 @@ A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a han
 - **Deployment:** Suitable for static hosting (Netlify/GitHub Pages); build artifacts live in `_site/` when generated.
 
 ## Prerequisites
-- **Ruby & Bundler** for Jekyll (`bundle install`).
+- **Ruby** for the vendored Jekyll executable (no external gems required).
 - **Node.js & npm** for tooling (`npm ci` preferred for reproducibility).
 - **Sass** and **Sharp** are installed via `npm ci`; no global installs required.
 
 ## Local / Codespaces dev
-- **Codespaces:** Opening the repo in GitHub Codespaces auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `bundle install` + `npm ci` after the container is created.
-- **Local machines:** Install Ruby 3.2 and Node 20, then run `bundle install && npm ci` in the project root.
-- **Run the dev server:** `npm run dev` serves Jekyll on `http://127.0.0.1:4000` with LiveReload (`4000`/`35729` forwarded in Codespaces).
-- **Build once:** `npm run build` compiles CSS and runs `bundle exec jekyll build`.
+- **Codespaces:** Opening the repo in GitHub Codespaces auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `npm ci` after the container is created.
+- **Local machines:** Install Ruby 3.2 and Node 20, then run `npm ci` in the project root.
+- **Run the dev server:** `npm run dev` compiles assets, builds `_site`, and serves it with Python's built-in HTTP server on `http://127.0.0.1:4000` (`4000` forwarded in Codespaces).
+- **Build once:** `npm run build` compiles CSS and runs the vendored Jekyll build.
 - **Test locally:** `npm run test` rebuilds the site and runs an internal link/asset check to verify the generated `_site` output. External link checks are skipped to keep runs offline-friendly.
 - **Note:** Playwright/browser-based screenshot tooling is not installed in Codespaces for this repo—skip any screenshot capture steps.
 
 ## Getting Started
 1. Install dependencies:
-   - `bundle install`
    - `npm install`
 2. Build CSS once:
    - `npm run build:css`
 3. Start a local site:
-   - `bundle exec jekyll serve`
+   - `npm run dev`
 4. Visit `http://127.0.0.1:4000` to preview.
 
 ## Development Workflow

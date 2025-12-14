@@ -1,0 +1,300 @@
+/* ============================================
+   Tillerstead Theme Layer
+   Parchment surface system, tile grids, badges
+   ============================================ */
+
+/* Page & body background */
+.ts-page,
+body.ts-theme {
+  background-color: var(--ts-color-bg);
+  background-image:
+    var(--ts-bg-pattern),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(247, 241, 227, 0.8));
+  background-size: var(--ts-bg-pattern-size), 100% 100%;
+  background-attachment: fixed;
+  color: var(--ts-color-text);
+}
+
+.ts-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 10%, rgba(200, 157, 79, 0.07), transparent 60%),
+              radial-gradient(circle at 80% 0%, rgba(11, 107, 92, 0.05), transparent 62%);
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.ts-theme .site-main {
+  width: 100%;
+  max-width: var(--shell-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Section surfaces */
+.ts-section {
+  position: relative;
+  padding: var(--section-padding-y) 0;
+}
+
+.ts-surface {
+  background: var(--ts-color-surface);
+  border-radius: var(--ts-radius-xl);
+  border: 1px solid var(--ts-color-border);
+  box-shadow: var(--ts-shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.ts-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(28, 35, 31, 0.03) 1px, transparent 1px),
+                    linear-gradient(0deg, rgba(28, 35, 31, 0.03) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ts-surface > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ts-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ts-color-border), transparent);
+  margin: clamp(1.5rem, 4vw, 2.5rem) 0;
+}
+
+.ts-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--ts-radius-pill);
+  border: 1px solid var(--ts-color-border);
+  background: var(--ts-color-surface-elevated);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ts-badge--emerald {
+  border-color: var(--ts-color-primary);
+  background: var(--ts-color-primary-soft);
+  color: var(--ts-color-primary);
+}
+
+/* Services Section */
+.ts-services {
+  position: relative;
+  margin: clamp(2.5rem, 6vw, 4rem) 0;
+}
+
+.ts-services .container {
+  position: relative;
+  padding: clamp(2rem, 5vw, 3rem);
+  background: var(--ts-gradient-section);
+  border-radius: var(--ts-radius-xl);
+  border: 1px solid var(--ts-color-border);
+  box-shadow: var(--ts-shadow-soft);
+  overflow: hidden;
+}
+
+.ts-services .container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 20%, rgba(11, 107, 92, 0.08), transparent 40%),
+                    radial-gradient(circle at 80% 10%, rgba(200, 157, 79, 0.06), transparent 38%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.ts-services__header {
+  position: relative;
+  z-index: 1;
+  max-width: 820px;
+  margin: 0 auto var(--ts-spacing-xl);
+  text-align: center;
+}
+
+.ts-services__header .lead {
+  margin-top: var(--ts-spacing-sm);
+  color: var(--ts-color-text);
+}
+
+.ts-services__grid {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.ts-services__grid > li {
+  height: 100%;
+}
+
+.ts-services__actions {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--ts-spacing-lg);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--ts-spacing-sm);
+}
+
+.ts-services__note {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--ts-spacing-md);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--ts-color-text-subtle);
+}
+
+.ts-services__gallery {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--ts-spacing-xl);
+  display: grid;
+  gap: var(--ts-spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.ts-services__photo {
+  margin: 0;
+  border-radius: var(--ts-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--ts-color-border);
+  box-shadow: var(--ts-shadow-soft);
+  background: var(--ts-color-surface-elevated);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  figcaption {
+    padding: var(--ts-spacing-sm) var(--ts-spacing-md);
+    font-size: var(--font-size-sm);
+    color: var(--ts-color-text);
+  }
+}
+
+/* Service Card Enhancements */
+.card--service,
+.ts-service-card {
+  height: 100%;
+  background: var(--ts-color-surface-elevated);
+  border: 1px solid var(--ts-color-border);
+  border-radius: var(--ts-radius-lg);
+  box-shadow: var(--ts-shadow-soft);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ts-spacing-md);
+}
+
+.ts-service-card__icon {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: var(--ts-radius-md);
+  border: 1px solid var(--ts-color-border);
+  background: var(--ts-color-primary-soft);
+  color: var(--ts-color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ts-service-card__tagline {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ts-color-primary);
+  margin: 0;
+}
+
+.ts-service-card__points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ts-service-card__points li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--ts-color-text);
+  line-height: 1.5;
+}
+
+.ts-service-card__points li::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 2px;
+  background: var(--ts-color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 107, 92, 0.18);
+}
+
+.ts-service-card__link {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--ts-color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ts-service-card__link:hover,
+.ts-service-card__link:focus-visible {
+  color: var(--ts-color-primary-strong);
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .ts-services .container {
+    padding: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .ts-services__header {
+    text-align: left;
+  }
+
+  .ts-services__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-page::after,
+  .ts-surface::before,
+  .ts-services .container::after {
+    animation: none;
+    transition: none;
+  }
+}
