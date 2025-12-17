@@ -1,9 +1,12 @@
 <!-- Unified Deliver Section -->
-<section class="ts-deliver" aria-labelledby="ts-deliver-title">
+{% assign section_id = include.section_id | default: 'ts-deliver' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+
+<section class="ts-deliver ts-section" id="{{ section_id }}" aria-labelledby="{{ heading_id }}">
   <div class="container ts-deliver__grid">
     <div class="ts-deliver__intro">
       <span class="eyebrow">What We Deliver</span>
-      <h2 id="ts-deliver-title" class="heading-2"><span aria-hidden="true" style="margin-right:0.5rem;display:inline-block;vertical-align:middle">{% include ts-icon.html name="icon-shield" size="24" class="ts-icon" %}</span>Craftsmanship Built for Shore Life</h2>
+      <h2 id="{{ heading_id }}" class="heading-2"><span aria-hidden="true" style="margin-right:0.5rem;display:inline-block;vertical-align:middle">{% include ts-icon.html name="icon-shield" size="24" class="ts-icon" %}</span>Craftsmanship Built for Shore Life</h2>
       <ul class="ts-deliver__list">
         <li><strong>Owner-led scheduling</strong> and on-site problem solving</li>
         <li><strong>Documented scopes</strong>, change orders, and punch lists</li>

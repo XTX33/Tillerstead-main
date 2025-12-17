@@ -13,11 +13,14 @@ Testimonials include
 {% assign heading = include.heading | default: 'Client testimonials' %}
 {% assign eyebrow = include.eyebrow | default: 'Verified reviews' %}
 
-<section class="ts-testimonials" aria-labelledby="ts-testimonials-title">
+{% assign section_id = include.section_id | default: 'ts-testimonials' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+
+<section class="ts-testimonials ts-section" aria-labelledby="{{ heading_id }}">
   <div class="container">
-    <header class="ts-testimonials__header">
-      {% if eyebrow %}<span class="eyebrow text-accent">{{ eyebrow }}</span>{% endif %}
-      <h2 id="ts-testimonials-title" class="heading-2">{{ heading }}</h2>
+    <header class="ts-testimonials__header section-header">
+      {% if eyebrow %}<p class="eyebrow text-accent">{{ eyebrow }}</p>{% endif %}
+      <h2 id="{{ heading_id }}" class="heading-2">{{ heading }}</h2>
     </header>
 
     {% if reviews and reviews.size > 0 %}

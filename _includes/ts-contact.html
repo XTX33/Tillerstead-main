@@ -1,9 +1,12 @@
 <!-- Unified Contact Section -->
-<section class="ts-contact" aria-labelledby="ts-contact-title">
+{% assign section_id = include.section_id | default: 'ts-contact' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+
+<section class="ts-contact ts-section" id="{{ section_id }}" aria-labelledby="{{ heading_id }}">
   <div class="container ts-contact__grid">
     <div class="ts-contact__copy">
       <span class="eyebrow">Licensed NJ Contractor</span>
-      <h2 id="ts-contact-title" class="heading-2">Get Your Free South Jersey Estimate</h2>
+      <h2 id="{{ heading_id }}" class="heading-2">Get Your Free South Jersey Estimate</h2>
       <p><strong>Serving Atlantic, Ocean & Cape May Counties</strong> with professional tile installation, bathroom remodeling, and property maintenance. Most consultations scheduled within 24-48 hours—emergency service available.</p>
       <p class="text-muted">You'll receive a detailed written proposal covering materials, timelines, waterproofing specs, and transparent pricing. Licensed HIC #13VH10808800, fully insured, owner-operated. <strong>No pressure, no hidden fees, no surprises.</strong></p>
       {% assign form_endpoint = site.forms.endpoint | default: 'https://formsubmit.co/info@tillerstead.com' %}
@@ -15,13 +18,12 @@
         method="post"
         action="{{ form_endpoint }}"
         accept-charset="UTF-8"
-        action="/contact/"
         data-netlify="true"
         data-contact-form
         data-contact-email="{{ site.company.email }}"
         data-contact-phone="{{ site.company.phone_display }}"
         netlify-honeypot="bot-field"
-        aria-describedby="ts-contact-title"
+        aria-labelledby="{{ heading_id }}"
       >
         <input type="hidden" name="form-name" value="homepage-contact">
         <input type="hidden" name="_subject" value="{{ site.forms.subject | default: 'New Tillerstead LLC inquiry' }}">

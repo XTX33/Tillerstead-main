@@ -1,7 +1,9 @@
 {% assign work = include.data | default: site.data.home.work | default: {} %}
 
 {% if work %}
+  {% assign section_id = include.section_id | default: 'home-work' %}
   {% include portfolio-highlights.html
+    section_id=section_id
     eyebrow=work.eyebrow
     title=work.title
     summary=work.summary

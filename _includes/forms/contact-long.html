@@ -6,9 +6,7 @@
   class="contact-form contact-form--long"
   method="post"
   action="{{ form_endpoint }}"
-  netlify-honeypot="_trap"
   accept-charset="UTF-8"
-  action="/success/"             <!-- Netlify form endpoint redirect -->
   data-netlify="true"
   netlify-honeypot="_trap"
   aria-describedby="{{ include.aria_describedby | default: 'form-intro' }}"

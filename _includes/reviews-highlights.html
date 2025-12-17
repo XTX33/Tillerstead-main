@@ -2,16 +2,19 @@
 Homepage Reviews Highlights Include
 - Renders top N reviews from _data/reviews.yml as trust cards
 - Params: limit (default 3), eyebrow, title, summary, cta_url, cta_label
+  - Optional IDs: section_id (default: home-reviews), heading_id (default: section_id + '-title')
 Usage: {% include reviews-highlights.html limit=3 %}
 {% endcomment %}
 {% assign all = site.data.reviews.reviews | default: [] %}
 {% assign limit = include.limit | default: 3 %}
 {% assign items = all | slice: 0, limit %}
-<section class="section reviews" aria-labelledby="reviews-title">
+{% assign section_id = include.section_id | default: 'home-reviews' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+<section class="ts-section section reviews" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
       <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Client feedback' }}</p>
-      <h2 id="reviews-title" class="heading-2">{{ include.title | default: 'Why South Jersey Homeowners Trust Tillerstead' }}</h2>
+      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Why South Jersey Homeowners Trust Tillerstead' }}</h2>
       <p class="lead">{{ include.summary | default: 'Straightforward communication, clean job sites, and durable tile and finish work.' }}</p>
     </div>
 
@@ -19,25 +22,19 @@ Usage: {% include reviews-highlights.html limit=3 %}
       <ul class="cards cards--3col" role="list" aria-label="Highlighted client reviews">
         {% for r in items %}
           <li>
-            <article class="card card--review" itemscope itemtype="https://schema.org/Review">
-              <div class="card-rating" aria-label="{{ r.rating | default: 5 | escape }} out of 5 stars" role="img">
-              <div class="card-rating" aria-label="{{ r.rating | default: 5 }} out of 5 stars" role="img">
-                {% assign stars = r.rating | default: 5 %}
+            {% assign stars = r.rating | default: 5 %}
+            <article class="card card--review" itemscope itemtype="https://schema.org/Review" aria-label="Review from {{ r.name | default: 'Client' | escape }}">
+              <div class="card-rating" aria-label="{{ stars }} out of 5 stars" role="img">
                 {% for i in (1..5) %}
                   <span class="star{% if i <= stars %} star--filled{% endif %}" aria-hidden="true">{% if i <= stars %}★{% else %}☆{% endif %}</span>
                 {% endfor %}
-                <meta itemprop="reviewRating" content="{{ stars | escape }}" />
               </div>
+
+              <meta itemprop="reviewRating" content="{{ stars }}">
               {% if r.text %}<p class="card-quote" itemprop="reviewBody">{{ r.text | escape }}</p>{% endif %}
               <p class="card-author">
                 {% if r.name %}<strong id="review--name-{{ forloop.index }}" itemprop="author">{{ r.name | escape }}</strong>{% endif %}
                 {% if r.source %}<span class="card-role"> · {{ r.source | escape }}</span>{% endif %}
-                <meta itemprop="reviewRating" content="{{ stars }}" />
-              </div>
-              {% if r.text %}<p class="card-quote">{{ r.text }}</p>{% endif %}
-              <p class="card-author">
-                {% if r.name %}<strong id="review--name-{{ forloop.index }}">{{ r.name }}</strong>{% endif %}
-                {% if r.source %}<span class="card-role"> · {{ r.source }}</span>{% endif %}
               </p>
             </article>
           </li>
@@ -46,7 +43,6 @@ Usage: {% include reviews-highlights.html limit=3 %}
     {% endif %}
 
     <div class="section-action">
-      <a href="{{ include.cta_url | default: '/reviews/' | relative_url | escape }}" class="btn btn--primary">{{ include.cta_label | default: 'Read more reviews' | escape }}</a>
       <a href="{{ include.cta_url | default: '/reviews/' | relative_url }}" class="btn btn--primary">{{ include.cta_label | default: 'Read more reviews' }}</a>
     </div>
   </div>

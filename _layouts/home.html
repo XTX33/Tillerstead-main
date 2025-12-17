@@ -21,7 +21,7 @@
     {% include header.html %}
 
     <main id="main" class="site-main ts-section ts-surface" role="main" tabindex="-1">
-      {% assign home = site.data.home | default: {} %}
+      {% assign home = site.data.home %}
 
       {% include sections/hero.html data=home.hero %}
       {% include sections/services.html data=home.services %}

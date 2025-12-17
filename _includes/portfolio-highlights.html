@@ -3,13 +3,16 @@ Homepage Portfolio Highlights Include
 - Renders a simple three-card preview of portfolio items
 - Data source: _data/portfolio_highlights.yml (key: highlights)
 - Optional overrides: eyebrow, title, summary, cta_url, cta_label
+  - Optional IDs: section_id (default: gallery), heading_id (default: section_id + '-title')
 Usage: {% include portfolio-highlights.html %}
 {% endcomment %}
-<section class="section ts-portfolio" aria-labelledby="gallery-title">
+{% assign section_id = include.section_id | default: 'gallery' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+<section class="ts-section section ts-portfolio" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
       <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Recent work' }}</p>
-      <h2 id="gallery-title" class="heading-2">{{ include.title | default: 'Portfolio highlights' }}</h2>
+      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Portfolio highlights' }}</h2>
       <p class="lead">{{ include.summary | default: 'Waterproof tile assemblies, remodels, and maintenance scopes documented with clear photos and timelines.' }}</p>
     </div>
 

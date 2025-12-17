@@ -8,18 +8,20 @@ Usage: {% include blog-highlights.html limit=3 %}
 {% assign limit = include.limit | default: 3 %}
 {% assign items = posts_sorted | slice: 0, limit %}
 {% if items and items.size > 0 %}
-<section class="section blog" aria-labelledby="blog-title">
+{% assign section_id = include.section_id | default: 'home-blog' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+<section class="ts-section section blog" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
-      <p class="eyebrow">{{ include.eyebrow | default: 'Guides & notes' }}</p>
-      <h2 id="blog-title">{{ include.title | default: 'Latest articles' }}</h2>
-      <p>{{ include.summary | default: 'Contractor-grade guidance on tile, bath, and remodeling in South Jersey.' }}</p>
+      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Guides & notes' }}</p>
+      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Latest articles' }}</h2>
+      <p class="lead">{{ include.summary | default: 'Contractor-grade guidance on tile, bath, and remodeling in South Jersey.' }}</p>
     </div>
 
     <ul class="cards cards--3col" role="list" aria-label="Latest articles">
       {% for post in items %}
         <li class="card card--post" itemscope itemtype="https://schema.org/Article">
-          <h3 class="card-title" itemprop="headline">
+          <h3 class="card-title heading-4" itemprop="headline">
             <a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a>
           </h3>
           <p class="card-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %e, %Y" }}</time></p>

@@ -1,10 +1,11 @@
 ﻿<!-- _includes/pattern-showcase.html -->
-<!-- _includes/pattern-showcase.html -->
-<section class="pattern-showcase pattern-showcase--tile ts-section ts-surface" aria-labelledby="pattern-showcase-heading">
+{% assign section_id = include.section_id | default: 'pattern-showcase' %}
+{% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
+<section class="pattern-showcase pattern-showcase--tile ts-section ts-surface" aria-labelledby="{{ heading_id }}">
   <div class="pattern-showcase-inner">
     <header class="pattern-showcase-header">
       <p class="ts-eyebrow">Licensed NJ Tile Contractor</p>
-      <h2 id="pattern-showcase-heading" class="pattern-showcase-title ts-section-title">
+      <h2 id="{{ heading_id }}" class="pattern-showcase-title ts-section-title">
         Precision Tile Patterns & Professional Installation
       </h2>
       <p class="pattern-showcase-description">
@@ -18,9 +19,9 @@
     <div class="pattern-gallery" role="list" aria-label="Tile pattern examples gallery">
       <figure class="pattern-gallery-item" role="listitem">
         <picture>
-          <source type="image/webp" srcset="/assets/img/tillerstead-work/bathrooms/bathroom-marble-shower-niche.webp">
+          <source type="image/webp" srcset="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-marble-shower-niche.webp' | relative_url }}">
           <img
-            src="/assets/img/tillerstead-work/bathrooms/bathroom-marble-shower-niche.jpg"
+            src="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-marble-shower-niche.jpg' | relative_url }}"
             alt="Porcelain slab shower with mosaic niche and window returns"
             loading="lazy"
             decoding="async"
@@ -36,9 +37,9 @@
 
       <figure class="pattern-gallery-item" role="listitem">
         <picture>
-          <source type="image/webp" srcset="/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.webp">
+          <source type="image/webp" srcset="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.webp' | relative_url }}">
           <img
-            src="/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.jpg"
+            src="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.jpg' | relative_url }}"
             alt="Wood-look feature wall tying into a marble shower"
             loading="lazy"
             decoding="async"
@@ -54,9 +55,9 @@
 
       <figure class="pattern-gallery-item" role="listitem">
         <picture>
-          <source type="image/webp" srcset="/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-detail.webp">
+          <source type="image/webp" srcset="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-detail.webp' | relative_url }}">
           <img
-            src="/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-detail.jpg"
+            src="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-detail.jpg' | relative_url }}"
             alt="Close-up of wood-look tile wrapping electrical boxes"
             loading="lazy"
             decoding="async"
@@ -72,9 +73,9 @@
 
       <figure class="pattern-gallery-item" role="listitem">
         <picture>
-          <source type="image/webp" srcset="/assets/img/tillerstead-work/bathrooms/bathroom-floor-install-progress.webp">
+          <source type="image/webp" srcset="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-floor-install-progress.webp' | relative_url }}">
           <img
-            src="/assets/img/tillerstead-work/bathrooms/bathroom-floor-install-progress.jpg"
+            src="{{ '/assets/img/tillerstead-work/bathrooms/bathroom-floor-install-progress.jpg' | relative_url }}"
             alt="Large-format planks being set over uncoupling membrane"
             loading="lazy"
             decoding="async"
