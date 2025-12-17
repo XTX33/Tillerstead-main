@@ -1,0 +1,9 @@
+{% assign testimonials = include.data | default: site.data.home.testimonials | default: {} %}
+
+{% if testimonials %}
+  {% include ts-testimonials.html
+    eyebrow=testimonials.eyebrow
+    heading=testimonials.title
+    limit=testimonials.limit
+    reviews=testimonials.reviews %}
+{% endif %}

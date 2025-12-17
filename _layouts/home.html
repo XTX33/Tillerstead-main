@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      {% if page.seo_title %}
+        {{ page.seo_title }}
+      {% elsif page.title %}
+        {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
+      {% else %}
+        {{ site.title }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
+      {% endif %}
+    </title>
+    {% include head.html %}
+  </head>
+
+  <body class="site-body ts-page ts-theme {{ page.body_class | default: '' }}">
+    <a class="skip-link" href="#main" tabindex="1">Skip to main content</a>
+
+    {% include logo-sprite-inline.html %}
+
+    {% include header.html %}
+
+    <main id="main" class="site-main ts-section ts-surface" role="main" tabindex="-1">
+      {% assign home = site.data.home | default: {} %}
+
+      {% include sections/hero.html data=home.hero %}
+      {% include sections/services.html data=home.services %}
+      {% include sections/work.html data=home.work %}
+      {% include sections/process.html data=home.process %}
+      {% include sections/materials.html data=home.materials %}
+      {% include sections/testimonials.html data=home.testimonials %}
+      {% include sections/cta.html data=home.cta %}
+    </main>
+
+    {% include footer.html %}
+    {% include scripts.html %}
+
+    {% include schema-local-business.html %}
+    {% if page.include_faq_schema %}
+      {% include schema-faq.html %}
+    {% endif %}
+
+    {% if page.structured_data %}
+      <script type="application/ld+json">
+        {{ page.structured_data | jsonify }}
+      </script>
+    {% endif %}
+  </body>
+</html>

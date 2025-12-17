@@ -1,0 +1,10 @@
+{% assign work = include.data | default: site.data.home.work | default: {} %}
+
+{% if work %}
+  {% include portfolio-highlights.html
+    eyebrow=work.eyebrow
+    title=work.title
+    summary=work.summary
+    cta_url=work.cta.url
+    cta_label=work.cta.label %}
+{% endif %}

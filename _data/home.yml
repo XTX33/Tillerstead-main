@@ -1,0 +1,143 @@
+hero:
+  eyebrow: Licensed NJ Tile Contractor — TCNA-Aligned Systems
+  title: Waterproof tile assemblies for homes, rentals, and shore properties
+  summary: >-
+    Built the right way, once. Tillerstead plans and documents complete tile systems—substrates,
+    waterproofing, mortars, movement joints, and layout—so showers, baths, and floors stay dry and
+    solid for years in Atlantic, Ocean, and Cape May Counties.
+  primary:
+    label: Request a consult
+    url: /contact/
+  secondary:
+    label: View recent projects
+    url: /portfolio/
+  image:
+    src: /assets/img/tillerstead-work/bathrooms/bathroom-marble-shower-niche.jpg
+    alt: Finished marble shower niche and window returns built by Tillerstead
+  highlights:
+    - title: Documented waterproofing
+      summary: Photos of pans, drains, membranes, and flood tests—know exactly what’s behind the tile.
+    - title: Planned layout and movement
+      summary: Tile sizes, grout joints, and movement accommodation (per TCNA EJ171) mapped before cuts.
+    - title: Clean, accountable jobsites
+      summary: Daily updates for owners, landlords, and partners—records you can keep for resale or insurance.
+  facts:
+    - label: Documented waterproofing
+      text: Photos of pans, drains, membranes, and flood tests—know exactly what’s behind the tile.
+    - label: Planned layout and movement
+      text: Tile sizes, grout joints, and movement accommodation (per TCNA EJ171) mapped before cuts.
+    - label: Clean, accountable jobsites
+      text: Daily updates for owners, landlords, and partners—records you can keep for resale or insurance.
+
+services:
+  eyebrow: Core capabilities
+  title: Waterproof tile systems planned end-to-end
+  summary: Showers, bathrooms, and tile floors built as complete systems—substrate prep, waterproofing, mortars, layout, and movement accommodation—so they handle South Jersey life without leaks or loose tile.
+  cards:
+    - icon: waterproof
+      title: Custom Tile & Waterproof Showers
+      tagline: Built to last, not to leak
+      description: Complete waterproof assemblies with proper slope, drain integration, flood testing, and layout planned before thinset.
+      details:
+        - Flood-tested pans
+        - Membranes and seams detailed
+        - Niches, benches & glass-ready edges
+    - icon: tile
+      title: Heated Floors & Large-Format Tile
+      tagline: Warm, flat, and quiet
+      description: Heat mats over prepared substrates, decoupling membranes, and LFT layout to minimize lippage and noise.
+      details:
+        - Heat mats & controls
+        - Decoupling membranes
+        - Large-format layout & leveling
+    - icon: remodeling
+      title: Stone, Slab & Feature Walls
+      tagline: Statement pieces that endure
+      description: Marble, granite, and porcelain slabs coordinated with structure, waterproofing, and load to perform over time.
+      details:
+        - Stone accents
+        - Fireplace & TV walls
+        - Porcelain slab panels
+    - icon: maintenance
+      title: Repairs, Rebuilds & Maintenance
+      tagline: Fixing what failed early
+      description: Honest assessments, targeted repairs, and full rebuilds when prior work skipped waterproofing or movement joints.
+      details:
+        - Leak & moisture checks
+        - Forensic tear-outs & reports
+        - Owner & GC documentation
+  actions:
+    primary:
+      label: Book a waterproofing walkthrough
+      url: /contact/
+    secondary:
+      label: Review recent math & installs
+      url: /portfolio/
+  note: TCNA-guided installs, daily documentation, and respectful job-sites from demo through punch.
+
+work:
+  eyebrow: Recent South Jersey projects
+  title: System-based tile and stone work from AC to Cape May
+  summary: Browse bathrooms, shower rebuilds, and repairs showing how substrate prep, membranes, and planned layout translate into durable finishes.
+  cta:
+    label: View full portfolio
+    url: /portfolio/
+
+process:
+  eyebrow: How we work
+  title: Documented craftsmanship from walk-through to closeout
+  summary: >-
+    We plan and build to TCNA guidance: assess structure and flatness, protect and prep, install membranes and
+    seams, set tile with appropriate mortars, allow for movement (per EJ171), grout and seal as specified, then
+    document with photos.
+  steps:
+    - title: Walk-through & assessment
+      description: Free on-site consultation to review goals, budgets, and property conditions so every scope starts on solid information.
+    - title: Written scope & approval
+      description: Detailed materials, waterproofing assemblies, timelines, and change-order terms spelled out before work begins.
+    - title: Execution & closeout
+      description: Daily photo updates, clean jobsites, and final checklists with optional maintenance plans for rentals and shore properties.
+
+materials:
+  eyebrow: Materials & assemblies
+  title: Systems built to stay dry, flat, and quiet
+  summary: Substrates, membranes, mortars, and movement are mapped before tile goes on so coastal homes handle salt, sand, and frequent guests.
+  items:
+    - icon: waterproof
+      title: Waterproofing & drainage
+      description: Flood-tested pans, integrated drains, and surface or bonded membranes detailed with photos you can keep.
+      points:
+        - Pre-slope, drains, and seams documented
+        - Niches, benches, and penetrations sealed
+        - Flood tests logged before tile goes on
+    - icon: tile
+      title: Substrates, heat & layout math
+      description: Structure checks, flatness correction, and movement accommodation per EJ171 for large-format tile and heated floors.
+      points:
+        - Prep for large-format and stone weight
+        - Heat mats paired with decoupling membranes
+        - Layouts balanced to avoid sliver cuts
+    - icon: maintenance
+      title: Finishes, sealants & documentation
+      description: Grout, sealant, and trim choices matched to use, with punch lists and care notes for owners, landlords, and partners.
+      points:
+        - Balanced grout joints and clean terminations
+        - Expansion at transitions and changes of plane
+        - Care guidance for rentals and shore homes
+
+testimonials:
+  eyebrow: What homeowners and partners say
+  title: Reviews from South Jersey clients
+  limit: 3
+
+cta:
+  eyebrow: Ready to plan your project?
+  title: Tell us about your bathroom, shower, or tile project
+  summary: Full gut, leak concerns, or a rental that needs durable finishes—we’ll respond with a clear next step and realistic options aligned to standards.
+  primary:
+    label: Request a consult
+    url: /contact/
+  secondary:
+    label: Call (609) 862-8808
+    url: tel:+16098628808
+  note: Licensed NJ HIC #13VH10808800 · Serving Atlantic, Ocean & Cape May Counties

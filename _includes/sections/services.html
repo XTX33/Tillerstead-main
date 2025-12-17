@@ -1,0 +1,44 @@
+{% assign services = include.data | default: site.data.home.services | default: {} %}
+
+{% if services %}
+  <section class="ts-section ts-services" aria-labelledby="home-services-title">
+    <div class="container">
+      <header class="ts-services__header">
+        {% if services.eyebrow %}<p class="eyebrow text-accent">{{ services.eyebrow }}</p>{% endif %}
+        {% if services.title %}<h2 id="home-services-title" class="heading-2 text-primary">{{ services.title }}</h2>{% endif %}
+        {% if services.summary %}<p class="lead">{{ services.summary }}</p>{% endif %}
+      </header>
+
+      {% if services.cards and services.cards != empty %}
+        <ul class="ts-services__grid" role="list">
+          {% for service in services.cards %}
+            <li>
+              {% include ts-service-card.html
+                icon=service.icon
+                title=service.title
+                description=service.description
+                tagline=service.tagline
+                details=service.details
+                url=service.url %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if services.actions %}
+        <nav class="ts-services__actions" aria-label="Service actions">
+          {% if services.actions.primary %}
+            <a class="btn btn--primary" href="{{ services.actions.primary.url | relative_url }}">{{ services.actions.primary.label }}</a>
+          {% endif %}
+          {% if services.actions.secondary %}
+            <a class="btn btn--ghost" href="{{ services.actions.secondary.url | relative_url }}">{{ services.actions.secondary.label }}</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+
+      {% if services.note %}
+        <p class="ts-services__note">{{ services.note }}</p>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

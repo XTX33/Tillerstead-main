@@ -1,0 +1,17 @@
+{% assign hero = include.data | default: site.data.home.hero | default: {} %}
+
+{% if hero %}
+  {% assign hero_image = hero.image | default: {} %}
+  {% include unified-hero-home.html
+    eyebrow=hero.eyebrow
+    title=hero.title
+    summary=hero.summary
+    primary_label=hero.primary.label
+    primary_url=hero.primary.url
+    secondary_label=hero.secondary.label
+    secondary_url=hero.secondary.url
+    hero_project=hero_image
+    hero_image=hero_image
+    facts=hero.facts
+    bullets=hero.highlights %}
+{% endif %}
