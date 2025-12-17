@@ -14,3 +14,6 @@ vendor/
 
 # Ignore old/legacy files
 assets/css/legacy/
+
+# Ignore temporary build artifacts
+tmp.css

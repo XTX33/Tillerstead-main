@@ -6,9 +6,6 @@
    - Modern browser support with fallbacks
 */
 (() => {
-  const $ = (s, c = document) => c.querySelector(s);
-  const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
-
   // ...existing code...
   /* =========================
      HIGH CONTRAST MODE TOGGLE
