@@ -1,12 +1,12 @@
-{%- assign hero_title = include.title | default: page.hero_title | default: page.title | default: site.title -%}
-{%- assign hero_summary = include.summary | default: page.hero_summary | default: page.description | default: site.tagline -%}
+{%- assign hero_title = include.title | default: page.hero_title | default: page.title | default: 'Expert Tile & Bathroom Remodeling' -%}
+{%- assign hero_summary = include.summary | default: page.hero_summary | default: page.description | default: 'Professional tile installation, custom bathrooms, and home remodeling services in Southern New Jersey' -%}
 {%- assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed & Insured NJ Contractor' -%}
 {%- assign hero_badge = include.badge | default: page.hero_badge | default: 'NJ HIC #13VH10808800' -%}
 
 {%- assign hero_primary_url = include.primary_url | default: page.hero_primary_url | default: '/contact/' -%}
-{%- assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Schedule consultation' -%}
+{%- assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Get free estimate' -%}
 {%- assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' -%}
-{%- assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View portfolio' -%}
+{%- assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View our work' -%}
 
 {%- assign hero_project = include.hero_project | default: page.hero_project_image -%}
 {%- if hero_project -%}
@@ -28,11 +28,11 @@
     <div class="ts-hero__body">
       <div class="ts-hero__brand">
         {% include logo-main.html class="ts-logo-link ts-logo-link--hero" img_class="ts-logo ts-logo--hero" variant="inverse" %}
-        <p class="ts-hero__tagline">Professional tile installation and bathroom remodeling</p>
+        <p class="ts-hero__tagline">Precision tile work and bathroom remodeling excellence</p>
       </div>
 
       {% if hero_badge %}
-        <p class="ts-hero__badge" aria-label="New Jersey Home Improvement Contractor License">{{ hero_badge }}</p>
+        <p class="ts-hero__badge" aria-label="New Jersey Home Improvement Contractor License Number">{{ hero_badge }}</p>
       {% endif %}
 
       {% if hero_eyebrow %}
@@ -62,22 +62,22 @@
 
       <div class="ts-hero__actions">
         {% if hero_primary_url %}
-          <a class="btn btn--primary" href="{{ hero_primary_url | relative_url }}" aria-label="Schedule a free consultation">{{ hero_primary_label }}</a>
+          <a class="btn btn--primary" href="{{ hero_primary_url | relative_url }}" aria-label="Request a free project estimate">{{ hero_primary_label }}</a>
         {% endif %}
         {% if hero_secondary_url %}
-          <a class="btn btn--ghost" href="{{ hero_secondary_url | relative_url }}" aria-label="Browse completed tile and remodeling projects">{{ hero_secondary_label }}</a>
+          <a class="btn btn--ghost" href="{{ hero_secondary_url | relative_url }}" aria-label="View completed tile and bathroom projects">{{ hero_secondary_label }}</a>
         {% endif %}
       </div>
 
       <p class="ts-hero__trust-line">
-        <strong>Licensed NJ HIC #{{ site.company.hic }}</strong>
-        <span aria-label="separator">&middot;</span> TCNA-certified techniques
+        <strong>NJ Licensed HIC #13VH10808800</strong>
+        <span aria-label="separator">&middot;</span> TCNA-certified installation methods
         <span aria-label="separator">&middot;</span> Serving Atlantic, Ocean &amp; Cape May Counties
       </p>
     </div>
 
     {% if hero_project %}
-    <aside class="ts-hero__aside" aria-label="Featured work and credentials">
+    <aside class="ts-hero__aside" aria-label="Featured project and credentials">
       <figure class="ts-hero__project">
         <img src="{{ hero_project_img }}"
              alt="{{ hero_project_alt }}"
@@ -103,22 +103,22 @@
       {% else %}
         <ul class="ts-hero__facts" role="list">
           <li class="ts-hero__fact">
-            <p class="ts-hero__fact-label">TCNA &amp; ANSI Standards</p>
-            <p class="ts-hero__fact-body">Flood testing, proper mortar coverage, and complete documentation for every installation.</p>
+            <p class="ts-hero__fact-label">TCNA-Certified Standards</p>
+            <p class="ts-hero__fact-body">Industry-leading installation methods including proper mortar coverage, flood testing, and complete waterproofing systems.</p>
           </li>
           <li class="ts-hero__fact">
-            <p class="ts-hero__fact-label">Owner-operated</p>
-            <p class="ts-hero__fact-body">Clear project scopes, transparent pricing, and professional crews on every job.</p>
+            <p class="ts-hero__fact-label">Owner-Operated Business</p>
+            <p class="ts-hero__fact-body">Direct communication with the owner, detailed project planning, and experienced professional crews on every installation.</p>
           </li>
           <li class="ts-hero__fact">
             <p class="ts-hero__fact-label">Southern New Jersey</p>
-            <p class="ts-hero__fact-body">Reliable service in Atlantic, Ocean &amp; Cape May Counties with flexible scheduling.</p>
+            <p class="ts-hero__fact-body">Reliable, on-time service throughout Atlantic, Ocean &amp; Cape May Counties with flexible scheduling options.</p>
           </li>
         </ul>
       {% endif %}
 
       <p class="ts-hero__note">
-        Precision layouts, waterproof assemblies, and tile installations built to last decades.
+        Expert craftsmanship combining precision tile layouts, proper waterproofing assemblies, and installations engineered to last for decades.
       </p>
     </aside>
     {% endif %}
