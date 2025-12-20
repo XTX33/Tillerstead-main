@@ -271,6 +271,8 @@
   }
 }
 
+/* Mobile-specific adjustments */
+@media (max-width: 920px) {
   .stack,
   .cluster {
     gap: var(--stack-gap-mobile, var(--ts-spacing-sm));
