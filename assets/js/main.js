@@ -193,13 +193,14 @@
       }, 150);
     });
   }
+});
 
-  // =========================
-  // TESTIMONIAL READ MORE
-  // - Expands truncated testimonials
-  // - Accessible button toggle
-  // =========================
-  document.querySelectorAll('[data-read-more]').forEach(button => {
+// =========================
+// TESTIMONIAL READ MORE
+// - Expands truncated testimonials
+// - Accessible button toggle
+// =========================
+document.querySelectorAll('[data-read-more]').forEach(button => {
     button.addEventListener('click', function() {
       const quoteText = this.previousElementSibling;
       if (quoteText && quoteText.classList.contains('is-truncated')) {
