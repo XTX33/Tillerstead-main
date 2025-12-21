@@ -108,13 +108,6 @@
   });
 
   // =========================
-  // FORM HANDLING (STATIC HOST)
-  // - Ensures forms are accessible, TCNA/NJ HIC compliant
-  // - Netlify passthrough supported
-  // =========================
-  // (Add form handling logic here as needed, following OUTPUT_RULES.md)
-
-  // =========================
   // MOBILE NAVIGATION DRAWER
   // - Modal dialog pattern (ARIA compliant)
   // - ESC closes, backdrop click closes
@@ -193,15 +186,14 @@
       }, 150);
     });
   }
-});
 
-// =========================
-// TESTIMONIAL READ MORE
-// - Expands truncated testimonials
-// - Accessible button toggle
-// =========================
-document.querySelectorAll('[data-read-more]').forEach(button => {
-    button.addEventListener('click', function() {
+  // =========================
+  // TESTIMONIAL READ MORE
+  // - Expands truncated testimonials
+  // - Accessible button toggle
+  // =========================
+  document.querySelectorAll('[data-read-more]').forEach(button => {
+    button.addEventListener('click', function () {
       const quoteText = this.previousElementSibling;
       if (quoteText && quoteText.classList.contains('is-truncated')) {
         quoteText.classList.remove('is-truncated');
@@ -214,5 +206,4 @@ document.querySelectorAll('[data-read-more]').forEach(button => {
       }
     });
   });
-
 })();
