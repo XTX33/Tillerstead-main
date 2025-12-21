@@ -11,25 +11,26 @@
     <nav class="site-nav site-nav--left" role="navigation" aria-label="Primary navigation">
       <ul class="site-menu site-menu--left">
         {% assign nav_items = site.data.navigation.primary %}
-        {% assign half = nav_items.size | divided_by: 2 %}
-        {% for item in nav_items limit:half %}
-          {% assign is_current = false %}
-          {% if item.exact %}
-            {% if page.url == item.exact %}
-              {% assign is_current = true %}
+        {% for item in nav_items limit:3 %}
+          {% unless item.children %}
+            {% assign is_current = false %}
+            {% if item.exact %}
+              {% if page.url == item.exact %}
+                {% assign is_current = true %}
+              {% endif %}
+            {% elsif item.match %}
+              {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
+                {% assign is_current = true %}
+              {% endif %}
             {% endif %}
-          {% elsif item.match %}
-            {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
-              {% assign is_current = true %}
-            {% endif %}
-          {% endif %}
-          <li class="nav-item">
-            <a href="{{ item.url | relative_url }}"
-               class="nav-link{% if is_current %} active{% endif %}"
-               {% if is_current %} aria-current="page"{% endif %}>
-              {{ item.title }}
-            </a>
-          </li>
+            <li class="nav-item">
+              <a href="{{ item.url | relative_url }}"
+                 class="nav-link{% if is_current %} active{% endif %}"
+                 {% if is_current %} aria-current="page"{% endif %}>
+                {{ item.title }}
+              </a>
+            </li>
+          {% endunless %}
         {% endfor %}
       </ul>
     </nav>
@@ -42,24 +43,26 @@
     <!-- Right side navigation -->
     <nav class="site-nav site-nav--right" role="navigation" aria-label="Secondary navigation">
       <ul class="site-menu site-menu--right">
-        {% for item in nav_items offset:half %}
-          {% assign is_current = false %}
-          {% if item.exact %}
-            {% if page.url == item.exact %}
-              {% assign is_current = true %}
+        {% for item in nav_items offset:3 limit:3 %}
+          {% unless item.children %}
+            {% assign is_current = false %}
+            {% if item.exact %}
+              {% if page.url == item.exact %}
+                {% assign is_current = true %}
+              {% endif %}
+            {% elsif item.match %}
+              {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
+                {% assign is_current = true %}
+              {% endif %}
             {% endif %}
-          {% elsif item.match %}
-            {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
-              {% assign is_current = true %}
-            {% endif %}
-          {% endif %}
-          <li class="nav-item">
-            <a href="{{ item.url | relative_url }}"
-               class="nav-link{% if is_current %} active{% endif %}"
-               {% if is_current %} aria-current="page"{% endif %}>
-              {{ item.title }}
-            </a>
-          </li>
+            <li class="nav-item">
+              <a href="{{ item.url | relative_url }}"
+                 class="nav-link{% if is_current %} active{% endif %}"
+                 {% if is_current %} aria-current="page"{% endif %}>
+                {{ item.title }}
+              </a>
+            </li>
+          {% endunless %}
         {% endfor %}
       </ul>
     </nav>
@@ -94,24 +97,27 @@
       </div>
       
       <ul class="mobile-menu">
+        {% assign nav_items = site.data.navigation.primary %}
         {% for item in nav_items %}
-          {% assign is_current = false %}
-          {% if item.exact %}
-            {% if page.url == item.exact %}
-              {% assign is_current = true %}
+          {% unless item.children %}
+            {% assign is_current = false %}
+            {% if item.exact %}
+              {% if page.url == item.exact %}
+                {% assign is_current = true %}
+              {% endif %}
+            {% elsif item.match %}
+              {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
+                {% assign is_current = true %}
+              {% endif %}
             {% endif %}
-          {% elsif item.match %}
-            {% if page.url == item.match or page.url contains item.match and item.match != "/" %}
-              {% assign is_current = true %}
-            {% endif %}
-          {% endif %}
-          <li class="mobile-nav-item">
-            <a href="{{ item.url | relative_url }}"
-               class="mobile-nav-link{% if is_current %} active{% endif %}"
-               {% if is_current %} aria-current="page"{% endif %}>
-              {{ item.title }}
-            </a>
-          </li>
+            <li class="mobile-nav-item">
+              <a href="{{ item.url | relative_url }}"
+                 class="mobile-nav-link{% if is_current %} active{% endif %}"
+                 {% if is_current %} aria-current="page"{% endif %}>
+                {{ item.title }}
+              </a>
+            </li>
+          {% endunless %}
         {% endfor %}
       </ul>
 
