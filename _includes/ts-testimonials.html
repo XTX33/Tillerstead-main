@@ -1,3 +1,5 @@
+<!-- htmlhint doctype-first:false -->
+
 {% comment %}
 Testimonials include
 - Reads from `include.reviews` when provided, otherwise `site.data.reviews.reviews`.
@@ -23,7 +25,7 @@ Testimonials include
       <h2 id="{{ heading_id }}" class="heading-2">{{ heading }}</h2>
     </header>
 
-    {% if reviews and reviews.size > 0 %}
+    {% if reviews and reviews.size gt 0 %}
       <div class="ts-testimonials__grid" role="list">
         {% for review in reviews %}
           {% assign rating_value = review.rating | default: 5 %}
@@ -37,8 +39,8 @@ Testimonials include
               <span class="sr-only">Rated {{ rating_value }} out of {{ rating_max }} stars</span>
               <div class="ts-testimonial__stars" aria-hidden="true">
                 {% for i in (1..rating_max) %}
-                  <span class="ts-testimonial__star{% if i <= rating_value %} ts-testimonial__star--filled{% endif %}">
-                    {% if i <= rating_value %}★{% else %}☆{% endif %}
+                  <span class="ts-testimonial__star{% if i lte rating_value %} ts-testimonial__star--filled{% endif %}">
+                    {% if i lte rating_value %}★{% else %}☆{% endif %}
                   </span>
                 {% endfor %}
               </div>
@@ -51,12 +53,8 @@ Testimonials include
                 {% if review.job_type %}<span class="ts-testimonial__job"> · {{ review.job_type }}</span>{% endif %}
                 {% if review.date %}<span class="ts-testimonial__date"> · {{ review.date | date: "%b %Y" }}</span>{% endif %}
               </p>
-              {% if review.badges and review.badges.size > 0 %}
-                <ul class="ts-testimonial__badges" aria-label="Review badges">
-                  {% for badge in review.badges %}
-                    <li class="ts-testimonial__badge">{{ badge }}</li>
-                  {% endfor %}
-                </ul>
+              {% if review.badges and review.badges.size gt 0 %}
+                <ul class="ts-testimonial__badges" aria-label="Review badges">{%- for badge in review.badges -%}<li class="ts-testimonial__badge">{{ badge }}</li>{%- endfor -%}</ul>
               {% endif %}
               {% if review.url and review.platform %}
                 <a href="{{ review.url }}" 
