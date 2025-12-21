@@ -1,0 +1,183 @@
+/* ============================================
+   Micro-Interactions & Smooth Transitions
+   Luxury Brand Polish - Subtle, Delightful
+   ============================================ */
+
+:root {
+  /* Timing Functions - Natural, Organic Movement */
+  --ease-smooth: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-enter: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Duration Tokens */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  
+  /* Hover Lift Effect */
+  --lift-sm: translateY(-2px);
+  --lift-md: translateY(-4px);
+  --lift-lg: translateY(-8px);
+  
+  /* Shadow Elevation */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lifted: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-dramatic: 0 16px 48px rgba(0, 0, 0, 0.16);
+}
+
+/* Global Smooth Transitions */
+* {
+  transition-timing-function: var(--ease-smooth);
+}
+
+/* Interactive Elements - Universal Polish */
+a,
+button,
+input,
+select,
+textarea,
+.interactive {
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+/* Hover Lift for Cards & Clickables */
+.card,
+.service-card,
+.portfolio-item,
+.plan-card,
+.review-card,
+.cta-card {
+  transition: transform var(--duration-normal) var(--ease-smooth),
+              box-shadow var(--duration-normal) var(--ease-smooth);
+}
+
+.card:hover,
+.service-card:hover,
+.portfolio-item:hover,
+.plan-card:hover,
+.review-card:hover {
+  transform: var(--lift-md);
+  box-shadow: var(--shadow-lifted);
+}
+
+/* Button Micro-Interactions */
+.btn,
+.cta-button,
+.nav-action {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-fast) var(--ease-smooth);
+}
+
+.btn:hover,
+.cta-button:hover {
+  transform: var(--lift-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:active,
+.cta-button:active {
+  transform: scale(0.98);
+  transition-duration: var(--duration-instant);
+}
+
+/* Link Underline Animation */
+a:not(.btn):not(.cta-button):not(.nav-link) {
+  position: relative;
+  text-decoration: none;
+}
+
+a:not(.btn):not(.cta-button):not(.nav-link)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--duration-normal) var(--ease-smooth);
+}
+
+a:not(.btn):not(.cta-button):not(.nav-link):hover::after {
+  width: 100%;
+}
+
+/* Input Focus States */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  transform: scale(1.01);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in on Scroll (for JS enhancement) */
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-enter),
+              transform var(--duration-slow) var(--ease-enter);
+}
+
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Animation Support */
+.fade-in-scroll:nth-child(1) { transition-delay: 0ms; }
+.fade-in-scroll:nth-child(2) { transition-delay: 100ms; }
+.fade-in-scroll:nth-child(3) { transition-delay: 200ms; }
+.fade-in-scroll:nth-child(4) { transition-delay: 300ms; }
+.fade-in-scroll:nth-child(5) { transition-delay: 400ms; }
+
+/* Image Hover Zoom */
+.image-zoom-container {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.image-zoom-container img {
+  transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Nav Item Active State */
+.nav-link.active {
+  position: relative;
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 2px;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

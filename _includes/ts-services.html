@@ -55,7 +55,7 @@
             {%- assign service_details_list = service_details_list | split: ',' -%}
           {%- endif -%}
 
-          <li>
+          <li class="fade-in-scroll">
             {% include ts-service-card.html
               icon=service_icon_key
               title=service_title
