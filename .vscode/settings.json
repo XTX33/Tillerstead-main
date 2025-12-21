@@ -1,4 +1,6 @@
 {
+    // Accessibility: Disable inlay hints audio signals for a distraction-free, WCAG-compliant editing experience.
+    // Reference: .ai/COMPLIANCE.md (accessibility), .ai/OUTPUT_RULES.md (clarity, no redundancy)
     "accessibility.signals.noInlayHints": {
         "sound": "off"
     }

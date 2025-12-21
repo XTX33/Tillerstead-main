@@ -11,7 +11,7 @@ jobs:
     name: No-op (required check)
     runs-on: ubuntu-latest
     steps:
-      - run: echo "No-op on push/PR; deletion is manual only."
+      - run: echo "No-op on push/PR; branch deletion is manual via workflow_dispatch only."
 
   delete-branches:
     if: github.event_name == 'workflow_dispatch'
@@ -20,66 +20,57 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository (full history)
         uses: actions/checkout@v4.1.2
         with:
           fetch-depth: 0
 
-      - name: Delete all branches except main
+      - name: Delete all remote branches except main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          # Function to get list of branches to delete
-          get_branches_to_delete() {
-            git for-each-ref --format='%(refname:short)' \
-                refs/remotes/origin/ | \
-                grep -v '^origin/HEAD$' | \
-                grep -v '^origin/main$' | \
-                sed 's|^origin/||' || true
-          }
+          # Tillerstead LLC - Branch Hygiene (TCNA/NJ HIC Compliant)
+          # This script removes all remote branches except 'main' to ensure codebase integrity and regulatory compliance.
+          # See /.ai/OUTPUT_RULES.md for naming and operational standards.
+
+          set -euo pipefail
 
           echo "=========================================="
-          echo "Branch Deletion Workflow"
+          echo "Tillerstead Branch Deletion Workflow"
           echo "=========================================="
-          echo "Fetching all remote branches..."
+          echo "Fetching all remote branches for authoritative cleanup..."
           git fetch --all --prune
 
-          echo ""
-          echo "Getting list of all remote branches except main..."
+          # List all remote branches except main and HEAD
+          branches_to_delete=$(git for-each-ref --format='%(refname:short)' refs/remotes/origin/ \
+            | grep -v '^origin/HEAD$' \
+            | grep -v '^origin/main$' \
+            | sed 's|^origin/||' || true)
 
-          # Use git for-each-ref for safer branch listing
-          branches_found=false
-          echo "Branches to delete:"
-          echo "=========================================="
-          while IFS= read -r branch; do
-            branches_found=true
-            echo "$branch"
-          done < <(get_branches_to_delete)
-
-          if [ "$branches_found" = false ]; then
-            echo "✓ No branches to delete (only main exists)"
+          if [ -z "$branches_to_delete" ]; then
+            echo "✓ No branches to delete (only main exists)."
             exit 0
           fi
 
-          echo "=========================================="
-          echo ""
+          echo "Branches scheduled for deletion:"
+          echo "------------------------------------------"
+          echo "$branches_to_delete"
+          echo "------------------------------------------"
 
-          # Track results
           success_count=0
           fail_count=0
 
-          # Delete each branch
-          while IFS= read -r branch; do
-            echo "Deleting branch: $branch"
+          for branch in $branches_to_delete; do
+            echo "Deleting remote branch: $branch"
             if git push origin --delete "$branch"; then
               echo "✓ Successfully deleted: $branch"
               success_count=$((success_count + 1))
             else
               echo "✗ Failed to delete: $branch"
-              ((fail_count++)) || true
+              fail_count=$((fail_count + 1))
             fi
-          done < <(get_branches_to_delete)
+          done
 
           echo ""
           echo "=========================================="

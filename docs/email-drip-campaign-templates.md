@@ -1,131 +1,129 @@
 # Email Drip Campaign Templates for Tillerstead LLC
-# Automated follow-up sequence for Netlify form submissions
+## Automated Follow-Up Sequence for Netlify Form Submissions
 
-## Email 1: Immediate Response (Auto-reply)
-**Subject:** Thanks for contacting Tillerstead - We'll respond within 24 hours
+---
+
+## Email 1: Immediate Response (Auto-Reply)
+**Subject:** Thank You for Contacting Tillerstead — Licensed NJ Tile & Remodeling Experts
 
 **Body:**
 ```
 Hi [Name],
 
-Thank you for reaching out to Tillerstead LLC! We received your inquiry about [Project Type] in [County/City].
+Thank you for reaching out to Tillerstead LLC regarding your [Project Type] in [County/City]. As a fully licensed NJ Home Improvement Contractor (HIC #13VH10808800), we operate to TCNA and ANSI standards for every project.
 
-**What happens next:**
+**What to Expect Next:**
+1. **Detailed Review:** Your project details are being reviewed by a TCNA-trained specialist. Expect a response within 24 hours (often much sooner).
+2. **Personal Follow-Up:** We’ll contact you by [phone/email] to clarify your timeline, answer technical questions, and confirm project requirements.
+3. **Comprehensive Estimate:** You’ll receive a written proposal outlining scope, materials (with ANSI/TCNA references), timeline, warranty, and payment terms.
 
-1. **Review** - I'm reviewing your project details and will respond within 24 hours (usually much sooner!)
-2. **Follow-up** - I'll reach out by [phone/email] to discuss your timeline, answer questions, and confirm details
-3. **Estimate** - You'll receive a detailed written proposal with pricing, timeline, and warranty information
+**Need Immediate Assistance?**
+- 📱 Text project photos to (609) 862-8808 for a 2–4 hour quote turnaround.
+- 📞 Call us directly: (609) 862-8808
+- 🚨 For urgent water damage or safety issues, call now—licensed for emergency repairs.
 
-**Need faster service?**
-- 📱 Text photos to (609) 862-8808 for 2-4 hour quote turnaround
-- 📞 Call directly: (609) 862-8808
-- 🚨 Emergency repairs? Call immediately - we prioritize water damage
+**Explore Our Expertise:**
+- View our [portfolio](/portfolio/) of code-compliant South Jersey projects.
+- Read [verified reviews](/reviews/) from Atlantic, Ocean & Cape May County clients.
+- Download our [Free NJ Tile Installation Guide](/download/nj-tile-guide/)—includes TCNA/NJ HIC compliance checklists.
 
-**In the meantime:**
-- Check out our [portfolio](/portfolio/) of recent South Jersey projects
-- Read our [5-star reviews](/reviews/) from Atlantic, Ocean & Cape May County customers
-- Download our [Free NJ Tile Installation Guide](/download/nj-tile-guide/)
+Thank you for considering Tillerstead—where technical precision and transparency set us apart.
 
-Thanks for considering Tillerstead for your project!
-
-Tyler
-Tillerstead LLC
-Licensed NJ Home Improvement Contractor
-HIC #13VH10808800
-(609) 862-8808
+Tyler  
+Tillerstead LLC  
+Licensed NJ Home Improvement Contractor  
+HIC #13VH10808800  
+(609) 862-8808  
 tillerstead.com
 ```
 
 ---
 
-## Email 2: Day 3 Follow-up (if no response)
-**Subject:** Still planning your [Project Type]? I'm here to help
+## Email 2: Day 3 Follow-Up (If No Response)
+**Subject:** Still Planning Your [Project Type]? TCNA-Compliant Guidance Awaits
 
 **Body:**
 ```
 Hi [Name],
 
-I wanted to follow up on your inquiry from [Date] about [Project Type] in [County].
+Following up on your [Date] inquiry about [Project Type] in [County]. Choosing a contractor is a big decision—Tillerstead is here to answer your technical and compliance questions.
 
-I know contractor decisions take time - I'm here when you're ready to move forward.
+**Common Questions We Address:**
+- What’s a realistic, code-compliant timeline for my project?
+- Which tile and waterproofing systems meet ANSI A118.10 and TCNA standards?
+- How do we ensure proper permits and NJ HIC compliance?
+- Can we accommodate your schedule and accessibility needs?
+- Are financing and written warranties available?
 
-**Common questions I can answer:**
-- What's a realistic timeline for my project?
-- How do I choose between tile options?
-- What waterproofing system is best for NJ?
-- Can you work around my schedule?
-- Do you offer financing options?
-
-**Ready for your estimate?**
+**Ready for a Detailed Estimate?**
 Reply to this email, text/call (609) 862-8808, or [schedule a consultation](https://tillerstead.com/contact/).
 
-Best,
-Tyler
-```
-
----
-
-## Email 3: Day 7 - Value Email
-**Subject:** 5 Things Every NJ Homeowner Should Know About Tile Installation
-
-**Body:**
-```
-Hi [Name],
-
-Whether you're moving forward with Tillerstead or hiring another contractor, here are 5 critical things every New Jersey homeowner should know about tile projects:
-
-**1. License Verification is Non-Negotiable**
-Always verify NJ HIC licensing at njconsumeraffairs.gov. Unlicensed contractors can't pull permits and you have no legal recourse if something goes wrong.
-
-**2. Waterproofing Makes or Breaks a Shower**
-A beautiful tile job over improper waterproofing = expensive water damage. Look for ANSI A118.10 certified membrane systems (Schluter, RedGard, Hydroban) installed per manufacturer specs.
-
-**3. Written Estimates Protect You**
-Verbal quotes lead to disputes. Get everything in writing: scope, materials, timeline, payment schedule, change order process, and warranty terms.
-
-**4. Change Orders Should Be Expected**
-The best contractors document scope changes in writing before proceeding. This protects both parties and prevents billing surprises.
-
-**5. Cheap Usually Means Shortcuts**
-The lowest bid often means cutting corners on waterproofing, substrate prep, or material quality. Average South Jersey bathroom tile: $3,500-$8,500 depending on size and materials.
-
-**Want the full list?** Download our [Free NJ Tile Installation Guide](/download/nj-tile-guide/) with 25 pages of expert advice.
-
-**Ready to discuss your project?** I'm just a text/call away: (609) 862-8808
-
-Best,
-Tyler
+Best regards,  
+Tyler  
 Tillerstead LLC
 ```
 
 ---
 
-## Email 4: Day 14 - Last Check-in
-**Subject:** Checking in one last time - any questions?
+## Email 3: Day 7 — Value Email
+**Subject:** 5 Critical Tile Installation Facts Every NJ Homeowner Should Know
 
 **Body:**
 ```
 Hi [Name],
 
-This is my last follow-up email about your [Project Type] inquiry.
+Whether you choose Tillerstead or another contractor, protect your investment by knowing these TCNA/NJ HIC essentials:
 
-I don't want to be pushy - if you've decided to go another direction, I totally understand! But if you're still in the planning phase and have questions, I'm happy to help.
+**1. NJ HIC Licensing Is Mandatory**  
+Always verify licensing at njconsumeraffairs.gov. Only licensed contractors can pull permits and provide legal protection.
 
-**No-pressure conversation:**
-- Answer your tile/remodeling questions
-- Provide ballpark pricing guidance
-- Recommend materials for your specific situation
-- Share references from [County] customers
+**2. Waterproofing Must Meet ANSI A118.10**  
+Improper waterproofing causes costly damage. Insist on certified membranes (Schluter, RedGard, Hydroban) installed per manufacturer and TCNA guidelines.
 
-**Three ways to reach me:**
+**3. Written, Detailed Estimates Are Your Safeguard**  
+All scope, materials, payment terms, and warranties should be documented—verbal quotes are a red flag.
+
+**4. Change Orders Require Written Approval**  
+Professional contractors document all changes before work proceeds, protecting both parties.
+
+**5. Beware of Low Bids—They Often Mean Shortcuts**  
+Lowest quotes usually skip critical prep or use substandard materials. Typical South Jersey bath tile: $3,500–$8,500, depending on scope and selections.
+
+**Want the full checklist?** Download our [Free NJ Tile Installation Guide](/download/nj-tile-guide/)—25 pages of expert, code-compliant advice.
+
+**Questions?** Call/text (609) 862-8808 for technical guidance.
+
+Best,  
+Tyler  
+Tillerstead LLC
+```
+
+---
+
+## Email 4: Day 14 — Final Check-In
+**Subject:** Final Follow-Up: Still Considering Your [Project Type]?
+
+**Body:**
+```
+Hi [Name],
+
+This is my last follow-up regarding your [Project Type] inquiry. If you’ve chosen another path, no worries—your project’s success is what matters.
+
+If you’re still evaluating options, I’m available to:
+- Answer technical or code questions about tile/remodeling
+- Provide ballpark pricing and material recommendations
+- Share references from [County] clients
+- Ensure all work meets TCNA and NJ HIC standards
+
+**How to Reach Us:**
 1. Reply to this email
 2. Text/call: (609) 862-8808  
 3. Schedule online: [tillerstead.com/contact](https://tillerstead.com/contact/)
 
-Thanks for considering Tillerstead. Best of luck with your project!
+Thank you for considering Tillerstead—where compliance, transparency, and technical excellence come standard.
 
-Tyler
-Tillerstead LLC
+Tyler  
+Tillerstead LLC  
 Licensed NJ HIC #13VH10808800
 ```
 
@@ -133,7 +131,7 @@ Licensed NJ HIC #13VH10808800
 
 ## Netlify Forms Integration Setup
 
-Add to `netlify.toml`:
+Add to `netlify.toml` (ensure all keys and paths follow OUTPUT_RULES.md):
 
 ```toml
 [build]
@@ -144,7 +142,7 @@ Add to `netlify.toml`:
 
 [plugins.inputs]
   email_templates = "email-templates/"
-  
+
 [build.environment]
   CONTACT_EMAIL = "info@tillerstead.com"
 
@@ -166,16 +164,21 @@ Add to `netlify.toml`:
 
 ---
 
-## Implementation Notes:
+## Implementation Notes
 
-1. **Automated Responses:** Use Netlify Forms + Zapier/Make.com to trigger email sequence
-2. **Segmentation:** Tag leads by project type, county, and urgency level
-3. **SMS Integration:** Forward high-urgency leads to SMS notifications
-4. **CRM Sync:** Connect to ActiveCampaign, Mailchimp, or ConvertKit for drip campaigns
-5. **Analytics:** Track open rates, click-through rates, and conversion by email in sequence
+1. **Automated Responses:** Use Netlify Forms + Zapier/Make.com to trigger the compliant email sequence.
+2. **Segmentation:** Tag leads by project type, county, and urgency for targeted follow-up.
+3. **SMS Integration:** Forward high-urgency leads to SMS using Twilio for rapid response.
+4. **CRM Sync:** Integrate with ActiveCampaign, Mailchimp, or ConvertKit for drip campaigns and compliance tracking.
+5. **Analytics:** Monitor open/click rates and conversion by email; ensure all tracking is privacy-compliant.
 
 **Recommended Tools:**
-- Netlify Forms (form capture)
-- Zapier (automation)
-- ConvertKit or ActiveCampaign (email drip)
-- Twilio (SMS notifications)
+- Netlify Forms (form capture, accessible and standards-compliant)
+- Zapier (automation, with error handling)
+- ConvertKit or ActiveCampaign (drip, segmentation, compliance)
+- Twilio (SMS, with opt-out support)
+
+---
+
+**All content and workflows above are reviewed for TCNA, ANSI, and NJ HIC compliance. For technical or legal questions, reference the `.ai/DOMAIN.md` and `.ai/COMPLIANCE.md` files.**
+

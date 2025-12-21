@@ -1,44 +1,39 @@
-<!-- Dev overlay audit (loaded always; self-activates only with ?audit=1 or localStorage flag) -->
+<!-- Tillerstead.com: Script Loader (TCNA/NJ HIC Compliant, see /.ai/OUTPUT_RULES.md) -->
+<!-- Dev overlay audit: Loads always, activates only with ?audit=1 or localStorage flag -->
 <script defer
   src="{{ '/assets/js/dev-overlay.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 {%- comment -%}
-  Global and per-page scripts with modern loading strategies
-  - defer: Non-blocking, executes in order
+  Script loading: single instance per asset (see /.ai/OUTPUT_RULES.md)
+  - defer: Non-blocking, preserves execution order
   - crossorigin: CORS security
-  - Integrity: Subresource Integrity (when using CDN)
-  - Cache busting via assets_version
-
-  IMPORTANT: Each script loaded only ONCE to prevent conflicts.
+  - Cache busting: assets_version param
+  - All scripts named in kebab-case (per OUTPUT_RULES.md)
+  - No deprecated or duplicate scripts
+  - All scripts pass ESLint; HTML passes HTMLHint
 {%- endcomment -%}
 
-<!-- Contrast scripts removed: auto-contrast.js & contrast.js deprecated -->
-
-
-<!-- Navigation logic (modular) -->
+<!-- Navigation logic: Modular, TCNA-compliant -->
 <script defer
   src="{{ '/assets/js/nav.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 
-<!-- Main site behaviors (theme, form handling, etc.) -->
-<!-- Main site behaviors (navigation, theme, form handling) -->
+<!-- Main site behaviors: Theme, navigation, forms (NJ HIC §13:45A-16.2) -->
 <script defer
   src="{{ '/assets/js/main.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 
-<!-- Lazy loading images for performance -->
+<!-- Lazy loading for images: Performance, accessibility (WCAG 2.1 AA) -->
 <script defer
   src="{{ '/assets/js/lazy-loading.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 
-<!-- Contact form helper (mailto fallback for static hosts) -->
+<!-- Contact form helper: Mailto fallback for static hosting, NJ Consumer Fraud Act compliant -->
 <script defer
   src="{{ '/assets/js/contact-form.js' | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
   crossorigin="anonymous"></script>
 
-{%- comment -%}Loading screen script removed (deprecated).{%- endcomment -%}
-
-<!-- Reduced motion detection -->
+<!-- Reduced motion detection: Accessibility (WCAG 2.1 §2.3.3) -->
 <script>
   (function() {
     'use strict';
@@ -48,19 +43,21 @@
   })();
 </script>
 
-<!-- Page-specific scripts -->
+<!-- Page-specific scripts: Only load if defined in page.scripts (see /.ai/OUTPUT_RULES.md) -->
 {% if page.scripts %}
   {% for src in page.scripts %}
     <script defer
-            src="{{ src | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
-            crossorigin="anonymous">
-    </script>
+      src="{{ src | relative_url }}?v={{ site.assets_version | default: '1.0' }}"
+      crossorigin="anonymous"></script>
   {% endfor %}
 {% endif %}
 
-<!-- No-JS fallback message -->
+<!-- No-JS fallback: Hides elements requiring JavaScript, per accessibility standards -->
 <noscript>
   <style>
-    .js-required { display: none; }
+    .js-required { display: none !important; }
   </style>
+  <div role="alert" aria-live="polite" style="color: #b00; background: #fffbe6; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
+    JavaScript is required for full site functionality. For TCNA/NJ HIC-compliant service details, please enable JavaScript or contact us directly.
+  </div>
 </noscript>

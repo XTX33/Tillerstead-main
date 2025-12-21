@@ -1,6 +1,4 @@
 ﻿# ============================
-#  Tillerstead.com â€” _config.yml
-# ============================
 #  Tillerstead.com — _config.yml
 # ============================
 
@@ -21,7 +19,7 @@ keywords:
   - Large format tile installer NJ
   - Licensed tile contractor NJ
 
-# Use your own layouts/includes (no injected theme)
+# No theme injection; use custom layouts/includes
 theme: null
 
 # Build & content
@@ -32,12 +30,12 @@ social:
   name: Tillerstead LLC
   links:
     - https://tillerstead.com
+    - https://www.instagram.com/tillerstead?igsh=MWg5NjlwNXBnYXM2Mg%3D%3D&utm_source=qr
+    - https://www.facebook.com/share/17ZQCR2zdZ/?mibextid=wwXIfr
+    - https://x.com/tillerstead?s=21
   instagram: "https://www.instagram.com/tillerstead?igsh=MWg5NjlwNXBnYXM2Mg%3D%3D&utm_source=qr"
   facebook: "https://www.facebook.com/share/17ZQCR2zdZ/?mibextid=wwXIfr"
   x: "https://x.com/tillerstead?s=21"
-    # Add social links once ready:
-    # - https://www.instagram.com/tillerstead
-    # - https://www.facebook.com/tillerstead
 
 # Business variables
 company:
@@ -52,9 +50,8 @@ company:
   address_postal_code: "08205"
   email: "info@tillerstead.com"
 
-# Optional: global defaults for OG/social
+# OG/social defaults
 logo: /assets/img/logo/tillerstead-logo-header.svg
-# Use existing project imagery for social + hero preloads
 default_og_image: /assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg
 hero_default_image: /assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.jpg
 
@@ -73,6 +70,10 @@ exclude:
   - Gemfile.lock
   - .DS_Store
   - .gitignore
+  - .ai/
+  - .github/
+  - "*.code-workspace"
+  - "*.devcontainer.json"
 
 keep_files:
   - CNAME
@@ -98,6 +99,7 @@ ux:
     - "Design consultations to align look, budget, and timeline"
     - "Transparent scheduling and material lead times"
     - "Monthly property care plans with photo reports"
+
 # Form submission defaults
 forms:
   endpoint: "https://formsubmit.co/info@tillerstead.com"

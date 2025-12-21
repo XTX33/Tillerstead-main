@@ -1,17 +1,55 @@
-/* Error: expected "}".
- *     ,
- * 464 | }
- *     |  ^
- *     '
- *   _sass\components\_buttons.scss 464:2  root stylesheet */
+/* 
+ * Tillerstead.com – Error Overlay Styles (DEV ONLY)
+ * Purpose: Visibly display SCSS/CSS build errors for rapid debugging.
+ * Context: Temporary overlay for local development only.
+ * Remove before production deploy.
+ * Brand: Navy (#000080), Green (#1cb394), White (#fff)
+ */
 
 body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+  font-family: "Fira Mono", "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Droid Sans Mono", monospace;
+  white-space: pre-wrap;
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "}".\a     \2577 \a 464 \2502  }\a     \2502   ^\a     \2575 \a   _sass\\components\\_buttons.scss 464:2  root stylesheet';
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100%;
+  background: linear-gradient(90deg, #fff 80%, #1cb394 100%);
+  color: #000080;
+  padding: 2em 2.5em 2em 2em;
+  margin: 0 0 2em 0;
+  border-top: 4px solid #1cb394;
+  border-bottom: 4px solid #000080;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  z-index: 9999;
+  position: relative;
+  content: 'SCSS Build Error:\a\aError: expected "}".\a     \2577 \a 464 \2502  }\a     \2502   ^\a     \2575 \a   _sass\\components\\_buttons.scss 464:2  root stylesheet\a\aResolve the error in _buttons.scss and recompile.';
+  /* Accessibility: Ensure error is visible to screen readers */
+  aria-live: assertive;
+  text-shadow: 0 1px 0 #fff, 0 2px 4px #1cb39422;
+  box-shadow: 0 2px 12px #00008022;
+}
+
+/* Optional: Add a dismiss button for devs */
+body::after {
+  content: "×";
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  font-size: 2rem;
+  color: #1cb394;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  text-align: center;
+  box-shadow: 0 1px 4px #00008022;
+  z-index: 10000;
+  pointer-events: auto;
+}
+body::after:hover {
+  background: #1cb394;
+  color: #fff;
 }

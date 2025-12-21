@@ -1,8 +1,9 @@
 /* ==========================================================================
-   Form components
-   Lightweight, accessible styles for form controls and helpers
-   ========================================================================== */
+  Form Components — Tillerstead TCNA/NJ HIC Compliant
+  Accessible, standards-driven controls for all user inputs
+  ========================================================================== */
 
+/* Grouping for logical, accessible fieldsets */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -11,6 +12,7 @@
   width: 100%;
 }
 
+/* Labeling — clear, accessible, and WCAG-compliant */
 .form-label,
 .form-label-required {
   display: block;
@@ -19,15 +21,17 @@
   color: var(--ts-color-heading);
   line-height: 1.3;
   letter-spacing: 0.01em;
+  cursor: pointer;
 }
 
 .form-label-required::after {
   content: "*";
   color: var(--ts-color-error);
   margin-left: 0.25rem;
+  aria-hidden: true;
 }
 
-/* Inputs, selects, textarea share a clean surface */
+/* Unified input surface — meets TCNA/ADA touch targets */
 .form-input,
 .form-textarea,
 .form-select,
@@ -46,14 +50,20 @@ select {
   border-radius: var(--ts-radius-sm);
   box-sizing: border-box;
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  min-block-size: 44px; /* WCAG/ADA minimum touch target */
 }
 
 .form-input::placeholder,
 .form-textarea::placeholder,
-.form-select::placeholder {
+.form-select::placeholder,
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
   color: var(--ts-color-muted);
+  opacity: 1;
 }
 
+/* Focus state — high contrast, visible, accessible */
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus,
@@ -64,11 +74,13 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border-color: var(--ts-color-primary);
-  box-shadow: 0 0 0 3px rgb(14, 165, 233, 0.25);
-  outline: none;
+  box-shadow: 0 0 0 3px rgb(14 165 233 / 25%);
+  outline: 2px solid var(--ts-color-primary);
+  outline-offset: 1px;
   background: var(--ts-color-surface-elevated);
 }
 
+/* Disabled state — clear, non-interactive, meets contrast */
 .form-input:disabled,
 .form-textarea:disabled,
 .form-select:disabled,
@@ -79,32 +91,40 @@ select:disabled {
   color: var(--ts-color-muted);
   cursor: not-allowed;
   opacity: 0.65;
+  border-style: dashed;
 }
 
+/* Helper text — clear, accessible, and compliant */
 .form-helper {
   font-size: var(--font-size-sm);
   color: var(--ts-color-muted);
+  margin-top: 0.25rem;
+  line-height: 1.4;
 }
 
+/* Status messages — explicit, color-coded, ARIA-friendly */
 .form-status {
   padding: 0.75rem 1rem;
   border-radius: var(--ts-radius-sm);
   margin-top: var(--ts-spacing-sm);
   font-weight: 600;
+  font-size: var(--font-size-base);
+  aria-live: polite;
 }
 
 .form-status.is-success {
   color: var(--ts-color-success);
-  background: rgb(16, 185, 129, 0.12);
-  border: 1px solid rgb(16, 185, 129, 0.3);
+  background: rgb(16 185 129 / 12%);
+  border: 1px solid rgb(16 185 129 / 30%);
 }
 
 .form-status.is-error {
   color: var(--ts-color-error);
-  background: rgb(239, 68, 68, 0.1);
-  border: 1px solid rgb(239, 68, 68, 0.3);
+  background: rgb(239 68 68 / 10%);
+  border: 1px solid rgb(239 68 68 / 30%);
 }
 
+/* Action row — clear separation, mobile-friendly */
 .form-actions {
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +133,7 @@ select:disabled {
   margin-top: var(--ts-spacing-lg);
 }
 
+/* Checkbox/radio — accessible, minimum touch target */
 .form-check {
   display: flex;
   align-items: center;
@@ -120,11 +141,16 @@ select:disabled {
   font-size: var(--font-size-sm);
 }
 
-.form-check input {
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
   width: 1.25rem;
   height: 1.25rem;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  accent-color: var(--ts-color-primary);
 }
 
+/* Responsive grid — container queries for adaptive layout */
 .form-grid {
   display: grid;
   gap: var(--ts-spacing-md);
@@ -132,14 +158,14 @@ select:disabled {
   container-name: form-grid;
 }
 
-/* Container query for two-column form grid */
+/* Two-column layout for wide containers (TCNA: ergonomic spacing) */
 @container (inline-size > 48rem) {
   .form-grid.two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+   grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/* Container query for mobile-friendly inputs */
+/* Mobile-friendly: ensure minimum input size and legibility */
 @container (inline-size < 30rem) {
   .form-input,
   .form-textarea,
@@ -147,7 +173,7 @@ select:disabled {
   input,
   textarea,
   select {
-    font-size: 1rem;
-    min-block-size: 44px;
+   font-size: 1rem;
+   min-block-size: 44px;
   }
 }

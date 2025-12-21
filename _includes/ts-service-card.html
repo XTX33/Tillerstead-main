@@ -1,5 +1,6 @@
 {% assign icon = include.icon | default: 'tile' %}
-
+{% assign card_id = include.id | default: include.title | slugify %}
+{% assign aria_label = include.title | prepend: 'Service card: ' %}
 {% capture icon_svg %}
   {% case icon %}
   {% when 'tile', 'flooring', 'waterproof' %}
@@ -32,17 +33,21 @@
   {% endcase %}
 {% endcapture %}
 
-<article class="card card--service ts-service-card" role="listitem">
+<article class="card card--service ts-service-card" role="listitem" id="{{ card_id }}" aria-label="{{ aria_label }}">
   <header class="card-header">
     <span class="ts-service-card__icon" aria-hidden="true">{{ icon_svg | strip }}</span>
     <div>
-      <p class="ts-service-card__tagline">{{ include.tagline | default: 'Documented scope &amp; math' }}</p>
+      <p class="ts-service-card__tagline">
+        {{ include.tagline | default: 'TCNA-compliant scope, transparent math, and NJ HIC #13VH12098700' }}
+      </p>
       <h3 class="card-title">{{ include.title }}</h3>
     </div>
   </header>
 
   <div class="ts-service-card__body">
-    <p class="card-desc">{{ include.description }}</p>
+    <p class="card-desc">
+      {{ include.description | default: 'All work performed to TCNA 2024 standards and NJ Consumer Fraud Act requirements. Detailed scope, transparent pricing, and documented methods—no shortcuts, no surprises.' }}
+    </p>
 
     {% if include.details %}
       <ul class="ts-service-card__points">
@@ -64,12 +69,16 @@
     {% endif %}
   </div>
 
-  {% if include.url %}
-    <footer class="card-footer">
-      <a class="ts-service-card__link" href="{{ include.url | relative_url }}" aria-label="Learn more about {{ include.title }}">
-        <span>Learn more</span>
-        <span aria-hidden="true">&rarr;</span>
-      </a>
-    </footer>
-  {% endif %}
+  <footer class="card-footer">
+    <a class="ts-service-card__link" href="{% if include.url %}{{ include.url | relative_url }}{% else %}/contact{% endif %}" aria-label="Learn more about {{ include.title | default: 'this service' }}">
+      <span>
+        {% if include.url %}
+          Learn more
+        {% else %}
+          Request a consultation
+        {% endif %}
+      </span>
+      <span aria-hidden="true">&rarr;</span>
+    </a>
+  </footer>
 </article>

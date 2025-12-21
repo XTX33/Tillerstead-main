@@ -1,52 +1,60 @@
 ---
 layout: default
-description: "Request a monthly maintenance plan or project estimate from Tillerstead LLC. Serving homeowners, landlords, and small commercial properties across South Jersey. NJ Licensed HIC #13VH10808800."
+description: "Request a TCNA-compliant project estimate or monthly maintenance plan from Tillerstead LLC. Serving South Jersey with licensed, insured tile and remodeling services. NJ HIC #13VH10808800."
 body_class: page-contact
 
 # Hero content for shared page-hero.html
 hero_eyebrow: "Contact"
 hero_title: Request a Scope Review or Estimate
 hero_summary: >
-  Licensed NJ contractor serving Atlantic, Ocean, and Cape May Counties.
-  Send project details for a written proposal with scope, timeline, and pricing.
+  NJ-licensed, TCNA-compliant contractor serving Atlantic, Ocean, and Cape May Counties.
+  Submit project details for a written scope, timeline, and transparent pricing.
 hero_primary_url: "tel:+16098628808"
 hero_primary_label: "Call Now: (609) 862-8808"
 hero_secondary_url: "mailto:info@tillerstead.com"
 hero_secondary_label: "Email Us"
 hero_kpis:
-  - label: "Licensed"
-    text: "NJ HIC #13VH10808800 with liability insurance"
-  - label: "Services"
-    text: "Tile installation, waterproof showers, bathroom remodeling, and property maintenance"
-  - label: "Service area"
-    text: "Atlantic, Ocean, and Cape May Counties. Larger projects statewide by request."
+  - label: "Licensed & Insured"
+    text: "NJ HIC #13VH10808800 · Full liability coverage"
+  - label: "Specialties"
+    text: "Tile installation, waterproofing (ANSI A118.10), bathroom remodeling, property maintenance"
+  - label: "Service Area"
+    text: "Atlantic, Ocean, Cape May Counties. Statewide for large-scope projects."
 ---
 
 <section class="section section-form" aria-labelledby="contact-heading">
   <div class="container contact-shell">
     <header class="contact-header">
-      <h2 id="contact-heading">Request a Project Review</h2>
+      <h2 id="contact-heading">Request a TCNA-Compliant Project Review</h2>
 
       <p class="lead" id="form-intro">
-        Licensed NJ contractor. Send project details, photos, or questions below.
-        Written estimates include scope, timeline, and pricing.
+        Tillerstead LLC is a licensed NJ contractor specializing in tile, waterproof showers, and remodeling to TCNA and ANSI standards.
+        Submit your project details, site photos, or technical questions below.
+        All written estimates include a detailed scope of work, timeline, and transparent pricing.
       </p>
 
-      <div class="contact-steps" aria-label="What happens after you send this form">
-        <h3>Process</h3>
+      <div class="contact-steps" aria-label="Project review and estimate process">
+        <h3>Our Process</h3>
         <ol>
-          <li><strong>Review:</strong> Project details reviewed to confirm scope, materials, and scheduling.</li>
-          <li><strong>Follow up:</strong> Contact by phone or email to discuss options and confirm details.</li>
-          <li><strong>Proposal:</strong> Written estimate with scope, timeline, and pricing.</li>
+          <li>
+            <strong>Scope Review:</strong> We assess your project for code compliance, substrate conditions, and material compatibility.
+          </li>
+          <li>
+            <strong>Consultation:</strong> We contact you to clarify technical requirements, scheduling, and site access.
+          </li>
+          <li>
+            <strong>Written Proposal:</strong> You receive a detailed estimate with scope, timeline, and pricing—compliant with NJ HIC and TCNA guidelines.
+          </li>
         </ol>
       </div>
 
-      <div class="what-you-can-expect" aria-label="Service approach">
-        <h3>Approach</h3>
+      <div class="what-you-can-expect" aria-label="Service standards and guarantees">
+        <h3>What Sets Us Apart</h3>
         <ul>
-          <li>Written scopes and change orders</li>
-          <li>Workmanship warranty on installations</li>
-          <li>Photo documentation during work</li>
+          <li>Written scopes, change orders, and warranty documentation</li>
+          <li>Workmanship warranty on all installations</li>
+          <li>Photo documentation and progress updates throughout your project</li>
+          <li>Compliance with TCNA, ANSI, and NJ HIC regulations</li>
         </ul>
       </div>
     </header>
@@ -57,7 +65,7 @@ hero_kpis:
       </div>
 
       <aside class="contact-alt">
-        <h3>Call or text</h3>
+        <h3>Call or Text a Licensed Contractor</h3>
         <p>
           <a href="tel:{{ site.company.phone_link | default: '+16098628808' }}">
             {{ site.company.phone_display | default: '(609) 862-8808' }}
@@ -65,22 +73,22 @@ hero_kpis:
           or email
           <a href="mailto:{{ site.company.email | default: 'info@tillerstead.com' }}">
             {{ site.company.email | default: 'info@tillerstead.com' }}
-          </a>.
+          </a>
+          for direct assistance.
         </p>
-        <div class="contact-priority-box">
-  <h4>Emergency Issue?</h4>
-  <p>
-    Active water leak or electrical hazard? 
-    please contact a licensed plumber or electrician immediately for emergency response.
-  </p>
-  <p>
-    For professional tile and remodeling work:
-    <br>
-    <strong>Direct:</strong> <a href="tel:+16098628808">(609) 862-8808</a>
-  </p>
-</div>
+        <div class="contact-priority-box" aria-label="Emergency contact guidance">
+          <h4>Emergency Issue?</h4>
+          <p>
+            If you have an active water leak or electrical hazard, contact a licensed plumber or electrician immediately for emergency response.
+          </p>
+          <p>
+            For tile, waterproofing, or remodeling needs:
+            <br>
+            <strong>Direct:</strong> <a href="tel:+16098628808">(609) 862-8808</a>
+          </p>
+        </div>
         <p class="microcopy">
-          Send photos of your space with project timeline for detailed estimate.
+          Attach site photos and describe your project timeline for a precise, code-compliant estimate.
         </p>
       </aside>
     </div>
@@ -96,7 +104,13 @@ hero_kpis:
   "about": {
     "@type": "HomeAndConstructionBusiness",
     "name": "Tillerstead LLC",
-    "telephone": "{{ site.company.phone_link }}"
+    "telephone": "{{ site.company.phone_link }}",
+    "areaServed": [
+      "Atlantic County, NJ",
+      "Ocean County, NJ",
+      "Cape May County, NJ"
+    ],
+    "license": "NJ HIC #13VH10808800"
   },
   "mainEntity": {
     "@type": "Action",
@@ -104,7 +118,7 @@ hero_kpis:
     "target": "{{ site.url }}/contact/",
     "result": {
       "@type": "Thing",
-      "name": "Estimate / Plan Follow-up"
+      "name": "TCNA-Compliant Estimate / Plan Follow-up"
     }
   }
 }

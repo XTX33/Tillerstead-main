@@ -6,9 +6,15 @@
   <section class="ts-section ts-materials" aria-labelledby="{{ heading_id }}">
     <div class="container">
       <header class="section-header">
-        {% if materials.eyebrow %}<p class="eyebrow text-accent">{{ materials.eyebrow }}</p>{% endif %}
-        {% if materials.title %}<h2 id="{{ heading_id }}" class="heading-2">{{ materials.title }}</h2>{% endif %}
-        {% if materials.summary %}<p class="lead">{{ materials.summary }}</p>{% endif %}
+        {% if materials.eyebrow %}
+          <p class="eyebrow text-accent">{{ materials.eyebrow }}</p>
+        {% endif %}
+        {% if materials.title %}
+          <h2 id="{{ heading_id }}" class="heading-2">{{ materials.title }}</h2>
+        {% endif %}
+        {% if materials.summary %}
+          <p class="lead">{{ materials.summary }}</p>
+        {% endif %}
       </header>
 
       {% if materials.items %}

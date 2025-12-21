@@ -1,14 +1,14 @@
 /* ==========================================================================
-   Header & Navigation
-   Clean, responsive header shell with accessible drawer toggles
-   ========================================================================== */
+  Header & Navigation
+  TCNA-compliant, accessible, and conversion-optimized header shell
+  ========================================================================== */
 
 .site-header {
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1400;
-  background: var(--header-bg, rgb(255, 255, 255, 0.92));
+  background: var(--header-bg, rgba(255, 255, 255, 0.92));
   border-bottom: 1px solid var(--ts-color-border);
   box-shadow: var(--ts-shadow-header);
   backdrop-filter: blur(14px);
@@ -53,23 +53,14 @@
   outline-offset: 4px;
 }
 
-/* Hide mobile nav toggle on desktop (above 920px) */
+/* Hide mobile nav toggle and mobile-only elements on desktop (≥921px) */
 @media (min-width: 921px) {
-  .nav-toggle {
-    display: none !important;
-  }
-  
-  .site-nav-drawer-header {
-    display: none !important;
-  }
-  
-  .nav-close {
-    display: none !important;
-  }
-  
+  .nav-toggle,
+  .site-nav-drawer-header,
+  .nav-close,
   .nav-cta--drawer,
   .nav-item--phone {
-    display: none !important;
+   display: none !important;
   }
 }
 
@@ -132,137 +123,151 @@
 }
 
 /* Hide mobile-only drawer header elements on desktop */
-.site-nav-drawer-header {
-  display: none;
-}
-
-.nav-close {
-  display: none;
-}
-
-.site-nav-backdrop {
-  display: none;
-}
-
-/* CTA elements visible in both desktop and mobile */
-.nav-cta--drawer {
-  display: none; /* Hidden on desktop, shown in mobile */
-}
-
+.site-nav-drawer-header,
+.nav-close,
+.site-nav-backdrop,
+.nav-cta--drawer,
 .nav-item--phone {
-  display: none; /* Hidden on desktop, shown in mobile */
+  display: none;
 }
 
-/* Media query for nav drawer on smaller screens */
+/* Mobile navigation drawer (≤920px) */
 @media (max-width: 920px) {
   .nav-toggle {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 44px;
-    min-height: 44px;
-    background: var(--ts-color-surface);
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   min-width: 44px;
+   min-height: 44px;
+   background: var(--ts-color-surface);
   }
 
   /* Hide desktop header actions on mobile */
   .site-header-actions .site-header-social,
   .site-header-actions .call-btn,
   .site-header-actions .header-cta {
-    display: none;
+   display: none;
   }
 
   .site-nav {
-    position: fixed;
-    inset: 0;
-    top: 0;
-    left: 0;
-    background: var(--ts-color-surface-elevated);
-    flex-direction: column;
-    justify-content: center;
-    padding: clamp(2rem, 5vw, 3rem);
-    transform: translateX(-100%);
-    transition: transform var(--transition-med);
-    pointer-events: none;
-    opacity: 0;
-    gap: var(--ts-spacing-xl);
+   position: fixed;
+   inset: 0;
+   top: 0;
+   left: 0;
+   background: var(--ts-color-surface-elevated);
+   flex-direction: column;
+   justify-content: center;
+   padding: clamp(2rem, 5vw, 3rem);
+   transform: translateX(-100%);
+   transition: transform var(--transition-med);
+   pointer-events: none;
+   opacity: 0;
+   gap: var(--ts-spacing-xl);
+   z-index: 1450;
   }
 
   .site-nav.is-open {
-    transform: translateX(0);
-    pointer-events: auto;
-    opacity: 1;
+   transform: translateX(0);
+   pointer-events: auto;
+   opacity: 1;
   }
 
   .site-nav-drawer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--ts-spacing-md);
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: var(--ts-spacing-md);
   }
 
   .nav-drawer-label {
-    font-size: var(--font-size-lg);
-    font-weight: 700;
-    color: var(--ts-color-heading);
-    margin: 0;
+   font-size: var(--font-size-lg);
+   font-weight: 700;
+   color: var(--ts-color-heading);
+   margin: 0;
   }
 
   .nav-close {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    color: var(--ts-color-heading);
-    font-size: var(--font-size-sm);
-    font-weight: 600;
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   background: transparent;
+   border: none;
+   padding: 0.5rem;
+   cursor: pointer;
+   color: var(--ts-color-heading);
+   font-size: var(--font-size-sm);
+   font-weight: 600;
   }
 
-  .nav-close:hover {
-    color: var(--ts-color-primary);
+  .nav-close:hover,
+  .nav-close:focus-visible {
+   color: var(--ts-color-primary);
+   outline: 2px solid var(--ts-color-primary);
+   outline-offset: 2px;
   }
 
   .nav-close-label {
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+   text-transform: uppercase;
+   letter-spacing: 0.05em;
   }
 
   .nav-close-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
   }
 
   .site-menu {
-    flex-direction: column;
-    gap: var(--ts-spacing-md);
+   flex-direction: column;
+   gap: var(--ts-spacing-md);
   }
 
   /* Show mobile-only CTA elements */
   .nav-cta--drawer,
   .nav-item--phone {
-    display: list-item;
+   display: list-item;
   }
 
   .site-nav-backdrop {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.4);
-    z-index: 1350;
+   display: block;
+   position: fixed;
+   inset: 0;
+   background: rgba(15, 23, 42, 0.4);
+   z-index: 1350;
   }
 }
 
-/* Media query for extra small screens */
+/* Extra small screens (≤640px) */
 @media (max-width: 640px) {
   .site-logo img,
   .ts-logo {
-    max-width: 180px;
+   max-width: 180px;
   }
 
   .site-header-inner {
-    gap: var(--ts-spacing-xs);
+   gap: var(--ts-spacing-xs);
   }
+}
+
+/* Accessibility: Ensure focus states are visible for all actionable elements */
+.nav-toggle:focus-visible,
+.nav-close:focus-visible,
+.site-logo-link:focus-visible,
+.site-menu .nav-link:focus-visible {
+  outline: 2px solid var(--ts-color-primary);
+  outline-offset: 2px;
+}
+
+/* Legal & Compliance: Ensure phone CTA is always accessible and descriptive */
+.nav-item--phone .nav-link {
+  font-weight: 700;
+  color: var(--ts-color-accent);
+  font-size: var(--font-size-md);
+  text-decoration: underline;
+  letter-spacing: 0.03em;
+}
+
+/* Performance: Prevent layout shift on sticky header */
+.site-header {
+  will-change: transform;
 }

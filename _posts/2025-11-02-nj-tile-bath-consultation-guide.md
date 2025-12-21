@@ -1,112 +1,110 @@
 ---
 layout: post
 title: "Your First Tile/Bath Consultation in NJ: What to Expect & How to Prep"
-description: "A simple 15-minute prep guide for South Jersey homeowners—photos to take, measurements to grab, and how Tillerstead builds a clean, fair proposal for tile and bathroom projects."
-accessibility: "All content is structured with semantic headings and lists for screen reader compatibility."
+description: "A 15-minute prep guide for South Jersey homeowners—photos, measurements, and how Tillerstead delivers TCNA-compliant, transparent proposals for tile and bathroom projects."
+accessibility: "All content uses semantic headings, lists, and descriptive links for screen reader compatibility and NJ HIC compliance."
 ---
 
-If you’ve never hired a property maintenance or remodeling contractor in New Jersey, the first consult can feel like a mystery. The goal with **Tillerstead LLC** is simple: a calm walkthrough, clear expectations, and a proposal that reflects your real space—not guesswork.
+If you’ve never hired a licensed home improvement contractor in New Jersey, your first consultation can feel opaque. **Tillerstead LLC** makes it straightforward: a calm walkthrough, clear expectations, and a proposal based on your real space—not guesswork or “ballpark” numbers.
 
-This guide shows you how to prep in about **15 minutes** so your consultation (in Atlantic County or anywhere in South Jersey) is efficient and accurate.
+This guide shows you how to prep in **15 minutes** for a consultation (Atlantic County and all South Jersey) that’s efficient, accurate, and fully NJ HIC/TCNA compliant.
 
 ---
 
-## What We Look At (and Why It Matters)
+## What We Assess—and Why It Matters
 
-During a tile or bathroom consultation, we’re not just “eyeballing it.” We’re checking the things that decide whether your project lasts:
+During a tile or bathroom consultation, we don’t “eyeball it.” We evaluate the factors that determine project longevity and code compliance:
 
-- **Moisture risk**  
-  Where water actually goes, not just where we hope it goes. We look at splash zones, corners, and any history of leaks to plan for **true waterproofing**, not just “water-resistant” products.
+- **Moisture management**  
+   We trace water flow—splash zones, corners, and any leak history—to plan for **true waterproofing** (ANSI A118.10/TCNA B422), not just “water-resistant” claims.
 
 - **Substrate & flatness**  
-  Tile follows what’s under it. Large-format tile especially needs flat, stable planes to avoid lippage and hollow spots. We assess subfloor, backer board, and any humps or dips.
+   Tile mirrors its substrate. Large-format tile demands flat, stable planes (TCNA EJ171, ANSI A108.02). We check subfloor, backer board, and any humps or dips to prevent lippage and hollow spots.
 
 - **Structure & transitions**  
-  How your floor system, thresholds, and nearby rooms tie together. We’re looking at deflection, height changes, and how tile will meet carpet, LVP, or hardwood without creating trip points.
+   We assess floor deflection (L/360 minimum per TCNA F250), thresholds, and how tile meets carpet, LVP, or hardwood—eliminating trip hazards and ensuring smooth transitions.
 
 - **Ventilation**  
-  Fans, duct runs, and how steam leaves the room. In South Jersey’s humidity, a strong, correctly ducted fan helps your grout, paint, and framing last longer.
+   Properly ducted fans (per IRC M1507) protect grout, paint, and framing from South Jersey humidity. We verify fan type, duct runs, and vent terminations.
 
 - **Lifestyle fit**  
-  How you actually live: cleaning habits, color preferences, and tolerance for grout lines and textures. A low-maintenance family bath gets different recommendations than a rarely used guest suite.
+   Your cleaning habits, color preferences, and tolerance for grout lines inform our recommendations. A busy family bath gets different specs than a guest suite.
 
 ---
 
-## Five Photos to Take Before We Talk
+## Five Photos to Take Before Your Consultation
 
-Good photos let us give you a realistic starting estimate without playing phone-tag. Aim for:
+Clear photos enable a realistic, code-based estimate—no phone tag, no surprises. Please provide:
 
-1. **Full room view**  
-   Stand in the doorway and capture floor, walls, and ceiling in one shot.
+1. **Full room overview**  
+    Stand in the doorway; capture floor, walls, and ceiling in one shot.
 
 2. **Wet area close-ups**  
-   Show the shower or tub surround, including corners, valve wall, and any obvious issues.
+    Show the shower or tub surround, including corners, valve wall, and any visible issues.
 
-3. **Threshold and floor at the doorway**  
-   We need to see transitions—the step into the bath, adjoining flooring, and any height differences.
+3. **Threshold and floor at entry**  
+    Document transitions—step into the bath, adjoining flooring, and height differences.
 
 4. **Problem areas**  
-   Cracked grout, loose tiles, soft spots at the tub or shower edge, or staining—anything that has you concerned.
+    Cracked grout, loose tiles, soft spots, or stains—anything concerning.
 
 5. **Exhaust fan and ducting**  
-   A photo of the fan and, if visible, the duct or vent termination in attic or exterior.
+    Photo of the fan and, if accessible, the duct or vent termination (attic/exterior).
 
-> **Pro tip:** If you can, also snap the **shutoff valves**, **trap/drain**, and any **access panel**. Those small details help us plan demo and tie-ins without surprises.
-
----
-
-## Quick measurements to have ready
-
-You don’t need to be perfect—just close enough to understand scale and material needs:
-
-- Room **length × width**  
-- **Ceiling height**  
-- **Wet area length × width** (shower or tub surround)  
-- Planned **tile size** (e.g., 12×24, 24×48, mosaics on floor)  
-- Any **niche, bench, or ledge** ideas  
-- Preference for **linear drain vs. center drain**
-
-These basics help us talk honestly about layouts, waste factor, and whether leveling or framing corrections are needed.
+> **Pro tip:** Also snap **shutoff valves**, **trap/drain**, and any **access panel**. These details help us plan demo and tie-ins, minimizing surprises and delays.
 
 ---
 
-## How Tillerstead prices clearly
+## Quick Measurements to Have Ready
 
-Every project is different, but the structure of our proposals stays consistent so you know what you’re signing:
+Precision isn’t required—just enough for scale and material planning:
+
+- Room **length × width**
+- **Ceiling height**
+- **Wet area length × width** (shower/tub surround)
+- Planned **tile size** (e.g., 12×24, 24×48, mosaic)
+- Any **niche, bench, or ledge** ideas
+- Preference for **linear drain** or **center drain**
+
+These basics let us discuss layouts, waste factor, and whether leveling or framing corrections are needed.
+
+---
+
+## How Tillerstead Prices—With Full Transparency
+
+Every project is unique, but our proposals follow a clear, NJ HIC-compliant structure:
 
 1. **Scope from demo to finish**  
-   A plain-language breakdown of what’s included—demo, disposal, prep, waterproofing, tile setting, grout, caulk—and what’s not (plumbing moves, electrical, glass, etc.), so there are fewer surprises.
+    Plain-language breakdown—demo, disposal, prep, waterproofing, tile setting, grout, caulk—and exclusions (plumbing moves, electrical, glass, etc.), so there are no hidden costs.
 
-2. **Methods & standards in plain English**  
-   We state the waterproofing system and installation approach in writing, tied to manufacturer instructions and industry standards (TCNA/ANSI), without burying you in jargon.
+2. **Methods & standards in writing**  
+    We specify waterproofing systems and installation methods (TCNA/ANSI), referencing manufacturer instructions—no jargon, just clear commitments.
 
-3. **Materials that match your tile**  
-   Mortars and grouts appropriate for your tile and use:  
-   - modified thinset mortars meeting **ANSI A118.4/A118.15** where required,  
-   - grout type (sanded, unsanded, or high-performance),  
-   - sealants and movement joints where needed.
+3. **Materials matched to your tile**  
+    - Mortars: Modified thinset meeting **ANSI A118.4/A118.15** as required  
+    - Grout: Sanded, unsanded, or high-performance, per application  
+    - Sealants and movement joints: Installed per TCNA EJ171
 
 4. **Documentation & accountability**  
-   Where applicable, we document:  
-   - **Flood tests** for shower pans,  
-   - **Substrate flatness checks**,  
-   - Any pre-existing conditions you should know about.
+    Where applicable, we provide:  
+    - **Flood test results** for shower pans  
+    - **Substrate flatness checks**  
+    - Notation of any pre-existing conditions
 
 5. **Schedule with cure times spelled out**  
-   We outline demo days, setting days, and realistic cure times for membranes, grout, and sealers so you know when you can safely use the shower or bath again.
+    We outline demo, setting, and realistic cure times for membranes, grout, and sealers—so you know exactly when your space is ready for use.
 
 ---
 
-## Ready to start your tile or bath project in South Jersey?
+## Ready to Start Your Tile or Bath Project in South Jersey?
 
-A little prep goes a long way.  
+A little prep delivers a smoother, more accurate estimate.
 
-**Next step:**  
+**Next steps:**  
+- Email your **five photos** and quick measurements to [info@tillerstead.com](mailto:info@tillerstead.com?subject=Project%20Inquiry&body=Hi%20Tillerstead%2C%0AI%27m%20interested%20in...)  
+- Or visit our [Contact](/pages/contact.html) page and tap **“Start Your Project”** for a streamlined estimate.
 
--- Email your **five photos** and quick measurements to [Email Tillerstead](mailto:info@tillerstead.com?subject=Project%20Inquiry&body=Hi%20Tillerstead%2C%0AI%27m%20interested%20in...) , or  
+Whether you’re in **Egg Harbor Township, Galloway, or anywhere in Atlantic County**, our promise is the same: a calm, honest consultation and tile or bathroom work you’ll be proud to live with—built to code, built to last.
 
-- Visit the **Contact** page and tap **“Start Your Project”** to share details for a streamlined estimate.
+**Do the work with integrity and care.** That’s the Tillerstead approach—every consultation, every project.
 
-Whether you’re in **Egg Harbor Township, Galloway, or elsewhere in Atlantic County**, the goal is the same: a calm, honest consultation and tile or bathroom work you’re proud to live with every day.
-
-Do the work with integrity and care. That's the Tillerstead approach to every consultation and project.

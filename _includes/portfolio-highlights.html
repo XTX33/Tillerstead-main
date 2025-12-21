@@ -1,6 +1,6 @@
 {% comment %}
 Homepage Portfolio Highlights Include
-- Renders a simple three-card preview of portfolio items
+- Renders a three-card preview of portfolio projects
 - Data source: _data/portfolio_highlights.yml (key: highlights)
 - Optional overrides: eyebrow, title, summary, cta_url, cta_label
   - Optional IDs: section_id (default: gallery), heading_id (default: section_id + '-title')
@@ -11,9 +11,11 @@ Usage: {% include portfolio-highlights.html %}
 <section class="ts-section section ts-portfolio" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
-      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Recent work' }}</p>
-      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Portfolio highlights' }}</h2>
-      <p class="lead">{{ include.summary | default: 'Waterproof tile assemblies, remodels, and maintenance scopes documented with clear photos and timelines.' }}</p>
+      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Recent Tile & Bath Projects' }}</p>
+      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Portfolio Highlights: TCNA-Compliant Installations' }}</h2>
+      <p class="lead">
+        {{ include.summary | default: 'Explore Tillerstead’s documented waterproof tile assemblies, NJ HIC-compliant remodels, and maintenance scopes. Every project meets or exceeds TCNA 2024 standards—no shortcuts, just technical precision.' }}
+      </p>
     </div>
 
     {% assign items = site.data.portfolio_highlights.highlights | default: site.data.portfolio_highlights %}
@@ -22,17 +24,35 @@ Usage: {% include portfolio-highlights.html %}
       <ul class="cards cards--3col" role="list">
         {% for item in preview_items %}
           <li>
-            <article class="card card--portfolio">
+            <article class="card card--portfolio" aria-labelledby="portfolio-{{ forloop.index }}-title">
               <figure class="card-media" style="--ar: {{ item.ar | default: '4 / 3' }}">
                 <img src="{{ item.file | relative_url }}"
-                     alt="{{ item.alt | escape }}"
+                     alt="{{ item.alt | default: 'Photo of ' | append: item.title | escape }}"
                      loading="lazy"
-                     decoding="async">
+                     decoding="async"
+                     width="400"
+                     height="300">
               </figure>
               <div class="card-content">
-                {% if item.category %}<span class="card-eyebrow">{{ item.category }}</span>{% endif %}
-                {% if item.title %}<h3 class="card-title heading-4">{{ item.title }}</h3>{% endif %}
-                {% if item.desc %}<p class="card-desc">{{ item.desc }}</p>{% endif %}
+                {% if item.category %}
+                  <span class="card-eyebrow">{{ item.category | escape }}</span>
+                {% endif %}
+                {% if item.title %}
+                  <h3 id="portfolio-{{ forloop.index }}-title" class="card-title heading-4">{{ item.title | escape }}</h3>
+                {% endif %}
+                {% if item.desc %}
+                  <p class="card-desc">{{ item.desc | escape }}</p>
+                {% endif %}
+                {% if item.kpi %}
+                  <ul class="card-kpi-list" aria-label="Project highlights">
+                    {% for kpi in item.kpi %}
+                      <li class="card-kpi">
+                        <span class="card-kpi-label">{{ kpi.label | escape }}</span>
+                        <span class="card-kpi-value">{{ kpi.value | escape }}</span>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
               </div>
             </article>
           </li>
@@ -41,7 +61,4 @@ Usage: {% include portfolio-highlights.html %}
     {% endif %}
 
     <div class="section-action">
-      <a href="{{ include.cta_url | default: '/portfolio/' | relative_url }}" class="btn btn--primary">{{ include.cta_label | default: 'View full portfolio' }}</a>
-    </div>
-  </div>
-</section>
+      <a href="{{ include.cta_url |

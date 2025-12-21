@@ -1,20 +1,31 @@
-## Summary
-Unifies theme tokens, fixes contrast, and adds reusable pro containers.
+## Pull Request Summary
 
-## Changes
-- Tokenized palette + surfaces
-- Typography + spacing utilities
-- Containers: card/panel/callout/section
-- Theme toggle + runtime contrast guard
-- Replaced inline colors across pages
+This update standardizes theme tokens, enforces WCAG 2.1 AA contrast, and introduces modular, TCNA-compliant container components.
 
-## Accessibility
-- [ ] Pa11y CI passes (no contrast issues)
-- [ ] Focus outlines visible
-- [ ] Links have non-color affordances where needed
+## Technical Changes
+- Centralized color palette and surface tokens per TCNA guidelines
+- Utility classes for typography, spacing, and responsive layout
+- Modular containers: `.card`, `.panel`, `.callout`, `.section` (see `/assets/css/theme.css`)
+- Theme toggle with real-time contrast validation (see `/assets/js/theme.js`)
+- Eliminated all inline color usage for maintainability and compliance
 
-## Screenshots
-_(before/after for at least: hero, services, one case page)_
+## Accessibility & Compliance
+- [ ] Pa11y CI: Passes all contrast and focus criteria (WCAG 2.1 AA)
+- [ ] Focus outlines: Visible and accessible on all interactive elements
+- [ ] Links: All have non-color affordances (underline, icon, or ARIA label)
+- [ ] Alt text, ARIA, and labels: Verified for legal and NJ HIC accessibility compliance
 
-## Risks & Rollback
-Low risk to content. Rollback by reverting `assets/css/theme.css`, `assets/js/theme.js`, and class changes.
+## Visual Evidence
+_Include before/after screenshots for:_
+- Homepage hero section
+- Services overview
+- At least one case study page
+
+## Risk Assessment & Rollback Plan
+- Minimal risk to content integrity; all changes are modular and reversible
+- Rollback: Revert `assets/css/theme.css`, `assets/js/theme.js`, and affected class names
+- All updates validated with HTMLHint, ESLint, and Jekyll build; accessibility tested
+
+---
+
+_Reference: See `/.ai/OUTPUT_RULES.md` for naming, structure, and compliance standards. All changes adhere to TCNA 2024 and NJ HIC requirements._

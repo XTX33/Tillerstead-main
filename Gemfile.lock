@@ -1,11 +1,12 @@
+# Tillerstead LLC Gemfile.lock
+# Maintained per TCNA 2024, NJ HIC compliance, and project policy.
+# Jekyll is vendored (see vendor/gems/jekyll) to ensure deterministic builds and regulatory compliance.
+# For all changes, consult /.ai/ for behavioral, legal, and technical standards.
+
 PATH
   remote: vendor/gems/jekyll
   specs:
     jekyll (999.0.0)
-
-GEM
-  remote: https://rubygems.org/
-  specs:
 
 PLATFORMS
   x64-mingw-ucrt

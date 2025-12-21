@@ -23,56 +23,57 @@ primary:
     title: Contact
     url: /contact/
     match: /contact/
-
-secondary:
-  - id: portfolio
-    title: Portfolio
-    url: /portfolio/
-    match: /portfolio/
-  - id: gc
-    title: Contractors
-    url: /for-general-contractors/
-    match: /for-general-contractors/
-  - id: reviews
-    title: Reviews
-    url: /reviews/
-    match: /reviews/
-  - id: about
-    title: About
-    url: /about/
-    match: /about/
-  - id: financing
-    title: Financing
-    url: /financing/
-    match: /financing/
-  - id: contact
-    title: Contact
-    url: /contact/
-    match: /contact/
   - id: blog
     title: Blog
     url: /blog/
     match: /blog/
-  - id: products
-    title: Recommended Products
-    url: /recommended-products/
-    match: /recommended-products/
-  - id: atlantic-county
-    title: Atlantic County NJ
-    url: /atlantic-county-nj/
-    match: /atlantic-county-nj/
-  - id: ocean-county
-    title: Ocean County NJ
-    url: /ocean-county-nj/
-    match: /ocean-county-nj/
-  - id: cape-may-county
-    title: Cape May County NJ
-    url: /cape-may-county-nj/
-    match: /cape-may-county-nj/
+  - id: financing
+    title: Financing
+    url: /financing/
+    match: /financing/
+  - id: gc
+    title: Contractors
+    url: /for-general-contractors/
+    match: /for-general-contractors/
+  - id: counties
+    title: Service Areas (NJ Licensed)
+    children:
+      - id: atlantic-county
+        title: Atlantic County NJ
+        url: /atlantic-county-nj/
+        match: /atlantic-county-nj/
+      - id: ocean-county
+        title: Ocean County NJ
+        url: /ocean-county-nj/
+        match: /ocean-county-nj/
+      - id: cape-may-county
+        title: Cape May County NJ
+        url: /cape-may-county-nj/
+        match: /cape-may-county-nj/
+      - id: nj-hic-license
+        title: NJ HIC License & Compliance
+        url: /nj-hic-license/
+        match: /nj-hic-license/ - id: counties
+    title: Service Areas
+    children:
+      - id: atlantic-county
+        title: Atlantic County NJ
+        url: /atlantic-county-nj/
+        match: /atlantic-county-nj/
+      - id: ocean-county
+        title: Ocean County NJ
+        url: /ocean-county-nj/
+        match: /ocean-county-nj/
+      - id: cape-may-county
+        title: Cape May County NJ
+        url: /cape-may-county-nj/
+        match: /cape-may-county-nj/
   - id: download-guide
     title: Free NJ Tile Guide
     url: /download/nj-tile-guide/
     match: /download/
+
+secondary:
   - id: privacy
     title: Privacy
     url: /privacy/
@@ -83,14 +84,24 @@ secondary:
     match: /terms/
 
 footer:
-  - ref: services
-  - ref: portfolio
-  - ref: products
-  - ref: gc
-  - ref: reviews
-  - ref: financing
-  - ref: about
-  - ref: contact
-  - ref: blog
-  - ref: privacy
-  - ref: terms
+  - group: Main
+    items:
+      - ref: services
+      - ref: portfolio
+      - ref: products
+      - ref: reviews
+      - ref: about
+      - ref: contact
+      - ref: blog
+      - ref: financing
+      - ref: gc
+      - ref: download-guide
+  - group: Service Areas
+    items:
+      - ref: atlantic-county
+      - ref: ocean-county
+      - ref: cape-may-county
+  - group: Legal
+    items:
+      - ref: privacy
+      - ref: terms

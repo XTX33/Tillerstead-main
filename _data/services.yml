@@ -1,33 +1,33 @@
 services:
   - id: tile
-    name: Tile That Doesn't Crack
+    name: Tile That Doesn’t Crack
     icon: tile
-    description: TCNA-compliant installation of ceramic, porcelain, and natural stone. Substrate flatness verified, not assumed. Waterproofing that passes flood tests. The boring details that prevent exciting failures.
+    description: TCNA-compliant installation of ceramic, porcelain, and natural stone. Substrate flatness verified to ANSI A108 standards—never assumed. Waterproofing passes ASTM flood tests. Every detail engineered to prevent costly failures and ensure lasting performance.
     points:
-      - Waterproof showers (with actual membranes)
-      - Heated floors that heat
-      - Large-format tile (95% coverage, not 60%)
-      - Layout geometry that makes sense
+      - Waterproof showers with ANSI A118.10 membranes, flood-tested and documented
+      - Heated floors with UL-listed systems and verified thermal coverage
+      - Large-format tile installed for 95% mortar coverage (TCNA-recommended), no hollow spots
+      - Precision layout geometry for visual harmony and minimal cuts
     url: "/services/#tile"
 
   - id: stone
-    name: Slabs & Premium Stone
-    icon: remodeling
-    description: Marble, granite, and gauged porcelain slabs requiring A118.15 thinset and someone who won't crack your $900 accent piece. Not for every project—but the right ones last decades.
+    name: Slabs & Premium Stonework
+    icon: stone
+    description: Marble, granite, and gauged porcelain slabs installed with ANSI A118.15 thinset by NJ HIC-licensed professionals. Book-matched, sealed, and detailed for decades of durability—never risking your investment with shortcuts.
     points:
-      - Book-matched marble installations
-      - 6mm porcelain slab panels
-      - Natural stone properly sealed
-      - Fireplace surrounds that survive heat
+      - Book-matched marble installations with seamless veining
+      - 6mm porcelain slab panels set to manufacturer specs
+      - Natural stone sealed with ASTM-compliant products
+      - Fireplace surrounds engineered for thermal expansion and code compliance
     url: "/services/#stone"
 
   - id: waterproofing
-    name: Waterproofing (The Important Part)
-    icon: maintenance
-    description: Schluter KERDI, Hydroban, RedGard systems installed to manufacturer specs. Flood tested. Documented. Because "waterproof" is a technical term, not a feeling.
+    name: Waterproofing (The Critical Layer)
+    icon: waterproofing
+    description: Schluter KERDI, Hydroban, and RedGard systems installed to manufacturer and TCNA standards. Flood tested, photo-documented, and certified for insurance and code compliance. “Waterproof” means proven, not promised.
     points:
-      - ANSI A118.10 compliant systems
-      - Flood testing before tile
-      - Seam details done correctly
-      - Documentation your insurance wants
+      - ANSI A118.10 compliant waterproofing systems
+      - Flood testing with photographic documentation before tile installation
+      - Seam and penetration details executed per manufacturer and TCNA guidelines
+      - Documentation package for insurance and warranty claims
     url: "/services/#waterproofing"

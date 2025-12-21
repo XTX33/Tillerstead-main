@@ -3,45 +3,42 @@
   <head>
     <title>
       {% if page.seo_title %}
-        {{ page.seo_title }}
+        {{ page.seo_title | strip }}
       {% elsif page.title %}
-        {{ page.title }} | {{ site.tagline | default: 'Tillerstead LLC' }}
+        {{ page.title | strip }} | {{ site.tagline | default: 'Tillerstead LLC' }}
       {% else %}
-        {{ site.title }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
+        {{ site.title | strip }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}
       {% endif %}
     </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% if page.description %}
+      <meta name="description" content="{{ page.description | strip }}">
+    {% else %}
+      <meta name="description" content="Tillerstead LLC: TCNA-compliant tile, bath, and remodeling by NJ HIC-licensed professionals. Precision, transparency, and technical excellence in South Jersey.">
+    {% endif %}
+    <meta property="og:title" content="{% if page.seo_title %}{{ page.seo_title | strip }}{% elsif page.title %}{{ page.title | strip }} | {{ site.tagline | default: 'Tillerstead LLC' }}{% else %}{{ site.title | strip }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description | strip }}{% else %}Tillerstead LLC: TCNA-compliant tile, bath, and remodeling by NJ HIC-licensed professionals. Precision, transparency, and technical excellence in South Jersey.{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:site_name" content="Tillerstead LLC">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% if page.seo_title %}{{ page.seo_title | strip }}{% elsif page.title %}{{ page.title | strip }} | {{ site.tagline | default: 'Tillerstead LLC' }}{% else %}{{ site.title | strip }} | {{ site.tagline | default: 'Property Maintenance, Remodeling & Tile in South Jersey' }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description | strip }}{% else %}Tillerstead LLC: TCNA-compliant tile, bath, and remodeling by NJ HIC-licensed professionals. Precision, transparency, and technical excellence in South Jersey.{% endif %}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     {% include head.html %}
   </head>
-
   <body class="site-body ts-page ts-theme {{ page.body_class | default: '' }}">
-    <!-- Accessibility: Skip to main content link -->
     <a class="skip-link" href="#main" tabindex="1">Skip to main content</a>
-
-    {%- comment -%} Inline logo sprite to avoid extra request {%- endcomment -%}
-    {%- include logo-sprite-inline.html -%}
-
-    {%- comment -%}Construction banner removed (deprecated).{%- endcomment -%}
-
-    <!-- Page header with navigation -->
+    {% include logo-sprite-inline.html %}
     {% include header.html %}
-
-    <!-- Main content area -->
     <main id="main" class="site-main ts-section ts-surface" role="main" tabindex="-1">
-      
-      {% if page.url != '/'
-        and page.url != '/index.html'
-        and page.is_home != true
-        and page.breadcrumb != false
-        and page.show_breadcrumbs != false %}
+      {% if page.url != '/' and page.url != '/index.html' and page.is_home != true and page.breadcrumb != false and page.show_breadcrumbs != false %}
         {% include ts-breadcrumbs.html %}
       {% endif %}
-
-      <!-- Page hero section (unless hidden) -->
-      {%- if page.hide_hero != true -%}
-        {%- include page-hero.html -%}
-      {%- endif -%}
-
-      <!-- Page content: full-width or contained -->
+      {% if page.hide_hero != true %}
+        {% include page-hero.html %}
+      {% endif %}
       {% if page.is_home or page.full_width %}
         {{ content }}
       {% else %}
@@ -55,22 +52,13 @@
           </div>
         </article>
       {% endif %}
-
     </main>
-
-    <!-- Page footer -->
     {% include footer.html %}
-
-    <!-- Scripts (deferred for performance) -->
     {% include scripts.html %}
-
-    <!-- Structured Data for SEO -->
     {% include schema-local-business.html %}
     {% if page.include_faq_schema %}
       {% include schema-faq.html %}
     {% endif %}
-
-    <!-- Structured data for current page (if provided in front-matter) -->
     {% if page.structured_data %}
       <script type="application/ld+json">
         {{ page.structured_data | jsonify }}

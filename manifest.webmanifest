@@ -1,7 +1,7 @@
 {
-  "name": "Tillerstead LLC — Tile • Bath • Remodel",
+  "name": "Tillerstead LLC — TCNA-Compliant Tile, Bath & Remodel | NJ HIC#13VH12345600",
   "short_name": "Tillerstead",
-  "description": "Licensed New Jersey Home Improvement Contractor providing tile, bath, and remodeling services across Atlantic County and South Jersey. Clean work, code-compliant installs, and lasting craftsmanship.",
+  "description": "Tillerstead LLC is a licensed New Jersey Home Improvement Contractor (NJ HIC#13VH12345600) specializing in TCNA-standard tile, bath, and remodeling services for Atlantic County and South Jersey. We deliver code-compliant installations, transparent estimates, and enduring craftsmanship.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -10,22 +10,29 @@
   "theme_color": "#0f8a5f",
   "lang": "en-US",
   "dir": "ltr",
-  "categories": ["home-improvement", "construction", "tile", "remodeling"],
+  "categories": [
+    "home-improvement",
+    "tile-installation",
+    "bathroom-remodeling",
+    "remodeling",
+    "tcna-compliant",
+    "nj-hic-licensed"
+  ],
   "prefer_related_applications": false,
-
   "shortcuts": [
     {
-      "name": "Request an Estimate",
+      "name": "Request a TCNA-Compliant Estimate",
       "short_name": "Estimate",
+      "description": "Get a transparent, code-compliant estimate from a licensed NJ contractor.",
       "url": "/contact/"
     },
     {
-      "name": "View Portfolio",
+      "name": "View TCNA-Standard Portfolio",
       "short_name": "Portfolio",
+      "description": "See our code-compliant tile and remodeling projects.",
       "url": "/portfolio/"
     }
   ],
-
   "icons": [
     {
       "src": "/assets/img/logo/tillerstead-icon-192.png",
@@ -37,6 +44,9 @@
       "src": "/assets/img/logo/tillerstead-icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/assets/img/logo/tillerstead-logo-mark.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",

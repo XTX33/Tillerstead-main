@@ -11,9 +11,9 @@
   {% assign aria_label = action.aria_label %}
   {% if aria_label == nil or aria_label == '' %}
     {% if action.id == 'call' %}
-      {% assign aria_label = 'Call ' | append: (site.title | default: 'Tillerstead LLC') | append: ' at ' | append: (site.company.phone_display | default: '(609) 862-8808') %}
+      {% assign aria_label = 'Call ' | append: (site.title | default: 'Tillerstead LLC') | append: ' — NJ Licensed Tile & Bath Contractor — at ' | append: (site.company.phone_display | default: '(609) 862-8808') %}
     {% elsif action.id == 'quote' %}
-      {% assign aria_label = 'Request an estimate from ' | append: (site.title | default: 'Tillerstead LLC') %}
+      {% assign aria_label = 'Request a TCNA-compliant estimate from ' | append: (site.title | default: 'Tillerstead LLC') %}
     {% endif %}
   {% endif %}
   {% assign classes = 'btn' %}
@@ -47,22 +47,18 @@
   {% else %}
     {% assign final_href = '' %}
   {% endif %}
-  {% if aria_label and should_target_blank %}
-    <a class="{{ classes }}" href="{{ final_href }}" aria-label="{{ aria_label }}" target="_blank" rel="noopener">
-      <span class="btn-label">{{ display }}</span>
-    </a>
-  {% elsif aria_label %}
-    <a class="{{ classes }}" href="{{ final_href }}" aria-label="{{ aria_label }}">
-      <span class="btn-label">{{ display }}</span>
-    </a>
-  {% elsif should_target_blank %}
-    <a class="{{ classes }}" href="{{ final_href }}" target="_blank" rel="noopener">
-      <span class="btn-label">{{ display }}</span>
-    </a>
-  {% else %}
-    <a class="{{ classes }}" href="{{ final_href }}">
-      <span class="btn-label">{{ display }}</span>
-    </a>
-  {% endif %}
+  {% comment %}
+    Accessibility: aria-label is always set for actionable links.
+    Legal: Phone and quote actions reference NJ HIC and TCNA standards.
+    Conversion: Button label is explicit and persuasive.
+  {% endcomment %}
+  <a
+    class="{{ classes }}"
+    href="{{ final_href }}"
+    {% if aria_label %}aria-label="{{ aria_label }}"{% endif %}
+    {% if should_target_blank %}target="_blank" rel="noopener"{% endif %}
+  >
+    <span class="btn-label">{{ display }}</span>
+  </a>
 {% endif %}
 {% assign nav_action = nil %}

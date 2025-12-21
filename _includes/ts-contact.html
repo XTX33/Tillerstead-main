@@ -6,9 +6,9 @@
   <div class="container ts-contact__grid">
     <div class="ts-contact__copy">
       <span class="eyebrow">Licensed NJ Contractor</span>
-      <h2 id="{{ heading_id }}" class="heading-2">Get Your Free South Jersey Estimate</h2>
-      <p><strong>Serving Atlantic, Ocean & Cape May Counties</strong> with tile installation, bathroom remodeling, and property maintenance.</p>
-      <p class="text-muted">You'll receive a detailed written proposal covering materials, timelines, waterproofing specs, and transparent pricing. Licensed HIC #13VH10808800, fully insured, owner-operated. <strong>No pressure, no hidden fees, no surprises.</strong></p>
+      <h2 id="{{ heading_id }}" class="heading-2">Request a TCNA-Compliant Estimate</h2>
+      <p><strong>Serving Atlantic, Ocean & Cape May Counties</strong> — Specializing in ANSI A108 tile installation, bathroom remodeling, and property maintenance. All work meets or exceeds TCNA and NJ HIC #13VH10808800 requirements.</p>
+      <p class="text-muted">Receive a detailed, written proposal outlining materials, timelines, waterproofing specs (ANSI A118.10/A118.12), and transparent pricing. Fully insured, owner-operated. <strong>No pressure, no hidden fees, no surprises—just technical clarity.</strong></p>
       {% assign form_endpoint = site.forms.endpoint | default: 'https://formsubmit.co/info@tillerstead.com' %}
       {% assign form_redirect = site.forms.redirect_path | default: '/success/?form=contact' %}
       {% assign redirect_url = form_redirect | absolute_url %}
@@ -24,6 +24,7 @@
         data-contact-phone="{{ site.company.phone_display }}"
         netlify-honeypot="bot-field"
         aria-labelledby="{{ heading_id }}"
+        novalidate
       >
         <input type="hidden" name="form-name" value="homepage-contact">
         <input type="hidden" name="_subject" value="{{ site.forms.subject | default: 'New Tillerstead LLC inquiry' }}">
@@ -31,29 +32,29 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_next" value="{{ redirect_url }}">
         <p class="sr-only">
-          <label for="bot-field">Do not fill this field</label>
-          <input id="bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off">
+          <label for="bot-field">Do not fill this field (anti-spam)</label>
+          <input id="bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
         </p>
         <div class="ts-contact__fields">
           <label class="ts-contact__field">
-            <span>Name</span>
+            <span>Name <span aria-hidden="true">*</span></span>
             <input type="text" name="name" required autocomplete="name" aria-required="true" placeholder="Your full name">
           </label>
           <label class="ts-contact__field">
-            <span>Email</span>
+            <span>Email <span aria-hidden="true">*</span></span>
             <input type="email" name="email" required autocomplete="email" aria-required="true" inputmode="email" placeholder="you@example.com">
           </label>
           <label class="ts-contact__field">
-            <span>Phone</span>
+            <span>Phone <span aria-hidden="true">*</span></span>
             <input type="tel" name="phone" required autocomplete="tel" aria-required="true" inputmode="tel" placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}">
           </label>
           <label class="ts-contact__field">
-            <span>Property Type</span>
+            <span>Property Type <span aria-hidden="true">*</span></span>
             <select name="property_type" required aria-required="true" aria-label="Property type">
               <option value="">Select your property type</option>
               <option>Single-family home (owner-occupied)</option>
               <option>Rental property / landlord</option>
-              <option>Vacation rental / Shore house</option>
+              <option>Vacation rental / shore house</option>
               <option>Multi-unit residential</option>
               <option>Condo / townhouse</option>
               <option>Small commercial / retail</option>
@@ -61,7 +62,7 @@
             </select>
           </label>
           <label class="ts-contact__field">
-            <span>Project Urgency</span>
+            <span>Project Urgency <span aria-hidden="true">*</span></span>
             <select name="project_urgency" required aria-required="true" aria-label="Project timeline">
               <option value="">When do you need this done?</option>
               <option>Emergency / ASAP (water damage, failed tile)</option>
@@ -72,15 +73,15 @@
             </select>
           </label>
           <label class="ts-contact__field ts-contact__field--full">
-            <span>Project details</span>
-            <textarea name="message" rows="4" required aria-required="true" placeholder="Share the scope, address or area, and timing."></textarea>
+            <span>Project Details <span aria-hidden="true">*</span></span>
+            <textarea name="message" rows="4" required aria-required="true" placeholder="Describe the scope, address/area, and timing."></textarea>
           </label>
         </div>
         <div class="ts-contact__cta">
           <p class="ts-contact__cta-note">
-            Licensed NJ HIC #{{ site.company.hic | default: '13VH10808800' }}
+            Licensed NJ HIC #{{ site.company.hic | default: '13VH10808800' }} &bull; TCNA/ANSI Compliant
           </p>
-          <button type="submit" class="btn btn--primary ts-contact__submit">Send my request</button>
+          <button type="submit" class="btn btn--primary ts-contact__submit">Request My Estimate</button>
         </div>
         <div class="form-status sr-only" aria-live="polite" data-form-status></div>
       </form>
@@ -88,12 +89,24 @@
     <aside class="ts-contact__panel" aria-label="Company details">
       <h3>Company Details</h3>
       <dl>
-        <dt>Name:</dt><dd>Tillerstead LLC</dd>
-        <dt>License:</dt><dd>NJ HIC #13VH10808800</dd>
-        <dt>Address:</dt><dd>325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</dd>
-        <dt>Email:</dt><dd><a href="mailto:info@tillerstead.com">info@tillerstead.com</a></dd>
-        <dt>Phone:</dt><dd><a href="tel:+16098628808">(609) 862-8808</a></dd>
+        <dt>Name:</dt>
+        <dd>Tillerstead LLC</dd>
+        <dt>License:</dt>
+        <dd>NJ HIC #13VH10808800</dd>
+        <dt>Address:</dt>
+        <dd>325 E. Jimmie Leeds Road, Suite 7-333, Galloway, NJ 08205</dd>
+        <dt>Email:</dt>
+        <dd>
+          <a href="mailto:info@tillerstead.com" aria-label="Email Tillerstead LLC">info@tillerstead.com</a>
+        </dd>
+        <dt>Phone:</dt>
+        <dd>
+          <a href="tel:+16098628808" aria-label="Call Tillerstead LLC">(609) 862-8808</a>
+        </dd>
       </dl>
+      <p class="text-muted" style="margin-top: var(--space-3);">
+        All work performed to TCNA 2024 and ANSI A108/A118 standards. Fully insured. NJ Consumer Fraud Act compliant.
+      </p>
     </aside>
   </div>
 </section>

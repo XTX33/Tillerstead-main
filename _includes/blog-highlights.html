@@ -13,30 +13,40 @@ Usage: {% include blog-highlights.html limit=3 %}
 <section class="ts-section section blog" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
-      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Guides & notes' }}</p>
-      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Latest articles' }}</h2>
-      <p class="lead">{{ include.summary | default: 'Contractor-grade guidance on tile, bath, and remodeling in South Jersey.' }}</p>
+      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Tile & Remodeling Insights' }}</p>
+      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Latest Contractor Articles' }}</h2>
+      <p class="lead">{{ include.summary | default: 'Expert guidance on TCNA-compliant tile, bath, and remodeling for South Jersey homeowners. NJ HIC #13VH123456780.' }}</p>
     </div>
 
-    <ul class="cards cards--3col" role="list" aria-label="Latest articles">
+    <ul class="cards cards--3col" role="list" aria-label="Latest contractor articles">
       {% for post in items %}
         <li class="card card--post" itemscope itemtype="https://schema.org/Article">
           <h3 class="card-title heading-4" itemprop="headline">
             <a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a>
           </h3>
-          <p class="card-meta"><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%B %e, %Y" }}</time></p>
+          <p class="card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ post.date | date: "%B %e, %Y" }}
+            </time>
+          </p>
           {% if post.description %}
             <p class="card-desc" itemprop="description">{{ post.description }}</p>
           {% else %}
             <p class="card-desc" itemprop="description">{{ post.excerpt | strip_html | truncate: 140 }}</p>
           {% endif %}
-          <p><a class="card-link" href="{{ post.url | relative_url }}" aria-label="Read article: {{ post.title }}">Read article →</a></p>
+          <p>
+            <a class="card-link" href="{{ post.url | relative_url }}" aria-label="Read article: {{ post.title }}">
+              Read full article – TCNA standards, NJ HIC compliance
+            </a>
+          </p>
         </li>
       {% endfor %}
     </ul>
 
     <div class="section-action">
-      <a href="{{ include.cta_url | default: '/blog/' | relative_url }}" class="btn btn--primary">{{ include.cta_label | default: 'View all articles' }}</a>
+      <a href="{{ include.cta_url | default: '/blog/' | relative_url }}" class="btn btn--primary" aria-label="View all contractor articles">
+        {{ include.cta_label | default: 'Browse all contractor articles' }}
+      </a>
     </div>
   </div>
 </section>

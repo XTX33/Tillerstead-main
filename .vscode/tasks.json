@@ -10,8 +10,7 @@
       "options": {
         "cwd": "${workspaceFolder}"
       }
-  "version": "2.0.0",
-  "tasks": [
+    },
     {
       "label": "Dev server",
       "type": "shell",

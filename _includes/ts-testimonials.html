@@ -49,6 +49,7 @@ Testimonials include
                 {% if review.author %}<span class="ts-testimonial__author">{{ review.author }}</span>{% endif %}
                 {% if review.location %}<span class="ts-testimonial__location"> · {{ review.location }}</span>{% endif %}
                 {% if review.job_type %}<span class="ts-testimonial__job"> · {{ review.job_type }}</span>{% endif %}
+                {% if review.date %}<span class="ts-testimonial__date"> · {{ review.date | date: "%b %Y" }}</span>{% endif %}
               </p>
               {% if review.badges and review.badges.size > 0 %}
                 <ul class="ts-testimonial__badges" aria-label="Review badges">
@@ -56,6 +57,19 @@ Testimonials include
                     <li class="ts-testimonial__badge">{{ badge }}</li>
                   {% endfor %}
                 </ul>
+              {% endif %}
+              {% if review.url and review.platform %}
+                <a href="{{ review.url }}" 
+                   class="ts-testimonial__verify" 
+                   target="_blank" 
+                   rel="noopener nofollow"
+                   aria-label="Verify this review on {{ review.platform }}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  <span>Verified on {{ review.platform }}</span>
+                </a>
               {% endif %}
             </footer>
           </article>

@@ -1,56 +1,54 @@
 # AI Governance & Instruction Architecture
 
-## Overview
+## Executive Summary
 
-This repository employs AI assistants as **disciplined engineering and documentation aides**, governed by a centralized instruction system.
+Tillerstead’s AI assistants operate as **precision engineering and documentation agents**, governed by a centralized, version-controlled instruction system. This ensures all AI-driven outputs are **TCNA-compliant**, **NJ HIC-aligned**, and meet the highest standards of technical accuracy, legal compliance, and brand integrity.
 
-All AI behavior is:
-- **Deterministic**: Same inputs produce consistent outputs
-- **Auditable**: All instructions are versioned and explicit
-- **Bounded**: Clear constraints prevent drift or speculation
-- **Tool-Agnostic**: Works with GitHub Copilot, GPT, Codex, and future tools
-
-## Structure
+## Instruction System Structure
 
 ```
 /.ai/
-├── SYSTEM.md          # Master AI behavior rules (authoritative)
-├── STYLE.md           # Writing and formatting standards
-├── DOMAIN.md          # Industry-specific knowledge (TCNA, NJ HIC)
-├── COMPLIANCE.md      # Legal and ethical boundaries
-├── OUTPUT_RULES.md    # Code quality and documentation standards
-├── COPILOT.md         # GitHub Copilot adapter
-├── GPT.md             # Chat/API model adapter
-└── CODEX.md           # Agent-style tool adapter
+├── SYSTEM.md          # Authoritative behavioral contract (must-read)
+├── STYLE.md           # Brand voice, persuasion, and copywriting standards
+├── DOMAIN.md          # TCNA 2024, NJ HIC, and technical authority
+├── COMPLIANCE.md      # Legal, ethical, and regulatory boundaries
+├── OUTPUT_RULES.md    # Code, naming, formatting, and documentation standards
+├── COPILOT.md         # GitHub Copilot adaptation (inherits all above)
+├── GPT.md             # Chat/API model adaptation
+└── CODEX.md           # Agent-style tool adaptation
 ```
 
-## Purpose
+## Core Principles
 
-This architecture ensures:
-- **Consistency**: AI behavior remains stable across sessions and tools
-- **Transparency**: All guidance is explicit, not hidden in prompts
-- **Quality**: Outputs meet professional engineering standards
-- **Safety**: Clear boundaries prevent harmful or incorrect generation
-- **Maintainability**: Single source of truth for all AI interactions
+- **Deterministic**: Identical inputs yield consistent, auditable outputs
+- **Explicit & Auditable**: All instructions are versioned, reviewable, and never hidden in prompts
+- **Bounded**: Strict constraints prevent drift, speculation, or non-compliance
+- **Tool-Agnostic**: Unified rules for Copilot, GPT, Codex, and future AI tools
 
-## For Contributors
+## Contributor Guidance
 
-When working with AI tools on this repository:
-1. AI behavior is governed by files in `/.ai/`, not ad-hoc prompts
-2. Changes to AI instructions must be committed explicitly
-3. All AI outputs must be reviewed by human developers
-4. Domain expertise (TCNA standards, NJ HIC compliance) is encoded in DOMAIN.md
+- **Source of Truth**: All AI behavior is governed by `/.ai/`—never by ad-hoc prompts
+- **Change Control**: Instruction updates require explicit commits and human review
+- **Domain Authority**: Technical, legal, and compliance expertise is encoded in `DOMAIN.md` and `COMPLIANCE.md`
+- **Quality Assurance**: All AI outputs must pass HTMLHint, ESLint, Jekyll build, and accessibility/performance checks
 
-## For AI Tools
+## AI Tool Protocol
 
-If you are an AI assistant reading this:
-1. Load and follow `SYSTEM.md` as your authoritative instruction set
-2. Reference `STYLE.md`, `DOMAIN.md`, and `OUTPUT_RULES.md` for specific guidance
-3. Never override or contradict the core behavioral rules
-4. When uncertain, ask rather than guess
-5. Label all assumptions and unknowns clearly
+- **Load `SYSTEM.md`** as the master contract—never override or contradict it
+- **Reference**: Use `STYLE.md` for voice, `DOMAIN.md` for technical/legal, `OUTPUT_RULES.md` for code/formatting
+- **Assumptions**: Clearly label all unknowns; never speculate on compliance or technical matters
+- **Escalation**: When uncertain, request clarification—do not guess
+
+## Technical & Compliance Highlights
+
+- **File Naming**: Enforce kebab-case for HTML/CSS/JS, camelCase for JS variables, descriptive YAML keys (see `OUTPUT_RULES.md`)
+- **Accessibility**: All alt text, labels, and descriptions must meet WCAG 2.1 AA and NJ HIC requirements
+- **SEO & Performance**: Outputs must support LCP <2.5s, TTI <3s, CLS <0.1, and include proper meta/structured data
+- **Legal**: All content and code must comply with NJ Consumer Fraud Act and TCNA 2024 standards
 
 ---
 
 **Last Updated**: December 20, 2025  
-**Governance Version**: 1.0.0
+**Governance Version**: 1.0.0  
+**Reference**: See `/.ai/SYSTEM.md` for authoritative rules
+

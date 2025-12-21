@@ -1,20 +1,22 @@
-<!-- NJ Statewide Service Section Example -->
-<!-- Usage: Add this section to any page to showcase statewide NJ coverage -->
+<!-- NJ Statewide Service Section – Tillerstead LLC -->
+<!-- Compliant with TCNA 2024, NJ HIC, and accessibility standards -->
 
-<section class="nj-statewide">
+<section class="nj-statewide" aria-labelledby="nj-statewide-heading">
   <div class="nj-wrap">
-    <div class="nj-head">
+    <header class="nj-head">
       <span class="nj-kicker">Statewide NJ Coverage</span>
-      <h2>Serving All of New Jersey</h2>
+      <h2 id="nj-statewide-heading">Serving All of New Jersey</h2>
       <p class="nj-lead">
-        Licensed contractor providing tile, waterproofing, and remodeling services across all New Jersey counties with documented, professional installations.
+        NJ HIC-licensed contractor specializing in TCNA-compliant tile, waterproofing, and remodeling. Every installation is documented, code-compliant, and backed by transparent project records—serving all 21 New Jersey counties.
       </p>
-    </div>
+    </header>
 
-    <div class="nj-grid">
-      <article class="nj-card">
-        <h3>Atlantic & Cape May Counties</h3>
-        <p>Shore properties, coastal homes, and rental units requiring durable, salt-resistant installations.</p>
+    <div class="nj-grid" role="list">
+      <article class="nj-card" role="listitem">
+        <h3>Atlantic &amp; Cape May Counties</h3>
+        <p>
+          Shore properties and coastal homes: salt-resistant tile assemblies, ANSI A137.1-compliant waterproofing, and robust solutions for high-moisture environments.
+        </p>
         <ul>
           <li>Galloway</li>
           <li>Ocean City</li>
@@ -23,9 +25,11 @@
         </ul>
       </article>
 
-      <article class="nj-card">
-        <h3>Ocean & Burlington Counties</h3>
-        <p>Residential remodels, custom showers, and heated floor installations for central Jersey homes.</p>
+      <article class="nj-card" role="listitem">
+        <h3>Ocean &amp; Burlington Counties</h3>
+        <p>
+          Custom showers, heated floors (ANSI A118.10 membranes), and residential remodels—delivered with full documentation and NJ code compliance.
+        </p>
         <ul>
           <li>Toms River</li>
           <li>Lakewood</li>
@@ -34,24 +38,26 @@
         </ul>
       </article>
 
-      <article class="nj-card">
-        <h3>Camden & Gloucester Counties</h3>
-        <p>Complete waterproofing systems and tile assemblies for homes, offices, and commercial spaces.</p>
+      <article class="nj-card" role="listitem">
+        <h3>Camden &amp; Gloucester Counties</h3>
+        <p>
+          Complete waterproofing systems, commercial tile assemblies, and ADA-accessible solutions for homes and businesses—installed to TCNA and NJ HIC standards.
+        </p>
         <ul>
           <li>Cherry Hill</li>
           <li>Voorhees</li>
           <li>Deptford</li>
           <li>Washington Township</li>
         </ul>
-        <div class="nj-subtle">
-          Extended service area available for larger projects
+        <div class="nj-subtle" aria-label="Extended service area notice">
+          Extended service area available for large-scale or specialty projects.
         </div>
       </article>
     </div>
 
-    <div class="nj-actions">
-      <a href="/contact/" class="nj-btn nj-primary">Request consultation</a>
-      <a href="/portfolio/" class="nj-btn">View recent work</a>
-    </div>
+    <nav class="nj-actions" aria-label="Service actions">
+      <a href="/contact/" class="nj-btn nj-primary" aria-label="Request a consultation with Tillerstead">Request Consultation</a>
+      <a href="/portfolio/" class="nj-btn" aria-label="View Tillerstead's recent work portfolio">View Recent Work</a>
+    </nav>
   </div>
 </section>

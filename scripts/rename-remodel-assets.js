@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+
+import fs from 'node:fs';
+import path from 'node:path';
 
 const RENAMES = [
   { from: 'bathroom-remodel-progress-shot-1.webp', to: 'bathroom-remodel-progress-1.webp' },

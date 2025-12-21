@@ -1,13 +1,13 @@
 /* ============================================
-   Social Links Component
-   Pills with hover lift + focus ring
-   ============================================ */
+  Social Links Component
+  Accessible, TCNA/NJ HIC-compliant social pills
+  ============================================ */
 
 .social-links {
   --social-pill-size: 2.5rem;
   --social-gap: var(--space-2, 0.75rem);
-  --social-border: var(--color-border-strong, rgb(12, 40, 54, 0.2));
-  --social-bg: var(--ts-color-surface-elevated, rgb(255, 255, 255, 0.9));
+  --social-border: var(--color-border-strong, rgb(12 40 54 / 20%));
+  --social-bg: var(--ts-color-surface-elevated, rgb(255 255 255 / 90%));
   --social-icon-color: var(--color-text, #12212c);
 
   display: inline-flex;
@@ -45,12 +45,17 @@
   color: var(--social-icon-color);
   text-decoration: none;
   transition:
-    background var(--transition-fast, 120ms ease),
-    border-color var(--transition-fast, 120ms ease),
-    color var(--transition-fast, 120ms ease),
-    box-shadow var(--transition-fast, 120ms ease),
-    transform var(--transition-fast, 120ms ease);
+   background var(--transition-fast, 120ms ease),
+   border-color var(--transition-fast, 120ms ease),
+   color var(--transition-fast, 120ms ease),
+   box-shadow var(--transition-fast, 120ms ease),
+   transform var(--transition-fast, 120ms ease);
   outline: none;
+  /* Accessibility: Ensure sufficient contrast and focus visibility */
+  &:focus-visible {
+   outline: 3px solid var(--ts-color-primary-bg);
+   outline-offset: 2px;
+  }
 }
 
 .social-link:hover,
@@ -62,33 +67,29 @@
   box-shadow: 0 6px 20px var(--shadow-soft);
 }
 
-.social-link:focus-visible {
-  outline: 3px solid var(--ts-color-primary-bg);
-  outline-offset: 2px;
-}
-
 .social-icon {
   width: 1.15rem;
   height: 1.15rem;
   display: block;
+  /* Accessibility: Hide decorative icons from assistive tech */
+  aria-hidden: true;
+  focusable: false;
 }
 
-/* Header context */
-
+/* Header context: High-contrast for navigation */
 .social-links--header {
-  --social-border: rgb(255, 255, 255, 0.35);
-  --social-bg: rgb(255, 255, 255, 0.08);
-  --social-icon-color: var(--ts-white, #ffffff);
+  --social-border: rgb(255 255 255 / 35%);
+  --social-bg: rgb(255 255 255 / 8%);
+  --social-icon-color: var(--ts-white, #fff);
 }
 
 .social-links--header .social-link:hover,
 .social-links--header .social-link:focus-visible {
-  background: rgb(255, 255, 255, 0.2);
+  background: rgb(255 255 255 / 20%);
   color: var(--ts-color-primary);
 }
 
-/* Drawer / stacked layout */
-
+/* Drawer / stacked layout for mobile accessibility */
 .social-links--stacked .social-links__list {
   flex-direction: row;
   flex-wrap: wrap;
@@ -100,21 +101,20 @@
   justify-content: flex-start;
 
   .social-links__list {
-    width: 100%;
-    justify-content: flex-start;
+   width: 100%;
+   justify-content: flex-start;
   }
 
   .social-link {
-    --social-bg: var(--ts-color-surface-elevated, #ffffff);
-    --social-icon-color: var(--color-text, #12212c);
+   --social-bg: var(--ts-color-surface-elevated, #fff);
+   --social-icon-color: var(--color-text, #12212c);
   }
 }
 
-/* Footer context */
-
+/* Footer context: Brand-compliant color and contrast */
 .social-links--footer {
-  --social-border: rgb(255, 255, 255, 0.35);
-  --social-bg: rgb(255, 255, 255, 0.07);
+  --social-border: rgb(255 255 255 / 35%);
+  --social-bg: rgb(255 255 255 / 7%);
   --social-icon-color: var(--ts-footer-link, #7fd1ff);
 
   margin-top: 1rem;
@@ -126,9 +126,9 @@
   color: var(--footer-bg);
 }
 
-/* Container query for small social icons */
+/* Responsive: Reduce pill size for small containers */
 @container (inline-size < 30rem) {
   .social-links {
-    --social-pill-size: 2.2rem;
+   --social-pill-size: 2.2rem;
   }
 }

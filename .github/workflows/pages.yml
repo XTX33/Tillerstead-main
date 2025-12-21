@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to GitHub Pages
+name: Deploy Jekyll Site to GitHub Pages
 
 env:
   PAGES_ARTIFACT_NAME: github-pages
@@ -14,45 +14,49 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment per ref/PR
 concurrency:
   group: pages-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
+    name: Build & Lint (TCNA/NJ HIC Compliant)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js (LTS)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: npm
 
-      - name: Install npm dependencies
+      - name: Install npm Dependencies
         run: npm ci
 
-      - name: Setup Ruby
+      - name: Lint HTML & JavaScript
+        run: |
+          npx htmlhint '**/*.html'
+          npx eslint .
+
+      - name: Setup Ruby (Jekyll Vendor)
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler: '2.4.19'
           bundler-cache: true
 
-      # Forked PRs don't have Pages permissions; skip Pages-only steps to avoid hard failures.
-      - name: Setup Pages
+      - name: Configure GitHub Pages (Internal Only)
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/configure-pages@v5
 
-      - name: Build site (production)
+      - name: Build Site (Production, TCNA/NJ HIC Standards)
         env:
           JEKYLL_ENV: production
         run: npm run build
 
-      - name: Upload artifact
+      - name: Upload Pages Artifact
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/upload-pages-artifact@v3
         with:
@@ -60,8 +64,7 @@ jobs:
           name: ${{ env.PAGES_ARTIFACT_NAME }}
 
   deploy:
-    # Deploy previews for internal PRs and production for default-branch pushes.
-    # Forked PRs lack Pages permissions, so we skip deployment there to avoid hard failures.
+    name: Deploy to GitHub Pages (Preview & Production)
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     environment:
       name: github-pages
@@ -69,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Deploy to GitHub Pages (preview on PRs)
+      - name: Deploy to GitHub Pages (Preview on PRs, Production on Main)
         id: deployment
         uses: actions/deploy-pages@v4
         with:

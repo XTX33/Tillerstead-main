@@ -1,114 +1,105 @@
 ---
 layout: post
 title: "Waterproofing 101: RedGard® vs Schluter® KERDI vs LATICRETE® HYDRO BAN®"
-description: "Compare three leading shower waterproofing systems—RedGard, KERDI, and HYDRO BAN—with their pros, pitfalls, and how Tillerstead installs them to spec under NJ code and TCNA standards."
+description: "A technical, code-compliant comparison of RedGard, KERDI, and HYDRO BAN—how Tillerstead selects and installs each system to TCNA and NJ code for lasting, warrantable showers."
 ---
 
-Even the best tile work will fail if the waterproofing system beneath it isn’t installed **exactly to manufacturer spec**. At **Tillerstead LLC**, we build every shower in line with **ANSI A118.10 (waterproof membranes)**, **A118.12 (crack isolation)**, and the **TCNA Handbook** (details B422, B421, B415, etc.), so you know your system isn’t just pretty—it’s **documented, warrantable, and durable**.
+Even flawless tile work fails if the waterproofing beneath isn’t installed **precisely to manufacturer and code spec**. At **Tillerstead LLC**, every shower is built to **ANSI A118.10 (waterproof membranes)**, **A118.12 (crack isolation)**, and the **TCNA Handbook** (details B422, B421, B415, etc.), ensuring your system is **documented, warrantable, and durable**—not just attractive.
 
-Below is a field-tested comparison of three common systems available through local supply houses and big-box stores like Home Depot or Floor & Decor.
+Below: a field-tested, code-referenced comparison of three leading systems available at local supply houses and big-box retailers.
 
 ---
 
 ## 🔴 RedGard® (Custom Building Products) — Liquid-Applied Membrane
 
-**Type:** Roll-/trowel-on liquid waterproofing meeting *ANSI A118.10*  
+**Type:** Roll/trowel-on liquid waterproofing, *ANSI A118.10* compliant
 
-**Best for:** Budget-conscious installs over cement board or mortar beds  
+**Best for:** Cost-effective installs over cement board or mortar beds
 
-**Pros:**  
- 
-✅ Widely available  
-✅ Flexible for irregular shapes  
-✅ Low material cost  
+**Advantages:**  
+- ✅ Readily available  
+- ✅ Adapts to complex shapes  
+- ✅ Low material cost
 
-**Keys to Spec-Compliant Use:**  
- 
-Apply **two or more coats** at a **wet-film thickness of ~30–35 mils**; verify with a wet-film gauge  
-Reinforce **plane changes and penetrations** with alkali-resistant mesh per manufacturer sheet  
-Allow full **cure (typically > 24 hrs)** before flood testing per **IAPMO PS 106** guidelines  
+**Critical Installation Steps:**  
+- Apply **minimum two coats** at **30–35 mils wet-film thickness**; confirm with a wet-film gauge  
+- Reinforce **all plane changes and penetrations** with alkali-resistant mesh per manufacturer’s instructions  
+- Allow **full cure (typically >24 hrs)** before flood testing per **IAPMO PS 106** and local code
 
-**Common Failures:**  
- 
-⚠ Under-thickness or pinholes  
-⚠ Skipped mesh at seams or corners  
-⚠ Premature flood testing before full cure  
+**Typical Failure Points:**  
+- ⚠ Insufficient thickness or pinholes  
+- ⚠ Missing mesh at seams/corners  
+- ⚠ Premature flood testing before full cure
 
-📄 **Spec Reference:** *RedGard Product Data Sheet #DS 462 (Rev 8/2023)* — [Custom Building Products](https://www.custombuildingproducts.com/products/surface-preparation/membranes-underlayments/redgard.aspx)
+**Reference:** [RedGard Product Data Sheet #DS 462 (Rev 8/2023)](https://www.custombuildingproducts.com/products/surface-preparation/membranes-underlayments/redgard.aspx)
 
 ---
 
 ## 🟠 Schluter® KERDI — Sheet Membrane System
 
-**Type:** Polyethylene sheet membrane bonded with unmodified thin-set (ANSI A118.1)  
+**Type:** Polyethylene sheet membrane, bonded with unmodified thin-set (*ANSI A118.1*)
 
-**Best for:** Full rebuilds needing testable seams and integrated drains/pans  
+**Best for:** Full rebuilds requiring testable seams and integrated drains/pans
 
-**Pros:**  
- 
-✅ Waterproofing directly at surface  
-✅ Compatible with KERDI-Drain and prefabricated pans  
-✅ Easy to flood-test before tile  
+**Advantages:**  
+- ✅ Surface-applied waterproofing  
+- ✅ Compatible with KERDI-Drain and prefabricated pans  
+- ✅ Easy, code-compliant flood testing
 
-**Keys to Spec-Compliant Use:**  
- 
-Embed sheets in **unmodified thin-set mortar (ANSI A118.1)** over clean substrate  
-Maintain **2″ (50 mm) overlaps** and **roll seams** to eliminate voids  
-Use **KERDI-Band, KERDI-Corners, and KERDI-Fix** sealant where required  
+**Critical Installation Steps:**  
+- Embed sheets in **unmodified thin-set mortar (ANSI A118.1)** over a clean, flat substrate  
+- Maintain **2″ (50 mm) overlaps**; roll seams to eliminate voids  
+- Use **KERDI-Band, KERDI-Corners, and KERDI-Fix** at all transitions and penetrations
 
-**Common Failures:**  
- 
-⚠ Skipped seam overlap or poor embedment  
-⚠ Using modified thin-set that voids warranty  
-⚠ Unsealed fastener holes at benches or niches  
+**Typical Failure Points:**  
+- ⚠ Skipped seam overlap or poor embedment  
+- ⚠ Use of modified thin-set (voids warranty)  
+- ⚠ Unsealed fastener holes at benches/niches
 
-📄 **Spec Reference:** *Schluter® KERDI Installation Handbook 2024* — [Schluter](https://www.schluter.com/schluter-us/en_US/downloadfiles)
+**Reference:** [Schluter® KERDI Installation Handbook 2024](https://www.schluter.com/schluter-us/en_US/downloadfiles)
 
 ---
 
 ## 🟢 LATICRETE® HYDRO BAN® — Premium Liquid-Applied Membrane
 
-**Type:** Liquid membrane meeting *ANSI A118.10 & A118.12*  
+**Type:** Liquid membrane, *ANSI A118.10 & A118.12* compliant
 
-**Best for:** High-performance, elastic waterproofing under tile in showers, steam rooms, and exteriors  
+**Best for:** High-performance, elastic waterproofing under tile in showers, steam rooms, and exteriors
 
-**Pros:**  
- 
-✅ Highly elastic and crack-isolating  
-✅ No fabric required at most changes of plane  
-✅ GreenGuard-certified, low-VOC  
+**Advantages:**  
+- ✅ Highly elastic, crack-isolating  
+- ✅ No fabric required at most plane changes  
+- ✅ GreenGuard-certified, low-VOC
 
-**Keys to Spec-Compliant Use:**  
- 
-Apply at **0.02 in (0.5 mm) dry-film thickness**; verify coverage rate (≈ 50 sq ft per gal @ two coats)  
-Reinforce any large movement joints or gaps with **LATICRETE Waterproofing/Anti-Fracture Fabric**  
-Allow **2 hrs between coats** and **24 hrs cure** before flood test (per LATICRETE TDS 410)  
+**Critical Installation Steps:**  
+- Apply at **0.02 in (0.5 mm) dry-film thickness**; verify coverage (≈50 sq ft/gal at two coats)  
+- Reinforce large movement joints/gaps with **LATICRETE Waterproofing/Anti-Fracture Fabric**  
+- Allow **2 hrs between coats** and **24 hrs cure** before flood test (per LATICRETE TDS 410)
 
-**Common Failures:**  
- 
-⚠ Under-applied thickness or skipped corners  
-⚠ Mixing with incompatible sealants or mortars  
+**Typical Failure Points:**  
+- ⚠ Under-applied thickness or missed corners  
+- ⚠ Mixing with incompatible sealants/mortars
 
-📄 **Spec Reference:** *HYDRO BAN® Data Sheet #DS-663.5-2024* — [LATICRETE](https://laticrete.com)
+**Reference:** [HYDRO BAN® Data Sheet #DS-663.5-2024](https://laticrete.com)
 
 ---
 
-## ⚖️ Our Professional Approach
+## ⚖️ Tillerstead’s Code-First, Warranty-Backed Approach
 
-Rather than forcing one product into every job, **we choose the system first**, then pair compatible mortars, sealants, and tapes by the **same manufacturer**.  
-That ensures:
+We **select the right system for each project**—never forcing a “one-size-fits-all” solution. All mortars, sealants, and tapes are paired by **manufacturer specification** for:
 
-- Full warranty coverage under manufacturer specs  
-- Predictable cure times and bond strengths  
-- Consistency with **NJ Residential Code (IRC P2709)** requirements for shower receptors  
+- Full warranty coverage  
+- Predictable cure/bond performance  
+- Compliance with **NJ IRC P2709** for shower receptors
 
-We document every waterproofing phase—**photos, flood-test logs, and substrate flatness checks**—so your finished shower isn’t just beautiful, it’s **built to spec and proven watertight**.
-
----
-
-**Next Step:**  
-If you’re planning a shower rebuild in **Atlantic County or anywhere in South Jersey**, send us a few photos and notes to **info@tillerstead.com** or [request a consultation](/contact.html). We’ll help match your space and budget with the right waterproofing system—and install it by the book.
+Every phase is documented—**photos, flood-test logs, substrate flatness checks**—so your shower is **proven watertight and code-compliant**.
 
 ---
 
-Do the work with integrity and care.
+**Ready to build a shower that lasts?**  
+If you’re in **Atlantic County or South Jersey**, email **info@tillerstead.com** or [request a consultation](/contact.html). We’ll match your space and budget with the right waterproofing system—and install it to the letter of the code.
+
+---
+
+*Do the work with integrity and care.*
+

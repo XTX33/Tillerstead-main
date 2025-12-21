@@ -7,15 +7,13 @@
 <link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 
-{%- assign meta_description = page.description | default: site.description | default: 'Tillerstead offers tile, stone, and waterproofing services with NJ HIC licensed pros.' -%}
+{%- assign meta_description = page.description | default: site.description | default: 'NJ HIC #13VH12057400. Tillerstead: TCNA-compliant tile, stone, and waterproofing by licensed professionals. No shortcuts—just technical excellence.' -%}
 <meta name="description" content="{{ meta_description | escape }}">
 
-{%- assign meta_keywords = page.keywords | default: site.keywords -%}
-{% if meta_keywords %}
-  <meta name="keywords" content="{{ meta_keywords | join: ', ' }}">
-{% endif %}
+{%- assign meta_keywords = page.keywords | default: site.keywords | default: 'tile, stone, waterproofing, NJ HIC, TCNA, bathroom remodeling, Atlantic County, Tillerstead' -%}
+<meta name="keywords" content="{{ meta_keywords | join: ', ' }}">
 
-<meta name="author" content="{{ site.company.owner | default: 'Tillerstead LLC' }}">
+<meta name="author" content="{{ site.company.owner | default: 'Tillerstead LLC (NJ HIC #13VH12057400)' }}">
 <meta name="geo.region" content="US-NJ">
 <meta name="geo.placename" content="{{ site.company.address_locality | default: 'Atlantic County' }}, NJ">
 <meta name="format-detection" content="telephone=no">
@@ -33,12 +31,12 @@
 <!-- Theme / icons -->
 <meta name="theme-color" content="#000080" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<link rel="icon" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" type="image/svg+xml" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/logo/tillerstead-icon-32.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/img/logo/tillerstead-icon-48.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-icon-180.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/logo/tillerstead-icon-192.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/img/logo/tillerstead-icon-512.png' | relative_url }}">
+<link rel="icon" href="{{ '/assets/img/logo/tillerstead-favicon.svg' | relative_url }}" type="image/svg+xml" sizes="any" aria-label="Tillerstead LLC logo, NJ HIC licensed tile contractor">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/logo/tillerstead-icon-32.png' | relative_url }}" aria-label="Tillerstead LLC favicon 32x32">
+<link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/img/logo/tillerstead-icon-48.png' | relative_url }}" aria-label="Tillerstead LLC favicon 48x48">
+<link rel="icon" type="image/png" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-icon-180.png' | relative_url }}" aria-label="Tillerstead LLC Apple touch icon">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/logo/tillerstead-icon-192.png' | relative_url }}" aria-label="Tillerstead LLC Android icon">
+<link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/img/logo/tillerstead-icon-512.png' | relative_url }}" aria-label="Tillerstead LLC large icon">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/logo/tillerstead-icon-180.png' | relative_url }}">
 <link rel="mask-icon" href="{{ '/assets/img/logo/tillerstead-logo-mark.svg' | relative_url }}" color="#1cb394">
 <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
@@ -47,7 +45,7 @@
 <!-- Hero image preloads -->
 {%- assign hero_preload_image = page.hero_image | default: site.hero_default_image | default: site.default_og_image -%}
 {% if hero_preload_image %}
-  <link rel="preload" as="image" href="{{ hero_preload_image | relative_url }}" fetchpriority="high">
+  <link rel="preload" as="image" href="{{ hero_preload_image | relative_url }}" fetchpriority="high" imagesrcset="{{ hero_preload_image | relative_url }} 1x" imagesizes="100vw">
 {% endif %}
 
 <!-- Open Graph & Twitter cards -->
@@ -64,7 +62,7 @@
   <meta property="og:url" content="{{ site.url }}{{ og_url }}">
 {% endif %}
 <meta property="og:image" content="{{ og_image | absolute_url }}">
-<meta property="og:image:alt" content="{{ site.title | default: 'Tillerstead LLC' }} - Tile & Stone">
+<meta property="og:image:alt" content="Tillerstead LLC - TCNA-compliant tile & stone, NJ HIC #13VH12057400">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 
@@ -72,7 +70,7 @@
 <meta name="twitter:title" content="{{ og_title | truncate: 70 }}">
 <meta name="twitter:description" content="{{ og_description | escape | truncate: 160 }}">
 <meta name="twitter:image" content="{{ og_image | absolute_url }}">
-<meta name="twitter:image:alt" content="{{ site.title | default: 'Tillerstead LLC' }} - Tile & Stone">
+<meta name="twitter:image:alt" content="Tillerstead LLC - TCNA-compliant tile & stone, NJ HIC #13VH12057400">
 
 <!-- Business contact microdata -->
 <meta property="business:contact_data:street_address" content="{{ site.company.address_line | default: '' }}">
@@ -86,7 +84,7 @@
 {% endif %}
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" crossorigin>
 {% if site.fonts and site.fonts.local_preload %}
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-600.woff2' | relative_url }}" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-700.woff2' | relative_url }}" crossorigin>

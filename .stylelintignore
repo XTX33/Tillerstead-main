@@ -1,24 +1,33 @@
-# Ignore built/compiled files
+# .stylelintignore for Tillerstead.com
 
+# Ignore output and compiled assets
 _site/
 dist/
 build/
 assets/css/main.css
 assets/css/*.min.css
 
-## Ignore Jekyll SCSS files with front matter
-
+# Ignore Jekyll SCSS sources with front matter
 assets/css/main.scss
 
-## Ignore dependencies
-
+# Ignore dependency directories
 node_modules/
 vendor/
+vendor/gems/
 
-## Ignore old/legacy files
-
+# Ignore legacy and deprecated styles
 assets/css/legacy/
+assets/css/old/
+assets/css/experimental/
 
-## Ignore temporary build artifacts
-
+# Ignore temporary and editor artifacts
 tmp.css
+*.tmp.css
+*.bak.css
+*.swp
+
+# Ignore Netlify deploy previews (if any)
+.netlify/
+
+# Ignore VS Code settings (if accidentally present)
+.vscode/

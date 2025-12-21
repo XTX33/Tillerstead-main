@@ -1,25 +1,32 @@
-## Branch model
+## Branch Model
 
-- **main**: Production branch. Contains code that is ready for deployment and should always be stable.
-- **staging**: Active integration branch. Feature and fix branches are opened against `staging` and merged only via pull requests.
-- **Feature/fix branches**: Named for the work item (for example, `feature/calc-improvements` or `bugfix/fix-typo`) and created from `staging`.
+- **main**: Production branch. Contains only code and content that meet Tillerstead’s release criteria, pass all status checks, and comply with TCNA 2024 and NJ HIC standards. Always stable and deployable.
+- **staging**: Integration branch for active development. All feature and fix branches are created from and merged into `staging` via pull request, ensuring continuous validation and traceability.
+- **Feature/fix branches**: Named descriptively for the work item (e.g., `feature/tcna-bath-updates`, `bugfix/accessibility-labels`). Always branch from `staging` and follow OUTPUT_RULES.md naming conventions.
 
-## Change flow and merge rules
+## Change Flow & Merge Rules
 
-1. Create a feature branch from `staging`.
-2. Open a pull request targeting `staging`.
-3. Ensure all required status checks pass (including the Jekyll build) and obtain the required approval(s).
-4. Merge using the "Merge pull request" or "Squash and merge" strategy; do not force-push to shared branches.
-5. Periodically promote `staging` into `main` via pull request once release criteria are met.
+1. Create a feature or fix branch from `staging` using descriptive, kebab-case names per OUTPUT_RULES.md.
+2. Open a pull request targeting `staging`. Reference relevant TCNA/NJ HIC standards and link to work items.
+3. Pass all required status checks (including Jekyll build, HTMLHint, ESLint, and accessibility tests).
+4. Obtain approvals from designated reviewers per COMPLIANCE.md.
+5. Merge using "Merge pull request" or "Squash and merge"—never force-push to shared branches.
+6. Promote `staging` to `main` via pull request only after all release criteria are met and documented.
 
-## Recommended GitHub branch protections
+## GitHub Branch Protection (Recommended)
 
-- Require pull requests before merging into `main`.
-- Require status checks to pass before merging; include the Jekyll build as a mandatory check.
-- Disallow force-pushes to `main`; allow only fast-forward or merge commits via pull requests.
+- Require pull requests for all merges into `main` and `staging`.
+- Enforce passing status checks (Jekyll build, HTMLHint, ESLint, accessibility) before merging.
+- Disallow force-pushes to `main` and `staging`; allow only fast-forward or merge commits via pull requests.
+- Require signed commits and enforce CODEOWNERS review for regulated files.
 
-## Release criteria for `staging` → `main`
+## Release Criteria: `staging` → `main`
 
-- The project builds cleanly (Jekyll build passes without errors).
-- Release checklist is completed and documented in the pull request (e.g., updated content reviewed, links validated, accessibility spot-check performed as applicable).
+- Project builds cleanly (Jekyll build passes; no HTMLHint or ESLint errors).
+- All content and code reviewed for TCNA 2024 and NJ HIC compliance; accessibility spot-checks completed.
+- Release checklist completed and attached to the pull request (content updates, link validation, alt text and ARIA labels verified).
 - All required reviewers have approved the promotion pull request.
+- No unresolved issues, broken links, or accessibility violations.
+
+> **Reference:** See `/.ai/OUTPUT_RULES.md` for naming, formatting, and commit conventions. All workflow steps must comply with SYSTEM.md, DOMAIN.md, and COMPLIANCE.md.
+

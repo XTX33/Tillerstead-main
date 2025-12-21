@@ -2,15 +2,12 @@
 layout: default
 title: "Tillerstead Blog | Tile, Bath & Remodel Notes"
 permalink: /blog/
-description: "Clear, contractor-grade guidance for tile, bath, and remodel projects in South Jersey — waterproofing systems, layouts, materials, and timelines explained plainly."
+description: "Contractor-grade, TCNA-compliant guidance for tile, bath, and remodeling in South Jersey—waterproofing, layout, and material standards explained for homeowners who demand quality and transparency."
 body_class: page-blog
 hero_eyebrow: "Insights & Field Notes"
 hero_title: "Project Notes & Product Insights"
 hero_summary: >
-  Field-tested guidance on waterproofing systems, tile layout, and realistic timelines —
-  written for South Jersey homeowners who care about quality work and a fair process.
-  Expect contractor-grade detail in plain language — what to watch for, what to ask,
-  and when to push pause until the plan is right.
+  Field-tested, code-compliant advice on waterproofing systems, tile layout, and realistic timelines—written for South Jersey homeowners who value technical accuracy and a fair process. Expect TCNA standards, NJ HIC compliance, and transparent breakdowns: what to watch for, what to ask, and when to pause until the plan is right.
 ---
 
 <section class="ts-section ts-surface section blog-index" aria-labelledby="blog-heading">
@@ -18,43 +15,43 @@ hero_summary: >
     {% assign posts_sorted = site.posts | sort: "date" | reverse %}
 
     {% if posts_sorted.size == 0 %}
-      <p class="microcopy center mt-2">
-        No articles are live yet. Project notes and product breakdowns will be published
-        as recent jobs are documented and photographed.
+      <p class="microcopy center mt-2" id="blog-empty-message">
+        No articles are published yet. Tillerstead’s project notes and product breakdowns—detailing TCNA methods, waterproofing protocols, and NJ HIC compliance—will be posted as recent jobs are documented and photographed.
       </p>
     {% else %}
-      <ul class="cards blog-cards mt-2 unstyled" aria-label="Tillerstead articles on tile, bath, and remodel work">
+      <ul class="cards blog-cards mt-2 unstyled" aria-label="Tillerstead articles: tile, bath, and remodel technical guidance">
         {% for post in posts_sorted %}
-          <li class="ts-card card blog-card stack-sm">
+          <li class="ts-card card blog-card stack-sm" itemscope itemtype="https://schema.org/Article">
             <header class="blog-card-header">
-              <h2 class="blog-card-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <h2 class="blog-card-title" id="blog-heading-{{ forloop.index }}">
+                <a href="{{ post.url | relative_url }}" itemprop="headline">{{ post.title }}</a>
               </h2>
               <p class="blog-card-meta">
                 <small>
-                  {{ post.date | date: "%B %e, %Y" }}
+                  <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ post.date | date: "%B %e, %Y" }}
+                  </time>
                   {% if post.category %}
-                    &nbsp;•&nbsp; {{ post.category }}
+                    &nbsp;•&nbsp; <span class="blog-card-category" itemprop="articleSection">{{ post.category | escape }}</span>
                   {% endif %}
                 </small>
               </p>
             </header>
 
             {% if post.description %}
-              <p class="lead blog-card-excerpt">
-                {{ post.description }}
+              <p class="lead blog-card-excerpt" itemprop="description">
+                {{ post.description | escape }}
               </p>
             {% endif %}
 
             <p class="blog-card-cta">
-              <a class="btn btn-ghost" href="{{ post.url | relative_url }}">
-                Read article &rarr;
+              <a class="btn btn-ghost" href="{{ post.url | relative_url }}" aria-labelledby="blog-heading-{{ forloop.index }}">
+                Read article<span class="visually-hidden">: {{ post.title }}</span> &rarr;
               </a>
             </p>
           </li>
         {% endfor %}
       </ul>
     {% endif %}
-
   </div>
 </section>

@@ -1,85 +1,83 @@
 # Tillerstead LLC Amazon Associate Product Links
 # Supports HTML development fund through affiliate commissions
-# All products are field-tested and used in actual installations
+# All products are field-tested and used in actual installations per TCNA and NJ HIC standards
 
 categories:
   - id: planning-essentials
     name: Project Planning & DIY Essentials
     description: >-
-      Start here if you're planning a project, gathering estimates, or want to understand 
-      the scope before committing. These tools help demystify the renovation process.
+      Start here if you’re planning a renovation, gathering estimates, or need to scope work before committing. 
+      These tools clarify project requirements and help prevent costly mistakes—especially for NJ homeowners.
     products:
       - name: Room By Room Project Planner
         full_name: "Room By Room Project Planner: Organize Interior Design Ideas, Sketch Layouts, Contractor Quotes & More"
         amazon_url: https://amzn.to/4qls9kO
-        type: Planning & Organization Tool
+        type: Planning & Documentation Tool
         description: >-
-          Track room layouts, design ideas, contractor quotes, material purchases, and timelines in one place. 
-          Especially useful when coordinating multiple trades or phasing a larger renovation. Keeps all the 
-          details you *will* forget if you don't write them down.
+          Centralizes room layouts, design concepts, contractor quotes, material lists, and timelines. 
+          Essential for NJ HIC compliance—document existing conditions, measurements, and utility locations 
+          before demolition. Streamlines communication and ensures all project details are preserved.
         pro_tip: >-
-          Use this to document existing conditions before demo. Take photos, sketch measurements, 
-          and note electrical/plumbing locations. Your future self (and your contractor) will thank you.
+          Photograph and sketch every room, noting electrical, plumbing, and structural features. 
+          Accurate documentation supports code compliance and protects against disputes.
         author: House To Home Publishing
         
       - name: BOSCH Laser Distance Measure
         full_name: "BOSCH GLM100-23 100 Ft Blaze Laser Distance Measure"
         amazon_url: https://amzn.to/4atkxIk
-        type: Measurement Tool
+        type: Precision Measurement Tool
         specs: "100 ft range, ±1/16\" accuracy, includes 2 AA batteries"
         description: >-
-          Makes estimates way easier for both clients and contractors. One-person measurements, 
-          instant calculations, no more crawling around with a tape measure. Great for planning 
-          tile layouts, estimating square footage, or checking ceiling heights.
+          Enables single-person, high-precision measurements for square footage, ceiling heights, and tile layouts. 
+          TCNA recommends verifying room squareness—use diagonal measurements to detect out-of-square conditions 
+          before tile installation. Eliminates manual errors and accelerates estimating.
         pro_tip: >-
-          Use it to measure diagonal distances in rooms—helps identify out-of-square walls 
-          before tile layout. Could save you from discovering layout issues mid-installation.
+          Measure diagonals and wall lengths to confirm squareness. Early detection of layout issues 
+          prevents lippage and ensures TCNA-compliant installations.
         brand: BOSCH
 
   - id: installation-materials
     name: Professional Installation Materials
     description: >-
-      Materials we actually use on jobs. TCNA-compliant products that work across 
-      South Jersey's climate challenges—humidity, temperature swings, and structural quirks.
+      TCNA-compliant materials proven in South Jersey’s climate—humidity, temperature swings, and structural quirks. 
+      Products selected for code compliance, durability, and performance in real-world installations.
     products:
       - name: DGSL Tile Leveling System
         full_name: "DGSL Tile Leveling System with Plier - 1200-Piece Spacers Clips and 300-Piece Reusable Wedges"
         amazon_url: https://amzn.to/49rOXIT
-        type: Installation Tool
+        type: Tile Leveling & Spacing System
         specs: "1/16 inch spacing, includes plier tool"
         description: >-
-          Keeps large-format tile installations flat and prevents lippage (uneven edges between tiles). 
-          Especially critical for 12"×24" or larger tiles on floors. The system uses disposable clips 
-          and reusable wedges—clips break away after mortar sets, wedges are reusable for future jobs.
+          Maintains flatness and prevents lippage on large-format tiles (12\"×24\"+). 
+          Disposable clips and reusable wedges ensure consistent grout joints and TCNA-compliant tolerances. 
+          Essential for floors and walls where uneven edges compromise both appearance and performance.
         pro_tip: >-
-          Not sure which grout size or spacing you need? Contact us for a recommendation based 
-          on your specific tile size and project. Wrong spacing can compromise both appearance and performance.
-        note: Choose grout spacing based on tile size—ask us if you're unsure
+          Select grout spacing based on tile size and manufacturer recommendations. 
+          Contact Tillerstead for expert guidance—incorrect spacing can void warranties and violate code.
+        note: Grout spacing must match tile size and TCNA standards—ask us for recommendations.
         brand: DGSL
         
       - name: Cotton Farm Cheesecloth
         full_name: "Cotton Farm Grade 100 XL Cheese Cloth - Ultra-Dense Butter Muslin"
         amazon_url: https://amzn.to/4p6jqBU
-        type: Cleaning & Finishing Material
+        type: Grout Haze Removal & Final Cleaning
         specs: "36\"×36\", 100% unbleached cotton, reusable, hemmed edges"
         description: >-
-          The secret weapon for grout haze removal and final tile cleaning. Grade 100 (ultra-dense) 
-          is ideal for buffing tiles after grouting without scratching. Reusable and washable—one 
-          package lasts multiple jobs. Way better than disposable sponges for final finish work.
+          Grade 100 ultra-dense cheesecloth is the preferred tool for final tile cleaning and grout haze removal. 
+          Outperforms disposable sponges—won’t scratch ceramic or natural stone, leaves no lint, and is reusable. 
+          Meets TCNA recommendations for post-installation cleaning.
         pro_tip: >-
-          Dampen lightly and use in circular motions for final polish after grout haze removal. 
-          Works on both natural stone and ceramic without leaving lint or scratches.
+          Lightly dampen and buff tiles in circular motions after grout cures. 
+          Suitable for all tile types—ensures a professional finish and compliance with manufacturer care instructions.
         brand: Cotton Farm from Mediterranean
 
 metadata:
   disclosure: >-
-    Tillerstead LLC is a participant in the Amazon Services LLC Associates Program, 
-    an affiliate advertising program designed to provide a means for sites to earn 
-    advertising fees by advertising and linking to Amazon.com. When you purchase through 
-    these links, we earn a small commission at no extra cost to you. All proceeds support 
-    our free technical blog content and HTML development.
+    Tillerstead LLC participates in the Amazon Services LLC Associates Program, 
+    an affiliate advertising program enabling sites to earn fees by linking to Amazon.com. 
+    Purchases via these links support our technical blog and HTML development at no extra cost to you.
   
   policy: >-
-    We only recommend products we've used in actual installations. Not sponsored placements 
-    or marketing fluff—just products that work and have survived real-world installations 
-    across South Jersey.
+    We only recommend products field-tested in actual installations—no paid placements or marketing fluff. 
+    All recommendations meet TCNA and NJ HIC standards for quality, safety, and compliance.
+

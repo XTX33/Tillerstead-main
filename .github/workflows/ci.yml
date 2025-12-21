@@ -12,31 +12,31 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
+      - name: Set up Ruby (TCNA/NJ HIC-compliant build)
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler: '2.4.19'
           bundler-cache: true
 
-      - name: Set up Node.js
+      - name: Set up Node.js (ESLint/HTMLHint ready)
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install npm dependencies
+      - name: Install npm dependencies (locked for reproducibility)
         run: npm ci
 
-      - name: Lint frontend files
+      - name: Lint frontend files (ESLint + HTMLHint, per OUTPUT_RULES.md)
         run: npm run lint
 
-      - name: Build site and run HTML checks
+      - name: Build site and run HTML checks (Jekyll, WCAG/SEO/CLS targets)
         env:
           JEKYLL_ENV: production
         run: npm run test
 
-      - name: Upload built site artifact
+      - name: Upload built site artifact (for deployment and audit)
         if: always()
         uses: actions/upload-artifact@v4
         with:

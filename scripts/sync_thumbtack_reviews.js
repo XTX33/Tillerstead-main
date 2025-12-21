@@ -9,11 +9,11 @@
  * data scraped from the public Thumbtack service page.
  */
 
-const fs = require('fs')
-const https = require('https')
-const path = require('path')
-const { load } = require('cheerio')
-const yaml = require('js-yaml')
+import fs from 'fs'
+import https from 'https'
+import path from 'path'
+import { load } from 'cheerio'
+import yaml from 'js-yaml'
 
 const SERVICE_URL =
   'https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199'
@@ -60,7 +60,7 @@ function textFrom ($, element) {
   return value || null
 }
 
-function parseRating ($, card) {
+function parseRating (card) {
   const ratingValue = card.find('[itemprop="ratingValue"]').attr('content')
   if (ratingValue) return { rating: parseFloat(ratingValue), ratingMax: 5 }
 
@@ -253,7 +253,7 @@ function extractReviews (html) {
         .get()
         .filter(Boolean)
 
-      const { rating, ratingMax } = parseRating($, card)
+      const { rating, ratingMax } = parseRating(card)
 
       const quoteHtml = body.length ? cleanHtml($, body) : ''
       const baseSlug = slugify(author)

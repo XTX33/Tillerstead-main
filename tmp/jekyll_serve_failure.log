@@ -1,6 +1,14 @@
-Unknown command: serve
-Usage: jekyll build [options]
-    -s, --source PATH                Source directory (default: current directory)
-    -d, --destination PATH           Destination directory (default: ./_site)
-        --trace                      Show full backtrace on errors
-    -h, --help                       Show this message
+[Jekyll Error] The custom Tillerstead Jekyll does not support 'jekyll serve'.
+
+How to build and preview your site locally:
+
+1. Build the site:
+   jekyll build -s . -d ./_site
+
+2. Preview the site:
+   cd _site
+   python3 -m http.server 4000
+   # Then visit http://localhost:4000
+
+Note: Update all scripts and docs to use 'jekyll build' and a static file server for local preview.
+For compliance and workflow standards, see /.ai/OUTPUT_RULES.md.

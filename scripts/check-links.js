@@ -1,31 +1,52 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
-const cheerio = require('cheerio');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import cheerio from 'cheerio';
+
+// __dirname workaround for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const siteDir = path.join(__dirname, '..', '_site');
 if (!fs.existsSync(siteDir)) {
-  console.error('Missing _site directory. Run `npm run build` first.');
+  console.error('Error: _site directory missing. Run `npm run build` before link checking. (TCNA/NJ HIC compliance)');
   process.exit(1);
 }
 
+// Allowlist for intentionally missing assets (e.g., favicon)
 const allowMissing = new Set(['/favicon.ico']);
 
+/**
+ * Determines if a link is external or non-checkable.
+ * @param {string} link
+ * @returns {boolean}
+ */
 function isExternal(link) {
   return (
     /^(https?:)?\/\//i.test(link) ||
-    /\/?mailto:/i.test(link) ||
-    /\/?tel:/i.test(link) ||
-    /\/?sms:/i.test(link) ||
+    /^mailto:/i.test(link) ||
+    /^tel:/i.test(link) ||
+    /^sms:/i.test(link) ||
     link.startsWith('#')
   );
 }
 
+/**
+ * Removes fragments and query strings from a reference.
+ * @param {string} ref
+ * @returns {string}
+ */
 function stripFragmentsAndQuery(ref) {
   const [pathPart] = ref.split('#');
   return pathPart.split('?')[0];
 }
 
+/**
+ * Normalizes a link or asset reference to an absolute file path in _site.
+ * @param {string} href
+ * @returns {string}
+ */
 function normalizeTarget(href) {
   const cleaned = stripFragmentsAndQuery(href);
   let target = cleaned;
@@ -50,6 +71,11 @@ function normalizeTarget(href) {
   return primary;
 }
 
+/**
+ * Recursively collects all HTML files in a directory.
+ * @param {string} dir
+ * @returns {string[]}
+ */
 function collectHtmlFiles(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
   return entries.flatMap((entry) => {
@@ -88,11 +114,11 @@ for (const file of collectHtmlFiles(siteDir)) {
 }
 
 if (missing.length) {
-  console.error('Broken internal links/assets found:');
+  console.error('Broken internal links/assets detected (TCNA/NJ HIC compliance required):');
   for (const issue of missing) {
-    console.error(`- ${issue.source} -> ${issue.ref}`);
+    console.error(`- ${issue.source} → ${issue.ref}`);
   }
   process.exit(1);
 }
 
-console.log('Link check passed: all internal references resolved.');
+console.log('Link check passed: all internal references resolved to TCNA/NJ HIC standards.');

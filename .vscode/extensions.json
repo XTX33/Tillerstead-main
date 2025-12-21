@@ -1,6 +1,22 @@
 {
+    // VS Code Extensions recommended for Tillerstead.com development
+    // Enforces HTML5, CSS3, and ES6+ standards per TCNA/NJ HIC compliance
+    // See /.ai/OUTPUT_RULES.md for naming and formatting conventions
+
     "recommendations": [
+        // Live server for standards-compliant local development
         "yandeu.five-server",
-        "htmlhint.vscode-htmlhint"
+
+        // HTML linter enforcing TCNA/NJ HIC code quality
+        "htmlhint.vscode-htmlhint",
+
+        // CSS linter for accessibility and technical accuracy
+        "stylelint.vscode-stylelint",
+
+        // ESLint for ES6+ JavaScript compliance and code clarity
+        "dbaeumer.vscode-eslint",
+
+        // Markdown linter for documentation and compliance copy
+        "davidanson.vscode-markdownlint"
     ]
 }

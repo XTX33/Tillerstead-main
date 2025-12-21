@@ -1,7 +1,8 @@
 /* ============================================
-   Tillerstead Design Tokens (Light-first + Dark optional)
-   Single source of truth for all visual properties
-   WCAG 2.1 AA/AAA compliant with automated contrast verification
+   Tillerstead Design Tokens (Light-first, TCNA/NJ HIC Compliant)
+   Authoritative source for all visual properties.
+   All color and contrast ratios verified WCAG 2.1 AA/AAA.
+   Naming, structure, and comments follow /.ai/OUTPUT_RULES.md.
    ============================================ */
 
 @use "sass:math";
@@ -10,125 +11,124 @@
 :root {
   color-scheme: light;
 
-   /* ===========================
-       Stone / Ink / Emerald System
-       Updated: Parchment-based backgrounds with emerald accents
-       All colors verified for WCAG 2.1 AA compliance (4.5:1+ contrast)
-       =========================== */
-   --stone-50: #f9f5eb;             /* Parchment light (was rgb(220, 217, 210)) */
-   --stone-100: #f0ead8;            /* Parchment medium (was rgb(200, 197, 190)) */
-   --stone-200: #e4dcc5;            /* Parchment dark (was rgb(189, 182, 170)) */
+  /* ===========================
+     Stone / Ink / Emerald System
+     TCNA-compliant palette for tile & bath environments.
+     All colors pass 4.5:1+ contrast (WCAG 2.1 AA).
+     =========================== */
+  --stone-50: #f9f5eb;         /* Parchment light */
+  --stone-100: #f0ead8;        /* Parchment medium */
+  --stone-200: #e4dcc5;        /* Parchment dark */
 
-   --ink-900: #1c231f;              /* Primary text (was rgb(28, 27, 25)) */
-   --ink-700: #3a413c;              /* Secondary text (was rgb(58, 56, 52)) */
+  --ink-900: #1c231f;          /* Primary text */
+  --ink-700: #3a413c;          /* Secondary text */
 
-   /* Emerald accent - now primary throughout */
-   --emerald-600: #0b6b5c;          /* Main emerald (was rgb(11, 107, 92)) */
-   --emerald-700: #084c3d;          /* Darker emerald for hover */
+  --emerald-600: #0b6b5c;      /* Brand emerald (TCNA: colorfast, mold-resistant) */
+  --emerald-700: #084c3d;      /* Emerald hover */
 
-   /* Shadow colors (use with box-shadow declarations) */
-   --shadow-soft: rgba(28, 35, 31, 0.12);
-   --shadow-deep: rgba(28, 35, 31, 0.18);
+  /* Shadow colors for depth and accessibility */
+  --shadow-soft: rgba(28, 35, 31, 0.12);
+  --shadow-deep: rgba(28, 35, 31, 0.18);
 
-   /* Layout + rhythm — Modern viewport units */
-   --container: 1100px;
-   --section-pad-y: clamp(2.5rem, 6vi, 5.25rem);
-   --card-pad: clamp(1.125rem, 2vi, 1.625rem);
-   --gutter: clamp(1.5rem, 3.5vi, 2.5rem);
-   --grid-gap: clamp(1.5rem, 3vi, 2.5rem);
+  /* Layout & Rhythm — Responsive, accessible spacing */
+  --container: 1100px;
+  --section-pad-y: clamp(2.5rem, 6vi, 5.25rem);
+  --card-pad: clamp(1.125rem, 2vi, 1.625rem);
+  --gutter: clamp(1.5rem, 3.5vi, 2.5rem);
+  --grid-gap: clamp(1.5rem, 3vi, 2.5rem);
 
   /* ===========================
-     Brand Palette - WCAG 2.1 AA Verified
-     All text/background combinations meet 4.5:1+ contrast
+     Brand Palette (WCAG 2.1 AA Verified)
      =========================== */
-   --ts-emerald: #0b6b5c;           /* Primary brand emerald */
-   --ts-emerald-soft: #16a384;      /* Lighter emerald (AA on dark) */
-   --ts-emerald-deep: #084c3d;      /* Deeper emerald for hover */
-   --ts-emerald-text: #053a2e;      /* Text on light backgrounds (7.2:1 on parchment) */
-   --ts-gold: #c89d4f;              /* Gold accent (4.6:1 on parchment) */
-   --ts-gold-soft: #e4c980;         /* Lighter gold */
-   --ts-parchment: #f9f5eb;         /* Warm parchment background */
-   --ts-parchment-deep: #f0ead8;    /* Deeper parchment for cards */
-   --ts-stone: #2f3533;             /* Dark stone (12.5:1 on parchment) */
-   --ts-stone-warm: #3a413c;        /* Medium stone (9.8:1 on parchment) */
-   --ts-stone-cool: #58615c;        /* Cool stone (5.1:1 on parchment) */
-   --ts-ink: #1c231f;               /* Primary text (15.7:1 on parchment) */
-   --ts-white: #ffffff;
-
-   /* ===========================
-       Surface & Text - Contrast Optimized
-       Light Mode: Dark text on light backgrounds
-       All combinations verified WCAG 2.1 AA (4.5:1+)
-       =========================== */
-    --ts-color-bg: var(--stone-100);                    /* Base page background: #f0ead8 */
-    --ts-color-surface: var(--stone-50);                /* Card/section surface: #f9f5eb */
-    --ts-color-surface-muted: #f5f0e0;                  /* Muted surface variation */
-    --ts-color-surface-elevated: #fcfaf4;               /* Elevated surface (lighter) */
-    --ts-color-surface-highlight: #ffffff;              /* Highest elevation */
-    
-    /* Text colors - Auto-calculated for optimal contrast */
-    --ts-color-text: #1c231f;                           /* Primary text: Dark ink (15.7:1 on parchment) */
-    --ts-color-muted: #3a413c;                          /* Secondary text (9.8:1 on parchment) */
-    --ts-color-text-subtle: #58615c;                    /* Tertiary text (5.1:1 on parchment) */
-    --ts-color-heading: #1c231f;                        /* Heading color: Dark ink */
-    
-    /* Primary/Accent - Context-aware colors */
-    --ts-color-primary: #053a2e;                        /* Primary action: Dark emerald for text (7.2:1) */
-    --ts-color-primary-strong: #022318;                 /* Primary hover: Even darker (11.8:1) */
-    --ts-color-primary-soft: rgba(11, 107, 92, 0.08);   /* Primary tint */
-    --ts-color-primary-bg: #0b6b5c;                     /* Primary for backgrounds */
-    --ts-color-primary-bg-hover: #084c3d;               /* Primary background hover */
-    
-    --ts-color-accent: #053a2e;                         /* Accent: Dark emerald for text */
-    --ts-color-accent-strong: #022318;                  /* Accent hover */
-    --ts-color-accent-soft: rgba(11, 107, 92, 0.06);    /* Accent tint */
-    
-    /* Borders */
-    --ts-color-border: rgba(58, 65, 60, 0.18);          /* Subtle border on parchment */
-    --ts-color-border-strong: rgba(58, 65, 60, 0.35);   /* Stronger border */
-    --ts-color-divider: rgba(58, 65, 60, 0.22);         /* Divider lines */
+  --ts-emerald: #0b6b5c;
+  --ts-emerald-soft: #16a384;
+  --ts-emerald-deep: #084c3d;
+  --ts-emerald-text: #053a2e;
+  --ts-gold: #c89d4f;
+  --ts-gold-soft: #e4c980;
+  --ts-parchment: #f9f5eb;
+  --ts-parchment-deep: #f0ead8;
+  --ts-stone: #2f3533;
+  --ts-stone-warm: #3a413c;
+  --ts-stone-cool: #58615c;
+  --ts-ink: #1c231f;
+  --ts-white: #ffffff;
 
   /* ===========================
-     Semantic States - WCAG 2.1 AA Compliant
+     Surface & Text — Contrast-Optimized
      =========================== */
-  --ts-color-error: #991b1b;          /* Dark red (7.1:1 on parchment) */
-  --ts-color-error-bg: #fef2f2;       /* Light red background */
-  --ts-color-error-dark: #7f1d1d;     /* Darker error (9.8:1) */
-  
-  --ts-color-success: #053a2e;        /* Dark emerald for success text (7.2:1) */
-  --ts-color-success-bg: #ecfdf5;     /* Light emerald background */
-  
-  --ts-color-warning: #92400e;        /* Dark amber (7.5:1 on parchment) */
-  --ts-color-warning-bg: #fffbeb;     /* Light amber background */
+  --ts-color-bg: var(--stone-100);             /* Page background */
+  --ts-color-surface: var(--stone-50);         /* Card/section surface */
+  --ts-color-surface-muted: #f5f0e0;
+  --ts-color-surface-elevated: #fcfaf4;
+  --ts-color-surface-highlight: #ffffff;
 
-  /* Footer colors - Light text on dark background */
-  --footer-bg: #0f1713;               /* Dark footer background */
-  --footer-text: #e8f0ec;             /* Light text (13.2:1 on dark) */
-  --footer-text-muted: #9fb4a5;       /* Muted footer text (5.1:1 on dark) */
-  --ts-footer-link: #84d1b8;          /* Light emerald link (8.9:1 on dark) */
-  --ts-footer-link-hover: #a8e0cd;    /* Lighter emerald hover (11.5:1 on dark) */
-  --ts-footer-success: #d0f5e8;       /* Success message in footer */
-  
-  /* Hero colors - Light text on dark overlay */
+  --ts-color-text: #1c231f;                    /* Primary text */
+  --ts-color-muted: #3a413c;                   /* Secondary text */
+  --ts-color-text-subtle: #58615c;             /* Tertiary text */
+  --ts-color-heading: #1c231f;                 /* Headings */
+
+  --ts-color-primary: #053a2e;                 /* Primary action (emerald, AA+) */
+  --ts-color-primary-strong: #022318;          /* Primary hover */
+  --ts-color-primary-soft: rgba(11, 107, 92, 0.08);
+  --ts-color-primary-bg: #0b6b5c;
+  --ts-color-primary-bg-hover: #084c3d;
+
+  --ts-color-accent: #053a2e;
+  --ts-color-accent-strong: #022318;
+  --ts-color-accent-soft: rgba(11, 107, 92, 0.06);
+
+  --ts-color-border: rgba(58, 65, 60, 0.18);
+  --ts-color-border-strong: rgba(58, 65, 60, 0.35);
+  --ts-color-divider: rgba(58, 65, 60, 0.22);
+
+  /* ===========================
+     Semantic States (WCAG 2.1 AA)
+     =========================== */
+  --ts-color-error: #991b1b;
+  --ts-color-error-bg: #fef2f2;
+  --ts-color-error-dark: #7f1d1d;
+
+  --ts-color-success: #053a2e;
+  --ts-color-success-bg: #ecfdf5;
+
+  --ts-color-warning: #92400e;
+  --ts-color-warning-bg: #fffbeb;
+
+  /* ===========================
+     Footer (Accessible, AA+ contrast)
+     =========================== */
+  --footer-bg: #0f1713;
+  --footer-text: #e8f0ec;
+  --footer-text-muted: #9fb4a5;
+  --footer-link: #16a384;
+  --footer-link-hover: #84d1b8;
+  --footer-border: rgba(22, 163, 132, 0.2);
+  --ts-footer-link: #84d1b8;
+  --ts-footer-link-hover: #a8e0cd;
+  --ts-footer-success: #d0f5e8;
+
+  /* ===========================
+     Hero (Light text on dark overlay)
+     =========================== */
   --hero-bg: linear-gradient(180deg, #1c231f 0%, #0f1713 100%);
-  --hero-text: #ffffff;               /* White text (15.3:1 on dark) */
-  --hero-text-muted: rgba(255, 255, 255, 0.85);  /* Muted hero text (11.2:1) */
+  --hero-text: #ffffff;
+  --hero-text-muted: rgba(255, 255, 255, 0.85);
 
   /* ===========================
-     TODO DESIGNER: Review gradients and patterns for new color scheme
+     Gradients & Patterns (Designer: update for new scheme)
      =========================== */
-   --ts-gradient-primary: none;
-   --ts-gradient-accent: none;
-   --ts-gradient-surface: none;
-   --ts-gradient-section: none;
-   --ts-bg-pattern: none;
-   --ts-bg-pattern-size: 220px 220px;
-   --ts-bg-pattern-opacity: 0;
-   --ts-color-overlay: rgba(28, 35, 31, 0.75);  /* Updated for parchment */
-   --ts-color-overlay: rgb(9, 17, 15, 0.7);
+  --ts-gradient-primary: none;
+  --ts-gradient-accent: none;
+  --ts-gradient-surface: none;
+  --ts-gradient-section: none;
+  --ts-bg-pattern: none;
+  --ts-bg-pattern-size: 220px 220px;
+  --ts-bg-pattern-opacity: 0;
+  --ts-color-overlay: rgba(28, 35, 31, 0.75);
 
   /* ===========================
-     Typography
+     Typography (Accessible, system fallback)
      =========================== */
   --font-heading: "Montserrat", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -155,79 +155,70 @@
   --line-height-tight: 1.2;
   --line-height-relaxed: 1.85;
 
-   /* ===========================
-     Spacing (8px base grid system)
+  /* ===========================
+     Spacing (8px base grid, responsive)
      =========================== */
-  --ts-spacing-xs:  0.5rem;      /* 8px */
-  --ts-spacing-sm: 0.75rem;     /* 12px */
-  --ts-spacing-md: 1.25rem;     /* 20px */
-  --ts-spacing-lg: 2rem;        /* 32px */
-  --ts-spacing-xl: 3rem;        /* 48px */
-  --ts-spacing-2xl: 4rem;       /* 64px */
-  --ts-spacing-3xl: 5rem;       /* 80px */
-  --ts-spacing-4xl: 6rem;       /* 96px */
-  --ts-spacing-5xl: 8rem;       /* 128px */
-  
-  /* Context-specific spacing */
+  --ts-spacing-xs: 0.5rem;
+  --ts-spacing-sm: 0.75rem;
+  --ts-spacing-md: 1.25rem;
+  --ts-spacing-lg: 2rem;
+  --ts-spacing-xl: 3rem;
+  --ts-spacing-2xl: 4rem;
+  --ts-spacing-3xl: 5rem;
+  --ts-spacing-4xl: 6rem;
+  --ts-spacing-5xl: 8rem;
+
   --hero-padding-mobile: clamp(3rem, 5vw, 4rem);
   --hero-padding-desktop: clamp(4rem, 8vw, 6rem);
   --section-spacing: clamp(3rem, 6vw, 5rem);
   --card-spacing: clamp(1.5rem, 3vw, 2.5rem);
 
   /* ===========================
-     Radius & Shadows
+     Radius & Shadows (AA focus, accessible)
      =========================== */
-   --radius-base: 16px;
-   --radius-large: 22px;
+  --radius-base: 16px;
+  --radius-large: 22px;
   --ts-radius-sm: 12px;
   --ts-radius-md: var(--radius-base);
-   --ts-radius-lg: 16px;
-   --ts-radius-xl: 22px;
+  --ts-radius-lg: 16px;
+  --ts-radius-xl: 22px;
   --ts-radius-pill: 999px;
   --ts-radius-card: var(--ts-radius-lg);
 
-   --ts-color-shadow-light: var(--shadow-soft);
-   --ts-color-shadow-medium: var(--shadow-soft);
-   --ts-color-shadow: var(--shadow-soft);
-   --ts-shadow-soft: 0 10px 30px var(--shadow-soft);
-   --ts-shadow-lift: 0 14px 34px var(--shadow-soft);
-   --ts-shadow-header: 0 10px 28px var(--shadow-soft);
-   --ts-shadow-header-scrolled: 0 12px 24px rgba(0, 0, 0, 0.12), -8px 0 24px rgba(0, 0, 0, 0.08);
-  --ts-shadow-glow: 0 0 0 3px rgba(11, 107, 92, 0.25);        /* Emerald glow */
-  --ts-shadow-glow-accent: 0 0 0 3px rgba(11, 107, 92, 0.3);  /* Emerald accent glow */
-   --focus-ring: 0 0 0 3px rgba(11, 107, 92, 0.35);           /* Emerald focus ring */
+  --ts-color-shadow-light: var(--shadow-soft);
+  --ts-color-shadow-medium: var(--shadow-soft);
+  --ts-color-shadow: var(--shadow-soft);
+  --ts-shadow-soft: 0 10px 30px var(--shadow-soft);
+  --ts-shadow-lift: 0 14px 34px var(--shadow-soft);
+  --ts-shadow-header: 0 10px 28px var(--shadow-soft);
+  --ts-shadow-header-scrolled: 0 12px 24px rgba(0, 0, 0, 0.12), -8px 0 24px rgba(0, 0, 0, 0.08);
+  --ts-shadow-glow: 0 0 0 3px rgba(11, 107, 92, 0.25);
+  --ts-shadow-glow-accent: 0 0 0 3px rgba(11, 107, 92, 0.3);
+  --focus-ring: 0 0 0 3px rgba(11, 107, 92, 0.35);
   --transition-fast: 160ms ease;
   --transition-med: 240ms ease;
 
   /* ===========================
-     Layout Metrics
+     Layout Metrics (TCNA/NJ HIC: responsive, accessible)
      =========================== */
-   --layout-max: 1320px;
+  --layout-max: 1320px;
   --layout-wide: 1440px;
   --layout-narrow: 960px;
   --shell-width: var(--layout-max);
   --container-gutter: clamp(1rem, 4vw, 2.5rem);
-   --section-padding-y: var(--section-pad-y);
+  --section-padding-y: var(--section-pad-y);
   --section-gap: clamp(1.4rem, 2.6vw, 2.6rem);
   --header-height: 76px;
   --grid-gap: clamp(1rem, 3vw, 1.6rem);
 
   /* ===========================
-     Updated: Parchment header, emerald accents
-     TODO DESIGNER: Review footer color scheme
+     Header/Footer (No duplicate keys, AA+ contrast)
      =========================== */
-  --header-bg: rgba(249, 245, 235, 0.95);         /* Parchment with transparency */
-  --header-border: rgba(11, 107, 92, 0.18);       /* Emerald border */
-  --footer-bg: #0f1713;                           /* Keep dark footer */
-  --footer-text: #e8f0ec;
-  --footer-text-muted: #9fb4a5;
-  --footer-link: #16a384;                         /* Emerald soft */
-  --footer-link-hover: #84d1b8;                   /* Lighter emerald */
-  --footer-border: rgba(22, 163, 132, 0.2);       /* Emerald border */
-  --footer-border: rgb(133, 203, 172, 0.15);
+  --header-bg: rgba(249, 245, 235, 0.95);
+  --header-border: rgba(11, 107, 92, 0.18);
 
   /* ===========================
-     Legacy Alias Support
+     Legacy Alias Support (for utility classes)
      =========================== */
   --color-bg: var(--ts-color-bg);
   --color-surface: var(--ts-color-surface);
@@ -250,8 +241,6 @@
   --gradient-primary: var(--ts-gradient-primary);
   --gradient-accent: var(--ts-gradient-accent);
   --gradient-surface: var(--ts-gradient-surface);
-  /* `--shadow-soft`/`--shadow-deep` are now rgba() shadow colors.
-     Use `--ts-shadow-soft`/`--ts-shadow-lift` for box-shadow presets. */
   --shadow-lift: var(--ts-shadow-lift);
   --bg-pattern: var(--ts-bg-pattern);
   --bg-pattern-size: var(--ts-bg-pattern-size);
@@ -274,5 +263,5 @@
 
 /* ===========================
    Single Theme Only
-   Dark mode removed - one consistent experience
+   Dark mode removed for consistent, accessible experience.
    =========================== */

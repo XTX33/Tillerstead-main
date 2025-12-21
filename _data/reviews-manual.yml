@@ -1,0 +1,102 @@
+# Manual Review Management
+# Use this file when Thumbtack sync is not working
+# Copy entries to reviews.yml to make them live on the site
+#
+# To add a review manually:
+# 1. Copy the template below
+# 2. Fill in all fields (use HTML for quote_html)
+# 3. Set a unique id (format: thumbtack-firstname-lastname-YYYY-MM-DD-#)
+# 4. Add the Thumbtack profile URL for verification
+# 5. Copy to reviews.yml when ready to publish
+
+# Template for new manual reviews:
+# - id: thumbtack-john-d-2025-12-20-1
+#   source: Thumbtack
+#   platform: Thumbtack
+#   rating: 5
+#   rating_max: 5
+#   quote_html: <p>Review text goes here. Use HTML paragraph tags.</p>
+#   author: John D.
+#   location: Galloway, NJ
+#   job_type: Bathroom Remodel
+#   date: '2025-12-20'
+#   badges:
+#     - Great Communication
+#     - On Time
+#   url: https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199
+
+# Staged reviews ready to publish:
+reviews:
+  - id: thumbtack-alexandra-s-2025-08-19-1
+    source: Thumbtack
+    platform: Thumbtack
+    rating: 5
+    rating_max: 5
+    quote_html: <p>It was a pleasure working with Devon to repair our ceiling in our closet. We chose to repair it rather than replace. Devon walked us through what that would look like offering the most cost effective option. He was very professional. I recommend working with him!!</p>
+    author: Alexandra S.
+    location: null
+    job_type: Drywall Repair and Texturing
+    date: '2025-08-19'
+    badges:
+      - Professionalism
+      - Value
+      - Responsiveness
+    url: https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199
+
+  - id: thumbtack-ahmed-a-2025-07-20-2
+    source: Thumbtack
+    platform: Thumbtack
+    rating: 5
+    rating_max: 5
+    quote_html: |
+      <p>I recently hired Devon for a bathroom remodel, and my wife and I couldn’t be happier with the results. From start to finish, Devon was professional, punctual, and detail-oriented. He took the time to listen to what we wanted, offered helpful suggestions, and executed everything with precision.</p>
+      <p>Devon kept the work area tidy throughout the project and completed the job on time without cutting corners.</p>
+      <p>It’s rare to find someone who truly takes pride in their work the way Devon does. I’d highly recommend him.</p>
+    author: Ahmed A.
+    location: null
+    job_type: Bathroom Remodel
+    date: '2025-07-20'
+    badges:
+      - Professionalism
+      - Value
+      - Responsiveness
+    url: https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199
+
+  - id: thumbtack-maria-j-2025-05-06-3
+    source: Thumbtack
+    platform: Thumbtack
+    rating: 5
+    rating_max: 5
+    quote_html: <p>I hired Devon Tyler for tile work in my home and was impressed by his patience, precision, and professionalism. He took his time to get every cut right and made sure the job was solid and clean. I’d absolutely recommend him to anyone looking for quality tile work done with care.</p>
+    author: Maria J.
+    location: null
+    job_type: Tile Installation and Replacement
+    date: '2025-05-06'
+    badges:
+      - Professionalism
+      - Value
+      - Responsiveness
+    url: https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199
+
+# Example with full HTML formatting:
+# - id: thumbtack-sarah-m-2025-11-15-1
+#   source: Thumbtack
+#   platform: Thumbtack
+#   rating: 5
+#   rating_max: 5
+#   quote_html: |
+#     <p>Devon did an exceptional job on our master bathroom renovation. 
+#     The attention to detail was impressive—every tile perfectly aligned, 
+#     and the waterproofing was thoroughly documented.</p>
+#     <p>He explained every step of the process and why certain methods 
+#     were necessary. The shower hasn't had a single issue after 6 months 
+#     of daily use.</p>
+#   author: Sarah M.
+#   location: Egg Harbor Township, NJ
+#   job_type: Master Bath Renovation
+#   date: '2025-11-15'
+#   badges:
+#     - Expert
+#     - Great Value
+#     - On Time
+#   url: https://www.thumbtack.com/nj/absecon/tile/tillerstead-llc/service/547437618353160199

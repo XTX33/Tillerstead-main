@@ -1,26 +1,35 @@
- # LICENSE
+# LICENSE
 
-Copyright (c) 2025 Tillerstead LLC  
+Copyright © 2025 Tillerstead LLC  
 All rights reserved.  
 
-This repository and its contents — including but not limited to source code, images, text, designs, and documentation — are the exclusive intellectual property of **Tillerstead LLC**, a New Jersey-licensed Home Improvement Contractor HIC #13VH10808800.  
-All rights are reserved under United States and international copyright law.  
+This repository and all included materials—source code, images, technical documentation, designs, and written content—are the exclusive intellectual property of **Tillerstead LLC**, New Jersey Home Improvement Contractor (NJ HIC #13VH10808800).  
+Protected under United States and international copyright law, as well as New Jersey Consumer Fraud Act (N.J.S.A. 56:8-1 et seq.) and all applicable TCNA 2024 standards.  
 
-No portion of this repository may be copied, reproduced, modified, distributed, or displayed without the express written permission of the owner.
+**No part of this repository may be copied, reproduced, modified, distributed, or displayed without the express written consent of Tillerstead LLC.**  
+All code, assets, and derivative works are subject to strict compliance and legal enforcement.
 
-Portions of website code were generated or refined with assistance from OpenAI’s ChatGPT.  
-All outputs and derivative works are used under a full commercial license and are owned solely by **Tillerstead LLC**.
+Portions of this website’s codebase were generated or refined with OpenAI’s ChatGPT under a full commercial license.  
+All outputs, modifications, and derivative works are the sole property of **Tillerstead LLC**.
 
 ---
 
+### NOTICE — Ownership, Authorship, and Compliance
 
-### NOTICE — Ownership and Authorship
+All creative, technical, and brand materials—including web design, technical documentation, and written content—are authored and owned by **Devon Tyler Barber**, operating as **Tillerstead LLC**.  
+All intellectual property rights are strictly reserved.  
+Any unauthorized reproduction, reuse, redistribution, or misrepresentation is strictly prohibited and will be prosecuted to the fullest extent of the law.
 
-All creative materials, including web design, brand assets, and written content within this repository,  
-are authored and owned by **Devon Tyler Barber**, operating as **Tillerstead LLC**.  
-All intellectual property rights are reserved.  
-Any unauthorized reproduction, reuse, or redistribution is prohibited.
+**Compliance:**  
+- NJ HIC License: #13VH10808800  
+- Adheres to TCNA 2024 standards and NJ Consumer Fraud Act  
+- Accessibility and legal requirements enforced per _data/compliance.yml_
 
 For business, licensing, or legal inquiries, contact:  
 - 📧 [info@tillerstead.com](mailto:info@tillerstead.com)  
 - 📍 Galloway, New Jersey, USA
+
+---
+
+_Last updated: 2025-06-XX. For the latest compliance and licensing information, see /.ai/COMPLIANCE.md and _data/compliance.yml._
+

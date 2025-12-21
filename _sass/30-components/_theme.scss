@@ -1,10 +1,17 @@
-/* ============================================
-   Tillerstead Theme Entry Point
-   --------------------------------------------
-   This file imports the main theme partial for
-   tillerstead.com. Update this import if the
-   theme structure changes in the future.
-   ============================================ */
+/* ===========================================================
+   Tillerstead Theme Component Entry Point
+   -----------------------------------------------------------
+   Imports the authoritative theme partial for tillerstead.com.
+   All component-level theme styles must inherit from the
+   design tokens defined in _sass/base/_tokens.scss, ensuring
+   TCNA-compliant, NJ HIC-legal, and fully accessible output.
+   -----------------------------------------------------------
+   - Do not modify import path without updating documentation.
+   - All changes must pass lint, build, and accessibility checks.
+   - Reference: /.ai/OUTPUT_RULES.md, /.ai/DOMAIN.md
+   =========================================================== */
 
-// Back-compat import for legacy includes
+// Legacy support: Imports layout-level theme foundation.
+// All new theme logic must use token-based variables and
+// utility classes per design system standards.
 @import "20-layout/tillerstead-theme";

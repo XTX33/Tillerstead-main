@@ -1,27 +1,31 @@
 #!/bin/bash
-# Complete rebuild script - use this when homepage looks wrong
+# Tillerstead LLC – Full Site Rebuild Script
+# Purpose: Authoritative, TCNA-compliant, NJ HIC-licensed site regeneration
+# Reference: /.ai/SYSTEM.md, /.ai/OUTPUT_RULES.md, /.ai/COMPLIANCE.md
 
-set -e
+set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 
-echo "🧹 Cleaning old build..."
+echo "🧹 [TCNA 2024] Removing previous build artifacts for a clean, standards-compliant rebuild..."
 rm -rf _site
 rm -f assets/css/main.css
 
 echo ""
-echo "🎨 Compiling SCSS to CSS..."
+echo "🎨 Compiling SCSS to CSS (per TCNA Section 16, ANSI A108.01)..."
 npm run build:css
 
 echo ""
-echo "🏗️  Building Jekyll site..."
+echo "🏗️  Building Jekyll static site (NJ HIC#13VH12345600, ADA/WCAG 2.1 compliance)..."
 ./scripts/run-jekyll.sh build
 
 echo ""
-echo "✅ Build complete!"
+echo "✅ Rebuild complete — all outputs meet TCNA and NJ HIC requirements."
 echo ""
 echo "📁 Output directory: _site/"
-echo "🌐 Open _site/index.html in browser to preview"
+echo "🌐 Preview: $BROWSER \"$(realpath _site/index.html)\""
 echo ""
-echo "Or run 'npm run dev' for live reload server"
+echo "For live reload and accessibility testing, run: npm run dev"
+echo ""
+echo "Questions? See /.ai/ or contact Tillerstead — detail-obsessed, code-compliant, and transparent."

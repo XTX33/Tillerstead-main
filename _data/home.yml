@@ -1,161 +1,39 @@
 hero:
-  eyebrow: Licensed & Insured NJ Home Improvement Contractor
-  title: The Tile Work That Outlasts the Mortgage
-  summary: >-
-    South Jersey's tile contractor who actually reads TCNA standards (yes, all 412 pages). 
-    We measure twice, waterproof correctly, and explain why that extra day of prep saves you 
-    $8,000 in mold remediation later. Your bathroom deserves better than "some guy."
+  eyebrow: Welcome
+  title: Quality Tile Work
+  summary: Professional tile installation and remodeling services.
   primary:
-    label: See What Proper Looks Like
+    label: View Portfolio
     url: /portfolio/
   secondary:
-    label: Schedule a Real Consultation
+    label: Contact Us
     url: /contact/
-  highlights:
-    - title: Geometry, Not Guesswork
-      summary: We center from *what you see*, not *what's easiest*. No sliver cuts. No "close enough." Math matters.
-    - title: Substrate Nerds
-      summary: Flatness tolerance? 1/8" in 10'. Deflection limit? L/360. We speak fluent ANSI A108 so your tile doesn't crack in two years.
-    - title: No Mysterious Crew
-      summary: Tyler's on every job. You get a licensed contractor, not a rotating cast of "my guy knows tile."
-  facts:
-    - label: Actually Licensed
-      text: "NJ HIC #13VH10808800. Ask your last quote for theirs. We'll wait."
-    - label: 95% Thinset Coverage
-      text: "Because TCNA says so (2024 update for large-format). Most contractors still think 80% is fine. It's not."
-    - label: We Answer Our Phone
-      text: "No 'left on read.' No ghosting post-deposit. Atlantic, Ocean & Cape May Counties with texts returned same-day."
 
 services:
-  eyebrow: What We Actually Do (And Why Most Don't)
-  title: Tile Work Worth Protecting
-  summary: >
-    We don't just "install tile." We build waterproof assemblies that pass flood tests, 
-    use thinset with actual ISO ratings, and explain the difference between modified and non-modified 
-    (because your marble installer better know). Not every project is a fit—but the right ones last decades.
+  eyebrow: Our Services
+  title: What We Offer
+  summary: Tile, bath, and remodeling for homes and businesses.
   cards:
-    - icon: waterproof
-      title: Showers That Don't Leak
-      description: >
-        ANSI A118.10 membranes (Schluter KERDI, Hydroban, not "some red stuff"). 
-        1/4" per foot slope. 2-hour flood test. Because "it's probably fine" isn't a waterproofing strategy.
-      details:
-        - Flood-tested before tile (with photos you can show your spouse)
-        - Seams done to spec, not spray-and-pray
-        - Niches that don't become biology experiments
     - icon: tile
-      title: Large-Format Tile (The Right Way)
-      description: >
-        24×48 porcelain needs C2-rated thinset, back-buttering, and lippage control systems. 
-        We know this because we read the manual. Your "flooring guy" watches YouTube at 1.5× speed.
-      details:
-        - Heated floors that heat (DITRA-HEAT with actual thermostats)
-        - Substrate flatness verified, not assumed
-        - Lippage clips on every tile because your kitchen deserves it
-    - icon: remodeling
-      title: Slabs & Stone (Not For Everyone)
-      description: >
-        6mm gauged porcelain slabs. Book-matched marble. The stuff that makes your designer giddy 
-        and requires A118.15 modified thinset and someone who won't crack your $900 accent piece.
-      details:
-        - Stone that's sealed correctly (penetrating, not that glossy garbage)
-        - Fireplace surrounds that survive heat cycling
-        - Porcelain slabs requiring a special insurance rider
-    - icon: maintenance
-      title: Fixing Someone Else's "Oops"
-      description: >
-        That shower leak? Probably no waterproofing membrane. Cracked tile? Deflection or wrong thinset. 
-        We document what failed, explain why (with photos), and rebuild it so you're not calling us again in 18 months.
-      details:
-        - Leak autopsies with actual diagnosis
-        - Tear-outs that reveal the horror stories
-        - Documentation your insurance company actually accepts
-  actions:
-    primary:
-      label: Request a scope review
-      url: /contact/
-    secondary:
-      label: View recent projects
-      url: /portfolio/
-  note: >
-    TCNA standards (because guessing is for lottery tickets). Daily photo logs (because "trust me bro" isn't a warranty). 
-    Jobs booked 4-8 weeks out because rushed tile is cracked tile.
-
-work:
-  eyebrow: Recent South Jersey projects
-  title: System-based tile and stone work from AC to Cape May
-  summary: Browse our completed projects showing substrate prep, membranes, and planned layout translating into durable finishes.
-  cta:
-    label: Learn more about our work
-    url: /portfolio/
+      title: Tile Installation
+      description: Expert tile work for floors, walls, and showers.
 
 process:
-  eyebrow: The Difference Between "Installed" and "Done Right"
-  title: What Happens Before Tile Hits Wall
-  summary: >-
-    Here's the secret: anyone with a trowel can stick tile to a wall. Kindergartners with craft paste prove this daily. 
-    The difference between a 5-year disaster and a 25-year bathroom? The stuff nobody sees. 
-    We measure flatness. We calculate lippage. We actually *read* the thinset bag. Revolutionary, we know.
+  eyebrow: Our Process
+  title: How We Work
+  summary: Step-by-step approach for lasting results.
   steps:
-    - title: "Step 1: Acknowledge Reality"
-      description: >-
-        Your walls aren't plumb. Your floor isn't flat. That's normal—houses settle. We measure deflection (L/360 limit), 
-        check substrate flatness (1/8" in 10'), and locate the "surprise" moisture issues before they're surprises. 
-        Ignoring this is how you get the "why is my tile cracking?" call.
-    - title: "Step 2: Geometry That Makes Sense"
-      description: >-
-        We center tile from your shower door (what you see), not the back wall (what's easy). 
-        We calculate grout joint widths so you don't get sliver cuts. We mock up patterns before mortaring. 
-        Because "eyeballing it" is what gave you sliver cuts at the shampoo shelf.
-    - title: "Step 3: The Stuff That Takes Time"
-      description: >-
-        Schluter membrane needs 24 hours. Thinset needs to cure. RedGard needs two coats. These aren't suggestions—they're 
-        chemistry. Contractors who "finish early" skip steps. That's not hustle, that's future mold.
-    - title: "Step 4: Think About Future You"
-      description: >-
-        Expansion joints at wall changes. Serviceable access to plumbing. Grout sealer applied (and explained). 
-        So when you sell this house, the inspector doesn't find deferred maintenance, and the next owner doesn't curse your contractor choice.
+    - title: Consultation
+      description: We assess your needs and provide recommendations.
 
 materials:
-  eyebrow: Materials & assemblies
-  title: Waterproofing, substrates, and finishes
-  summary: Proper materials and installation sequence for long-term performance. Assemblies follow TCNA and ANSI standards.
+  eyebrow: Materials
+  title: What We Use
+  summary: High-quality products for every project.
   items:
-    - icon: waterproof
-      title: Waterproofing & drainage
-      description: Flood-tested pans, integrated drains, and surface or bonded membranes detailed with photos you can keep.
-      points:
-        - Pre-slope, drains, and seams documented
-        - Niches, benches, and penetrations sealed
-        - Flood tests logged before tile goes on
     - icon: tile
-      title: Substrates, heat & layout math
-      description: Structure checks, flatness correction, and movement accommodation per EJ171 for large-format tile and heated floors.
+      title: Tile & Stone
+      description: Durable, beautiful finishes for your space.
       points:
-        - Prep for large-format and stone weight
-        - Heat mats paired with decoupling membranes
-        - Layouts balanced to avoid sliver cuts
-    - icon: maintenance
-      title: Finishes, sealants & documentation
-      description: Grout, sealant, and trim choices matched to use, with punch lists and care notes for owners, landlords, and partners.
-      points:
-        - Balanced grout joints and clean terminations
-        - Expansion at transitions and changes of plane
-        - Care guidance for rentals and shore homes
-
-testimonials:
-  eyebrow: What homeowners and partners say
-  title: Reviews from South Jersey clients
-  limit: 3
-
-cta:
-  eyebrow: Start a project
-  title: Request a scope review or estimate
-  summary: Send project details, photos, or plans. We'll respond with availability, process, and pricing structure.
-  primary:
-    label: Request a consult
-    url: /contact/
-  secondary:
-    label: Call (609) 862-8808
-    url: tel:+16098628808
-  note: Licensed NJ HIC #13VH10808800 · Serving Atlantic, Ocean & Cape May Counties
+        - Premium brands
+        - Professional installation

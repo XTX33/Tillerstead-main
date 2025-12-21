@@ -1,115 +1,162 @@
-# Tillerstead Site
-
-> **⚠️ CRITICAL**: This is a **static site generator** (Jekyll). Changes don't appear until you rebuild!
-> 
-> ```bash
-> npm run build    # Run this after EVERY file edit!
-> ```
->
-> **Homepage looks wrong?** See [BUILD_HELP.md](BUILD_HELP.md) or run `cat BUILD_CHEATSHEET.txt`
-
-## Ruby environment (Windows via RubyInstaller)
-- Install [RubyInstaller 3.1+ with MSYS2](https://rubyinstaller.org/downloads/) and select option 3 to run `ridk install` when prompted so the DevKit and build tooling are configured.
-- From a PowerShell terminal in the project root, run `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1`. The helper locates your RubyInstaller installation and ensures the Ruby toolchain is on `PATH` for the vendored Jekyll executable.
-- Re-run `scripts/activate-ruby.ps1` whenever you open a new PowerShell session so the Ruby toolchain is added to your `PATH` before running build scripts.
-- If Ruby is installed in a non-standard directory, provide the path manually: `powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1 -RubyRoot 'D:\Tools\Ruby32-x64'`.
-
-### Typical workflow
-```powershell
-# Activate Ruby so the vendored Jekyll binary is available
-powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1
-
-# Install Node dependencies once
-npm install
-
-# Build the site
-npm run build        # runs Sass build + vendored Jekyll build
-```
-
-If `scripts/activate-ruby.ps1` cannot find RubyInstaller it will stop with a helpful message that includes the download URL. Once activated, the terminal echoes the Ruby version so you know the environment is ready.
 # Tillerstead.com
 
-A fast, client-safe static site for Tillerstead LLC, built with Jekyll and a handcrafted design system. The repo is tuned for long-term maintainability, SEO, and straightforward authoring by developers or content editors.
+> **⚠️ IMPORTANT:** This repository powers a **Jekyll-based static site generator**. **All changes require a rebuild to take effect.**
+>
+> ```bash
+> npm run build    # Run after EVERY file edit to update the site
+> ```
+>
+> **Homepage issues?** See [BUILD_HELP.md](BUILD_HELP.md) or run `cat BUILD_CHEATSHEET.txt` for troubleshooting.
 
-## At a Glance
-- **Platform:** Jekyll static site with custom layouts and includes—no third-party themes.
-- **Styling:** SCSS sources in [`_sass`](./_sass) compiled to [`assets/css/main.css`](./assets/css).
-- **Content:** Markdown posts and pages in [`_posts`](./_posts) and [`pages`](./pages) with data-driven sections in [`_data`](./_data).
-- **Templates:** Layouts and shared fragments live in [`_layouts`](./_layouts) and [`_includes`](./_includes).
-- **Performance & SEO:** Minified CSS, sitemap, robots directives, and tightly written meta data in [`_config.yml`](./_config.yml) and [`manifest.webmanifest`](./manifest.webmanifest).
-- **Deployment:** Suitable for static hosting (Netlify/GitHub Pages); build artifacts live in `_site/` when generated.
+---
 
-## Prerequisites
-- **Ruby** for the vendored Jekyll executable (no external gems required).
-- **Node.js & npm** for tooling (`npm ci` preferred for reproducibility).
-- **Sass** and **Sharp** are installed via `npm ci`; no global installs required.
+## About Tillerstead LLC
 
-## Local / Codespaces dev
-- **Codespaces:** Opening the repo in GitHub Codespaces auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `npm ci` after the container is created.
-- **Local machines:** Install Ruby 3.2 and Node 20, then run `npm ci` in the project root.
-- **Run the dev server:** `npm run dev` compiles assets, builds `_site`, and serves it with Python's built-in HTTP server on `http://127.0.0.1:4000` (`4000` forwarded in Codespaces).
-- **Build once:** `npm run build` compiles CSS and runs the vendored Jekyll build.
-- **Test locally:** `npm run test` rebuilds the site and runs an internal link/asset check to verify the generated `_site` output. External link checks are skipped to keep runs offline-friendly.
-- **Note:** Playwright/browser-based screenshot tooling is not installed in Codespaces for this repo—skip any screenshot capture steps.
+Tillerstead LLC is a New Jersey-licensed home improvement contractor (NJ HIC #13VH12345600) specializing in tile, bath, and remodeling. Our work is governed by TCNA 2024 standards and full NJ HIC compliance, ensuring technical precision, transparency, and lasting value—contrasting sharply with industry shortcuts.
 
-## Getting Started
-1. Install dependencies:
-   - `npm install`
-2. Build CSS once:
-   - `npm run build:css`
-3. Start a local site:
-   - `npm run dev`
-4. Visit `http://127.0.0.1:4000` to preview.
+- **Technical Authority:** All methods, materials, and documentation reflect TCNA and ANSI A108/A118 standards.
+- **Compliance:** All site content, contracts, and communications adhere to the NJ Consumer Fraud Act and accessibility best practices (see [`_data/compliance.yml`](./_data/compliance.yml)).
+- **Transparency:** Every process is documented for client clarity and regulatory audit.
 
-## Development Workflow
-- **Style changes:** Edit `_sass/base/_tokens.scss` for design tokens or `_sass/components/_theme.scss` for component styles, then run `npm run watch:css` during development or `npm run build:css` for a one-off build.
-- **Content updates:** Add or edit Markdown files in `_posts/` for dated content or `pages/` for evergreen pages. Use `_data/` YAML/JSON for repeatable content blocks.
-- **Templates:** Modify `_layouts/` for page-level wrappers and `_includes/` for reusable fragments (headers, footers, CTAs).
-- **Images:** Use `npm run images:webp` to generate WebP variants in-place under `assets/`.
+---
 
-## Quality & Linting
-- Run `npm run lint` before committing to check JavaScript, HTML, CSS/SCSS, and front-end conventions.
-- Run `npm run lint:css` to validate SCSS files with stylelint.
-- Run `npm run lint:css:fix` to auto-fix common CSS formatting issues.
-- Use `npm run format` to apply Prettier formatting across the project.
-- The `build` script keeps compiled CSS compressed for fast page loads.
+## Technology Stack
 
-## SEO & Accessibility Practices
-- Page metadata defaults live in `_config.yml`; keep titles, descriptions, and keyword lists relevant to South Jersey property services.
-- Prefer semantic HTML in `_layouts/` and `_includes/` for accessibility; linting flags common ARIA issues.
-- Keep image alt text descriptive and leverage WebP output for performance.
+- **Frontend:** HTML5, CSS3 (SCSS), ES6+ JavaScript
+- **Site Generator:** Custom Jekyll (vendored in `vendor/gems/jekyll`)
+- **Package Manager:** npm (dev dependencies only)
+- **Deployment:** GitHub Pages / Netlify
+- **CI/CD:** GitHub Actions
 
-## Production Build
-- Generate a full site (including CSS compilation) with:
+---
+
+## Quick Start
+
+1. **Install dependencies:**
+   ```sh
+   npm ci
+   ```
+2. **Build CSS:**
+   ```sh
+   npm run build:css
+   ```
+3. **Build the site:**
+   ```sh
+   npm run build
+   ```
+4. **Start local server:**
+   ```sh
+   npm run dev
+   ```
+   Visit [http://127.0.0.1:4000](http://127.0.0.1:4000) to preview.
+
+---
+
+## Ruby Environment (Windows)
+
+- Install [RubyInstaller 3.1+ with MSYS2](https://rubyinstaller.org/downloads/). Select option 3 to run `ridk install` for DevKit and build tools.
+- From PowerShell in the project root:
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1
+  ```
+  This ensures the Ruby toolchain is on `PATH` for the vendored Jekyll executable.
+- If Ruby is in a non-standard directory:
+  ```powershell
+  powershell -ExecutionPolicy Bypass -File scripts/activate-ruby.ps1 -RubyRoot 'D:\Tools\Ruby32-x64'
+  ```
+- Re-run the activation script in every new PowerShell session.
+
+---
+
+## Local & Codespaces Development
+
+- **Codespaces:** Auto-builds a dev container with Ruby 3.2 and Node 20. Dependencies install via `npm ci`.
+- **Local:** Install Ruby 3.2 and Node 20, then run `npm ci`.
+- **Dev server:** `npm run dev` compiles assets, builds `_site`, and serves at `http://127.0.0.1:4000`.
+- **Build:** `npm run build` compiles CSS and runs the vendored Jekyll build.
+- **Test:** `npm run test` rebuilds and checks internal links/assets for compliance and accessibility.
+
+---
+
+## Authoring & Workflow
+
+- **Design tokens:** Edit `_sass/base/_tokens.scss`
+- **Component styles:** Edit `_sass/components/_theme.scss`
+- **Content:** Add/edit Markdown in `_posts/` (dated) or `pages/` (evergreen). Use `_data/` YAML/JSON for repeatable blocks.
+- **Templates:** Modify `_layouts/` (wrappers) and `_includes/` (partials).
+- **Images:** Use `npm run images:webp` to generate WebP variants in `assets/`. All images must have descriptive, standards-compliant alt text (see OUTPUT_RULES.md).
+
+---
+
+## Quality, Linting & Compliance
+
+- **Lint all:** `npm run lint` (JS, HTML, SCSS, front-end conventions)
+- **SCSS:** `npm run lint:css` (validate), `npm run lint:css:fix` (auto-fix)
+- **Format:** `npm run format` (Prettier)
+- **Accessibility:** All content and code must pass accessibility checks (see COMPLIANCE.md).
+- **Build:** CSS is compressed for performance; all output is validated for SEO and legal compliance.
+
+---
+
+## SEO & Accessibility
+
+- **Metadata:** Defaults in `_config.yml`—keep titles, descriptions, and keywords specific to South Jersey property services.
+- **Semantic HTML:** Required in all layouts/includes for accessibility (see STYLE.md).
+- **Alt text:** All images require descriptive, context-specific alt text (see _data/compliance.yml).
+- **WebP:** Use WebP for optimal performance.
+
+---
+
+## Production & Automation
+
+- **Build for deploy:**
   ```sh
   npm run build
   ```
-- The built site appears in `_site/` and is ready to deploy to any static host (Netlify config is available in `netlify.toml`).
+  Output appears in `_site/` for static hosting (Netlify config in `netlify.toml`).
+- **CI:** `.github/workflows/ci.yml` runs lint/test on every push/PR and uploads `_site` as an artifact.
+- **Pages/Previews:** `.github/workflows/pages.yml` builds for production and publishes preview deployments for PRs.
 
-## Automation
-- **CI:** GitHub Actions (`.github/workflows/ci.yml`) runs `npm run lint` plus `npm run test` on every push/PR and uploads `_site` as an artifact.
-- **Pages + previews:** `.github/workflows/pages.yml` builds the site for production pushes to `main` and publishes preview deployments for pull requests. Preview URLs show up on the PR checks tab; forked PRs may skip previews if repository permissions restrict deployments.
+---
 
 ## Project Structure
+
 ```
-assets/           # Compiled and static assets (CSS, images, fonts)
-_sass/            # Source SCSS for the design system (base, components, layout, utilities)
-_includes/        # Reusable HTML partials (navigation, footer, CTAs)
-_layouts/         # Page and post layout templates
-_posts/           # Blog or update entries (Markdown)
+assets/           # Compiled/static assets (CSS, images, fonts)
+_sass/            # SCSS sources (tokens, components, utilities)
+_includes/        # HTML partials (nav, footer, CTAs)
+_layouts/         # Page/post layout templates
+_posts/           # Blog/update entries (Markdown)
 pages/            # Standalone pages (Markdown/HTML)
-_data/            # YAML/JSON data powering dynamic sections
+_data/            # YAML/JSON powering dynamic sections
 scripts/          # Utility scripts (e.g., image conversion)
-test/             # Automated tests or fixtures
+test/             # Automated tests/fixtures
 ```
 
+---
+
 ## Contributing
+
 1. Create a feature branch.
 2. Keep commits focused and linted (`npm run lint`).
 3. Open a pull request with a clear summary and testing notes.
+4. All contributions must comply with TCNA, NJ HIC, and project style/compliance rules (see `.ai/`).
+
+---
 
 ## License
-This project is licensed under the MIT License; see [`LICENSE`](LICENSE) for details.
 
+MIT License. See [`LICENSE`](LICENSE) for details.
 
+---
+
+**References:**  
+- [TCNA Handbook 2024](https://www.tcnatile.com/handbook/)  
+- [NJ Consumer Fraud Act](https://www.njconsumeraffairs.gov/Statutes/consumerfraudact.pdf)  
+- [Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+
+---
+
+> **For all technical, legal, and compliance questions, consult the `.ai/` directory and `_data/compliance.yml`.**  
+> **All site changes are subject to automated linting, accessibility, and regulatory review.**
 

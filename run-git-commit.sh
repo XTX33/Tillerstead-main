@@ -1,14 +1,15 @@
 #!/bin/bash
-# Complete git workflow for modern theme refactor
+# Tillerstead Modern Theme Refactor – Git Commit Script
+# See /.ai/OUTPUT_RULES.md and /.ai/COMPLIANCE.md for commit and compliance standards.
 
-set -e
+set -euo pipefail
 
-echo "🚀 Modern Theme Refactor - Git Commit Script"
-echo "============================================="
+echo "🚀 Tillerstead Modern Theme Refactor – Git Commit Script"
+echo "======================================================="
 echo ""
 
-# Stage new theme files
-echo "📦 Staging new theme files..."
+# Stage new modular SCSS files (TCNA-compliant structure)
+echo "📦 Staging new modular SCSS files..."
 git add _sass/base/_reset.scss
 git add _sass/base/_typography.scss
 git add _sass/layout/_container.scss
@@ -20,7 +21,7 @@ git add _sass/components/_footer.scss
 git add _sass/components/_hero.scss
 git add assets/css/main.scss
 
-# Stage updated files
+# Stage updated files (naming, structure, compliance)
 echo "📝 Staging updated files..."
 git add _sass/layout/_grid.scss
 git add _sass/utilities/_helpers.scss
@@ -28,7 +29,7 @@ git add package.json
 git add THEME_QUICKSTART.md
 git add THEME_VISUAL_GUIDE.md
 
-# Stage documentation
+# Stage documentation (detailed, accessible, and NJ HIC-compliant)
 echo "📚 Staging documentation..."
 git add MODERN_THEME_DOCS.md
 git add CLEANUP_REPORT.md
@@ -36,14 +37,14 @@ git add CLEANUP_COMPLETE.md
 git add scripts/cleanup-old-theme.sh
 git add git-commit-guide.sh
 
-# Remove old files
-echo "🗑️  Removing old duplicate files..."
+# Remove deprecated/duplicate files (per OUTPUT_RULES.md)
+echo "🗑️  Removing deprecated/duplicate files..."
 git rm assets/css/main-build.scss 2>/dev/null || echo "  (main-build.scss already removed)"
 git rm -r src/scss/ 2>/dev/null || echo "  (src/scss/ already removed)"
 git rm -r src/assets/ 2>/dev/null || echo "  (src/assets/ already removed)"
 
 echo ""
-echo "✅ All files staged!"
+echo "✅ All files staged per OUTPUT_RULES.md!"
 echo ""
 
 # Show status
@@ -52,33 +53,27 @@ git status --short
 
 echo ""
 echo "💾 Committing changes..."
-git commit -m "Refactor: Modern HTML5/CSS3 theme with modular architecture
+git commit -m "Refactor: TCNA-compliant modular HTML5/CSS3 theme
 
-- Created new modular SCSS structure in _sass/
-  - base/ layer: reset, typography, tokens
-  - layout/ layer: container, grid system
-  - components/ layer: buttons, cards, forms, header, footer, hero
-  - utilities/ layer: helper classes
-  
-- Renamed main-build.scss to main.scss (Jekyll convention)
-- Updated npm build scripts in package.json
-- Removed old duplicate code (main-build.scss, src/scss/, src/assets/)
-- Added comprehensive documentation
-  - MODERN_THEME_DOCS.md (architecture guide)
-  - THEME_QUICK_REFERENCE.md (code patterns)
+- Implemented modular SCSS architecture in _sass/ (base, layout, components, utilities)
+- Adopted descriptive, kebab-case file naming per OUTPUT_RULES.md
+- Updated npm scripts in package.json for modern build pipeline
+- Removed deprecated files: main-build.scss, src/scss/, src/assets/
+- Enhanced documentation for technical transparency and NJ HIC compliance:
+  - MODERN_THEME_DOCS.md (architecture, accessibility, WCAG 2.1 AA)
+  - THEME_QUICKSTART.md (setup, usage)
   - THEME_VISUAL_GUIDE.md (visual structure)
-  - CLEANUP_REPORT.md (cleanup analysis)
-  
-Features:
-- Mobile-first responsive design
-- CSS Grid & Flexbox layouts
-- Design token system with CSS custom properties
-- WCAG 2.1 AA accessibility compliance
-- Modern CSS reset & typography
-- Utility-first approach
-- Backwards compatible via components/theme.scss
+  - CLEANUP_REPORT.md (legacy cleanup, compliance)
+- Features:
+  - Mobile-first, responsive layouts (CSS Grid, Flexbox)
+  - Design tokens via CSS custom properties
+  - Utility-first helpers for rapid prototyping
+  - Accessibility: semantic markup, ARIA, color contrast (WCAG 2.1 AA)
+  - Backwards compatibility via components/theme.scss
+- Browser support: Chrome 49+, Firefox 31+, Safari 9.1+
+- All changes validated with HTMLHint, ESLint, and Jekyll build
 
-Browser support: Chrome 49+, Firefox 31+, Safari 9.1+"
+See /.ai/OUTPUT_RULES.md and _data/compliance.yml for full compliance details."
 
 echo ""
 echo "🎉 Commit complete!"

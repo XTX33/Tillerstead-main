@@ -1,96 +1,97 @@
 ---
 layout: post
 title: "Home Depot Picks: Good–Better–Best Shower Systems (and How Pros Use Them Right)"
-description: "South Jersey homeowners: learn which waterproofing systems from Home Depot actually hold up—RedGard, Schluter® KERDI, and GoBoard—and how Tillerstead installs them to last."
+description: "South Jersey homeowners: discover which Home Depot waterproofing systems—RedGard, Schluter® KERDI, GoBoard—actually meet code, and how Tillerstead installs them to TCNA and NJ HIC standards."
 ---
 
-You can buy a lot of what you need for a solid, watertight shower at **Home Depot**—if you know what you’re looking at. The key is combining **store-bought systems** with **professional prep and methods** that meet manufacturer specs and **TCNA standards**. That’s how **Tillerstead LLC** builds lasting showers across Atlantic County and South Jersey.
+You can source robust, code-compliant shower waterproofing at **Home Depot**—if you know what to look for and how to install it. The difference between a lasting shower and a future leak isn’t the brand; it’s **TCNA-compliant prep, manufacturer-correct methods, and NJ HIC-licensed execution**. That’s the Tillerstead standard for Atlantic County and South Jersey.
 
-Below is a **Good–Better–Best** breakdown to help you understand where each system shines—and where to be cautious.
+Below, we break down the **Good–Better–Best** options, with technical specifics and pro-level cautions.
 
 ---
 
 ## 🟢 Good: Liquid-Applied Waterproofing (e.g., RedGard®)
 
-**Best for:** Standard layouts, budget-conscious builds, or repairs over existing cement board.
+**Best for:** Standard layouts, budget-conscious projects, or repairs over cement board.
 
-**How it works:** A roll-on or trowel-on membrane creates a waterproof barrier directly over the cement board.
+**How it works:** A liquid membrane (like RedGard®) is rolled or troweled directly onto cement board, forming a seamless waterproof barrier.
 
-**Keys to success:**
+**Critical details:**
 
-- Apply to the **required thickness** (check the label and use a **wet-film gauge**).
-- Ensure **complete coverage** at corners, seams, and penetrations.
-- Allow full **cure time** before tile.
+- Apply to **manufacturer-specified thickness** (use a **wet-film gauge**—ANSI A118.10).
+- Ensure **full coverage** at all corners, seams, and penetrations.
+- Allow for **complete curing** before tiling—don’t shortcut dry times.
 
-**Pros:**  
-✅ Easy to find at Home Depot  
-✅ Flexible around irregular shapes  
-✅ Affordable and quick to apply  
+**Advantages:**  
+✅ Widely available at Home Depot  
+✅ Flexible for irregular layouts  
+✅ Cost-effective and fast to apply  
 
-**Watch-outs:**  
-⚠️ Most failures happen when coats are too thin or missed in corners.  
-⚠️ Needs consistent drying time—don’t rush it.
+**Risks:**  
+⚠️ Most failures result from thin coats or missed corners—inspect with a wet-film gauge.  
+⚠️ Rushing cure time leads to adhesion and waterproofing failures.
 
 ---
 
 ## 🟡 Better: Sheet Membrane Systems (e.g., Schluter® KERDI)
 
-**Best for:** Full shower rebuilds where you want consistent, testable waterproofing.
+**Best for:** Full shower rebuilds where you want verifiable, surface-level waterproofing.
 
-**How it works:** Thinset-bonded sheets overlap to form a continuous barrier, sealed with banding and corners.
+**How it works:** Sheets (like KERDI) are embedded in thinset, overlapped, and sealed with banding and pre-formed corners, creating a continuous waterproof layer.
 
-**Pros:**  
-✅ Waterproof right at the surface—no moisture soaking into the backer  
-✅ Easy to **flood test** before tile  
-✅ Long track record in both DIY and professional installs  
+**Advantages:**  
+✅ Waterproofing is right at the surface—no wicking into backer  
+✅ Easy to **flood test** per code before tiling  
+✅ Proven in both DIY and pro installs  
 
-**Watch-outs:**  
-⚠️ Roll seams tight and follow overlap requirements.  
-⚠️ Use the correct thinset (usually **unmodified** for Schluter).  
-⚠️ Plan corner details before you start—folds matter.
+**Risks:**  
+⚠️ Overlap seams per manufacturer spec (typically 2" minimum—see TCNA B422).  
+⚠️ Use **unmodified thinset** for Schluter systems—incorrect mortar voids warranty.  
+⚠️ Plan corners and penetrations in advance; improper folds = leaks.
 
 ---
 
 ## 🟣 Best: Foam Backer Boards + Integrated Pans (e.g., KERDI-BOARD®, KERDI-SHOWER, GoBoard®)
 
-**Best for:** Full rebuilds, large-format tile, or tight deadlines where precision, flatness, and an integrated drain solution matter.
+**Best for:** Full rebuilds, large-format tile, or projects needing precision, flatness, and integrated drains.
 
-**How it works:** Lightweight foam backer boards create a waterproof substrate that ties into prefabricated pans or manufacturer drain kits to form a single, testable waterproof assembly.
+**How it works:** Lightweight foam boards and prefabricated pans form a waterproof substrate, tying into manufacturer drain kits for a single, testable assembly.
 
-**Pros:**  
-✅ Ultra-flat planes for **large-format tile**  
-✅ Few or no exposed fasteners in wet zones when detailed per the manufacturer  
-✅ Faster, lighter, and cleaner handling on site  
+**Advantages:**  
+✅ Ultra-flat, stable planes for **large-format tile**  
+✅ Minimal exposed fasteners in wet zones when detailed per manufacturer  
+✅ Faster, cleaner, and lighter than cement board  
 
-**Watch-outs:**  
-⚠️ Use the manufacturer’s **fasteners, washers, tapes, sealants, and drain kits**—mixing brands or improvised details can void warranties.  
-⚠️ Follow specified screw spacing, bedding, and bonding methods; confirm slope to drain and seal all penetrations.
+**Risks:**  
+⚠️ Use only **manufacturer-approved fasteners, washers, tapes, sealants, and drains**—mixing brands voids warranties and code compliance.  
+⚠️ Follow all screw spacing, bedding, and slope requirements; seal every penetration.
 
 ---
 
-## 💡 The Pro Angle: Why Method Matters More Than Brand
+## 💡 The Pro Angle: Method > Brand
 
-All three systems—liquid, sheet, and foam—can perform beautifully **if** installed correctly. The weak link is never the product; it’s the **method**.
+All three systems—liquid, sheet, foam—can pass a flood test and last decades **if installed to TCNA and manufacturer standards**. The weak link is always the method, not the product.
 
 At **Tillerstead**, we:
 
-- Install to **manufacturer and ANSI standards** (A118.10 / A118.12).  
-- Use **movement joints** per TCNA EJ171.  
-- Perform **flood tests** where required.  
-- Document prep and waterproofing with photos before tile goes up.
+- Install to **ANSI A118.10/A118.12** and **TCNA** details (B422, B421, EJ171).
+- Use **movement joints** per TCNA EJ171 for crack isolation.
+- Perform and document **flood tests** before tile.
+- Provide photo documentation of prep and waterproofing for every project (NJ HIC compliance).
 
-That means you can pick up your favorite system at Home Depot, and we’ll make sure it’s **assembled right**, not just “stuck together.”
+**You can buy the materials—Tillerstead ensures they’re assembled to code, not just “stuck together.”**
 
 ---
 
 **Bottom line:**  
-You can buy quality waterproofing materials at any big-box store—but durability comes from how they’re detailed, sealed, and documented.  
+Big-box stores sell quality waterproofing, but only code-compliant detailing, sealing, and documentation deliver lasting results—and protect your investment.
 
-If you’re in **South Jersey or Atlantic County**, we’re happy to help you plan the right mix of DIY + professional installation.
+If you’re in **South Jersey or Atlantic County**, let’s plan the right mix of DIY and professional installation for your project.
 
 **Next step:**  
-Send your shower photos and goals to **<info@tillerstead.com>**, or visit the [Contact page](/contact.html) to start a consultation.
+Send your shower photos and goals to **<info@tillerstead.com>**, or visit the [Contact page](/contact.html) to start a code-compliant consultation.
 
 ---
 
-Do the work with integrity and care.
+_Do the work with integrity and care. That’s the Tillerstead way._
+

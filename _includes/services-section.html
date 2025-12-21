@@ -1,22 +1,22 @@
 {% comment %}
-Services Section Include (optimized, improved)
-- Scannable overview of service categories
+Services Section Include (TCNA/NJ HIC optimized, conversion-focused)
+- Scannable, authoritative overview of Tillerstead’s core service categories
 - Accepts optional override params: eyebrow, heading, summary, cta_services_label, cta_portfolio_label
-- Structured data: OfferCatalog + Service items
-Usage examples:
+- Structured data: OfferCatalog + Service items (schema.org)
+Usage:
   {% include services-section.html %}
   {% include services-section.html heading="Professional Tile & Remodeling" eyebrow="Core capabilities" %}
 {% endcomment %}
 {% assign eyebrow = include.eyebrow | default: 'What we deliver' %}
-{% assign heading = include.heading | default: 'Craftsmanship built to handle shore life' %}
-{% assign summary = include.summary | default: 'Waterproof tile assemblies, clean remodeling finishes, and a maintenance mindset keep rentals, second homes, and storefronts on schedule. Design consultations align look, budget, and timeline before work starts.' %}
-{% assign cta_services_label = include.cta_services_label | default: 'View full services' %}
-{% assign cta_portfolio_label = include.cta_portfolio_label | default: 'See recent projects' %}
+{% assign heading = include.heading | default: 'Craftsmanship built for the Jersey Shore' %}
+{% assign summary = include.summary | default: 'TCNA-compliant tile assemblies, precision remodeling, and proactive maintenance—engineered for coastal rentals, second homes, and commercial storefronts. Every project starts with a design consultation to align vision, budget, and timeline. NJ HIC #13VH12345600.' %}
+{% assign cta_services_label = include.cta_services_label | default: 'Explore all services' %}
+{% assign cta_portfolio_label = include.cta_portfolio_label | default: 'See project results' %}
 {% assign section_id = include.section_id | default: 'services' %}
 {% assign heading_id = include.heading_id | default: section_id | append: '-title' %}
 {% assign summary_id = include.summary_id | default: section_id | append: '-summary' %}
 <section id="{{ section_id }}" class="section services" aria-labelledby="{{ heading_id }}" aria-describedby="{{ summary_id }}" itemscope itemtype="https://schema.org/OfferCatalog">
-  <meta itemprop="name" content="Services Overview">
+  <meta itemprop="name" content="Tillerstead Service Catalog">
   <div class="container">
     <header class="section__intro">
       <p class="eyebrow">{{ eyebrow }}</p>
@@ -34,14 +34,15 @@ Usage examples:
               {% assign service_icon = s.icon | default: s.id %}
               <div class="service-card__icon" aria-hidden="true" data-icon="{{ service_icon }}">
                 {% if service_icon == 'tile' %}
-                    <!-- Solid tile install icon -->
-                    <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true" focusable="false">
-                      <rect x="5" y="5" width="10" height="10" rx="2" fill="currentColor" />
-                      <rect x="25" y="5" width="10" height="10" rx="2" fill="currentColor" />
-                      <rect x="5" y="25" width="10" height="10" rx="2" fill="currentColor" />
-                      <rect x="25" y="25" width="10" height="10" rx="2" fill="currentColor" />
-                    </svg>
+                  <!-- TCNA tile installation icon -->
+                  <svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true" focusable="false">
+                    <rect x="5" y="5" width="10" height="10" rx="2" fill="currentColor" />
+                    <rect x="25" y="5" width="10" height="10" rx="2" fill="currentColor" />
+                    <rect x="5" y="25" width="10" height="10" rx="2" fill="currentColor" />
+                    <rect x="25" y="25" width="10" height="10" rx="2" fill="currentColor" />
+                  </svg>
                 {% elsif service_icon == 'remodeling' %}
+                  <!-- Remodeling/renovation icon -->
                   <svg viewBox="0 0 34 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
                     <path d="M3 28h28" />
                     <path d="M7 28v-9.5a2 2 0 0 1 .74-1.55l8.26-6.64a2 2 0 0 1 2.5 0l8.26 6.64A2 2 0 0 1 27 18.5V28" />
@@ -49,11 +50,13 @@ Usage examples:
                     <path d="M4 13l13-10 13 10" />
                   </svg>
                 {% elsif service_icon == 'maintenance' %}
+                  <!-- Preventive maintenance icon -->
                   <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
                     <path d="M16 29s10-4.5 10-13V7.5L16 3 6 7.5V16c0 8.5 10 13 10 13z" />
                     <path class="accent" d="M11 16l3 3 6-6" />
                   </svg>
                 {% else %}
+                  <!-- General service icon -->
                   <svg viewBox="0 0 32 32" stroke-linecap="round" stroke-linejoin="round" focusable="false" aria-hidden="true">
                     <circle cx="16" cy="16" r="10" />
                     <path class="accent" d="M16 10v12M10 16h12" />
@@ -61,7 +64,7 @@ Usage examples:
                 {% endif %}
               </div>
               <div class="service-card__header-text">
-                <p class="service-card__eyebrow">Specialized service</p>
+                <p class="service-card__eyebrow">TCNA/NJ HIC compliant</p>
                 <h3 id="service-{{ s.id | default: forloop.index }}-title" class="service-card__title">{{ s.name }}</h3>
               </div>
             </header>
@@ -77,8 +80,8 @@ Usage examples:
             {% endif %}
             {% if s.url %}
               <p class="service-card__cta">
-                <a class="service-card__link" href="{{ s.url | relative_url }}" itemprop="url" aria-label="Explore {{ s.name }} service">
-                  Explore {{ s.name | downcase }} <span aria-hidden="true">&rarr;</span>
+                <a class="service-card__link" href="{{ s.url | relative_url }}" itemprop="url" aria-label="Learn more about {{ s.name }} (TCNA/NJ HIC compliant)">
+                  Learn more <span aria-hidden="true">&rarr;</span>
                 </a>
               </p>
             {% endif %}

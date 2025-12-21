@@ -1,31 +1,29 @@
 ﻿# ============================
-#  Tillerstead.com â€” _config.yml
-# ============================
 #  Tillerstead.com — _config.yml
 # ============================
 
 # Site identity
 title: Tillerstead LLC
-tagline: Professional Tile & Stone Installation in South Jersey
-description: Expert tile and stone installation specializing in custom showers, heated floors, natural stone surfaces, and waterproof assemblies. Licensed NJ contractor serving Atlantic, Ocean & Cape May Counties with precision craftsmanship.
+tagline: TCNA-Compliant Tile & Stone Installation — South Jersey
+description: TCNA-standard tile and stone installation: custom showers, heated floors, waterproof assemblies, and natural stone surfaces. NJ HIC #13VH10808800. Serving Atlantic, Ocean, and Cape May Counties with precision, transparency, and owner oversight.
 url: https://tillerstead.com
 baseurl: ""                 # keep empty for apex/root
 timezone: America/New_York
 
-# Global keyword focus for SEO
+# SEO: Targeted keyword focus
 keywords:
-  - Professional tile installation South Jersey
-  - Custom shower tile specialist NJ
-  - Heated floor installation Atlantic County
-  - Natural stone installation New Jersey
-  - Marble bathroom tile contractor
+  - TCNA-compliant tile installation South Jersey
+  - Custom shower waterproofing NJ HIC contractor
+  - Heated floor tile systems Atlantic County
+  - Natural stone and marble tile New Jersey
   - Large format tile installation NJ
-  - Waterproofing specialist South Jersey
-  - Schluter certified installer NJ
-  - Porcelain slab installation South Jersey
+  - Schluter-certified waterproofing South Jersey
+  - Porcelain slab installation expert NJ
   - Licensed tile contractor Atlantic County
+  - Owner-supervised tile projects NJ
+  - Written scopes and change orders NJ
 
-# Use your own layouts/includes (no injected theme)
+# No injected theme; use custom layouts/includes
 theme: null
 
 # Build & content
@@ -36,33 +34,26 @@ social:
   name: Tillerstead LLC
   links:
     - https://tillerstead.com
-  instagram: "https://www.instagram.com/tillerstead?igsh=MWg5NjlwNXBnYXM2Mg%3D%3D&utm_source=qr"
-  facebook: "https://www.facebook.com/share/17ZQCR2zdZ/?mibextid=wwXIfr"
-  x: "https://x.com/tillerstead?s=21"
-    # Add social links once ready:
-    # - https://www.instagram.com/tillerstead
-    # - https://www.facebook.com/tillerstead
+    - https://www.instagram.com/tillerstead?igsh=MWg5NjlwNXBnYXM2Mg%3D%3D&utm_source=qr
+    - https://www.facebook.com/share/17ZQCR2zdZ/?mibextid=wwXIfr
+    - https://x.com/tillerstead?s=21
 
 # Business variables
 company:
-  owner: "Tyler of Tillerstead"
+  owner: "Tyler, Owner/Operator"
   phone_display: "(609) 862-8808"
   phone_link: "+16098628808"
   hic: "13VH10808800"
   address_line: "325 E. Jimmie Leeds Road, Suite 7-333"
-  address_city: "Galloway, NJ 08205"
-  address_locality: "Galloway"
+  address_city: "Galloway, NJ"
   address_region: "NJ"
   address_postal_code: "08205"
   email: "info@tillerstead.com"
 
-# Optional: global defaults for OG/social
+# OG/social imagery (SVG for logo, JPEG for social)
 logo: /assets/img/logo/tillerstead-logo-header.svg
-# Use existing project imagery for social + hero preloads
 default_og_image: /assets/img/social/tillerstead-showcase.jpg
 hero_default_image: /assets/img/tillerstead-work/bathrooms/bathroom-accent-wall-and-shower.jpg
-# Use an existing raster image for social sharing previews
-default_og_image: /assets/img/marble-bath.jpg
 
 # Cache-busting helper
 assets_version: "2025-11-23.1"
@@ -93,22 +84,25 @@ theme:
   respect_reduced_motion: true
 
 ux:
-  cta_primary_label: "Book a consultation"
-  cta_secondary_label: "Explore services"
+  cta_primary_label: "Book a TCNA-Compliant Consultation"
+  cta_secondary_label: "See Tile Services"
   reassurances:
-    - "NJ Licensed & Insured â€¢ HIC #13VH10808800"
     - "NJ Licensed & Insured • HIC #13VH10808800"
-    - "Written scopes & change orders"
-    - "Waterproof assemblies by default"
-    - "Owner on site and accountable"
+    - "Written scopes, change orders, and transparent pricing"
+    - "Owner on site — no subcontracted labor"
+    - "Waterproof assemblies per TCNA standards"
+    - "All work documented for warranty and compliance"
   value_props:
-    - "Design consultations to align look, budget, and timeline"
+    - "Design consultations: align vision, budget, and timeline"
     - "Transparent scheduling and material lead times"
-    - "Monthly property care plans with photo reports"
+    - "Monthly property care plans with photo documentation"
+    - "All installations meet or exceed TCNA and manufacturer specs"
+
 # Form submission defaults
 forms:
   endpoint: "https://formsubmit.co/info@tillerstead.com"
   guide_endpoint: "https://formsubmit.co/info@tillerstead.com"
   redirect_path: "/success/?form=contact"
   guide_redirect_path: "/download/nj-tile-guide/thank-you/"
-  subject: "New Tillerstead LLC inquiry from tillerstead.com"
+  subject: "New Tillerstead LLC inquiry — TCNA/NJ HIC Compliant"
+

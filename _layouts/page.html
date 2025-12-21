@@ -4,7 +4,7 @@ hide_hero: true
 ---
 
 <main class="ts-section ts-surface section page-section" itemscope itemtype="https://schema.org/WebPage" role="main" tabindex="-1">
-  <!-- Metadata for search engines -->
+  <!-- SEO & Schema.org metadata -->
   <meta itemprop="name" content="{{ page.title | default: site.title }}">
   {% if page.description %}
     <meta itemprop="description" content="{{ page.description }}">
@@ -23,7 +23,7 @@ hide_hero: true
             <p class="page-lead lead">{{ page.description }}</p>
           {% endif %}
 
-          <!-- Optional: Author and publish date metadata -->
+          <!-- Author and publish date metadata -->
           {% if page.author or page.date %}
             <div class="page-meta text-small" role="doc-credits">
               {% if page.author %}
@@ -38,16 +38,16 @@ hide_hero: true
       {% endif %}
 
       <!-- Page content -->
-      <div class="page-body">
+      <div class="page-body" id="main-content">
         {{ content }}
       </div>
 
-      <!-- Optional: Author bio or byline -->
+      <!-- Author bio or byline -->
       {% if page.author_bio %}
         <footer class="page-footer stack-lg">
-          <hr class="divider">
+          <hr class="divider" aria-hidden="true">
           <div class="author-bio" role="doc-afterword">
-            <h3 class="text-small">About the Author</h3>
+            <h2 class="text-small">About the Author</h2>
             <p>{{ page.author_bio }}</p>
           </div>
         </footer>
@@ -57,5 +57,5 @@ hide_hero: true
   </div>
 </main>
 
-<!-- Call-to-action: Request estimate or next steps -->
+<!-- Conversion-focused CTA: Request a TCNA-compliant estimate -->
 {% include cta-estimate.html %}

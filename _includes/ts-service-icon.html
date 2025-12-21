@@ -3,7 +3,7 @@
 
 {% case icon %}
 {% when 'waterproof', 'shower', 'showers', 'bath', 'bathroom' %}
-<svg class="{{ svg_class }} ts-icon--shower" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+<svg class="{{ svg_class }} ts-icon--shower" viewBox="0 0 48 48" role="img" aria-label="Shower or waterproofing icon" focusable="false">
   <path d="M10 40h28" class="ts-icon__stroke"></path>
   <path d="M18 40V18a6 6 0 0 1 12 0v22" class="ts-icon__stroke"></path>
   <path d="M12 22h24" class="ts-icon__stroke"></path>
@@ -11,7 +11,7 @@
   <path d="M16 29v3M32 29v3M24 31v3" class="ts-icon__stroke" stroke-linecap="round"></path>
 </svg>
 {% when 'tile', 'floor', 'flooring', 'large-format', 'heat', 'heated' %}
-<svg class="{{ svg_class }} ts-icon--tile" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+<svg class="{{ svg_class }} ts-icon--tile" viewBox="0 0 48 48" role="img" aria-label="Tile or flooring icon" focusable="false">
   <rect x="6" y="6" width="14" height="14" rx="2" class="ts-icon__stroke"></rect>
   <rect x="28" y="6" width="14" height="14" rx="2" class="ts-icon__stroke"></rect>
   <rect x="6" y="28" width="14" height="14" rx="2" class="ts-icon__stroke"></rect>
@@ -19,7 +19,7 @@
   <path d="M4 24h40M24 4v40" class="ts-icon__stroke" stroke-linecap="round"></path>
 </svg>
 {% when 'remodeling', 'stone', 'feature', 'walls' %}
-<svg class="{{ svg_class }} ts-icon--remodel" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+<svg class="{{ svg_class }} ts-icon--remodel" viewBox="0 0 48 48" role="img" aria-label="Remodeling or stonework icon" focusable="false">
   <path d="M8 30h32" class="ts-icon__stroke" stroke-linecap="round"></path>
   <path d="M14 30V12h12v18" class="ts-icon__stroke"></path>
   <path d="M26 18h12v12" class="ts-icon__stroke"></path>
@@ -27,14 +27,14 @@
   <path d="M20 12V6h8v6" class="ts-icon__stroke"></path>
 </svg>
 {% when 'maintenance', 'repairs', 'repair' %}
-<svg class="{{ svg_class }} ts-icon--maintenance" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+<svg class="{{ svg_class }} ts-icon--maintenance" viewBox="0 0 48 48" role="img" aria-label="Maintenance or repair icon" focusable="false">
   <path d="M10 38c1.5-6 5-10 10-10s8.5 4 10 10" class="ts-icon__stroke"></path>
   <path d="M16 18a6 6 0 1 1 6 6" class="ts-icon__stroke"></path>
   <path d="M32 10l4-4 6 6-4 4" class="ts-icon__stroke"></path>
   <path d="M30 14l-2 6 6-2" class="ts-icon__stroke"></path>
 </svg>
 {% else %}
-<svg class="{{ svg_class }} ts-icon--default" viewBox="0 0 48 48" role="img" aria-hidden="true" focusable="false">
+<svg class="{{ svg_class }} ts-icon--default" viewBox="0 0 48 48" role="img" aria-label="General service icon" focusable="false">
   <path d="M8 32 24 16l16 16" class="ts-icon__stroke"></path>
   <path d="M12 36h24" class="ts-icon__stroke" stroke-linecap="round"></path>
   <path d="M20 12h8v8h-8z" class="ts-icon__stroke"></path>

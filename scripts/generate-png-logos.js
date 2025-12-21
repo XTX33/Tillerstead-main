@@ -4,13 +4,14 @@
  * Uses sharp library for high-quality conversion
  */
 
-const fs = require('fs');
-const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
+import fs from 'fs';
+import path from 'path';
+import { exec } from 'child_process';
+import { promisify } from 'util';
 
 const execAsync = promisify(exec);
 
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const LOGO_DIR = path.join(__dirname, '../assets/img/logo');
 const OUTPUT_DIR = LOGO_DIR;
 

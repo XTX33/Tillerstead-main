@@ -1,5 +1,5 @@
 {
-  "/**": [
+  "//": [
     "SEO: Tooling keeps code style consistent, preventing issues that harm search engine crawlability.",
     "Accessibility: Linting enforces semantic HTML and ARIA patterns flagged by recommended configs.",
     "Performance: Formatter and linters ensure minimal bundle size by avoiding stray assets and whitespace.",
@@ -8,7 +8,9 @@
   "private": true,
   "scripts": {
     "jekyll": "ruby vendor/gems/jekyll/bin/jekyll",
-    "lint": "eslint . && htmlhint *.html && stylelint \"**/*.{css,scss}\"",
+    "lint": "npm run lint:js && npm run lint:html && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:html": "htmlhint \"*.html\"",
     "lint:css": "stylelint \"**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"**/*.{css,scss}\" --fix",
     "format": "prettier --write .",
@@ -40,7 +42,7 @@
     "prettier": "3.7.4",
     "sass": "1.97.0",
     "sharp": "0.34.5",
-    "stylelint": "^16.23.1",
+    "stylelint": "16.23.1",
     "stylelint-config-standard-scss": "16.0.0",
     "stylelint-scss": "6.8.1"
   }

@@ -1,6 +1,10 @@
+{%- comment -%}
+  Testimonials section include.
+  Data fallback: include.data → site.data.home.testimonials → empty object.
+{%- endcomment -%}
 {% assign testimonials = include.data | default: site.data.home.testimonials | default: {} %}
 
-{% if testimonials %}
+{% if testimonials.reviews and testimonials.reviews.size > 0 %}
   {% assign section_id = include.section_id | default: 'home-testimonials' %}
   {% include ts-testimonials.html
     section_id=section_id

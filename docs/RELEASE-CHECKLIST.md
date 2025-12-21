@@ -1,25 +1,32 @@
 # Release Checklist
 
-Use this checklist before promoting changes to production to avoid regressions in the public site experience.
+Before promoting any changes to production, rigorously complete this checklist to uphold Tillerstead’s technical standards, regulatory compliance, and client trust. Reference TCNA 2024 guidelines, NJ HIC requirements, and internal `.ai/` policies throughout.
 
-## Automated verification
-- [ ] Ensure the **CI** workflow is green (linting, full site build, and link checks).
-- [ ] Ensure the **Jekyll Build Verification** workflow passes (`bundle exec jekyll build` with HTML and link validation).
-- [ ] Run `npm run test` locally if time permits to mirror production link checks and the full static build.
+## Automated Verification
+- [ ] **CI Workflow:** Confirm all status checks are green—linting, full static build, and link validation (per `.github/workflows/ci.yml`).
+- [ ] **Jekyll Build Verification:** Ensure `bundle exec jekyll build` passes with no HTML or link errors (see [TCNA Section 4.1.2](https://www.tcnatile.com/), NJ HIC §13:45A-16.2).
+- [ ] **Local Testing:** Run `npm run test` to replicate production link checks and static build. Address all warnings and errors.
 
-## Visual and UX smoke test
-- [ ] Homepage loads without console errors or missing assets.
-- [ ] Primary navigation works on desktop and mobile (menu toggle, section links, and footer navigation).
-- [ ] Key calls-to-action are clickable and routed correctly (contact buttons, phone/email links, quote requests).
-- [ ] All images, icons, and backgrounds render without distortion or placeholders.
-- [ ] No horizontal scrolling at common breakpoints (320px, 768px, 1024px, and large desktop widths).
+## Visual & UX Quality Assurance
+- [ ] **Homepage Integrity:** Loads without console errors, missing assets, or layout shifts. Validate with Chrome DevTools and Lighthouse.
+- [ ] **Navigation:** All menus and section links function on desktop and mobile. Test hamburger toggle, footer navigation, and skip links for accessibility.
+- [ ] **Calls-to-Action:** All contact, quote, and service request buttons are visible, keyboard-accessible, and route to correct destinations.
+- [ ] **Media Rendering:** Images, SVGs, and backgrounds display at intended resolutions with descriptive, standards-compliant alt text (see `.ai/COMPLIANCE.md`).
+- [ ] **Responsive Layout:** No horizontal scrolling at 320px, 768px, 1024px, or ≥1440px. Validate with browser emulation and manual resizing.
 
-## Content and accessibility spot checks
-- [ ] Headers follow a sensible hierarchy (one `<h1>` per page, logical `<h2>`/`<h3>` nesting).
-- [ ] Contact links (phone, email, maps) open the expected applications/URLs and are accessible via keyboard.
-- [ ] Forms or interactive components respond to keyboard focus states and do not trap focus.
-- [ ] Alt text is present for informative imagery; decorative images are correctly marked or skipped.
+## Content, Accessibility & Legal Compliance
+- [ ] **Header Structure:** One `<h1>` per page; logical `<h2>`/`<h3>` nesting. Confirm with HTMLHint and screen reader tools.
+- [ ] **Contact Links:** Phone, email, and map links open correct apps/URLs, are keyboard-accessible, and use ARIA labels as needed.
+- [ ] **Interactive Elements:** All forms and widgets support keyboard navigation, visible focus states, and do not trap focus (WCAG 2.1 AA).
+- [ ] **Alt Text & Descriptions:** Informative images have precise alt text; decorative images use `role="presentation"` or empty alt attributes. Review for NJ Consumer Fraud Act compliance.
 
-## Repository safeguards
-- [ ] Enable required status checks on the `main` branch (e.g., **CI** and **Jekyll Build Verification**) before allowing merges.
-- [ ] Keep branch protection enabled so updates must pass automated validation prior to deployment.
+## Repository & Deployment Safeguards
+- [ ] **Branch Protection:** `main` branch requires passing CI and Jekyll Build Verification before merges. Confirm via GitHub branch protection settings.
+- [ ] **Automated Validation:** No manual deploys—ensure all updates pass automated checks and are reviewed per `.ai/OUTPUT_RULES.md`.
+
+---
+
+**Final Step:**  
+Document any deviations, edge cases, or technical debt in the release notes. Reference the relevant `.ai/` policy file for each exception.
+
+*For authoritative guidance, consult: `/.ai/SYSTEM.md`, `/.ai/STYLE.md`, `/.ai/DOMAIN.md`, `/.ai/COMPLIANCE.md`, `/.ai/OUTPUT_RULES.md`, and `/.ai/COPILOT.md`.*

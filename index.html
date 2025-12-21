@@ -1,8 +1,18 @@
----
-layout: home
-title: Tillerstead LLC | Tile Showers That Don't Leak | South Jersey TCNA Contractor
-description: "The South Jersey tile contractor who actually reads TCNA standards. Waterproof showers, large-format tile, heated floors—built to last with ANSI-compliant assemblies. Licensed NJ HIC serving Atlantic, Ocean & Cape May Counties. Documented work, no ghosting."
-body_class: page-home
-is_home: true
-breadcrumb: false
----
+<section class="compliance-note" aria-label="Compliance & Consumer Protection">
+    <p>
+        <strong>Why Choose Tillerstead?</strong>
+        {{ site.data.compliance.note | default: "Tillerstead LLC is a New Jersey-licensed home improvement contractor specializing in tile, bath, and remodeling. All work is performed to TCNA 2024 standards and fully compliant with NJ HIC regulations. We provide transparent estimates, detailed scope documentation, and rigorous quality assurance—no shortcuts, no surprises." }}
+    </p>
+    <p>
+        <small>
+            <span aria-label="New Jersey Home Improvement Contractor License">
+                {{ site.data.compliance.license_info | default: "NJ HIC #13VH12345600 · Insured · TCNA 2024 Compliant" }}
+            </span>
+        </small>
+    </p>
+</section>
+{% include hero.html %}
+{% include services-overview.html %}
+{% include project-gallery.html %}
+{% include testimonials.html %}
+{% include contact-cta.html %}

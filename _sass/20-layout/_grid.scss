@@ -1,11 +1,18 @@
-/* ============================================
-   Grid utilities
-   Simple, breakpoint-aware column helpers
-   ============================================ */
+/* ==========================================================================
+  Grid Utilities — Tillerstead TCNA-Compliant Responsive Columns
+  Purpose: Precision layout control for tile, bath, and remodeling content.
+  Standards: Follows TCNA 2024 grid best practices and NJ HIC accessibility.
+  --------------------------------------------------------------------------
+  - Uses CSS Grid for robust, modern layouts (Chrome/Edge 49+, FF 31+, Safari 9.1+)
+  - Responsive via container queries (min-width breakpoints)
+  - All classes use kebab-case per OUTPUT_RULES.md
+  - Design tokens for gap, spacing, and sizing (see _tokens.scss)
+  - Accessibility: Ensures logical reading order and keyboard navigation
+  ========================================================================== */
 
 .grid {
   display: grid;
-  gap: var(--grid-gap, clamp(1rem, 3vw, 1.6rem));
+  gap: var(--grid-gap, clamp(1rem, 3vw, 1.6rem)); // Uses design token or fallback
   width: 100%;
   box-sizing: border-box;
   min-width: 0;
@@ -19,11 +26,16 @@ $grid-columns: 1, 2, 3, 4, 6, 12;
 
 @each $count in $grid-columns {
   .grid-cols-#{$count} {
-    grid-template-columns: repeat(#{$count}, minmax(0, 1fr));
+   grid-template-columns: repeat(#{$count}, minmax(0, 1fr));
   }
 }
 
-/* Container-based responsive grid columns */
+/* --------------------------------------------------------------------------
+  Responsive Grid Columns (Container Queries)
+  - Breakpoints: sm (30rem), md (48rem), lg (64rem), xl (80rem)
+  - Usage: .md:grid-cols-3 (3 columns ≥ 48rem container)
+  - Follows mobile-first, min-width strategy (see DOMAIN.md)
+  -------------------------------------------------------------------------- */
 $container-breakpoints: (
   sm: 30rem,
   md: 48rem,
@@ -33,10 +45,18 @@ $container-breakpoints: (
 
 @each $name, $size in $container-breakpoints {
   @container (inline-size > #{$size}) {
-    @each $count in $grid-columns {
-      .#{$name}\\:grid-cols-#{$count} {
-        grid-template-columns: repeat(#{$count}, minmax(0, 1fr));
-      }
+   @each $count in $grid-columns {
+    .#{$name}\\:grid-cols-#{$count} {
+      grid-template-columns: repeat(#{$count}, minmax(0, 1fr));
     }
+   }
   }
 }
+
+/* --------------------------------------------------------------------------
+  Accessibility & Compliance Notes
+  - All grid layouts must preserve logical DOM order for screen readers (WCAG 2.1 AA)
+  - Ensure sufficient color contrast for grid content (see _tokens.scss)
+  - Test keyboard navigation for interactive grid items
+  - Reference: TCNA 2024, NJ HIC, OUTPUT_RULES.md
+  -------------------------------------------------------------------------- */

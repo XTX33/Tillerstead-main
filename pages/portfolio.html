@@ -1,12 +1,11 @@
 ---
 layout: default
-description: "Showers, floors, backsplashes, drywall repairs, prep, trim, and caulk work completed with proper substrate prep, waterproofing, and clean finishes."
+description: "Portfolio of code-compliant tile, bath, and finish work by Tillerstead LLC. All projects meet TCNA standards and NJ HIC requirements: waterproofing, substrate prep, and precision installation."
 body_class: page-portfolio
 hero_eyebrow: "Portfolio"
 hero_title: "Recent Tile & Finish Work Across South Jersey"
 hero_summary: >
-  Recent waterproof shower, floor, and backsplash installations completed for New Jersey general contractors.
-  Clean layouts, code-compliant assemblies, and reliable schedules.
+  Completed waterproof showers, floors, and backsplashes for New Jersey general contractors. All assemblies follow TCNA methods and NJ HIC law—no shortcuts, no guesswork.
 permalink: /portfolio/
 ---
 
@@ -15,111 +14,107 @@ permalink: /portfolio/
 {% assign projects = site.data.portfolio.projects | default: [] %}
 {% assign total_projects = projects | size | plus: 0 %}
 {% assign fallback_src = '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' | relative_url %}
-{% assign fallback_alt = 'Documented project photo from Tillerstead LLC' %}
-{% assign fallback_caption = 'Waterproof tile, remodeling, and maintenance scopes completed across South Jersey.' %}
+{% assign fallback_alt = 'Completed marble tile floor by Tillerstead LLC. Installed per TCNA F142-24, with waterproofing and substrate correction.' %}
+{% assign fallback_caption = 'All work meets TCNA and NJ HIC standards—documented, code-compliant, and built to last.' %}
 
 <section class="ts-section ts-surface portfolio-page">
   <div class="container">
-  <!-- Filters -->
-  <div class="filters" role="tablist" aria-label="Portfolio filters">
-    <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
-    <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
-    <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
-    <button class="chip" role="tab" aria-selected="false" data-filter="floors">Floors</button>
-    <button class="chip" role="tab" aria-selected="false" data-filter="remodels">Remodels</button>
-    <button class="chip" role="tab" aria-selected="false" data-filter="repairs">Repairs</button>
-  </div>
-
-  <!-- Slider -->
-  <div class="gallery-slider" id="gallery-slider" aria-live="polite">
-    <figure class="slide">
-      <div class="slide-media">
-        <picture id="slide-picture">
-          <source id="slide-source-webp" type="image/webp">
-          <img id="slide-image"
-               src="{{ fallback_src }}"
-               alt="{{ fallback_alt | escape }}"
-               width="1280"
-               height="960"
-               loading="lazy"
-               decoding="async">
-        </picture>
-      </div>
-      <figcaption class="slide-caption">
-        <p id="slide-caption-text">{{ fallback_caption }}</p>
-      </figcaption>
-    </figure>
-
-    <div class="slider-footer">
-      <span class="slide-meta" id="slide-meta">
-        {% if total_projects == 0 %}
-          All work
-        {% else %}
-          All work Â· 1 of {{ total_projects }}
-          All work · 1 of {{ total_projects }}
-        {% endif %}
-      </span>
-
-      <div class="slider-controls" aria-label="Slide controls">
-        <button type="button" class="slider-arrow prev" aria-label="Previous photo">â€¹</button>
-        <button type="button" class="slider-arrow next" aria-label="Next photo">â€º</button>
-        <button type="button" class="slider-arrow prev" aria-label="Previous photo">‹</button>
-        <button type="button" class="slider-arrow next" aria-label="Next photo">›</button>
-      </div>
+    <!-- Filters -->
+    <div class="filters" role="tablist" aria-label="Portfolio filters">
+      <button class="chip is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="showers">Showers</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="backsplashes">Backsplashes</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="floors">Floors</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="remodels">Remodels</button>
+      <button class="chip" role="tab" aria-selected="false" data-filter="repairs">Repairs</button>
     </div>
 
-    <div class="slider-dots" id="slider-dots" aria-hidden="true"></div>
-  </div>
+    <!-- Slider -->
+    <div class="gallery-slider" id="gallery-slider" aria-live="polite">
+      <figure class="slide">
+        <div class="slide-media">
+          <picture id="slide-picture">
+            <source id="slide-source-webp" type="image/webp">
+            <img id="slide-image"
+                 src="{{ fallback_src }}"
+                 alt="{{ fallback_alt | escape }}"
+                 width="1280"
+                 height="960"
+                 loading="lazy"
+                 decoding="async">
+          </picture>
+        </div>
+        <figcaption class="slide-caption">
+          <p id="slide-caption-text">{{ fallback_caption }}</p>
+        </figcaption>
+      </figure>
 
-  <!-- Trade Notes Section -->
-  <section class="trade-notes" aria-labelledby="trade-notes-title">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="trade-notes-title" class="heading-2 text-primary">Trade Notes</h2>
-        <p class="lead">How planning shows up in finished work</p>
-      </header>
-      
-      <div class="trade-notes-grid">
-        <article class="trade-note-card">
-          <h3 class="heading-4">Layout Centered on Sightline</h3>
-          <p>Tile layouts start from where you see the space — not arbitrary wall edges. This keeps cuts balanced and avoids slivers in high-visibility areas.</p>
-        </article>
+      <div class="slider-footer">
+        <span class="slide-meta" id="slide-meta">
+          {% if total_projects == 0 %}
+            All work
+          {% else %}
+            All work · 1 of {{ total_projects }}
+          {% endif %}
+        </span>
 
-        <article class="trade-note-card">
-          <h3 class="heading-4">Cuts Pushed to Secondary Areas</h3>
-          <p>Partial tiles are planned for corners, toe-kicks, and edges you don't see first. The goal: full or near-full modules in the primary field.</p>
-        </article>
-
-        <article class="trade-note-card">
-          <h3 class="heading-4">Substrate Corrected Before Tile</h3>
-          <p>Large-format material exposes every substrate flaw. We flatten, level, and prepare — not hide problems under tile and hope.</p>
-        </article>
-
-        <article class="trade-note-card">
-          <h3 class="heading-4">Movement Joints at Perimeter</h3>
-          <p>Tile expands. Structures settle. We honor expansion joints and change-of-plane transitions per TCNA guidelines — not just caulk and pray.</p>
-        </article>
+        <div class="slider-controls" aria-label="Slide controls">
+          <button type="button" class="slider-arrow prev" aria-label="Previous photo">‹</button>
+          <button type="button" class="slider-arrow next" aria-label="Next photo">›</button>
+        </div>
       </div>
-      
-      <p class="trade-notes-footer">
-        <em>Anyone can install tile. Planning is what makes it last.</em>
-      </p>
-    </div>
-  </section>
 
-  <section class="portfolio-actions">
-    <div class="btn-row">
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Get Free NJ Estimate</a>
-      <a class="btn btn-ghost" href="tel:+16098628808">Call (609) 862-8808</a>
+      <div class="slider-dots" id="slider-dots" aria-hidden="true"></div>
     </div>
-  </section>
+
+    <!-- Trade Notes Section -->
+    <section class="trade-notes" aria-labelledby="trade-notes-title">
+      <div class="container">
+        <header class="section-header">
+          <h2 id="trade-notes-title" class="heading-2 text-primary">Trade Notes</h2>
+          <p class="lead">How technical planning delivers lasting results</p>
+        </header>
+        
+        <div class="trade-notes-grid">
+          <article class="trade-note-card">
+            <h3 class="heading-4">Layout Centered on Sightline</h3>
+            <p>Tile layouts are planned from the primary sightline, not arbitrary edges. This ensures balanced cuts and eliminates unsightly slivers in visible areas. (TCNA Handbook, Layout Guidelines)</p>
+          </article>
+
+          <article class="trade-note-card">
+            <h3 class="heading-4">Cuts Pushed to Secondary Areas</h3>
+            <p>Partial tiles are reserved for corners and low-visibility zones. The main field features full or near-full modules for a professional, symmetrical finish.</p>
+          </article>
+
+          <article class="trade-note-card">
+            <h3 class="heading-4">Substrate Corrected Before Tile</h3>
+            <p>All substrates are flattened and leveled to TCNA tolerances before tile installation. Large-format tile exposes every flaw—prep is non-negotiable.</p>
+          </article>
+
+          <article class="trade-note-card">
+            <h3 class="heading-4">Movement Joints at Perimeter</h3>
+            <p>Expansion and movement joints are installed at all perimeters and changes of plane, per TCNA EJ171. This prevents cracking and ensures long-term durability.</p>
+          </article>
+        </div>
+        
+        <p class="trade-notes-footer">
+          <em>Anyone can install tile. Technical planning and code compliance make it last.</em>
+        </p>
+      </div>
+    </section>
+
+    <section class="portfolio-actions">
+      <div class="btn-row">
+        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Request a TCNA-Compliant Estimate</a>
+        <a class="btn btn-ghost" href="tel:+16098628808" aria-label="Call Tillerstead LLC at (609) 862-8808">Call (609) 862-8808</a>
+      </div>
+    </section>
   </div>
 </section>
 
 <script>
-/* Image data â€“ shared with slider and initial markup via _data/portfolio.yml */
 /* Image data – shared with slider and initial markup via _data/portfolio.yml */
-const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
+const PROJECTS = {{ projects | jsonify | replace: '</', '<\/') }};
 </script>
 
 <script>
@@ -127,7 +122,7 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => Array.from(c.querySelectorAll(s));
 
-  const BASE = "{{ '/assets/img/' | relative_url }}";
+  const base = "{{ '/assets/img/' | relative_url }}";
 
   const slider = $('#gallery-slider');
   const imgEl = $('#slide-image');
@@ -138,13 +133,13 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
   const nextBtn = $('.slider-arrow.next');
   const chips = $$('.chip');
 
-  const TAG_LABELS = {
+  const tagLabels = {
     all: 'All work',
-    showers: 'Showers & wet areas',
+    showers: 'Showers & Wet Areas',
     backsplashes: 'Backsplashes',
-    floors: 'Floors & large-format tile',
-    remodels: 'Remodels & full bathroom scopes',
-    repairs: 'Repairs & punchlist rescue'
+    floors: 'Floors & Large-Format Tile',
+    remodels: 'Remodels & Full Bath Scopes',
+    repairs: 'Repairs & Code Corrections'
   };
 
   let currentFilter = 'all';
@@ -161,6 +156,11 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
 
     if (!slides.length) {
       slider.setAttribute('aria-busy', 'true');
+      imgEl.src = "{{ fallback_src }}";
+      imgEl.alt = "{{ fallback_alt | escape }}";
+      captionEl.textContent = "{{ fallback_caption }}";
+      metaEl.textContent = tagLabels[currentFilter] || 'All work';
+      dotsEl.innerHTML = '';
       return;
     }
     slider.removeAttribute('aria-busy');
@@ -187,6 +187,7 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
       dot.type = 'button';
       dot.className = 'slider-dot';
       dot.dataset.index = i;
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
       dot.addEventListener('click', () => {
         showSlide(i);
         restartAutoplay();
@@ -199,8 +200,10 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
     if (!slides.length) return;
     const nextIdx = (index + 1) % slides.length;
     const nextSlide = slides[nextIdx];
-    const img = new Image();
-    img.src = BASE + nextSlide.file;
+    if (nextSlide && nextSlide.file) {
+      const img = new window.Image();
+      img.src = base + nextSlide.file;
+    }
   }
 
   function showSlide(newIndex) {
@@ -211,16 +214,15 @@ const PROJECTS = {{ projects | jsonify | replace: '</', '<\/'} };
     const hasWebp = !!slide.file_webp;
     if (sourceEl) {
       if (hasWebp) {
-        sourceEl.srcset = BASE + slide.file_webp;
+        sourceEl.srcset = base + slide.file_webp;
       } else {
         sourceEl.removeAttribute('srcset');
       }
     }
-    imgEl.src = BASE + slide.file; // Primary (jpg or webp). If webp-only older browsers may not show; acceptable given support.
-    imgEl.alt = slide.alt || '';
+    imgEl.src = base + slide.file;
+    imgEl.alt = slide.alt || 'Project photo by Tillerstead LLC, installed per TCNA/NJ HIC standards.';
     captionEl.textContent = slide.caption || '';
-    metaEl.textContent = `${TAG_LABELS[currentFilter] || 'All work'} Â· ${index + 1} of ${slides.length}`;
-    metaEl.textContent = `${TAG_LABELS[currentFilter] || 'All work'} · ${index + 1} of ${slides.length}`;
+    metaEl.textContent = `${tagLabels[currentFilter] || 'All work'} · ${index + 1} of ${slides.length}`;
 
     $$('.slider-dot', dotsEl).forEach(dot => {
       dot.classList.toggle('is-active', Number(dot.dataset.index) === index);

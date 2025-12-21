@@ -1,9 +1,9 @@
 /* ============================================
-   Card components
-   Simple, responsive card system for tilework, services, and testimonials
-   ============================================ */
+  Card Components — Tillerstead TCNA/NJ HIC Compliant
+  Modular, responsive cards for tilework, services, and testimonials
+  ============================================ */
 
-/* Grid wrappers */
+/* Grid Wrappers */
 .cards {
   list-style: none;
   margin: 0;
@@ -22,7 +22,7 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
 }
 
-/* Base card */
+/* Base Card */
 .card,
 .ts-card {
   display: flex;
@@ -36,8 +36,14 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
   position: relative;
   min-width: 0;
+  /* Ensures keyboard focus is visible for accessibility */
+  &:focus-within {
+   outline: 2px solid var(--ts-color-accent);
+   outline-offset: 2px;
+  }
 }
 
+/* Card Eyebrow: For credentialing, trade standards, or project type */
 .card-eyebrow {
   display: inline-block;
   font-size: var(--font-size-xs);
@@ -47,12 +53,14 @@
   color: var(--ts-color-primary);
 }
 
+/* Card Description: Use for summary, scope, or compliance notes */
 .card-desc,
 .card-description {
   margin: 0;
   color: var(--ts-color-muted);
 }
 
+/* Card Media: For project photos, always provide descriptive alt text */
 .card-media {
   margin: 0;
   overflow: hidden;
@@ -65,14 +73,18 @@
   width: 100%;
   height: auto;
   display: block;
+  /* Enforce alt attribute for accessibility and NJ HIC compliance */
+  alt: "";
 }
 
+/* Card Content: Main vertical stack */
 .card-content {
   display: flex;
   flex-direction: column;
   gap: var(--ts-spacing-sm);
 }
 
+/* Card Header: Title and optional badge or KPI */
 .card-header {
   display: flex;
   justify-content: space-between;
@@ -80,6 +92,7 @@
   gap: var(--ts-spacing-sm);
 }
 
+/* Card Title: Use for project name, service, or testimonial source */
 .card-title {
   margin: 0;
   font-size: clamp(1.25rem, 2vw, 1.75rem);
@@ -87,6 +100,7 @@
   color: var(--ts-color-heading);
 }
 
+/* Card Body: Main content, always use semantic HTML in markup */
 .card-body {
   flex: 1;
   display: flex;
@@ -95,11 +109,7 @@
   color: var(--ts-color-text);
 }
 
-.card-description {
-  margin: 0;
-  color: var(--ts-color-muted);
-}
-
+/* Card Footer: For CTAs, compliance badges, or project KPIs */
 .card-footer {
   display: flex;
   justify-content: space-between;
@@ -110,6 +120,7 @@
   margin-top: auto;
 }
 
+/* Card Image: For tilework, always use object-fit for cropping */
 .card-image {
   width: 100%;
   overflow: hidden;
@@ -121,13 +132,17 @@
   height: auto;
   display: block;
   object-fit: cover;
+  /* Enforce alt attribute for accessibility */
+  alt: "";
 }
 
+/* Service Card: For NJ HIC/TCNA-compliant service listings */
 .card--service,
 .service-card {
   border: 1px solid var(--ts-color-border);
 }
 
+/* Card Spacing Variants */
 .card-compact {
   padding: clamp(1rem, 2vw, 1.5rem);
 }
@@ -136,10 +151,12 @@
   padding: clamp(2.5rem, 5vw, 3.5rem);
 }
 
+/* Card Elevation: For featured or highlighted projects */
 .card-elevated {
   box-shadow: 0 14px 34px var(--shadow-soft);
 }
 
+/* Card Color Variants: Use for primary CTAs or accent services */
 .card--primary,
 .card-primary {
   background: var(--ts-color-primary-soft);
@@ -152,6 +169,7 @@
   background: var(--ts-color-accent-soft);
 }
 
+/* Featured Card: For award-winning or code-compliant projects */
 .card-featured {
   border-color: var(--ts-color-primary);
   box-shadow: 0 14px 34px var(--shadow-soft);
@@ -166,10 +184,12 @@
   pointer-events: none;
 }
 
+/* Interactive Card: For clickable or focusable cards */
 .card-interactive {
   cursor: pointer;
 }
 
+/* Hover State: Accessible, visually distinct, and compliant */
 .card:hover,
 .ts-card:hover {
   transform: translateY(-2px);
@@ -177,10 +197,12 @@
   border-color: color-mix(in srgb, var(--ts-color-primary) 55%, var(--ts-color-border));
 }
 
+/* Maintain aspect ratio for media */
 .card-image-aspect {
   aspect-ratio: 16 / 9;
 }
 
+/* Card Badge: For certifications, TCNA/NJ HIC numbers, or KPIs */
 .card-badge {
   display: inline-flex;
   align-items: center;
@@ -194,20 +216,19 @@
   color: var(--ts-color-accent-strong);
 }
 
-/* Container query replaces mobile media query */
+/* Container Query: Responsive padding and font for mobile */
 @container (inline-size < 30rem) {
   .card,
   .ts-card {
-    padding: clamp(1.25rem, 4vi, 1.6rem);
-    gap: var(--ts-spacing-sm);
-    font-size: var(--font-size-sm);
+   padding: clamp(1.25rem, 4vi, 1.6rem);
+   gap: var(--ts-spacing-sm);
+   font-size: var(--font-size-sm);
   }
 }
 
 /* ============================================
-   Trade Notes Section
-   Portfolio project details and planning notes
-   ============================================ */
+  Trade Notes Section — Portfolio Project Details
+  ============================================ */
 
 .trade-notes {
   margin-top: var(--ts-spacing-xl);
@@ -215,13 +236,13 @@
   border-top: 1px solid var(--ts-color-border);
 
   .section-header {
-    text-align: center;
-    margin-bottom: var(--ts-spacing-lg);
+   text-align: center;
+   margin-bottom: var(--ts-spacing-lg);
   }
 
   .lead {
-    color: var(--ts-color-text-subtle);
-    margin-top: var(--ts-spacing-sm);
+   color: var(--ts-color-text-subtle);
+   margin-top: var(--ts-spacing-sm);
   }
 }
 
@@ -237,17 +258,17 @@
   border-radius: var(--ts-radius-lg);
   background: var(--ts-color-surface-elevated);
   border: 1px solid var(--ts-color-border);
-  
+
   .heading-4 {
-    color: var(--ts-color-primary);
-    margin-bottom: var(--ts-spacing-sm);
-    font-size: var(--font-size-lg);
+   color: var(--ts-color-primary);
+   margin-bottom: var(--ts-spacing-sm);
+   font-size: var(--font-size-lg);
   }
 
   p {
-    margin: 0;
-    color: var(--ts-color-text);
-    line-height: 1.6;
+   margin: 0;
+   color: var(--ts-color-text);
+   line-height: 1.6;
   }
 }
 
@@ -259,15 +280,16 @@
   font-style: italic;
 }
 
+/* Accessibility: Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .card,
   .ts-card {
-    transition: none !important;
+   transition: none !important;
   }
 
   .card:hover,
   .ts-card:hover {
-    transform: none;
-    box-shadow: 0 10px 30px var(--shadow-soft);
+   transform: none;
+   box-shadow: 0 10px 30px var(--shadow-soft);
   }
 }

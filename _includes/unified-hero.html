@@ -7,6 +7,7 @@
 {% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
 {% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'View recent work' %}
+{% assign hero_heading_level = include.heading_level | default: page.hero_heading_level | default: 'h1' %}
 
 {% assign primary_href = hero_primary_url %}
 {% unless primary_href contains '://' or primary_href contains 'mailto:' or primary_href contains 'tel:' or primary_href | slice: 0, 1 == '#' %}
@@ -29,16 +30,20 @@
 
       {% if hero_eyebrow %}<p class="ts-eyebrow mb-3">{{ hero_eyebrow }}</p>{% endif %}
 
-      <h1 class="hero__title">{{ hero_title }}</h1>
+      {% capture heading_tag_open %}<{{ hero_heading_level }} class="hero__title">{% endcapture %}
+      {% capture heading_tag_close %}</{{ hero_heading_level }}>{% endcapture %}
+      {{ heading_tag_open | strip_newlines }}{{ hero_title }}{{ heading_tag_close | strip_newlines }}
 
       {% if hero_summary %}
         <p class="hero__lead">{{ hero_summary }}</p>
       {% endif %}
 
-      {% if hero_kpis %}
+      {%- assign kpis_array = hero_kpis | default: '' -%}
+      {% if kpis_array and kpis_array.size > 0 %}
+        <!-- KPIs are part of the hero intro for Tillerstead's positioning -->
         <section class="hero__stats-panel" aria-label="Key points">
           <ul class="hero__stats-list">
-            {% for metric in hero_kpis %}
+            {% for metric in kpis_array %}
               <li>
                 {% if metric.label %}<strong class="text-accent">{{ metric.label }}:</strong>{% endif %}
                 {% if metric.text %} {{ metric.text }}{% endif %}
@@ -49,8 +54,12 @@
       {% endif %}
 
       <nav class="hero__actions" aria-label="Primary actions">
-        {% if hero_primary_url %}<a class="btn btn--primary" href="{{ primary_href }}">{{ hero_primary_label }}</a>{% endif %}
-        {% if hero_secondary_url %}<a class="btn btn--ghost" href="{{ secondary_href }}">{{ hero_secondary_label }}</a>{% endif %}
+        {% if hero_primary_url %}
+          <a class="btn btn--primary" href="{{ primary_href }}" aria-label="{{ hero_primary_label }}">{{ hero_primary_label }}</a>
+        {% endif %}
+        {% if hero_secondary_url %}
+          <a class="btn btn--ghost" href="{{ secondary_href }}" aria-label="{{ hero_secondary_label }}">{{ hero_secondary_label }}</a>
+        {% endif %}
       </nav>
     </div>
   </div>

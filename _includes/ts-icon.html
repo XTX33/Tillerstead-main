@@ -1,10 +1,20 @@
 {% comment %}
 Usage: {% include ts-icon.html name="icon-plan" size="22" class="optional-classes" %}
 Renders: <svg><use href="#icon-plan"></use></svg>
+- All icons must be present in the SVG sprite (see assets/img/icons.svg).
+- Follows Tillerstead coding standards: semantic, accessible, and compliant (see /.ai/OUTPUT_RULES.md, DOMAIN.md).
 {% endcomment %}
 {% assign icon_name = include.name | default: 'icon-plan' %}
 {% assign icon_size = include.size | default: '20' %}
 {% assign icon_class = include.class | default: 'ts-icon' %}
-<svg class="{{ icon_class }}" width="{{ icon_size }}" height="{{ icon_size }}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-  <use href="#{{ icon_name }}"></use>
+<svg
+  class="{{ icon_class | escape }}"
+  width="{{ icon_size | escape }}"
+  height="{{ icon_size | escape }}"
+  viewBox="0 0 24 24"
+  role="img"
+  aria-label="{{ icon_name | replace: 'icon-', '' | replace: '-', ' ' | capitalize }} icon"
+  focusable="false"
+>
+  <use href="#{{ icon_name | escape }}"></use>
 </svg>

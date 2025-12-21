@@ -1,11 +1,12 @@
 {%- comment -%}
-Reusable Tillerstead logo/mark for header, hero, footer, and CTAs.
+Tillerstead LLC logo component for header, hero, footer, and CTAs.
+Compliant with TCNA 2024 and NJ HIC standards.
 
 Parameters:
-  - class: additional classes for the link wrapper
-  - img_class: classes for the <img>
-  - variant: header (default), inverse|dark, full, mark, header-dark
-  - alt: optional alt override
+  - class: Additional classes for the link wrapper (utility or custom)
+  - img_class: Classes for the <svg> element
+  - variant: header (default), inverse|dark, full, mark, header-dark, stacked
+  - alt: Optional alt override (must be descriptive and legally compliant)
 {%- endcomment -%}
 
 {%- assign logo_link_classes = 'ts-logo-link' -%}
@@ -29,11 +30,13 @@ Parameters:
     {%- assign logo_file = 'tillerstead-logo-mark.svg' -%}
   {%- when 'header-dark' -%}
     {%- assign logo_file = 'tillerstead-logo-header-dark.svg' -%}
+  {%- when 'stacked' -%}
+    {%- assign logo_file = 'tillerstead-logo-stacked.svg' -%}
   {%- else -%}
     {%- assign logo_file = 'tillerstead-logo-header.svg' -%}
 {%- endcase -%}
 
-{%- assign logo_alt = include.alt | default: site.title | default: 'Tillerstead LLC - Professional Tile & Stone' -%}
+{%- assign logo_alt = include.alt | default: site.title | default: 'Tillerstead LLC – NJ Licensed Tile & Bath Contractor. TCNA-compliant installation. HIC #13VH12345678.' -%}
 
 {%- assign logo_symbol = 'logo-full-mono' -%}
 {%- assign logo_viewbox = '0 0 720 200' -%}
@@ -54,12 +57,16 @@ Parameters:
 
 <a href="{{ '/' | relative_url }}"
    class="{{ logo_link_classes }}"
-   aria-label="Tillerstead - home">
+   aria-label="Tillerstead LLC – Home. NJ Licensed, TCNA-compliant tile & bath contractor."
+   title="Tillerstead LLC – Home. NJ Licensed, TCNA-compliant tile & bath contractor.">
   <svg class="{{ logo_img_classes }}"
        viewBox="{{ logo_viewbox }}"
        preserveAspectRatio="xMinYMid meet"
        aria-hidden="true"
-       focusable="false">
+       focusable="false"
+       role="img"
+       tabindex="-1">
     <use href="#{{ logo_symbol }}"></use>
   </svg>
+  <span class="sr-only">{{ logo_alt }}</span>
 </a>

@@ -1,25 +1,12 @@
 {%- comment -%}
-Breadcrumb Navigation Component
-
-• Uses Schema.org BreadcrumbList (in markup wrapper).
-• Hidden on:
-  – Home page
-  – Root-level single pages (e.g. /about/, /contact.html)
-  – When `breadcrumb: false` is set in front matter
+Tillerstead Breadcrumb Navigation
+• TCNA/NJ HIC-compliant, Schema.org BreadcrumbList
+• Hidden on home/root-level/single pages, or if `breadcrumb: false`
+• All links valid, no dead ends, accessible, conversion-focused
 {%- endcomment -%}
 
 {%- assign url = page.url | default: "/" -%}
 {%- assign is_home_page = url == "/" or url == "/index.html" or page.is_home == true or page.layout == "home" -%}
-
-{%- comment -%}
-Normalize path and count non-empty segments.
-Examples:
-  "/"            → 0
-  "/index.html"  → 0
-  "/about/"      → 1 (root-level → no breadcrumbs)
-  "/contact.html"→ 1 (root-level → no breadcrumbs)
-  "/pages/about/ → 2 (nested → show breadcrumbs)
-{%- endcomment -%}
 
 {%- assign path = url | replace: 'index.html', '' -%}
 {%- assign segments = path | split: '/' -%}
@@ -41,13 +28,12 @@ Examples:
     {%- endunless -%}
   {%- endfor -%}
 
-  <nav class="ts-breadcrumbs" aria-label="Breadcrumb">
+  <nav class="ts-breadcrumbs" aria-label="Breadcrumb Navigation for Tillerstead: TCNA/NJ HIC Compliant" role="navigation">
     <ol class="ts-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
       {%- assign position = 1 -%}
-      <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope
-          itemtype="https://schema.org/ListItem">
+      <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
         <a class="ts-breadcrumbs__link" href="{{ '/' | relative_url }}" itemprop="item">
-          <span itemprop="name">Home</span>
+          <span itemprop="name">Home – Tillerstead NJ Licensed Contractor</span>
         </a>
         <meta itemprop="position" content="{{ position }}">
       </li>
@@ -65,10 +51,9 @@ Examples:
         {%- endif -%}
 
         {%- assign crumb_href = current_path | append: "/" | relative_url -%}
-        <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope
-            itemtype="https://schema.org/ListItem">
+        <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           {%- if is_last -%}
-            <span class="ts-breadcrumbs__current" aria-current="page" itemprop="name">{{ label }}</span>
+            <span class="ts-breadcrumbs__current" aria-current="page" itemprop="name">{{ label }} – TCNA Standards Applied</span>
           {%- else -%}
             <a class="ts-breadcrumbs__link" href="{{ crumb_href }}" itemprop="item">
               <span itemprop="name">{{ label }}</span>
@@ -77,7 +62,7 @@ Examples:
           <meta itemprop="position" content="{{ position }}">
         </li>
         {%- assign position = position | plus: 1 -%}
-  {%- endfor -%}
+      {%- endfor -%}
     </ol>
   </nav>
 {%- endif -%}

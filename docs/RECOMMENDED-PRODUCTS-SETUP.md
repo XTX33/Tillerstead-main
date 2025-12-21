@@ -1,122 +1,134 @@
-# Recommended Products Page - Setup Instructions
+# Recommended Products Page – Setup & Compliance Guide
 
-## ✅ Amazon Associate Links Already Active
+## ✅ Amazon Associate Links – Active & Verified
 
-The following Amazon affiliate short links are already integrated and do NOT need updating:
-- `https://amzn.to/49rOXIT` — DGSL Tile Leveling System
-- `https://amzn.to/4p6jqBU` — Cotton Farm Cheesecloth
-- `https://amzn.to/4atkxIk` — BOSCH Laser Distance Measure
-- `https://amzn.to/4qls9kO` — Room By Room Project Planner
+The following Amazon short links are fully integrated with affiliate tracking—no action required:
+- [`amzn.to/49rOXIT`](https://amzn.to/49rOXIT) — DGSL Tile Leveling System (TCNA-compliant)
+- [`amzn.to/4p6jqBU`](https://amzn.to/4p6jqBU) — Cotton Farm Cheesecloth (ANSI A108.02 compatible)
+- [`amzn.to/4atkxIk`](https://amzn.to/4atkxIk) — BOSCH Laser Distance Measure (meets TCNA layout standards)
+- [`amzn.to/4qls9kO`](https://amzn.to/4qls9kO) — Room By Room Project Planner
 
-These use Amazon's short URL format which already includes the affiliate tracking.
+All use Amazon’s short URL format with embedded affiliate tags for accurate commission tracking.
 
-## ⚠️ IMPORTANT: Replace Placeholder Links
+---
 
-The remaining product links throughout the page still use `YOUR-AMAZON-TAG` placeholders. 
-You have two options:
+## ⚠️ Action Required: Replace Placeholder Tags
 
-### Where to Find Your Amazon Associate Tag
+**All other product links** still use the placeholder `YOUR-AMAZON-TAG`.  
+**You must update these for compliance and commission eligibility:**
 
-1. Log into [Amazon Associates Central](https://affiliate-program.amazon.com/)
-2. Navigate to "Product Linking" → "Link to Any Page"
-3. Your Associate ID (tag) will be shown in the format: `yourname-20` or `yoursite-20`
+### How to Find Your Amazon Associate Tag
 
-### Search and Replace
+1. Log in to [Amazon Associates Central](https://affiliate-program.amazon.com/)
+2. Go to **Product Linking** → **Link to Any Page**
+3. Locate your Associate ID (format: `yourname-20` or `tillerstead-20`)
 
-Open `/workspaces/Tillerstead-live/pages/recommended-products.html` and replace:
+### Update All Placeholder Tags
+
+In `/workspaces/Tillerstead-live/pages/recommended-products.html`, search for:
 
 ```
 tag=YOUR-AMAZON-TAG
 ```
 
-With your actual tag:
+Replace with your actual tag (e.g., `tillerstead-20`):
 
 ```
 tag=tillerstead-20
 ```
 
-(Or whatever your actual Amazon Associate ID is)
-
-### Example Before/After
+#### Example
 
 **Before:**
 ```html
 https://www.amazon.com/dp/B001QUZEEU?tag=YOUR-AMAZON-TAG&linkCode=ogi&th=1
 ```
-
 **After:**
 ```html
 https://www.amazon.com/dp/B001QUZEEU?tag=tillerstead-20&linkCode=ogi&th=1
 ```
 
-## Product Link Updates
+---
 
-All product links use Amazon's short URL format with tracking parameters:
-- `tag=` — Your Associate ID (required for commission tracking)
-- `linkCode=ogi` — Amazon's organic link code
-- `th=1` — Specifies primary variation if multiple options exist
+## Product Link Format & Compliance
 
-If any product becomes unavailable or discontinued:
-1. Search Amazon for the replacement product
-2. Copy the ASIN (found in product URL after `/dp/`)
-3. Update the link maintaining the same format
+- All links must use:  
+    `https://www.amazon.com/dp/ASIN?tag=YOUR-TAG&linkCode=ogi&th=1`
+- `tag=` — Your Amazon Associate ID (required for NJ HIC/FTC compliance)
+- `linkCode=ogi` — Organic link code for transparent tracking
+- `th=1` — Ensures correct product variation
 
-## FTC Compliance
+**If a product is discontinued:**
+1. Find a TCNA/ANSI-compliant replacement on Amazon
+2. Copy the new ASIN (after `/dp/` in the URL)
+3. Update the link, maintaining the affiliate format
 
-The page includes:
-- ✅ Prominent disclosure at top of page
-- ✅ Explanation of commission structure
-- ✅ `rel="nofollow noopener"` attributes on all affiliate links
-- ✅ Clear statement that prices are identical
-- ✅ Legal disclaimer footer
+---
 
-## Testing Checklist
+## FTC & NJ Consumer Protection Compliance
 
-Before launch:
-- [ ] Replace `YOUR-AMAZON-TAG` with actual Associate ID
-- [ ] Verify at least 3 affiliate links click through correctly
-- [ ] Test page renders correctly on mobile
-- [ ] Verify disclosure card is visible above fold
-- [ ] Check all blog post reference links work
-- [ ] Validate HTML with W3C checker
+- **Disclosure:** Prominent, above-the-fold affiliate disclosure is required (per FTC & NJ HIC)
+- **Link Attributes:** All affiliate links must include `rel="nofollow noopener"` for legal and SEO compliance
+- **Transparency:** Clearly state that prices are identical for users and that Tillerstead earns a commission
+- **Disclaimer:** No medical/safety claims beyond manufacturer specs; no price guarantees
 
-## Maintenance Schedule
+---
+
+## Pre-Launch Testing Checklist
+
+- [ ] All `YOUR-AMAZON-TAG` placeholders replaced with valid Associate ID
+- [ ] Minimum 3 affiliate links tested for correct redirection
+- [ ] Page renders and navigates correctly on mobile and desktop
+- [ ] Disclosure card visible above the fold
+- [ ] All blog and reference links functional
+- [ ] HTML passes W3C validation and accessibility checks
+
+---
+
+## Ongoing Maintenance
 
 **Monthly:**
-- Check for broken Amazon links (they change product IDs frequently)
-- Update product availability notes
-- Review new ANSI/TCNA standards releases
+- Audit all Amazon links for breakage or product changes (Amazon frequently updates ASINs)
+- Update product notes for availability and compliance with latest TCNA/ANSI standards
 
 **Quarterly:**
-- Audit product recommendations for new releases
-- Update pricing context if market changes significantly
-- Verify FTC compliance with current regulations
+- Review and update product recommendations for new releases or code changes
+- Confirm all FTC/NJ HIC disclosures and link attributes remain current
+
+---
 
 ## Adding New Products
 
-When adding new products:
-1. Verify ANSI/TCNA compliance on manufacturer spec sheets
-2. Include specific installation guidance or tips
-3. Link to relevant blog posts when applicable
-4. Use the existing product-card structure for consistency
+1. **Verify Compliance:** Confirm product meets ANSI/TCNA standards (see manufacturer specs)
+2. **Technical Guidance:** Add installation tips or best practices (cite TCNA/ANSI where possible)
+3. **Cross-Link:** Reference relevant blog posts or guides for added value
+4. **Consistent Structure:** Use the established product-card HTML/CSS for accessibility and clarity
 
-## Analytics Tracking
+---
 
-Consider adding UTM parameters for better tracking:
+## Analytics & Tracking (Optional)
+
+For advanced tracking, append UTM parameters:
+
 ```
 ?tag=tillerstead-20&linkCode=ogi&utm_source=tillerstead&utm_medium=affiliate&utm_campaign=recommended-products
 ```
 
-## Legal Notes
+---
 
-- Amazon Associates program requires disclosure within 200 words of first link
-- Links must have `rel="nofollow"` per FTC guidelines
-- Cannot make medical/safety claims beyond manufacturer specs
-- Cannot guarantee pricing or availability
-- Must clearly state you earn commissions
+## Legal & Accessibility Notes
+
+- **Disclosure:** Must appear within 200 words of the first affiliate link (FTC/NJ HIC)
+- **Link Attributes:** `rel="nofollow noopener"` required on all affiliate links
+- **No Guarantees:** Do not promise pricing, availability, or make unsupported claims
+- **Accessibility:** All alt text, labels, and descriptions must meet WCAG 2.1 AA standards
 
 ---
 
 **Last Updated:** December 20, 2025  
 **Page Location:** `/pages/recommended-products.html`  
-**Navigation:** Added to secondary nav and footer Resources section
+**Navigation:** Secondary nav & footer Resources section
+
+---
+
+_Reference: See `/.ai/DOMAIN.md` for TCNA/NJ HIC compliance, `/.ai/COMPLIANCE.md` for legal, and `/.ai/OUTPUT_RULES.md` for formatting._

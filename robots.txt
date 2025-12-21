@@ -1,3 +1,10 @@
+# Tillerstead.com robots.txt
+# TCNA-compliant, NJ HIC-compliant site – Tillerstead LLC
+
 User-agent: *
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /drafts/
 Allow: /
+
 Sitemap: https://tillerstead.com/sitemap.xml

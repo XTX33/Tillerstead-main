@@ -1,197 +1,149 @@
 # Quality Standards & Best Practices
 
-> ⚠️ **MIGRATED TO CENTRALIZED GOVERNANCE**  
-> This file's content has been integrated into **[`/.ai/OUTPUT_RULES.md`](../../.ai/OUTPUT_RULES.md)** as part of the centralized AI instruction system.  
-> **All AI tools should reference**: `/.ai/SYSTEM.md` → `/.ai/OUTPUT_RULES.md`  
-> This file is preserved for historical reference and manual QA procedures.
+> ⚠️ **CENTRALIZED GOVERNANCE**  
+> This file is maintained for historical reference only.  
+> **Authoritative source:** [/.ai/OUTPUT_RULES.md](../../.ai/OUTPUT_RULES.md)  
+> **AI tools must reference:** `/.ai/SYSTEM.md` → `/.ai/OUTPUT_RULES.md`  
+> All standards below are enforced by CI and manual QA.
 
 ---
 
-## 🎯 Quality Goals for Tillerstead Site
-When working on this repository, prioritize:
-- **HTML Modernization**: Use latest semantic HTML5 standards for better SEO and accessibility
-- **SEO Excellence**: Ensure all pages have proper meta tags, Open Graph data, and structured data
-- **Brand Consistency**: Maintain cohesive design using the token-based theme system
-- **Performance**: Keep the site fast and lightweight (LCP < 2.5s, CLS < 0.1)
-- **Accessibility**: Ensure WCAG 2.1 AA compliance minimum
+## 🎯 Tillerstead Quality Objectives
+
+- **Semantic HTML5**: Use `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>` for structure.  
+  *Reference: [OUTPUT_RULES.md §HTML]*  
+- **SEO Compliance**: Every page must include unique `<title>`, meta description, Open Graph, Twitter Card, canonical URL, and viewport meta.  
+  *Reference: [OUTPUT_RULES.md §SEO]*  
+- **Brand Consistency**: All colors, typography, and spacing must use CSS custom properties from `_sass/base/_tokens.scss`.  
+  *Reference: [STYLE.md §Design System]*  
+- **Performance**: LCP < 2.5s, CLS < 0.1, TTI < 3s, FCP < 1.8s.  
+  *Reference: [OUTPUT_RULES.md §Performance]*  
+- **Accessibility**: WCAG 2.1 AA minimum. All images require descriptive `alt` text; ensure keyboard navigation and ARIA compliance.  
+  *Reference: [OUTPUT_RULES.md §Accessibility], [COMPLIANCE.md §Legal]*  
+- **Technical Authority**: Cite TCNA 2024 and NJ HIC standards where relevant.  
+  *Reference: [DOMAIN.md §Compliance]*
+
+---
 
 ## 🌐 SEO & Performance Checklist
-When adding or modifying HTML pages, ensure:
 
-### HTML5 Best Practices
-- Use semantic structure: `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`
-- Include proper heading hierarchy (single `<h1>`, logical progression)
-- Add `loading="lazy"` for non-critical images with `srcset` for responsive images
-- Use `async` or `defer` for JavaScript loading
-- Include `rel="preload"` for critical fonts and hero images
+- **HTML5 Structure**:  
+  - Single `<h1>` per page; logical heading order.  
+  - `loading="lazy"` and `srcset` for images.  
+  - Use `defer` or `type="module"` for scripts.  
+  - `rel="preload"` for critical fonts/images.
 
-### Required Meta Tags
-Every page must have:
-- Unique `<title>` tag (50-60 characters)
-- Meta description (150-160 characters)
-- Open Graph tags (`og:title`, `og:description`, `og:image`, `og:url`)
-- Twitter Card tags
-- Canonical URL
-- Viewport meta tag
+- **Meta Tags (Required on Every Page):**  
+  - `<title>`: 50–60 chars, unique, TCNA/NJ HIC compliant.  
+  - `<meta name="description">`: 150–160 chars, service-specific.  
+  - Open Graph: `og:title`, `og:description`, `og:image`, `og:url`.  
+  - Twitter Card: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`.  
+  - `<link rel="canonical">`  
+  - `<meta name="viewport" content="width=device-width,initial-scale=1">`
 
-### Structured Data
-Include JSON-LD structured data where appropriate:
-- Organization schema for company pages
-- LocalBusiness schema for location/service pages
-- BreadcrumbList for navigation
-- Service schema for service descriptions
+- **Structured Data:**  
+  - Use JSON-LD for `LocalBusiness`, `Organization`, `Service`, and `BreadcrumbList` schemas.  
+  - Ensure all business info matches NJ HIC registration.
 
-### Performance Targets
-- Largest Contentful Paint (LCP): < 2.5 seconds
-- Time to Interactive (TTI): < 3 seconds
-- Cumulative Layout Shift (CLS): < 0.1
-- First Contentful Paint (FCP): < 1.8 seconds
+- **Performance Targets:**  
+  - LCP < 2.5s  
+  - TTI < 3s  
+  - CLS < 0.1  
+  - FCP < 1.8s  
+  - Optimize images (WebP preferred), minimize HTTP requests, inline critical CSS.
+
+---
 
 ## 🎨 Brand & Design Standards
 
-### Design Token Usage
-Always use CSS custom properties from `_sass/base/_tokens.scss`:
-- Colors: `var(--color-primary)`, `var(--color-accent)`, etc.
-- Typography: `var(--font-sans)`, `var(--heading-1)`, etc.
-- Spacing: `var(--space-1)` through `var(--space-12)`
-- Shadows: `var(--shadow-soft)`, `var(--shadow-lift)`
-- Borders: `var(--radius-sm)`, `var(--radius-pill)`
+- **Design Tokens:**  
+  - Use only variables from `_sass/base/_tokens.scss` for all colors, typography, spacing, shadows, and radii.  
+  - Never hardcode colors or fonts.  
+  - Utility classes for spacing, backgrounds, and typography.
 
-### CSS Best Practices
-- Never use hardcoded colors; always reference design tokens
-- Keep component styles modular and reusable
-- Use utility classes for common patterns
-- Maintain mobile-first responsive design
-- Ensure sufficient color contrast (4.5:1 for text, 3:1 for UI)
+- **CSS Practices:**  
+  - Modular, reusable, mobile-first.  
+  - Minimum 4.5:1 contrast for text, 3:1 for large/bold text.  
+  - No !important except for documented accessibility overrides.
+
+---
 
 ## 🔧 Quality Control Process
 
-### Pre-Commit Checklist
-Before creating a PR:
-```bash
-# Install dependencies
-npm install
+- **Pre-Commit:**  
+  - `npm ci`  
+  - `npm run lint`  
+  - `bundle install && bundle exec jekyll build`  
+  - All changes must pass HTMLHint, ESLint, and Jekyll build.
 
-# Run linters
-npm run lint
+- **Code Review:**  
+  1. Semantic HTML5 and heading order  
+  2. Accessibility: ARIA, keyboard, alt text  
+  3. SEO: meta tags, structured data, canonical URLs  
+  4. Performance: image optimization, lazy loading, minimal JS  
+  5. Brand: design tokens, utility classes  
+  6. Code: clean, maintainable, no dead code  
+  7. Security: no secrets, XSS protection
 
-# Build Jekyll site (if Ruby/Bundler available)
-bundle install
-bundle exec jekyll build
-```
-
-### Code Review Focus Areas
-When reviewing code, check for:
-1. **Semantic HTML**: Proper use of HTML5 elements
-2. **Accessibility**: ARIA labels, keyboard navigation, screen reader support
-3. **SEO**: Meta tags, structured data, heading hierarchy
-4. **Performance**: Image optimization, lazy loading, minimal JS
-5. **Design Consistency**: Use of design tokens, brand colors
-6. **Code Quality**: Clean, readable, maintainable code
-7. **Security**: No hardcoded credentials, XSS protection
+---
 
 ## 📊 Quality Metrics
 
-### Automated Checks (CI)
-- ESLint: JavaScript code quality and standards
-- HTMLHint: HTML structure and syntax validation
-- Jekyll Build: Site generation without errors
+- **Automated:**  
+  - ESLint (JavaScript)  
+  - HTMLHint (HTML)  
+  - Jekyll build (site generation)
 
-### Manual Review Areas
-- Visual design consistency across pages
-- Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
-- Mobile responsiveness (320px to 1920px viewports)
-- Accessibility with keyboard-only navigation
-- Load time and performance on slow connections
+- **Manual:**  
+  - Visual consistency  
+  - Cross-browser (Chrome, Firefox, Safari, Edge)  
+  - Mobile responsiveness (320–1920px)  
+  - Keyboard navigation  
+  - Lighthouse: performance, accessibility, SEO  
+  - W3C HTML validation
 
-## 🛠️ Useful Tools & Scripts
+---
 
-### SEO Audit Script
-Create `scripts/seo-audit.js` to check SEO requirements:
-```javascript
-const glob = require('glob');
-const fs = require('fs');
+## 🛠️ Tools & Scripts
 
-const files = glob.sync('**/*.html', { 
-  ignore: ['node_modules/**', '_site/**', 'vendor/**'] 
-});
+- **SEO Audit:**  
+  - `scripts/seo-audit.js` checks for required meta tags and outputs `seo-audit.md`.  
+  - Run: `node scripts/seo-audit.js`
 
-let report = '# SEO Audit Report\n\n';
-let issues = 0;
+- **Contrast Checker:**  
+  - Use [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)  
+  - Validate all text/background pairs using design tokens.
 
-files.forEach(f => {
-  const content = fs.readFileSync(f, 'utf8');
-  const hasTitle = /<title[^>]*>.*<\/title>/i.test(content);
-  const hasMetaDesc = /<meta\s+name=["']description["']/i.test(content);
-  const hasOG = /<meta\s+property=["']og:/i.test(content);
-  const hasViewport = /<meta\s+name=["']viewport["']/i.test(content);
-  
-  report += `## ${f}\n`;
-  report += `- Title tag: ${hasTitle ? '✅' : '❌'}\n`;
-  report += `- Meta description: ${hasMetaDesc ? '✅' : '❌'}\n`;
-  report += `- Open Graph tags: ${hasOG ? '✅' : '❌'}\n`;
-  report += `- Viewport meta: ${hasViewport ? '✅' : '❌'}\n\n`;
-  
-  if (!hasTitle || !hasMetaDesc || !hasOG || !hasViewport) issues++;
-});
+---
 
-report += `\n---\n**Summary**: ${issues} pages need attention\n`;
-fs.writeFileSync('seo-audit.md', report);
-console.log(`✅ SEO audit complete: ${files.length} pages checked, ${issues} need attention`);
-```
+## 📝 Documentation & Commit Standards
 
-Run with: `node scripts/seo-audit.js`
+- **Comments:**  
+  - Document complex logic, browser workarounds, and accessibility overrides.
 
-### Contrast Checker
-For checking color contrast ratios:
-- Online tool: https://webaim.org/resources/contrastchecker/
-- Check all text against backgrounds using design tokens
-- Ensure 4.5:1 ratio for normal text, 3:1 for large text (18px+ or 14px+ bold)
+- **File Headers:**  
+  - For major CSS/JS files, include a header with purpose, dependencies, and notes.
 
-## 📝 Documentation Standards
+- **Commit Messages:**  
+  - Use [Conventional Commits](https://www.conventionalcommits.org/):  
+    - `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `chore:`
+  - Example: `feat: add TCNA-compliant contact form with ARIA validation`
 
-### Code Comments
-- Add comments for complex logic or non-obvious implementations
-- Document any workarounds or browser-specific fixes
-- Keep comments up-to-date with code changes
-
-### File Headers
-For significant CSS or JS files, include a header:
-```css
-/**
- * Component Name - Brief Description
- * 
- * Purpose: Explain what this file does
- * Dependencies: List any dependencies
- * Notes: Any important considerations
- */
-```
-
-### Commit Messages
-Follow conventional commits format:
-- `feat:` New feature
-- `fix:` Bug fix
-- `docs:` Documentation changes
-- `style:` Formatting, missing semi-colons, etc.
-- `refactor:` Code restructuring without changing behavior
-- `perf:` Performance improvements
-- `test:` Adding or updating tests
-- `chore:` Maintenance tasks
-
-Example: `feat: add contact form to homepage with validation`
+---
 
 ## 🚀 Continuous Improvement
 
-### Regular Maintenance Tasks
-- Update dependencies quarterly (check for security updates)
-- Review and update SEO meta tags as content changes
-- Audit accessibility with screen readers
-- Check performance metrics with Lighthouse
-- Validate HTML with W3C validator
-- Test on real devices (not just browser DevTools)
+- **Quarterly:**  
+  - Update dependencies, review SEO/meta, audit accessibility, run Lighthouse, validate HTML, test on real devices.
 
-### Learning & Evolution
-- Stay current with web standards and best practices
-- Test new CSS features with progressive enhancement
-- Monitor Core Web Vitals in production
-- Gather user feedback on accessibility and usability
+- **Ongoing:**  
+  - Monitor Core Web Vitals, gather user feedback, stay current with TCNA/NJ HIC and web standards.
+
+---
+
+**Reference:**  
+- [/.ai/SYSTEM.md](../../.ai/SYSTEM.md)  
+- [/.ai/OUTPUT_RULES.md](../../.ai/OUTPUT_RULES.md)  
+- [/.ai/STYLE.md](../../.ai/STYLE.md)  
+- [/.ai/DOMAIN.md](../../.ai/DOMAIN.md)  
+- [/.ai/COMPLIANCE.md](../../.ai/COMPLIANCE.md)

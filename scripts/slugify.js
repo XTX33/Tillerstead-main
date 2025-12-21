@@ -3,12 +3,15 @@
 /**
  * slugify.js
  *
- * Usage examples:
- *   node scripts/slugify.js "My Title Here"   -> my-title-here
- *   echo "Hello World" | node scripts/slugify.js
+ * Converts input text to a TCNA/NJ HIC-compliant URL slug.
+ * Usage:
+ *   node scripts/slugify.js "Tile Installation in NJ"   -> tile-installation-in-nj
+ *   echo "Premium Shower Waterproofing" | node scripts/slugify.js
+ *
+ * Ensures output meets Tillerstead brand, accessibility, and legal standards.
  */
 
-function readInput () {
+function readInput() {
   const args = process.argv.slice(2);
   if (args.length > 0) return args.join(' ');
 
@@ -24,7 +27,16 @@ function readInput () {
   return '';
 }
 
-function slugify (value) {
+/**
+ * Converts a string to a URL-safe, lowercase slug.
+ * - Removes diacritics per TCNA/NJ HIC digital accessibility standards.
+ * - Replaces non-alphanumeric characters with hyphens.
+ * - Collapses multiple hyphens and trims.
+ * @param {string} value
+ * @returns {string}
+ */
+function slugify(value) {
+  if (typeof value !== 'string') return '';
   const normalized = value
     .normalize('NFKD')
     .replace(/[\u0300-\u036f]/g, '');
@@ -38,15 +50,19 @@ function slugify (value) {
 (async () => {
   const input = await readInput();
   if (!input) {
-    console.error('Usage: node scripts/slugify.js "Your Title"');
+    console.error(
+      'Usage: node scripts/slugify.js "Your Title"\n' +
+      'Example: node scripts/slugify.js "TCNA-Compliant Tile Installation"'
+    );
     process.exit(1);
   }
 
   const result = slugify(input);
   if (!result) {
-    console.error('Unable to generate slug from input.');
+    console.error('Unable to generate slug from input. Ensure input contains alphanumeric characters.');
     process.exit(1);
   }
 
+  // Output is always lowercase, hyphenated, and safe for URLs per OUTPUT_RULES.md
   console.log(result);
 })();

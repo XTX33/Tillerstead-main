@@ -1,78 +1,78 @@
 primary:
   - id: services
-    title: Services
+    title: Tile & Remodeling Services
     url: /services/
-    match: /services/
+    match: ^/services/
   - id: portfolio
-    title: Our Work
+    title: Project Portfolio
     url: /portfolio/
-    match: /portfolio/
+    match: ^/portfolio/
   - id: reviews
-    title: Reviews
+    title: Verified Client Reviews
     url: /reviews/
-    match: /reviews/
+    match: ^/reviews/
   - id: about
-    title: About
+    title: About Tillerstead
     url: /about/
-    match: /about/
+    match: ^/about/
   - id: contact
-    title: Contact
+    title: Request a Consultation
     url: /contact/
-    match: /contact/
+    match: ^/contact/
 
 secondary:
   - id: portfolio
-    title: Portfolio
+    title: Project Portfolio
     url: /portfolio/
-    match: /portfolio/
+    match: ^/portfolio/
   - id: gc
-    title: Contractors
+    title: For General Contractors
     url: /for-general-contractors/
-    match: /for-general-contractors/
+    match: ^/for-general-contractors/
   - id: reviews
-    title: Reviews
+    title: Verified Client Reviews
     url: /reviews/
-    match: /reviews/
+    match: ^/reviews/
   - id: about
-    title: About
+    title: About Tillerstead
     url: /about/
-    match: /about/
+    match: ^/about/
   - id: financing
-    title: Financing
+    title: Financing Options
     url: /financing/
-    match: /financing/
+    match: ^/financing/
   - id: contact
-    title: Contact
+    title: Request a Consultation
     url: /contact/
-    match: /contact/
+    match: ^/contact/
   - id: blog
-    title: Blog
+    title: Tile & Remodeling Insights
     url: /blog/
-    match: /blog/
+    match: ^/blog/
   - id: atlantic-county
-    title: Atlantic County NJ
+    title: Atlantic County, NJ Projects
     url: /atlantic-county-nj/
-    match: /atlantic-county-nj/
+    match: ^/atlantic-county-nj/
   - id: ocean-county
-    title: Ocean County NJ
+    title: Ocean County, NJ Projects
     url: /ocean-county-nj/
-    match: /ocean-county-nj/
+    match: ^/ocean-county-nj/
   - id: cape-may-county
-    title: Cape May County NJ
+    title: Cape May County, NJ Projects
     url: /cape-may-county-nj/
-    match: /cape-may-county-nj/
+    match: ^/cape-may-county-nj/
   - id: download-guide
-    title: Free NJ Tile Guide
+    title: Free NJ Tile Standards Guide
     url: /download/nj-tile-guide/
-    match: /download/
+    match: ^/download/nj-tile-guide/
   - id: privacy
-    title: Privacy
+    title: Privacy Policy
     url: /privacy/
-    match: /privacy/
+    match: ^/privacy/
   - id: terms
     title: Terms & Conditions
     url: /terms/
-    match: /terms/
+    match: ^/terms/
 
 footer:
   - ref: services

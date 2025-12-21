@@ -1,3 +1,7 @@
+{%- comment -%}
+  Section: Hero
+  Loads hero data from include or site default, then renders unified hero component.
+{%- endcomment -%}
 {% assign hero = include.data | default: site.data.home.hero %}
 
 {% if hero.title or hero.summary %}
@@ -10,8 +14,8 @@
     primary_url=hero.primary.url
     secondary_label=hero.secondary.label
     secondary_url=hero.secondary.url
-    hero_project=hero_image
     hero_image=hero_image
     facts=hero.facts
-    bullets=hero.highlights %}
+    bullets=hero.highlights
+  %}
 {% endif %}

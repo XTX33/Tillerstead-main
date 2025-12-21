@@ -10,6 +10,7 @@
   data-netlify="true"
   netlify-honeypot="_trap_short"
   aria-live="polite"
+  novalidate
 >
   <!-- Netlify-required -->
   <input type="hidden" name="form-name" value="{{ include.form_name | default: 'contact-short' }}">
@@ -20,14 +21,14 @@
 
   <!-- Honeypot -->
   <p class="sr-only">
-    <label for="_trap_short">Do not fill this field</label>
-    <input id="_trap_short" name="_trap_short" type="text" tabindex="-1" autocomplete="off">
+    <label for="_trap_short">Do not fill this field (anti-spam)</label>
+    <input id="_trap_short" name="_trap_short" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
   </p>
 
   <div class="form-grid">
     <div class="form-field">
       <label for="{{ include.prefix }}name-short">
-        Name <span aria-hidden="true">*</span>
+        Full Name <span aria-hidden="true">*</span>
       </label>
       <input
         id="{{ include.prefix }}name-short"
@@ -35,13 +36,14 @@
         type="text"
         required
         autocomplete="name"
-        placeholder="Your name"
+        placeholder="Your full legal name (NJ HIC requirement)"
+        aria-required="true"
       >
     </div>
 
     <div class="form-field">
       <label for="{{ include.prefix }}email-short">
-        Email <span aria-hidden="true">*</span>
+        Email Address <span aria-hidden="true">*</span>
       </label>
       <input
         id="{{ include.prefix }}email-short"
@@ -51,12 +53,13 @@
         autocomplete="email"
         inputmode="email"
         placeholder="you@example.com"
+        aria-required="true"
       >
     </div>
 
     <div class="form-field">
       <label for="{{ include.prefix }}phone-short">
-        Phone
+        Phone Number (for scheduling)
       </label>
       <input
         id="{{ include.prefix }}phone-short"
@@ -65,44 +68,48 @@
         autocomplete="tel"
         inputmode="tel"
         placeholder="{{ site.company.phone_display | default: '(609) 862-8808' }}"
+        aria-describedby="{{ include.prefix }}phone-desc-short"
       >
+      <small id="{{ include.prefix }}phone-desc-short" class="form-desc">
+        Optional, but recommended for prompt scheduling and compliance.
+      </small>
     </div>
 
     <div class="form-field">
-      <label for="{{ include.prefix }}project-type-short">Project type</label>
-      <select id="{{ include.prefix }}project-type-short" name="project_type">
-        <option value="">Select an option</option>
-        <option>Monthly Maintenance Plan</option>
-        <option>Kitchen or Bathroom Remodel</option>
-        <option>Tile Installation (shower, floor, backsplash)</option>
-        <option>Repairs / Service Call</option>
-        <option>Flooring installation</option>
-        <option>Other / Not sure yet</option>
+      <label for="{{ include.prefix }}project-type-short">Project Type <span aria-hidden="true">*</span></label>
+      <select id="{{ include.prefix }}project-type-short" name="project_type" required aria-required="true">
+        <option value="">Select your project type</option>
+        <option value="maintenance-plan">Monthly Maintenance Plan (TCNA/NJ HIC compliant)</option>
+        <option value="remodel">Kitchen or Bathroom Remodel (full scope)</option>
+        <option value="tile-installation">Tile Installation (shower, floor, backsplash)</option>
+        <option value="repairs-service">Repairs / Service Call (diagnostics, TCNA standards)</option>
+        <option value="flooring-installation">Flooring Installation (tile, LVT, hardwood)</option>
+        <option value="other">Other / Not sure yet (consultation available)</option>
       </select>
     </div>
   </div>
 
   <div class="form-field">
     <label for="{{ include.prefix }}details-short">
-      Project details <span aria-hidden="true">*</span>
+      Project Details <span aria-hidden="true">*</span>
     </label>
     <textarea
       id="{{ include.prefix }}details-short"
       name="details"
       rows="4"
       required
-      placeholder="Share a quick overview of your project or maintenance request."
+      placeholder="Describe your project, location, and any TCNA/NJ HIC requirements. The more detail, the more accurate your estimate."
+      aria-required="true"
     ></textarea>
   </div>
 
   <p class="form-note">
-    I’ll review your request personally and follow up with clear next steps. Your information is used only to respond and prepare your estimate.
+    Your request is reviewed personally by a TCNA-certified, NJ HIC-licensed professional. All information is confidential and used solely for your estimate and compliance. Expect a clear, jargon-free response outlining next steps and technical recommendations.
   </p>
 
   <button type="submit" class="btn btn-primary">
-    {{ include.button_label | default: 'Send my request' }}
+    {{ include.button_label | default: 'Request My Estimate' }}
   </button>
 
   <p id="{{ include.prefix }}form-status-short" data-form-status class="sr-only" role="status" aria-live="polite"></p>
-</form>
 </form>

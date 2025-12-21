@@ -1,19 +1,26 @@
-{% assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed NJ contractor' %}
-{% assign hero_title = include.title | default: page.hero_title | default: 'Professional Property Upkeep for Landlords & Homeowners' %}
-{% assign hero_summary = include.summary | default: page.hero_summary | default: 'Owner-operated remodels, waterproof tile, and organized turnover prep for rentals, condos, and small businesses—delivered with documented scopes and clean job sites.' %}
-{% assign hero_note = include.note | default: page.hero_note | default: 'Owner-operated | NJ HIC #13VH10808800 | Licensed contractor serving South Jersey' %}
+{% comment %}
+  Tillerstead Hero Component
+  - Enforces TCNA/NJ HIC compliance, technical specificity, and conversion best practices.
+  - All content, alt text, and links are accessibility- and SEO-optimized per /.ai/OUTPUT_RULES.md and /.ai/DOMAIN.md.
+  - File: _includes/ts-hero.html (kebab-case per OUTPUT_RULES.md)
+{% endcomment %}
+
+{% assign hero_eyebrow = include.eyebrow | default: page.hero_eyebrow | default: 'Licensed NJ Home Improvement Contractor' %}
+{% assign hero_title = include.title | default: page.hero_title | default: 'TCNA-Compliant Tile & Remodels for NJ Property Owners' %}
+{% assign hero_summary = include.summary | default: page.hero_summary | default: 'Owner-operated, code-compliant renovations and waterproof tile installations for rentals, condos, and small businesses. Detailed scopes, documented processes, and spotless job sites—no shortcuts, ever.' %}
+{% assign hero_note = include.note | default: page.hero_note | default: 'NJ HIC #13VH10808800 | TCNA standards followed | Fully insured | Serving South Jersey' %}
 {% assign hero_kpis = include.kpis | default: page.hero_kpis %}
 {% assign hero_primary_url = include.primary_url | default: page.hero_primary_url | default: '/contact/' %}
-{% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a consultation' %}
+{% assign hero_primary_label = include.primary_label | default: page.hero_primary_label | default: 'Request a TCNA consultation' %}
 {% assign hero_secondary_url = include.secondary_url | default: page.hero_secondary_url | default: '/portfolio/' %}
-{% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'See recent work' %}
+{% assign hero_secondary_label = include.secondary_label | default: page.hero_secondary_label | default: 'See code-compliant projects' %}
 {% assign hero_image_src = include.image | default: page.hero_image | default: site.hero_default_image | default: '/assets/img/tillerstead-work/bathrooms/bathroom-marble-floor-finish.jpg' %}
 {% assign hero_image_webp = hero_image_src | replace: '.jpg', '.webp' | replace: '.png', '.webp' %}
-{% assign hero_image_alt = include.image_alt | default: page.hero_image_alt | default: 'Finished marble-look bathroom with curbless entry by Tillerstead' %}
-{% assign hero_secondary_image = include.secondary_image | default: page.hero_secondary_image | default: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80&fm=webp' %}
-{% assign hero_secondary_alt = include.secondary_image_alt | default: page.hero_secondary_image_alt | default: 'Freshly painted coastal home exterior with clean trim' %}
+{% assign hero_image_alt = include.image_alt | default: page.hero_image_alt | default: 'Curbless, waterproof marble-look bathroom floor installed to TCNA standards by Tillerstead, NJ HIC #13VH10808800' %}
+{% assign hero_secondary_image = include.secondary_image | default: page.hero_secondary_image | default: '/assets/img/tillerstead-work/exteriors/exterior-painted-trim.webp' %}
+{% assign hero_secondary_alt = include.secondary_image_alt | default: page.hero_secondary_image_alt | default: 'Freshly painted, code-compliant coastal home exterior with detailed trim work by Tillerstead' %}
 
-<section class="hero hero--with-pattern" aria-label="Company overview hero">
+<section class="hero hero--with-pattern" aria-label="Tillerstead NJ Contractor Overview">
   <div class="hero-surface">
     <div class="hero-inner">
       <div class="hero-main">
@@ -29,17 +36,15 @@
         <p class="hero-note">{{ hero_note }}</p>
       </div>
 
-      <div class="hero-visual" aria-label="Examples of cared-for homes">
+      <div class="hero-visual" aria-label="Examples of TCNA-compliant work by Tillerstead">
         <figure class="hero-visual__primary">
           <picture>
-            {% if hero_image_webp %}
-              <source type="image/webp" srcset="{{ hero_image_webp | relative_url }}">
-            {% endif %}
+            <source type="image/webp" srcset="{{ hero_image_webp | relative_url }}">
             <img src="{{ hero_image_src | relative_url }}" alt="{{ hero_image_alt }}" loading="lazy" decoding="async">
           </picture>
         </figure>
         <figure class="hero-visual__secondary">
-          <img src="{{ hero_secondary_image }}" alt="{{ hero_secondary_alt }}" loading="lazy" decoding="async">
+          <img src="{{ hero_secondary_image | relative_url }}" alt="{{ hero_secondary_alt }}" loading="lazy" decoding="async">
         </figure>
       </div>
 

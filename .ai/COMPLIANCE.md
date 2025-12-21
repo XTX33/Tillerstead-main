@@ -1,87 +1,74 @@
-# COMPLIANCE.md — Legal & Ethical Boundaries
+# COMPLIANCE.md — Legal, Ethical & Safety Boundaries
 
-**Inherits From**: `SYSTEM.md`  
-**Scope**: Legal requirements, ethical constraints, and safety boundaries  
-**Authority**: NJ Consumer Fraud Act, HIC regulations, professional ethics
+**Inheritance**: `SYSTEM.md` → `COMPLIANCE.md`  
+**Scope**: Legal mandates, ethical constraints, safety protocols, and AI content boundaries  
+**Authority**: NJ Consumer Fraud Act, HIC regulations, OSHA, TCNA, ADA, EPA RRP
 
 ---
 
 ## PURPOSE
 
-This file defines legal, ethical, and safety boundaries for all AI-generated content related to Tillerstead LLC. All outputs must comply with:
-- New Jersey Home Improvement Contractor (HIC) regulations
-- NJ Consumer Fraud Act requirements
-- Industry safety standards (OSHA)
-- Professional ethics and licensing requirements
+This document codifies all legal, ethical, and safety requirements for Tillerstead LLC and governs all AI-generated content. All outputs must strictly comply with:
+
+- New Jersey Home Improvement Contractor (HIC) regulations (N.J.S.A. 56:8-136)
+- NJ Consumer Fraud Act
+- OSHA construction safety standards
+- TCNA (Tile Council of North America) installation standards
+- EPA RRP (lead/asbestos) protocols
+- ADA accessibility guidelines (where applicable)
+- Professional licensing and ethics
 
 ---
 
 ## NJ HOME IMPROVEMENT CONTRACTOR COMPLIANCE
 
-### License Information
-**Critical**: All contracts, estimates, and advertisements MUST include:
-- **License Number**: 13VH10808800
+### License & Disclosure
+
+**MANDATORY**: All contracts, estimates, and advertisements must display:
+
+- **NJ HIC License Number**: 13VH10808800
 - **Legal Business Name**: Tillerstead LLC
 - **Trade Scope**: Carpentry, Ceramic Tile, Waterproofing
 
-### Contract Requirements (N.J.S.A. 56:8-136)
+### Contract Requirements
 
-**Every written contract must include**:
-1. Contractor's full legal name, address, phone number
-2. **HIC license number prominently displayed**
-3. Detailed scope of work description
+Every written contract must include (per N.J.S.A. 56:8-136):
+
+1. Contractor’s full legal name, address, and phone number
+2. **Prominent HIC license number**
+3. Detailed scope of work (TCNA-compliant descriptions)
 4. Itemized cost breakdown (materials, labor, permits)
-5. Project start date and substantial completion date
-6. Payment schedule tied to work completion milestones
-7. **3-Day Right of Rescission notice** (bold, minimum 12pt font)
-8. Change order procedures and pricing
+5. Project start and substantial completion dates
+6. Payment schedule tied to measurable milestones
+7. **3-Day Right of Rescission notice** (bold, ≥12pt font)
+8. Change order process and pricing
 9. Warranty terms and duration
 10. Dispute resolution procedures
 
-**Sample 3-Day Rescission Language**:
+**Required 3-Day Rescission Language**:  
 > **THREE-DAY RIGHT TO CANCEL**  
 > You, the buyer, may cancel this transaction at any time prior to midnight of the third business day after the date of this transaction. See the attached notice of cancellation form for an explanation of this right.
 
-### Payment Restrictions (Critical)
+### Payment Restrictions
 
-**Deposit Limits**:
-- **Maximum initial deposit**: 10% of total contract price OR $1,000 (whichever is LESS)
-- **Violation penalties**: Up to $10,000 per violation + treble damages to homeowner
+- **Initial deposit**: Max 10% of contract price or $1,000 (whichever is less)
+- **Progress payments**: Tied to verifiable completion milestones
+- **Final payment**: At least 10% retained until substantial completion
+- **No full payment upfront** (strictly prohibited)
 
-**Payment Schedule Requirements**:
-- **Progress-based payments**: Tied to measurable completion milestones
-- **Never take full payment upfront**: Violates NJ law
-- **Final payment retention**: Minimum 10% held until substantial completion
+**Compliant Payment Example** (Backsplash, $2,500):
 
-**Examples of Compliant Payment Schedules**:
+- $250 deposit (10%)
+- $750 at substrate prep completion
+- $1,000 at tile installation completion
+- $500 after inspection/grout sealing
 
-**Kitchen Tile Backsplash ($2,500 total)**:
-- Deposit at contract signing: $250 (10%)
-- At substrate prep completion: $750
-- At tile installation completion: $1,000
-- Final payment after inspection/grout sealing: $500
+### Change Orders
 
-**Full Bathroom Remodel ($15,000 total)**:
-- Deposit: $1,000 (not $1,500 - limited to $1,000)
-- At demo completion: $3,000
-- At rough-in/waterproofing: $4,000
-- At tile installation: $4,500
-- Final at punch list completion: $2,500
-
-### Change Order Requirements
-
-**All changes to original scope must**:
-- Be documented in writing BEFORE work begins
-- Include itemized cost impact (positive or negative)
-- Be signed by both contractor and homeowner
-- Reference original contract number
-- Explain reason for change (homeowner request vs. unforeseen conditions)
-
-**Unforeseen Conditions**:
-- Must document with photos before proceeding
-- Provide written explanation and revised estimate
-- Obtain written approval before additional work
-- Cannot use as excuse for price escalation on predictable issues
+- All changes must be documented and signed before work begins
+- Itemize cost impact and reference original contract
+- Explain reason (homeowner request or unforeseen condition)
+- Unforeseen conditions require photo documentation and written approval
 
 ---
 
@@ -89,71 +76,53 @@ This file defines legal, ethical, and safety boundaries for all AI-generated con
 
 ### Required Disclosures
 
-**All advertisements must include**:
-- HIC license number: 13VH10808800
-- **Cannot make false or misleading claims**
-- **Cannot guarantee specific time frames without caveats**
-- **Cannot make comparative claims without substantiation**
+- HIC license number: 13VH10808800 on all ads
+- No false, misleading, or unsubstantiated claims
+- No guarantees of timeframes or outcomes unless contractually supported
 
-### Prohibited Marketing Practices
+### Prohibited Claims
 
-**Never state or imply**:
-❌ "Lowest prices guaranteed" (unless you actually price-match)
-❌ "Fastest installation in NJ" (unsubstantiated claim)
-❌ "100% waterproof guarantee" (no tile work is 100% guaranteed)
-❌ "Better than [named competitor]" (unfair comparison)
-❌ "No job too small" (if you have minimum project requirements)
-❌ "Emergency 24/7 service" (if you don't actually provide it)
+- ❌ “Lowest prices guaranteed” (unless price-match policy exists)
+- ❌ “Fastest installation in NJ” (unless substantiated)
+- ❌ “100% waterproof guarantee” (no tile system is 100% waterproof)
+- ❌ Comparative claims without evidence
+- ❌ “No job too small” (if minimums apply)
+- ❌ “Emergency 24/7 service” (unless actually provided)
 
-**Acceptable Marketing Claims**:
-✅ "Licensed NJ HIC contractor #13VH10808800"
-✅ "TCNA-compliant installations" (if you follow TCNA standards)
-✅ "Schluter System Certified Installer" (if certified)
-✅ "Serving South Jersey since [year]"
-✅ "Written estimates within 48 hours" (if you actually do this)
-✅ "Photo documentation of all installations"
+### Acceptable Claims
 
-### Testimonial & Review Requirements
+- ✅ “Licensed NJ HIC contractor #13VH10808800”
+- ✅ “TCNA-compliant installations”
+- ✅ “Schluter System Certified Installer” (if certified)
+- ✅ “Serving South Jersey since [year]”
+- ✅ “Written estimates within 48 hours” (if consistently delivered)
+- ✅ “Photo documentation of all installations”
 
-**Homeowner testimonials must**:
-- Be genuine (no fabricated reviews)
-- Not be incentivized (no payment for positive reviews)
-- Include first name + last initial OR full name with permission
-- Not make specific performance claims beyond scope (e.g., "increased home value by $50k")
+### Testimonials & Reviews
 
-**Photo usage**:
-- Obtain written permission before posting client project photos
-- Blur/crop identifying information (addresses, family photos, etc.)
-- Never use photos from other sources as your own work
+- Must be genuine, not incentivized or fabricated
+- Use first name + last initial or full name with permission
+- No specific performance claims beyond scope
+- Written permission required for all client project photos
+- Blur/crop identifying details; never use stock or competitor photos
 
 ---
 
 ## SAFETY & LIABILITY COMPLIANCE
 
-### OSHA Requirements
+### OSHA & TCNA Safety
 
-**Silica Dust Control (OSHA 1926.1153)**:
-- **Wet-cutting required** for all tile/stone cutting when feasible
-- **Respiratory protection**: N95 minimum when dry-cutting unavoidable
-- **Warning labels**: "Silica dust hazard - use respiratory protection"
-
-**Fall Protection (OSHA 1926.501)**:
-- **Required at 6+ feet** for residential construction
-- Proper scaffolding setup and guardrails
-- Ladder safety (Type 1 or 1A, 4:1 angle)
-
-**Chemical Safety**:
-- **Material Safety Data Sheets (SDS)**: Available on-site for all products
-- **PPE required**: Gloves for thinset/grout, eye protection for cutting
-- **Ventilation**: Adequate for adhesive/solvent products
+- **Silica Dust (OSHA 1926.1153)**: Wet-cutting required; N95 minimum for dry-cutting; silica hazard labels mandatory
+- **Fall Protection (OSHA 1926.501)**: Required at 6+ feet; proper scaffolding, guardrails, ladder safety
+- **Chemical Safety**: SDS on-site; PPE for thinset/grout; eye protection for cutting; adequate ventilation
 
 ### Liability Disclaimers
 
-**For DIY Content/Advice**:
-> **Disclaimer**: This information is for educational purposes. Tile installation involves specialized skills and tools. Improper installation can cause property damage, mold growth, and structural issues. Consult with a licensed professional before attempting complex installations. Tillerstead LLC assumes no liability for DIY project outcomes.
+**DIY Content**:  
+> **Disclaimer**: For educational purposes only. Tile installation requires specialized skills and tools. Improper installation can cause property damage, mold, and structural issues. Consult a licensed professional before attempting complex installations. Tillerstead LLC assumes no liability for DIY outcomes.
 
-**For Estimates/Proposals**:
-> **Note**: This estimate is based on visual inspection and homeowner representations. Unforeseen conditions (hidden rot, plumbing issues, structural damage) may affect final cost. All change orders will be documented and approved in writing before proceeding.
+**Estimates/Proposals**:  
+> **Note**: Estimate based on visual inspection and homeowner representations. Unforeseen conditions may affect final cost. All change orders will be documented and approved in writing.
 
 ---
 
@@ -161,35 +130,27 @@ This file defines legal, ethical, and safety boundaries for all AI-generated con
 
 ### Professional Standards
 
-**Must always**:
-- Recommend permits when required by code
-- Advise against illegal or unsafe practices
-- Disclose conflicts of interest (manufacturer partnerships, referral fees)
-- Respect competitor work (critique methods, not individuals)
-- Honor quoted prices unless material conditions change materially
+**Always**:
 
-**Must never**:
-- Knowingly violate building codes
-- Conceal defects or installation failures
+- Recommend permits when code requires
+- Advise against illegal/unsafe practices
+- Disclose conflicts of interest
+- Critique methods, not individuals
+- Honor quoted prices unless conditions materially change
+
+**Never**:
+
+- Violate building codes
+- Conceal defects or failures
 - Misrepresent material quality or source
-- Promise timelines you can't meet
+- Promise timelines that can’t be met
 - Accept payment for incomplete work
-- Work without proper insurance coverage
+- Work without proper insurance
 
-### Client Communication Ethics
+### Client Communication
 
-**Required disclosures**:
-- Lead times for custom materials
-- Warranty limitations (e.g., grout staining is maintenance, not defect)
-- Maintenance requirements (sealing schedules)
-- Realistic project duration (include buffer for delays)
-
-**Prohibited practices**:
-- Ghosting clients (no response to calls/texts)
-- Bait-and-switch (low initial quote, then escalate costs)
-- Pressure tactics ("price only good today")
-- Disparaging other contractors by name
-- Promising work outside scope of license
+- Disclose lead times, warranty limitations, maintenance requirements, and realistic project durations
+- Never ghost clients, bait-and-switch, use pressure tactics, or disparage competitors by name
 
 ---
 
@@ -197,134 +158,97 @@ This file defines legal, ethical, and safety boundaries for all AI-generated con
 
 ### Lead Paint & Asbestos (Pre-1978 Homes)
 
-**Requirements**:
-- **EPA RRP Rule**: Renovation, Repair, and Painting in pre-1978 homes
-- **Lead testing**: Required before disturbing painted surfaces
-- **Asbestos**: Suspect materials (9"×9" tile, old mastic) require testing
-- **Certified renovator**: Must be on-site for lead work
+- **EPA RRP Rule**: Lead testing before disturbing painted surfaces
+- **Asbestos**: Test suspect materials (e.g., 9"x9" tile, old mastic)
+- **Certified renovator**: Required for lead work
 
-**Warning to homeowners**:
-> **Important**: Homes built before 1978 may contain lead paint. Disturbing lead paint can cause serious health risks. We will assess for lead hazards and follow EPA RRP protocols if present. Asbestos testing may be required for older flooring materials.
+**Homeowner Warning**:  
+> **Important**: Homes built before 1978 may contain lead paint. Disturbing lead paint can cause serious health risks. We assess for lead hazards and follow EPA RRP protocols. Asbestos testing may be required for older flooring.
 
-### Accessibility (ADA Considerations)
+### Accessibility (ADA)
 
-**When relevant**:
-- Curbless/roll-in showers for wheelchair access
-- Grab bar blocking during framing
-- Slip-resistant tile for accessible showers
-- Proper slope requirements (1:12 for wheelchair ramps)
-
-**Disclosure**:
-- Note: "This installation may not meet ADA accessibility standards. Consult with accessibility specialist if needed."
+- Curbless/roll-in showers, grab bar blocking, slip-resistant tile, and 1:12 slope for ramps when relevant
+- **Disclosure**:  
+    > This installation may not meet ADA accessibility standards. Consult an accessibility specialist if needed.
 
 ---
 
 ## DATA PRIVACY & SECURITY
 
-### Client Information Protection
-
-**Must protect**:
-- Home addresses (do not post publicly)
-- Contact information (phone, email)
-- Financial information (credit cards, payment details)
-- Project photos (with identifying details)
-
-**Marketing use**:
-- Obtain written permission before posting client projects
-- Use first name + last initial unless full permission granted
-- Blur identifying information in photos (addresses, personal items)
-
-**Record retention**:
-- Keep contracts and photos for minimum 7 years (NJ statute of limitations)
-- Store securely (encrypted digital or locked physical files)
-- Destroy/delete after retention period
+- Protect all client addresses, contact, financial info, and project photos
+- Written permission required for marketing use of client projects
+- Blur identifying info in all published photos
+- Retain contracts/photos for 7 years (NJ statute); store securely; destroy after retention
 
 ---
 
 ## INSURANCE & WARRANTY COMPLIANCE
 
-### Required Insurance Coverage
+### Insurance
 
-**General Liability**:
-- **Minimum**: $1,000,000 per occurrence
-- **Aggregate**: $2,000,000
-- **Includes**: Property damage, bodily injury, completed operations
+- **General Liability**: $1M per occurrence, $2M aggregate (property, injury, completed ops)
+- **Workers Comp**: Required for all employees/subs; penalties up to $10,000/day for non-compliance
+- **Certificate of Insurance**: Provided to homeowners on request; must be current and name homeowner as “Additional Insured” if requested
 
-**Workers Compensation**:
-- **Required**: If any employees (including subcontractors in some cases)
-- **Penalties**: Up to $10,000 per day for non-compliance
+### Warranty
 
-**Certificate of Insurance**:
-- Must provide to homeowners upon request
-- Must be current and name homeowner as "Additional Insured" if requested
-
-### Warranty Requirements
-
-**Standard warranty terms**:
-- **Installation workmanship**: Minimum 1 year (Tillerstead standard: 2 years)
-- **Material defects**: Covered by manufacturer warranty (pass-through)
+- **Workmanship**: 2 years (Tillerstead standard; minimum 1 year by law)
+- **Material defects**: Manufacturer warranty (pass-through)
 - **Exclusions**: Normal wear, improper maintenance, homeowner damage
 
-**Written warranty language**:
-> **Installation Warranty**: Tillerstead LLC warrants tile installation workmanship for 2 years from substantial completion. This warranty covers installation defects including: delamination, cracking due to improper substrate prep, grout failure, and waterproofing failures. Warranty does not cover: normal wear, impact damage, improper maintenance, or tile/material defects (covered by manufacturer). Warranty is void if unauthorized repairs are attempted.
+**Warranty Language**:  
+> **Installation Warranty**: Tillerstead LLC warrants tile installation workmanship for 2 years from substantial completion. Covers installation defects (delamination, substrate prep, grout, waterproofing failures). Excludes normal wear, impact damage, improper maintenance, or manufacturer defects. Warranty void if unauthorized repairs are attempted.
 
 ---
 
 ## DISPUTE RESOLUTION & COMPLAINTS
 
-### Complaint Handling Process
+### Complaint Handling
 
-**Required response**:
-1. Acknowledge complaint within 24 hours
-2. Schedule inspection within 3-5 business days
-3. Provide written assessment and remedy plan
-4. Complete corrective work within reasonable timeframe
-5. Document all communications and resolutions
+1. Acknowledge within 24 hours
+2. Schedule inspection within 3–5 business days
+3. Provide written assessment/remedy plan
+4. Complete corrective work promptly
+5. Document all communications/resolutions
 
-**Escalation paths**:
-- NJ Division of Consumer Affairs (HIC complaints)
-- Better Business Bureau (BBB)
-- Local licensing authority
-- Small claims court (under $15,000 in NJ)
-- Arbitration (if specified in contract)
+**Escalation**:  
+- NJ Division of Consumer Affairs  
+- BBB  
+- Local licensing authority  
+- Small claims court (<$15,000)  
+- Arbitration (if in contract)
 
-### NJ HIC Complaint Process
+**HIC Complaint Response**:  
+- Respond promptly to Division  
+- Provide contract, payment, and photo records  
+- Offer good-faith resolution  
+- Multiple unresolved complaints risk license suspension
 
-**If homeowner files HIC complaint**:
-- Respond promptly to Division requests
-- Provide contract, payment records, photos
-- Offer good-faith resolution
-- **Know that**: Multiple unresolved complaints can result in license suspension
-
-**Preventive measures**:
-- Over-communicate during project
-- Document everything with photos and emails
-- Address concerns immediately
-- Offer reasonable remedies for legitimate issues
+**Prevention**:  
+- Over-communicate, document with photos/emails, address concerns immediately, offer reasonable remedies
 
 ---
 
 ## AI CONTENT GENERATION RULES
 
-### Prohibited AI-Generated Content
+### Strictly Prohibited
 
-**Never generate**:
-- Fabricated testimonials or reviews
-- False claims about certifications or licenses
-- Misleading before/after comparisons (using others' work)
-- Medical/health claims (e.g., "prevents respiratory illness")
-- Legal advice (refer to attorney)
-- Specific guarantee of outcomes ("guaranteed to increase home value")
+- Fabricated testimonials/reviews
+- False claims about certifications/licenses
+- Misleading before/after photos
+- Medical/health claims
+- Legal advice
+- Guaranteed outcomes (“guaranteed to increase home value”)
 
 ### Required Disclaimers
 
-**For educational content**:
-> This content is for informational purposes only and does not constitute professional advice. Consult with a licensed contractor for your specific project.
+**Educational Content**:  
+> This content is for informational purposes only and does not constitute professional advice. Consult a licensed contractor for your specific project.
 
-**For estimates/pricing**:
+**Estimates/Pricing**:  
 > Pricing is approximate and based on typical conditions. Actual costs may vary based on site-specific factors, material selections, and unforeseen conditions.
 
-**For DIY advice**:
+**DIY Advice**:  
 > DIY tile installation requires specialized skills and tools. Improper installation can cause costly damage. Consider hiring a licensed professional for complex projects.
 
 ---
@@ -332,10 +256,11 @@ This file defines legal, ethical, and safety boundaries for all AI-generated con
 ## COMPLIANCE CHECKLIST
 
 Before publishing any AI-generated content, verify:
+
 - [ ] HIC license number included where required
-- [ ] No false or misleading claims
-- [ ] Safety warnings included for DIY content
-- [ ] Disclaimers present for estimates/advice
+- [ ] No false/misleading claims
+- [ ] Safety warnings for DIY content
+- [ ] Disclaimers for estimates/advice
 - [ ] No prohibited comparative claims
 - [ ] Testimonials are genuine (if used)
 - [ ] Photo permissions obtained
@@ -345,6 +270,7 @@ Before publishing any AI-generated content, verify:
 
 ---
 
-**Version**: 1.0.0  
-**Last Updated**: December 20, 2025  
-**Legal Authority**: NJ Consumer Fraud Act (N.J.S.A. 56:8-136), NJ HIC Regulations, OSHA Standards
+**Version**: 1.0.1  
+**Last Updated**: June 2024  
+**Legal Authority**: NJ Consumer Fraud Act (N.J.S.A. 56:8-136), NJ HIC Regulations, OSHA, TCNA, EPA RRP, ADA
+

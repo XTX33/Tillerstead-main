@@ -1,24 +1,25 @@
 # Execution Plan
 
-## Phase 1 — Build & CI safety net
-- Clean the repo of accidental build artifacts (e.g., `tmp.css`) and pin any missing dev tools so `npm run dev`/`serve` work without global installs.
-- Re-point CI and Pages workflows to the actual default branch and defuse the destructive branch-pruning workflow until safeguards exist.
-- Rationale: Ensures developers and automation share the same predictable toolchain and prevents silent CI/Pages gaps or accidental branch loss.
-- Risks: Low; branch-workflow edits should be coordinated with repo admins to confirm the intended default branch.
+## Phase 1 — Repository Hygiene & CI Reliability
+- Remove all accidental build artifacts (e.g., `tmp.css`) and ensure all dev dependencies are explicitly pinned in `package.json` so `npm run dev` and `npm run serve` function without global installs.  
+- Update CI and GitHub Pages workflows to reference the actual default branch (`main`). Temporarily disable any destructive branch-pruning workflows until robust safeguards and admin sign-off are in place.  
+- **Rationale:** Guarantees a reproducible, standards-compliant toolchain for all contributors and automation, eliminating silent CI/Pages failures and accidental branch loss.  
+- **Risks:** Minimal; coordinate workflow changes with repository administrators to confirm branch protection and compliance with NJ HIC recordkeeping.
 
-## Phase 2 — Contact form delivery & layout
-- Normalize the contact form to a single submission backend, remove conflicting attributes, and fix the duplicate `action` so requests reach the intended endpoint.
-- Add scoped layout styles for `.ts-contact__grid`, `.ts-contact__fields`, and `.ts-contact__panel` to achieve the intended two-column layout with accessible stacking on mobile.
-- Rationale: Restores lead capture reliability and improves usability of the highest-intent CTA.
-- Risks: Medium; switching endpoints may require updating spam protections/notifications with the chosen provider.
+## Phase 2 — Contact Form Integrity & Accessible Layout
+- Standardize the contact form to a single, secure submission endpoint. Remove conflicting or duplicate attributes (e.g., multiple `action` values) to ensure all requests are reliably delivered and logged per NJ HIC requirements.  
+- Implement scoped, accessible CSS for `.ts-contact__grid`, `.ts-contact__fields`, and `.ts-contact__panel` to achieve a responsive two-column layout that meets WCAG 2.1 AA standards and TCNA-recommended usability practices.  
+- **Rationale:** Maximizes lead capture reliability, legal compliance, and user experience for high-intent visitors.  
+- **Risks:** Moderate; endpoint changes may require updating spam protection and notification settings with the selected provider.
 
-## Phase 3 — Content & asset hygiene
-- Deduplicate/cleanup `_config.yml` metadata (double `default_og_image`, misencoded reassurance text) to keep SEO and on-page copy clean.
-- Replace the hotlinked Unsplash hero fallback with a local, licensed asset to remove third-party latency/licensing risk.
-- Rationale: Improves brand polish, social previews, and avoids brittle third-party dependencies.
-- Risks: Low; requires selecting or exporting an appropriate local image.
+## Phase 3 — Content & Asset Compliance
+- Deduplicate and sanitize `_config.yml` metadata (e.g., remove duplicate `default_og_image`, correct reassurance text encoding) to ensure SEO, social previews, and on-page copy are accurate and compliant.  
+- Replace any hotlinked Unsplash hero fallback with a locally hosted, properly licensed image asset (per OUTPUT_RULES.md), including descriptive alt text for accessibility and legal compliance.  
+- **Rationale:** Enhances brand authority, eliminates third-party licensing and latency risks, and ensures all assets meet TCNA/NJ HIC documentation standards.  
+- **Risks:** Low; requires selection or export of a compliant local image.
 
-## Phase 4 — SEO automation
-- Automate `sitemap.xml` generation in the build step instead of manual maintenance to prevent future crawl gaps.
-- Rationale: Reduces human error and keeps search engines aligned with the latest content.
-- Risks: Low; ensure automation respects any intentional exclusions before enabling.
+## Phase 4 — Automated SEO & Sitemap Integrity
+- Integrate automated `sitemap.xml` generation into the build process, eliminating manual maintenance and ensuring all public-facing pages are discoverable by search engines.  
+- **Rationale:** Reduces human error, maintains crawl integrity, and aligns with technical SEO best practices.  
+- **Risks:** Low; verify that automation respects intentional exclusions and legal requirements before deployment.
+

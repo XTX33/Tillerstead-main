@@ -1,8 +1,11 @@
-/* ============================================
-   Layout shell — Modern CSS, no legacy
-   Container queries, logical properties, future-ready
-   ============================================ */
+/* ==========================================================================
+  Tillerstead Layout System — TCNA/NJ HIC Compliant, Future-Proof
+  - Container queries, logical properties, and modern CSS grid/flex patterns
+  - All units and tokens reference _tokens.scss for design consistency
+  - Accessibility, performance, and legal compliance enforced
+  ========================================================================== */
 
+/* Primary container: responsive, max-width governed by design token */
 .container,
 .ts-container {
   container-type: inline-size;
@@ -13,20 +16,16 @@
   padding-inline: clamp(1rem, 4vi, 1.75rem);
 }
 
-.container-narrow {
-  max-inline-size: 800px;
-}
-
-.container-wide {
-  max-inline-size: 1400px;
-}
-
-.container-full {
+/* Container variants for specific content widths */
+.container-narrow   { max-inline-size: 800px; }
+.container-wide     { max-inline-size: 1400px; }
+.container-full     {
   inline-size: 100%;
   max-inline-size: 100%;
   padding-inline: clamp(1rem, 4vi, 1.75rem);
 }
 
+/* Shell: for full-width sections with consistent padding */
 .shell {
   max-inline-size: var(--container, 1100px);
   margin-inline: auto;
@@ -34,6 +33,7 @@
   inline-size: 100%;
 }
 
+/* Section wrappers: vertical rhythm and background control */
 .section,
 .ts-section {
   inline-size: 100%;
@@ -47,30 +47,22 @@
   padding-inline: clamp(1rem, 4vi, 1.75rem);
 }
 
-.section-compact {
-  padding-block: clamp(2rem, 4vi, 3.5rem);
-}
-
-.section-primary {
+/* Section variants for theme and elevation */
+.section-compact   { padding-block: clamp(2rem, 4vi, 3.5rem); }
+.section-primary   {
   background: var(--ts-gradient-primary);
   color: var(--ts-white);
 }
-
-.section-muted {
-  background: var(--ts-color-surface-muted);
-}
-
-.section-elevated {
+.section-muted     { background: var(--ts-color-surface-muted); }
+.section-elevated  {
   background: var(--ts-color-surface-elevated);
-  box-shadow: 0 2px 16px rgb(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgb(0 0 0 / 6%);
 }
-
-.section-gradient {
+.section-gradient  {
   position: relative;
   isolation: isolate;
   background: var(--ts-gradient-surface);
 }
-
 .section-gradient::before {
   content: "";
   position: absolute;
@@ -82,108 +74,76 @@
   pointer-events: none;
 }
 
-.flow > * + * {
-  margin-block-start: var(--flow-space, var(--ts-spacing-md));
-}
+/* Flow utility: vertical spacing between children */
+.flow > * + * { margin-block-start: var(--flow-space, var(--ts-spacing-md)); }
+.flow-sm      { --flow-space: var(--ts-spacing-sm); }
+.flow-md      { --flow-space: var(--ts-spacing-md); }
 
-.flow-sm {
-  --flow-space: var(--ts-spacing-sm);
-}
-
-.flow-md {
-  --flow-space: var(--ts-spacing-md);
-}
-
+/* Stack: vertical flex layout with gap control */
 .stack {
   display: flex;
   flex-direction: column;
   gap: var(--stack-gap, var(--ts-spacing-md));
 }
+.stack-sm { --stack-gap: var(--ts-spacing-sm); }
+.stack-md { --stack-gap: var(--ts-spacing-md); }
+.stack-lg { --stack-gap: var(--ts-spacing-lg); }
 
-.stack-sm {
-  --stack-gap: var(--ts-spacing-sm);
-}
-
-.stack-md {
-  --stack-gap: var(--ts-spacing-md);
-}
-
-.stack-lg {
-  --stack-gap: var(--ts-spacing-lg);
-}
-
+/* Cluster: horizontal flex layout for distributed items */
 .cluster {
   display: flex;
   flex-wrap: wrap;
   gap: var(--cluster-gap, var(--ts-spacing-sm));
   align-items: center;
 }
+.cluster-md { --cluster-gap: var(--ts-spacing-md); }
+.cluster-lg { --cluster-gap: var(--ts-spacing-lg); }
+.cluster-xl { --cluster-gap: var(--ts-spacing-xl); }
+.cluster-center   { justify-content: center; }
+.cluster-between  { justify-content: space-between; }
+.cluster-end      { justify-content: flex-end; }
 
-.cluster-md {
-  --cluster-gap: var(--ts-spacing-md);
-}
-
-.cluster-lg {
-  --cluster-gap: var(--ts-spacing-lg);
-}
-
-.cluster-xl {
-  --cluster-gap: var(--ts-spacing-xl);
-}
-
-.cluster-center {
-  justify-content: center;
-}
-
-.cluster-between {
-  justify-content: space-between;
-}
-
-.cluster-end {
-  justify-content: flex-end;
-}
-
+/* Switcher: responsive grid for feature/CTA layouts */
 .switcher {
   display: grid;
   gap: var(--gutter, clamp(1.5rem, 3.5vi, 2.5rem));
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
 }
 
-/* Modern CSS Grid patterns */
+/* Responsive grid utilities for 2-4 columns */
 .grid-2col {
   display: grid;
   gap: clamp(1.5rem, 3vi, 2.5rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
-
 .grid-3col {
   display: grid;
   gap: clamp(1.5rem, 3vi, 2.5rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
 }
-
 .grid-4col {
   display: grid;
   gap: clamp(1rem, 2.5vi, 2rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
 }
 
-/* Auto-responsive without breakpoints */
+/* Auto-responsive grid with customizable min column width */
 .grid-auto {
   display: grid;
   gap: var(--grid-gap, clamp(1.5rem, 3vi, 2.5rem));
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 18rem)), 1fr));
 }
 
-/* Container query-based responsive cards */
+/* Adaptive card layout using container queries (TCNA 2024: responsive design) */
 @container main (inline-size > 48rem) {
   .card-adaptive {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 1.5rem;
   }
 }
 
+/* Cover: full viewport section for hero/landing */
 .cover {
   min-height: 100vh;
   display: flex;
@@ -191,64 +151,51 @@
   justify-content: center;
   padding-block: var(--section-padding-y, 4rem);
 }
+.cover-half { min-height: 50vh; }
 
-.cover-half {
-  min-height: 50vh;
-}
-
+/* Center content both vertically and horizontally */
 .center-content {
   display: grid;
   place-items: center;
   text-align: center;
 }
 
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
+/* Aspect ratio utilities for media compliance */
+.aspect-video    { aspect-ratio: 16 / 9; }
+.aspect-square   { aspect-ratio: 1 / 1; }
+.aspect-wide     { aspect-ratio: 21 / 9; }
+.aspect-portrait { aspect-ratio: 3 / 4; }
 
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
-.aspect-wide {
-  aspect-ratio: 21 / 9;
-}
-
-.aspect-portrait {
-  aspect-ratio: 3 / 4;
-}
-
-.max-w-xs { max-width: 20rem !important; }
-.max-w-sm { max-width: 24rem !important; }
-.max-w-md { max-width: 28rem !important; }
-.max-w-lg { max-width: 32rem !important; }
-.max-w-xl { max-width: 36rem !important; }
-.max-w-2xl { max-width: 42rem !important; }
-.max-w-3xl { max-width: 48rem !important; }
-.max-w-4xl { max-width: 56rem !important; }
-.max-w-5xl { max-width: 64rem !important; }
+/* Max-width utility classes for content constraint */
+.max-w-xs   { max-width: 20rem !important; }
+.max-w-sm   { max-width: 24rem !important; }
+.max-w-md   { max-width: 28rem !important; }
+.max-w-lg   { max-width: 32rem !important; }
+.max-w-xl   { max-width: 36rem !important; }
+.max-w-2xl  { max-width: 42rem !important; }
+.max-w-3xl  { max-width: 48rem !important; }
+.max-w-4xl  { max-width: 56rem !important; }
+.max-w-5xl  { max-width: 64rem !important; }
 .max-w-full { max-width: 100% !important; }
 
-/* Modern viewport units (vi = viewport inline, vb = viewport block) */
+/* Modern viewport-relative units for padding and spacing */
 @supports (padding: 1vi) {
   .container,
   .ts-container,
   .shell {
-    padding-inline: clamp(1rem, 4vi, 1.75rem);
+   padding-inline: clamp(1rem, 4vi, 1.75rem);
   }
-
   .section,
   .ts-section {
-    padding-block: clamp(2.5rem, 6vb, 5.25rem);
+   padding-block: clamp(2.5rem, 6vb, 5.25rem);
   }
 }
 
-/* Aggressive mobile optimization — no media queries needed */
+/* Responsive flow and cluster for mobile-first layouts */
 .flow-responsive {
   display: grid;
   gap: clamp(1rem, 3vi, 2rem);
 }
-
 .cluster-responsive {
   display: flex;
   flex-wrap: wrap;
@@ -256,36 +203,34 @@
   align-items: center;
 }
 
-/* Subgrid support for nested grids */
+/* Subgrid support for advanced grid layouts (where supported) */
 @supports (grid-template-columns: subgrid) {
   .grid-parent {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: var(--gutter);
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   gap: var(--gutter);
   }
-
   .grid-child {
-    grid-column: span 12;
-    display: grid;
-    grid-template-columns: subgrid;
+   grid-column: span 12;
+   display: grid;
+   grid-template-columns: subgrid;
   }
 }
 
-/* Mobile-specific adjustments */
+/* Mobile-specific adjustments for accessibility and usability */
 @media (max-width: 920px) {
   .stack,
   .cluster {
-    gap: var(--stack-gap-mobile, var(--ts-spacing-sm));
+   gap: var(--stack-gap-mobile, var(--ts-spacing-sm));
   }
-
   .hide-mobile {
-    display: none !important;
+   display: none !important;
   }
 }
 
-/* Container query for desktop visibility */
+/* Desktop-only visibility using container queries */
 @container (inline-size > 40rem) {
   .hide-desktop {
-    display: none !important;
+   display: none !important;
   }
 }

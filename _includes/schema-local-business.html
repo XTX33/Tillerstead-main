@@ -8,7 +8,6 @@
   "legalName": "Tillerstead LLC",
   "url": "{{ site.url }}",
   "logo": "{{ site.url }}/assets/img/logo/tillerstead-logo-full.svg",
-  "image": "{{ site.default_og_image | absolute_url }}",
   "image": "{{ site.url }}/assets/img/og.jpg",
   "description": "{{ site.description | escape }}",
   "telephone": "{{ site.company.phone_link }}",
@@ -36,25 +35,25 @@
       "name": "New Jersey"
     },
     {
-      "@type": "City",
+      "@type": "AdministrativeArea",
       "name": "Atlantic County",
-      "containedIn": {
+      "containedInPlace": {
         "@type": "State",
         "name": "New Jersey"
       }
     },
     {
-      "@type": "City",
+      "@type": "AdministrativeArea",
       "name": "Ocean County",
-      "containedIn": {
+      "containedInPlace": {
         "@type": "State",
         "name": "New Jersey"
       }
     },
     {
-      "@type": "City",
+      "@type": "AdministrativeArea",
       "name": "Cape May County",
-      "containedIn": {
+      "containedInPlace": {
         "@type": "State",
         "name": "New Jersey"
       }
@@ -63,13 +62,19 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "dayOfWeek": [
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday"
+      ],
       "opens": "07:00",
       "closes": "18:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
+      "dayOfWeek": "https://schema.org/Saturday",
       "opens": "08:00",
       "closes": "16:00"
     }
@@ -86,7 +91,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Custom Tile Installation",
-          "description": "Professional custom tile installation including showers, backsplashes, floors, and heated floor systems."
+          "description": "TCNA-compliant tile installation: showers, backsplashes, floors, and radiant heated systems. All work meets ANSI A108/A118 standards."
         }
       },
       {
@@ -94,7 +99,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Waterproof Shower Systems",
-          "description": "Certified waterproof assemblies using Schluter, RedGard, and ANSI A118.10 standards."
+          "description": "Certified waterproof assemblies using Schluter, RedGard, and ANSI A118.10-compliant membranes. NJ HIC# 13VH11744200."
         }
       },
       {
@@ -102,7 +107,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Natural Stone Installation",
-          "description": "Marble, granite, and natural stone installation with professional fabrication coordination."
+          "description": "Marble, granite, and natural stone set to TCNA guidelines. Professional fabrication coordination and substrate prep."
         }
       },
       {
@@ -110,7 +115,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Bathroom Remodeling",
-          "description": "Complete bathroom renovations including tile work, fixtures, and waterproofing."
+          "description": "Complete bath renovations: tile, fixtures, waterproofing, and code-compliant upgrades. All work documented and warrantied."
         }
       },
       {
@@ -118,7 +123,7 @@
         "itemOffered": {
           "@type": "Service",
           "name": "Property Maintenance Plans",
-          "description": "Monthly property care with scheduled inspections, repairs, and maintenance documentation."
+          "description": "Monthly property care: scheduled inspections, repairs, and maintenance logs. Transparent, contract-based service."
         }
       }
     ]
@@ -135,6 +140,8 @@
     "https://www.wikidata.org/wiki/Q4287745"
   ],
   "knowsAbout": [
+    "TCNA Methods",
+    "ANSI A108/A118 Standards",
     "Tile Installation",
     "Waterproofing Systems",
     "Bathroom Remodeling",
@@ -144,6 +151,6 @@
     "Large Format Tile",
     "Custom Showers"
   ],
-  "slogan": "Expert Tile & Stone Installation"
+  "slogan": "Expert Tile & Stone Installation. TCNA-Literate. NJ HIC# 13VH11744200."
 }
 </script>

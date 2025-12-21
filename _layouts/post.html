@@ -4,8 +4,7 @@ hide_hero: true
 ---
 
 <main class="ts-section ts-surface section blog-post" itemscope itemtype="https://schema.org/BlogPosting" role="main" tabindex="-1">
-  
-  <!-- Article metadata -->
+  <!-- SEO & Schema.org metadata -->
   <meta itemprop="headline" content="{{ page.title }}">
   <meta itemprop="datePublished" content="{{ page.date | date: '%Y-%m-%dT%H:%M:%SZ' }}">
   {% if page.date_modified %}
@@ -22,35 +21,28 @@ hide_hero: true
   {% endif %}
 
   <div class="container shell">
-    
     <!-- Article header -->
     <header class="post-header stack-md" role="banner">
       <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
-
-      <!-- Article metadata: date, author, reading time -->
       <div class="post-meta" role="doc-credits">
         <time class="post-date" datetime="{{ page.date | date: '%Y-%m-%d' }}" itemprop="datePublished">
           {{ page.date | date: "%B %-d, %Y" }}
         </time>
-
         {% if page.author %}
           <span class="post-author" itemprop="author">
             By <strong>{{ page.author }}</strong>
           </span>
         {% endif %}
-
         {% if page.reading_time %}
           <span class="post-reading-time">
             {{ page.reading_time }} min read
           </span>
         {% endif %}
       </div>
-
-      <!-- Optional: Featured image -->
       {% if page.featured_image %}
         <figure class="post-featured-image">
           <img src="{{ page.featured_image | relative_url }}"
-               alt="{{ page.featured_image_alt | default: page.title }}"
+               alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}Featured image for {{ page.title }}: TCNA/NJ HIC-compliant installation example{% endif %}"
                loading="lazy"
                decoding="async"
                itemprop="image">
@@ -59,8 +51,6 @@ hide_hero: true
           {% endif %}
         </figure>
       {% endif %}
-
-      <!-- Lead paragraph / summary -->
       {% if page.description %}
         <p class="post-lead lead" itemprop="description">{{ page.description }}</p>
       {% endif %}
@@ -71,7 +61,6 @@ hide_hero: true
       {{ content }}
     </div>
 
-    <!-- Article footer: tags, author bio, related posts -->
     <footer class="post-footer stack-lg">
       <hr class="divider">
 
@@ -80,7 +69,8 @@ hide_hero: true
         <nav class="post-tags" aria-label="Article tags">
           <h3 class="text-small">Tagged:</h3>
           <ul class="tag-list" role="list">
-            {% for tag in page.tags %}
+            {% assign unique_tags = page.tags | uniq %}
+            {% for tag in unique_tags %}
               <li role="listitem">
                 <a href="{{ '/tags/' | append: tag | append: '/' | relative_url }}" class="tag">
                   {{ tag }}
@@ -99,7 +89,7 @@ hide_hero: true
         </div>
       {% endif %}
 
-      <!-- Share buttons (optional) -->
+      <!-- Share buttons -->
       {% if page.enable_sharing %}
         <div class="post-share" role="group" aria-label="Share this article">
           <h3 class="text-small">Share</h3>
@@ -108,7 +98,8 @@ hide_hero: true
               <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}"
                  class="share-btn"
                  target="_blank"
-                 rel="noopener">
+                 rel="noopener"
+                 aria-label="Share on Facebook">
                 Facebook
               </a>
             </li>
@@ -116,7 +107,8 @@ hide_hero: true
               <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | url_encode }}"
                  class="share-btn"
                  target="_blank"
-                 rel="noopener">
+                 rel="noopener"
+                 aria-label="Share on Twitter/X">
                 Twitter / X
               </a>
             </li>
@@ -124,7 +116,8 @@ hide_hero: true
               <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url }}"
                  class="share-btn"
                  target="_blank"
-                 rel="noopener">
+                 rel="noopener"
+                 aria-label="Share on LinkedIn">
                 LinkedIn
               </a>
             </li>
@@ -132,12 +125,9 @@ hide_hero: true
         </div>
       {% endif %}
     </footer>
-
   </div>
-
 </main>
 
-<!-- Related posts or suggested reading (optional) -->
 {% if page.show_related %}
   <section class="related-posts ts-section ts-surface section">
     <div class="container">
@@ -146,7 +136,9 @@ hide_hero: true
         {% assign related = site.posts | where_exp: "post", "post.tags contains page.tags[0]" | where_exp: "post", "post.url != page.url" | limit: 3 %}
         {% for post in related %}
           <article class="post-card">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <h3>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
             <p class="text-small">{{ post.date | date: "%B %-d, %Y" }}</p>
             <p>{{ post.description | default: post.excerpt }}</p>
           </article>
@@ -156,5 +148,4 @@ hide_hero: true
   </section>
 {% endif %}
 
-<!-- CTA: Request estimate or next steps -->
 {% include cta-estimate.html %}

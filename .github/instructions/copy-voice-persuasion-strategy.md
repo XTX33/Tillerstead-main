@@ -1,307 +1,231 @@
-# Tillerstead LLC - Copy Voice & Persuasion Strategy
+# Tillerstead LLC – Copy Voice & Persuasion Strategy
 
-> ⚠️ **DEPRECATED - MIGRATED TO CENTRALIZED GOVERNANCE**  
-> This file has been superseded by **[`/.ai/STYLE.md`](../../.ai/STYLE.md)** as part of the centralized AI instruction system.  
-> **All AI tools should reference the new structure**: `/.ai/SYSTEM.md` → `/.ai/STYLE.md`  
-> This file is preserved for historical reference only.
+> **DEPRECATED – CENTRALIZED INSTRUCTION SYSTEM**  
+> This file is retained for historical reference only.  
+> **Authoritative source:** [/.ai/STYLE.md](../../.ai/STYLE.md)  
+> **Reference chain:** `/.ai/SYSTEM.md` → `/.ai/STYLE.md`  
+> All AI tools and contributors must follow the centralized `.ai/` governance.
 
 ---
 
 ## Purpose
-This instruction file defines the voice, tone, and persuasion strategy for all Tillerstead LLC website copy, marketing materials, and client communications. The goal: attract ideal clients through demonstration of mastery, personality-driven differentiation, and strategic positioning against corner-cutting competitors.
+
+Defines the Tillerstead LLC voice, tone, and persuasion strategy for all website copy, marketing, and client communications. The objective: attract ideal clients by demonstrating technical mastery, authentic personality, and clear differentiation from shortcut-prone competitors.
+
+---
 
 ## Core Philosophy: "The 48 Laws Applied to Tile"
 
-### Law 1: Never Outshine the Master (Make Clients Feel Smart)
-- **Application**: Frame expertise as empowering clients to make informed decisions
-- **Language**: "You deserve to know why..." / "Here's what they don't tell you..."
-- **Example**: "You're asking the right questions—here's what substrate deflection actually means..."
+- **Empower Clients:** Frame expertise as enabling informed decisions.  
+    _"You deserve to know why..."_  
+    _"You're asking the right questions—here's what substrate deflection actually means..."_
 
-### Law 4: Always Say Less Than Necessary (Be Intriguing)
-- **Application**: Hint at depth of knowledge without overwhelming
-- **Language**: Drop technical terms with brief explanations, not lectures
-- **Example**: "TCNA standards (the 412-page handbook most contractors haven't opened)"
+- **Be Intriguing, Not Overwhelming:** Use technical terms with concise explanations.  
+    _"TCNA standards (the 412-page handbook most contractors haven't opened)"_
 
-### Law 6: Court Attention at All Cost (Be Bold & Memorable)
-- **Application**: Use provocative headlines and memorable phrases
-- **Language**: Headlines that challenge assumptions or make bold claims
-- **Example**: "The Tile Work That Outlasts the Mortgage"
+- **Bold, Memorable Positioning:** Challenge assumptions with specific, provocative headlines.  
+    _"The Tile Work That Outlasts the Mortgage"_
 
-### Law 16: Use Absence to Increase Respect (Create Scarcity)
-- **Application**: Signal selectivity, limited availability
-- **Language**: "Booked 4-8 weeks out" / "Not every project is a fit"
-- **Example**: "We turn down jobs that can't be done right"
+- **Signal Scarcity & Selectivity:**  
+    _"Booked 4–8 weeks out"_  
+    _"We turn down jobs that can't be done right"_
 
-### Law 27: Create a Cult Following (Offer a Belief System)
-- **Application**: Position TCNA compliance as the "correct way" vs. "winging it"
-- **Language**: "The right way" / "Industry standards" / "How it should be done"
-- **Example**: "TCNA-compliant installations vs. 'some guy who watches YouTube'"
+- **Promote Standards as Belief System:**  
+    _"TCNA-compliant installations vs. 'some guy who watches YouTube'"_
 
-### Law 28: Enter Action with Boldness (Be Direct & Confident)
-- **Application**: Make definitive claims backed by technical knowledge
-- **Language**: Confident declarations, not hedging
-- **Example**: "Cracked tile? It's deflection or wrong thinset. Always."
+- **Direct, Confident Claims:**  
+    _"Cracked tile? It's deflection or wrong thinset. Always."_
 
-### Law 30: Make Accomplishments Seem Effortless
-- **Application**: Show mastery through casual deployment of expertise
-- **Language**: Technical terms used naturally, not pompously
-- **Example**: "We check substrate flatness (1/8\" in 10' for rectified tile)—basic stuff"
+- **Effortless Mastery:**  
+    _"We check substrate flatness (1/8\" in 10' for rectified tile)—basic stuff"_
 
-### Law 33: Discover Each Man's Thumbscrew (Target Pain Points)
-- **Application**: Address specific frustrations with past contractors
-- **Language**: "You've been ghosted..." / "No more 'I'll call you back' that never happens"
-- **Example**: "Texts returned same-day. Not 'left on read' for three weeks."
+- **Target Pain Points:**  
+    _"Texts returned same-day. Not 'left on read' for three weeks."_
 
-### Law 37: Create Compelling Spectacles (Make Work Visible)
-- **Application**: Photo documentation, flood test results, progress updates
-- **Language**: Visual proof, documented processes
-- **Example**: "Flood test photos you can show your skeptical spouse"
+- **Make Work Visible:**  
+    _"Flood test photos you can show your skeptical spouse"_
 
-### Law 43: Work on Hearts and Minds of Others
-- **Application**: Make clients *want* to work with you through values alignment
-- **Language**: Shared frustration with poor craftsmanship
-- **Example**: "Built for long-term performance, not short-term profit"
+- **Align Values:**  
+    _"Built for long-term performance, not short-term profit"_
+
+---
 
 ## Voice & Tone Guidelines
 
-### Overall Voice: "The Competent Professional Who Refuses to Suffer Fools"
-- **Technical but Accessible**: Use industry terminology, explain when necessary
-- **Confident Without Arrogance**: "We know our stuff" not "We're better than you"
-- **Self-Aware Humor**: Acknowledge when we're being particular or pedantic
-- **Direct & Honest**: Say what needs saying, even if uncomfortable
+- **Technical, Accessible:** Use industry terms, explain as needed (see [/.ai/STYLE.md]).
+- **Confident, Not Arrogant:**  
+    _"We know our stuff"—never "We're better than you"._
+- **Self-Aware Humor:**  
+    _"We're the kind of annoying that measures substrate flatness"_
+- **Direct, Honest:** Address uncomfortable truths with solutions.
 
-### Tone Variations by Context
+### Contextual Tone
 
-#### Homepage/Hero Sections: Bold & Provocative
-- Make big claims backed by specifics
-- Challenge assumptions about tile work
-- Example: "The Tile Work That Outlasts the Mortgage"
+- **Homepage/Hero:** Bold, provocative, specific.  
+    _"The Tile Work That Outlasts the Mortgage"_
+- **Service Descriptions:** Detailed, standards-based, contrast shortcuts.  
+    _"C2-rated thinset, not 'whatever's at the truck'"_
+- **About/Process:** Personality-driven, transparent, addresses frustrations.  
+    _"We're the kind of annoying that measures substrate flatness"_
+- **Technical Content:** Authoritative, plain language, cite standards.  
+    _"ANSI A108.10 waterproofing (because 'probably fine' isn't a plan)"_
 
-#### Service Descriptions: Detailed & Differentiated
-- Show depth of knowledge through specificity
-- Contrast proper methods with common shortcuts
-- Example: "C2-rated thinset, not 'whatever's at the truck'"
+---
 
-#### About/Process Pages: Personality-Driven
-- Inject humor and self-awareness
-- Address client frustrations directly
-- Example: "We're the kind of annoying that measures substrate flatness"
+## Positioning: The Anti-Corner-Cutter
 
-#### Technical Content: Authoritative but Human
-- Lead with standards and specs
-- Explain why they matter in plain language
-- Example: "ANSI A108.10 waterproofing (because 'probably fine' isn't a plan)"
+**What We Are:**  
+- TCNA/ANSI/OSHA compliant (cite standards, e.g., TCNA 2024, ANSI A108.10)  
+- Documentation-obsessed (photo logs, written scopes, inspection checklists)  
+- Communication-focused (same-day responses, realistic timelines)  
+- Owner-operated (Tyler on every job, direct accountability)  
+- Selective (turn down jobs that can't be done right)
 
-## Positioning Strategy: The Anti-Corner-Cutter
+**What We’re Not (Implied):**  
+- The cheapest quote (quality saves long-term)  
+- The fastest timeline (proper cure times, no rushing)  
+- The "yes man" (no false promises)  
+- The mystery crew (no unlicensed labor)
 
-### What We Are
-- **Standards-Compliant Professional**: TCNA, ANSI, OSHA by the book
-- **Documentation-Obsessed**: Photo logs, written scopes, inspection checklists
-- **Communication-Focused**: Same-day text responses, realistic timelines
-- **Owner-Operated**: Tyler on every job, direct accountability
-- **Selective**: Turn down jobs that can't be done right
+**Contrast Proper Methods vs. Shortcuts:**  
+- _"We measure substrate flatness (most don't)"_  
+- _"Ask your quote for their HIC number. We'll wait."_  
+- _"C2-rated thinset with ISO 13007 certification (not 'whatever's on sale')"_  
 
-### What We're Not (Implied, Never Stated Directly)
-- **The Cheapest Quote**: Quality costs more upfront, saves long-term
-- **The Fastest Timeline**: Proper cure times, no rushing
-- **The "Yes Man"**: Won't promise what can't be delivered
-- **The Mystery Crew**: No rotating cast of unlicensed workers
-
-### Contrast Without Naming
-Never say: "Other contractors cut corners"
-Instead say: "We measure substrate flatness (most don't)"
-
-Never say: "Competitors are unlicensed"
-Instead say: "Ask your quote for their HIC number. We'll wait."
-
-Never say: "They use wrong materials"
-Instead say: "C2-rated thinset with ISO 13007 certification (not 'whatever's on sale')"
+---
 
 ## Language Patterns
 
-### Power Words (Use Frequently)
-- **Documented**: Implies others don't document
-- **Tested**: (flood tested, ohm tested) - shows rigor
-- **Standards-Compliant**: TCNA, ANSI, OSHA
-- **Licensed**: With specific HIC number
-- **Verified**: (flatness verified, coverage verified)
-- **Accountable**: Direct owner involvement
-- **Realistic**: (timelines, expectations)
-- **Preventive**: (planning prevents failures)
+- **Power Words:** Documented, tested, standards-compliant, licensed (with HIC #), verified, accountable, realistic, preventive.
+- **Humor:** Self-deprecating pedantry, absurdist comparisons, exaggerated obviousness, sarcastic air quotes, parenthetical asides.
+- **Technical Specificity:** Always pair terms with practical implications.  
+    _"L/360 deflection limit (so your tile doesn't crack)"_  
+    _"95% thinset coverage (TCNA 2024 update for large-format)"_
+- **Contrast:**  
+    _"Schluter KERDI membrane, not red paint from the box store"_  
+    _"Texts returned same-day, not left on read"_
 
-### Humor Patterns
-1. **Self-Deprecating Pedantry**: "Yes, we're annoying about..."
-2. **Absurdist Comparisons**: "Kindergartners with craft paste..."
-3. **Exaggerated Obviousness**: "Revolutionary concept: answering the phone"
-4. **Sarcastic Air Quotes**: "Some guy" / "probably fine" / "red paint"
-5. **Parenthetical Asides**: "(imagine that)" / "(shocking, we know)"
-
-### Technical Specificity Patterns
-Always pair technical terms with practical implications:
-- "L/360 deflection limit (so your tile doesn't crack)"
-- "95% thinset coverage (TCNA 2024 update for large-format)"
-- "1/4\" per foot slope (proper drainage prevents standing water)"
-
-### Contrast Patterns (Proper vs. Shortcut)
-Format: [Proper method] not [shortcut version]
-- "Schluter KERDI membrane, not red paint from the box store"
-- "Modified thinset with C2 rating, not whatever's on sale"
-- "Substrate flatness verified, not assumed"
-- "Texts returned same-day, not left on read"
+---
 
 ## Sentence Structure
 
-### Headlines: Bold Declarations or Provocative Questions
-- "Built to Last. Installed with Judgment."
-- "The Tile Work That Outlasts the Mortgage"
-- "What Happens Before Tile Hits Wall?"
-- "Showers That Don't Leak (Revolutionary Concept)"
+- **Headlines:** Bold declarations or provocative questions.  
+    _"Built to Last. Installed with Judgment."_
+- **Body Copy:** Short, punchy sentences. Technical detail. Payoff or humor.  
+    _"Your walls aren't plumb. Your floor isn't flat. That's normal—houses settle. We measure deflection (L/360 limit), check substrate flatness (1/8\" in 10'), and locate the moisture issues before they're surprises. Ignoring this is how you get the 'why is my tile cracking?' call."_
+- **Bullets:** Specific claim + technical detail + implication.  
+    _"**Waterproof showers that don't leak**: Schluter KERDI membranes installed to spec. Flood tested before tile. Seam details done correctly. Because 'probably fine' isn't a waterproofing strategy."_
 
-### Body Copy: Mix of Technical and Conversational
-**Rhythm**: Short punchy sentence. Longer explanatory sentence with technical detail. Payoff/humor.
-Example: "Your walls aren't plumb. Your floor isn't flat. That's normal—houses settle. We measure deflection (L/360 limit), check substrate flatness (1/8\" in 10'), and locate the moisture issues before they're surprises. Ignoring this is how you get the 'why is my tile cracking?' call."
-
-### Bullet Points: Specificity + Implication
-Format: [Bold claim]: [Technical details]. [Why it matters or what others do wrong].
-Example: "**Waterproof showers that don't leak**: Schluter KERDI membranes installed to spec. Flood tested before tile. Seam details done correctly. Because 'probably fine' isn't a waterproofing strategy."
+---
 
 ## Content Types & Applications
 
-### Service Pages
-- **Goal**: Demonstrate depth of expertise while remaining accessible
-- **Structure**: Bold claim → Technical specifics → Contrast with shortcuts → Client benefit
-- **Example**: See /services/ page tile installation section
+- **Service Pages:**  
+    Structure: Bold claim → Technical specifics → Contrast → Client benefit.  
+    _See `/services/` for examples._
+- **About/Process:**  
+    Structure: Personality → Competence → Process → CTA.  
+    _See `/about/`._
+- **Blog Posts:**  
+    Structure: Common question → Technical answer → Practical implication → DIY vs. pro.  
+    _Homeowner-friendly, professional positioning._
+- **Email Campaigns:**  
+    Structure: Story/anecdote → Technical insight → Next step.  
+    Conversational, technically competent.
+- **Social Media:**  
+    Progress photos, technical captions, before/after, "things we find" stories.  
+    Casual, never unprofessional.
 
-### About/Process Pages  
-- **Goal**: Build trust through transparency and personality
-- **Structure**: Self-aware personality → Technical competence → Process clarity → Call to action
-- **Example**: See /about/ page
-
-### Blog Posts
-- **Goal**: Establish authority while being helpful
-- **Structure**: Address common question → Technical answer → Practical implications → When to DIY vs. hire pro
-- **Format**: "Homeowner-friendly technical writing with subtle professional positioning"
-
-### Email Campaigns
-- **Goal**: Nurture leads through education and personality
-- **Tone**: More conversational, still technically competent
-- **Structure**: Story/anecdote → Technical insight → Clear next step
-
-### Social Media
-- **Goal**: Showcase work and personality in digestible chunks
-- **Tone**: More casual but never unprofessional
-- **Content**: Progress photos with technical captions, before/after comparisons, "things we find" horror stories
+---
 
 ## Red Lines (Never Cross)
 
-### Don't
-- ❌ Name competitors directly
-- ❌ Use fear-mongering without solutions
-- ❌ Make promises we can't keep (timelines, perfection)
-- ❌ Disparage DIY attempts (offer to fix, don't shame)
-- ❌ Use jargon without explanation
-- ❌ Be negative without being helpful
-- ❌ Compromise on safety for humor
-- ❌ Mock homeowners for not knowing technical details
+- ❌ Never name competitors directly
+- ❌ No fear-mongering without solutions
+- ❌ No false promises (timelines, perfection)
+- ❌ Never disparage DIY attempts (offer to fix, don’t shame)
+- ❌ No unexplained jargon
+- ❌ No negativity without solutions
+- ❌ Never compromise on safety for humor
+- ❌ Never mock homeowners for lack of technical knowledge
 
-### Do
-- ✅ Contrast proper methods vs. shortcuts (without naming)
+- ✅ Always contrast proper methods vs. shortcuts (without naming)
 - ✅ Address legitimate concerns with technical solutions
-- ✅ Set realistic expectations clearly
+- ✅ Set clear, realistic expectations
 - ✅ Offer to assess/repair failed DIY work professionally
 - ✅ Explain technical terms in practical language
 - ✅ Point out problems AND provide solutions
-- ✅ Take safety seriously (no jokes about OSHA)
-- ✅ Educate clients to make informed decisions
+- ✅ Take safety seriously (no OSHA jokes)
+- ✅ Educate clients for informed decisions
 
-## NJ/South Jersey Regional Voice
+---
 
-### Local References (Use Sparingly)
-- Shore houses and nor'easter flooding
-- Parkway tolls (when discussing service area)
-- Atlantic City-area suppliers (Tile Showcase, Dal-Tile)
-- Hurricane/humidity concerns
-- Older housing stock challenges
+## Regional Voice: NJ/South Jersey
 
-### Regional Tone
-- Direct but friendly (not brash New York, not Southern formal)
-- Self-effacing about local quirks
-- Pride in local workmanship traditions
-- Practical about Shore/coastal challenges
+- **References:** Shore houses, nor’easter flooding, Parkway tolls, Atlantic City suppliers, humidity, old housing stock.
+- **Tone:** Direct, friendly, self-effacing, pride in local workmanship, practical about coastal challenges.
+
+---
 
 ## Client Avatars & Targeted Language
 
-### Primary: Homeowners Burned by Past Contractors
-**Pain Points**: Ghosting, poor communication, surprise costs, failed work
-**Language**: Emphasize communication, documentation, accountability
-**Example**: "Texts returned same-day. No 'I'll call you back' that never happens."
+- **Primary:** Homeowners burned by past contractors  
+    _Pain: Ghosting, poor communication, failed work_  
+    _Language: Emphasize communication, documentation, accountability_
+- **Secondary:** Detail-oriented homeowners  
+    _Pain: Fear of shortcuts, want quality_  
+    _Language: Standards compliance, technical details_
+- **Tertiary:** Landlords/property managers  
+    _Pain: Reliability, durability, documentation_  
+    _Language: Longevity, prevention, photo logs_
+- **Quaternary:** General contractors  
+    _Pain: Dependable subs, documentation, scheduling_  
+    _Language: Scope docs, progress updates, coordination_
 
-### Secondary: Detail-Oriented Homeowners
-**Pain Points**: Want quality, willing to pay for it, worried about cutting corners
-**Language**: Emphasize standards compliance, technical details, proper methods
-**Example**: "TCNA standards, ANSI waterproofing specs, documented at every step"
-
-### Tertiary: Landlords/Property Managers
-**Pain Points**: Need reliability, durability, minimal callbacks
-**Language**: Emphasize longevity, prevention, documentation for records
-**Example**: "Built for long-term durability with photo logs for your property files"
-
-### Quaternary: General Contractors
-**Pain Points**: Need dependable subs who communicate, document, and stay on schedule
-**Language**: Emphasize coordination, scheduling integrity, documentation
-**Example**: "Scope documents, progress updates, and coordination that makes you look good"
+---
 
 ## Measurement & Optimization
 
-### Track These Phrases
-- "Booked out" (creates urgency)
-- "Licensed HIC" mentions (establishes credibility)
-- "Ask for their HIC number" (positions against unlicensed competition)
-- TCNA/ANSI standard citations (demonstrates expertise)
-- Photo documentation references (transparency differentiator)
+- **Track:**  
+    "Booked out", "Licensed HIC", "Ask for their HIC number", TCNA/ANSI citations, photo documentation.
+- **A/B Test:**  
+    Headlines, technical depth, humor intensity, CTA urgency.
+- **Conversion Points:**  
+    Service page contact forms, portfolio → contact rate, blog time-on-site, social engagement.
 
-### A/B Test Opportunities
-- Bold vs. subtle headlines
-- Technical depth in service descriptions
-- Humor intensity (some find it off-putting, others love it)
-- Call-to-action urgency (scarcity vs. open availability)
-
-### Conversion Points to Monitor
-- Contact form submissions from service pages
-- Portfolio views → contact rate
-- Time on site for blog readers
-- Social media engagement on technical vs. personality posts
+---
 
 ## Implementation Checklist
 
-When creating new copy, ask:
-1. ✅ Does it demonstrate mastery without being pompous?
-2. ✅ Does it address a specific client pain point?
-3. ✅ Does it contrast proper methods with shortcuts (without naming)?
-4. ✅ Does it include specific technical details?
-5. ✅ Does it have personality (humor, self-awareness)?
-6. ✅ Is it honest about limitations and scope?
-7. ✅ Does it build trust through transparency?
-8. ✅ Does it include a clear next step?
+1. Demonstrates mastery without arrogance
+2. Addresses specific client pain points
+3. Contrasts proper methods with shortcuts (no naming)
+4. Includes technical details (cite standards where possible)
+5. Shows personality (humor, self-awareness)
+6. Honest about limitations and scope
+7. Builds trust through transparency
+8. Includes a clear next step
 
-## Examples of Voice in Action
+---
 
-### Before (Generic Contractor Copy)
+## Voice in Action: Examples
+
+**Before (Generic):**  
 "We provide quality tile installation services with attention to detail and customer satisfaction."
 
-### After (Tillerstead Voice)
+**After (Tillerstead):**  
 "We install tile the annoying way: substrate flatness verified, thinset coverage at 95%, and flood testing before a single tile goes in. Slower than 'some guy.' More expensive than the Craigslist quote. But you only pay once."
 
-### Before (Generic Service Description)
+**Before (Generic):**  
 "Custom shower installations with waterproofing systems."
 
-### After (Tillerstead Voice)
+**After (Tillerstead):**  
 "Waterproof showers that don't leak. Schluter KERDI membranes (not 'red paint from the box store'). Flood tested with photos you can show your skeptical spouse. Because 'probably fine' isn't a waterproofing strategy."
 
-### Before (Generic About Section)
+**Before (Generic):**  
 "Tyler is an experienced contractor serving South Jersey."
 
-### After (Tillerstead Voice)
+**After (Tillerstead):**  
 "Tyler's the kind of contractor who measures substrate flatness with a level *and* a straightedge. Who knows the difference between modified and non-modified thinset. Who's read all 412 pages of the TCNA Handbook. Yes, this makes us slower and more expensive. It also means your shower doesn't leak."
 
 ---
@@ -310,16 +234,17 @@ When creating new copy, ask:
 
 - Review and update voice examples quarterly
 - Audit new pages for voice consistency
-- Test new humor patterns with small audience first
+- Test new humor patterns with small audiences
 - Maintain technical accuracy as standards evolve (TCNA updates)
 - Balance personality with professionalism (err on professional if uncertain)
 
-## Final Note
+---
 
-This voice works because it's authentic to Tyler's actual approach and knowledge. Don't fake expertise. Don't exaggerate capabilities. The confidence comes from genuine competence backed by licenses, insurance, standards compliance, and documented results.
+**Last updated:** December 2024  
+**Voice architect:** Integration of TCNA technical expertise with persuasion principles  
+**Review cycle:** Quarterly for tone, annually for positioning
 
-The humor targets corner-cutting practices, not people. The technical details demonstrate mastery, not gatekeeping. The goal is attracting clients who value quality and building trust through transparency—not winning every bid.
+---
 
-**Last Updated**: December 2024
-**Voice Architect**: Integration of TCNA technical expertise with persuasion principles
-**Review Cycle**: Quarterly for tone drift, annually for strategic positioning
+**For authoritative guidance, see [/.ai/STYLE.md](../../.ai/STYLE.md) and [/.ai/SYSTEM.md](../../.ai/SYSTEM.md). All content must comply with [/.ai/OUTPUT_RULES.md](../../.ai/OUTPUT_RULES.md) for naming, accessibility, and technical standards.**
+

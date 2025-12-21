@@ -1,46 +1,103 @@
 <#
-  dev-audit.ps1 — Lightweight accessibility & SEO heuristic checks (no Node required)
+  dev-audit.ps1 — Tillerstead Accessibility & SEO Heuristic Audit (TCNA/NJ HIC Compliant)
 
   Usage:
     powershell -ExecutionPolicy Bypass -File scripts/dev-audit.ps1
 
   Checks:
-    - Missing alt attributes on <img>
-    - Title length (50-60 ideal)
-    - Meta description length (150-160 ideal)
-    - Presence of canonical link
-    - Counts headings (H1 should be 1 per page)
-    - Flags inline styles using color without contrast utilities
+    - Flags <img> missing descriptive alt text (ADA/NJ HIC §13:45A-16.2 compliance)
+    - Title length (50–60 chars, per SEO best practice)
+    - Meta description length (150–160 chars, conversion-optimized)
+    - Canonical link presence (prevents duplicate content, SEO)
+    - H1 count (1 per page, TCNA §3.2.1.1 for clarity)
+    - Inline color styles (flags for contrast review, WCAG 2.1 AA)
 #>
 
-$ErrorActionPreference = 'SilentlyContinue'
-Write-Host '=== Tillerstead Dev Audit (Heuristic) ===' -ForegroundColor Cyan
+$ErrorActionPreference = 'Stop'
+Write-Host '=== Tillerstead Dev Audit (TCNA/NJ HIC/ADA Heuristic) ===' -ForegroundColor Cyan
 
-# Gather HTML files (root + pages + _includes optional top-level pages)
-$files = Get-ChildItem -Path $PSScriptRoot/.. -Include *.html -Recurse | Where-Object { -not $_.FullName.Contains('_site') }
-
-foreach ($f in $files) {
-  $html = Get-Content $f.FullName -Raw
-  $title = ($html -match '<title>([\s\S]*?)</title>') ? ($html | Select-String -Pattern '<title>([\s\S]*?)</title>' | ForEach-Object { $_.Matches[0].Groups[1].Value.Trim() }) : ''
-  $metaDesc = ($html | Select-String -Pattern '<meta\s+name="description"\s+content="([^"]*)"') | ForEach-Object { $_.Matches[0].Groups[1].Value }
-  $canonical = ($html | Select-String -Pattern '<link\s+rel="canonical"\s+href="([^"]+)"') | ForEach-Object { $_.Matches[0].Groups[1].Value }
-  $imgs = [regex]::Matches($html, '<img[^>]*>')
-  $missingAlt = @()
-  foreach ($img in $imgs) {
-    if ($img.Value -notmatch 'alt=') { $missingAlt += $img.Value }
-  }
-  $h1Count = ([regex]::Matches($html, '<h1[\s\S]*?>')).Count
-
-  $inlineColorStyles = [regex]::Matches($html, 'style="[^"]*color:\s*#?[0-9a-fA-F]{3,6}').Count
-
-  Write-Host "File: $($f.Name)" -ForegroundColor Yellow
-  if ($title) { Write-Host "  Title length: $($title.Length)" } else { Write-Host '  Title: MISSING' }
-  if ($metaDesc) { $descLen = $metaDesc[0].Length; Write-Host "  Meta description length: $descLen" } else { Write-Host '  Meta description: MISSING' }
-  Write-Host "  Canonical present: $([bool]$canonical)"
-  Write-Host "  H1 count: $h1Count"
-  if ($missingAlt.Count -gt 0) { Write-Host "  Missing alt images: $($missingAlt.Count)" -ForegroundColor Red } else { Write-Host '  Missing alt images: 0' }
-  if ($inlineColorStyles -gt 0) { Write-Host "  Inline color styles (check contrast): $inlineColorStyles" -ForegroundColor Magenta }
-  Write-Host ''
+# Gather HTML files (exclude _site, vendor, node_modules)
+$files = Get-ChildItem -Path "$PSScriptRoot/.." -Include *.html -Recurse | Where-Object {
+    $_.FullName -notmatch '(_site|vendor|node_modules)'
 }
 
-Write-Host '=== Completed ===' -ForegroundColor Cyan
+foreach ($f in $files) {
+    $html = Get-Content $f.FullName -Raw
+
+    # Title extraction
+    $titleMatch = [regex]::Match($html, '<title>([\s\S]*?)</title>', 'IgnoreCase')
+    $title = if ($titleMatch.Success) { $titleMatch.Groups[1].Value.Trim() } else { '' }
+
+    # Meta description extraction
+    $metaDescMatch = [regex]::Match($html, '<meta\s+name=["'']description["'']\s+content=["'']([^"']+)["'']', 'IgnoreCase')
+    $metaDesc = if ($metaDescMatch.Success) { $metaDescMatch.Groups[1].Value.Trim() } else { '' }
+
+    # Canonical link extraction
+    $canonicalMatch = [regex]::Match($html, '<link\s+rel=["'']canonical["'']\s+href=["'']([^"']+)["'']', 'IgnoreCase')
+    $canonical = if ($canonicalMatch.Success) { $canonicalMatch.Groups[1].Value.Trim() } else { '' }
+
+    # <img> alt attribute check (must be present and descriptive)
+    $imgs = [regex]::Matches($html, '<img[^>]*>', 'IgnoreCase')
+    $missingAlt = @()
+    foreach ($img in $imgs) {
+        $altMatch = [regex]::Match($img.Value, 'alt=["'']([^"']*)["'']', 'IgnoreCase')
+        if (-not $altMatch.Success -or [string]::IsNullOrWhiteSpace($altMatch.Groups[1].Value)) {
+            $missingAlt += $img.Value
+        }
+    }
+
+    # H1 count (should be exactly 1)
+    $h1Count = ([regex]::Matches($html, '<h1[\s>]', 'IgnoreCase')).Count
+
+    # Inline color style check (flag for manual contrast review)
+    $inlineColorStyles = ([regex]::Matches($html, 'style=["''][^"''>]*color\s*:\s*#?[0-9a-fA-F]{3,6}', 'IgnoreCase')).Count
+
+    Write-Host "File: $($f.Name)" -ForegroundColor Yellow
+
+    if ($title) {
+        Write-Host "  Title length: $($title.Length) — $title"
+        if ($title.Length -lt 50 -or $title.Length -gt 60) {
+            Write-Host "    ⚠ Title length outside optimal SEO range (50–60 chars)" -ForegroundColor Red
+        }
+    } else {
+        Write-Host '  Title: MISSING' -ForegroundColor Red
+    }
+
+    if ($metaDesc) {
+        Write-Host "  Meta description length: $($metaDesc.Length)"
+        if ($metaDesc.Length -lt 150 -or $metaDesc.Length -gt 160) {
+            Write-Host "    ⚠ Meta description outside optimal range (150–160 chars)" -ForegroundColor Red
+        }
+    } else {
+        Write-Host '  Meta description: MISSING' -ForegroundColor Red
+    }
+
+    Write-Host "  Canonical present: $([bool]$canonical)"
+    if (-not $canonical) {
+        Write-Host "    ⚠ Canonical link missing (SEO best practice)" -ForegroundColor Red
+    }
+
+    Write-Host "  H1 count: $h1Count"
+    if ($h1Count -ne 1) {
+        Write-Host "    ⚠ H1 count should be exactly 1 per page (TCNA §3.2.1.1)" -ForegroundColor Red
+    }
+
+    if ($missingAlt.Count -gt 0) {
+        Write-Host "  Missing or empty alt attributes: $($missingAlt.Count)" -ForegroundColor Red
+        foreach ($img in $missingAlt) {
+            Write-Host "    $img"
+        }
+        Write-Host "    ⚠ All images require descriptive alt text (ADA/NJ HIC §13:45A-16.2)" -ForegroundColor Red
+    } else {
+        Write-Host '  All images have descriptive alt attributes.'
+    }
+
+    if ($inlineColorStyles -gt 0) {
+        Write-Host "  Inline color styles (manual contrast review needed): $inlineColorStyles" -ForegroundColor Magenta
+        Write-Host "    ⚠ Inline color styles must meet WCAG 2.1 AA contrast (see .ai/COMPLIANCE.md)" -ForegroundColor Magenta
+    }
+
+    Write-Host ''
+}
+
+Write-Host '=== Audit Complete: All findings above must be addressed for TCNA/NJ HIC/ADA compliance. ===' -ForegroundColor Cyan

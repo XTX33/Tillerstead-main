@@ -13,9 +13,13 @@ Usage: {% include reviews-highlights.html limit=3 %}
 <section class="ts-section section reviews" aria-labelledby="{{ heading_id }}">
   <div class="container">
     <div class="section-header">
-      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Client feedback' }}</p>
-      <h2 id="{{ heading_id }}" class="heading-2">{{ include.title | default: 'Why South Jersey Homeowners Trust Tillerstead' }}</h2>
-      <p class="lead">{{ include.summary | default: 'Straightforward communication, clean job sites, and durable tile and finish work.' }}</p>
+      <p class="eyebrow text-accent">{{ include.eyebrow | default: 'Verified Client Feedback' }}</p>
+      <h2 id="{{ heading_id }}" class="heading-2">
+        {{ include.title | default: 'South Jersey’s TCNA-Compliant Tile & Bath Reviews' }}
+      </h2>
+      <p class="lead">
+        {{ include.summary | default: 'Every project meets TCNA standards and NJ HIC regulations. Clients value our transparent communication, meticulous site cleanliness, and precision tile installation.' }}
+      </p>
     </div>
 
     {% if items and items.size > 0 %}
@@ -29,12 +33,19 @@ Usage: {% include reviews-highlights.html limit=3 %}
                   <span class="star{% if i <= stars %} star--filled{% endif %}" aria-hidden="true">{% if i <= stars %}★{% else %}☆{% endif %}</span>
                 {% endfor %}
               </div>
-
               <meta itemprop="reviewRating" content="{{ stars }}">
-              {% if r.text %}<p class="card-quote" itemprop="reviewBody">{{ r.text | escape }}</p>{% endif %}
+              {% if r.text %}
+                <p class="card-quote" itemprop="reviewBody">
+                  {{ r.text | escape }}
+                </p>
+              {% endif %}
               <p class="card-author">
-                {% if r.name %}<strong id="review--name-{{ forloop.index }}" itemprop="author">{{ r.name | escape }}</strong>{% endif %}
-                {% if r.source %}<span class="card-role"> · {{ r.source | escape }}</span>{% endif %}
+                {% if r.name %}
+                  <strong id="review--name-{{ forloop.index }}" itemprop="author">{{ r.name | escape }}</strong>
+                {% endif %}
+                {% if r.source %}
+                  <span class="card-role"> · {{ r.source | escape }}</span>
+                {% endif %}
               </p>
             </article>
           </li>
@@ -43,7 +54,9 @@ Usage: {% include reviews-highlights.html limit=3 %}
     {% endif %}
 
     <div class="section-action">
-      <a href="{{ include.cta_url | default: '/reviews/' | relative_url }}" class="btn btn--primary">{{ include.cta_label | default: 'Read more reviews' }}</a>
+      <a href="{{ include.cta_url | default: '/reviews/' | relative_url }}" class="btn btn--primary" aria-label="Read detailed client reviews and compliance credentials">
+        {{ include.cta_label | default: 'See More Verified Reviews & Credentials' }}
+      </a>
     </div>
   </div>
 </section>

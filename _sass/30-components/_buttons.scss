@@ -1,8 +1,9 @@
 /* ============================================
-   Button components — Modern, container-aware
-   Zero media queries, pure performance
-   ============================================ */
+  Button Components — TCNA/NJ HIC Compliant
+  Accessible, Responsive, Conversion-Optimized
+  ============================================ */
 
+/* Base Button — semantic, accessible, and robust */
 .btn,
 .button {
   display: inline-flex;
@@ -22,17 +23,17 @@
   position: relative;
   white-space: nowrap;
   transition: background var(--transition-fast), color var(--transition-fast), 
-              border-color var(--transition-fast), transform var(--transition-fast);
+          border-color var(--transition-fast), transform var(--transition-fast);
   min-inline-size: 2.5em;
   min-block-size: 2.5em;
   user-select: none;
   outline: none;
-  /* GPU acceleration */
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform;
 }
 
+/* Focus ring — WCAG 2.1 AA compliant, visible on keyboard navigation */
 .btn:focus-visible,
 .button:focus-visible {
   outline: 2.5px solid var(--ts-color-primary);
@@ -41,6 +42,7 @@
   z-index: 2;
 }
 
+/* Disabled state — visually and programmatically disabled */
 .btn[disabled],
 .btn[aria-disabled="true"],
 .button[disabled],
@@ -51,14 +53,17 @@
   filter: grayscale(0.2);
 }
 
-/* Variants */
+/* =========================
+  Button Variants
+  ========================= */
+
+/* Primary CTA — high contrast, conversion-focused */
 .btn-primary,
 .btn--primary {
   background: var(--ts-color-primary-bg);
   color: var(--ts-white);
   box-shadow: 0 10px 24px var(--shadow-soft);
 }
-
 .btn-primary:hover:not(:disabled),
 .btn-primary:focus-visible,
 .btn--primary:hover:not(:disabled),
@@ -68,13 +73,13 @@
   box-shadow: 0 12px 28px var(--shadow-soft);
 }
 
+/* Secondary — outlined, for less prominent actions */
 .btn-secondary,
 .btn--secondary {
   background: transparent;
   color: var(--ts-color-heading);
   border: 1.5px solid var(--ts-color-primary-bg);
 }
-
 .btn-secondary:hover:not(:disabled),
 .btn-secondary:focus-visible,
 .btn--secondary:hover:not(:disabled),
@@ -85,6 +90,7 @@
   transform: translateY(-1px);
 }
 
+/* Accent — for special actions, e.g., estimates or consultations */
 .btn-accent,
 .btn--accent {
   background: transparent;
@@ -92,7 +98,6 @@
   border: 1.5px solid var(--ts-color-border);
   box-shadow: 0 2px 10px var(--shadow-soft);
 }
-
 .btn-accent:hover:not(:disabled),
 .btn-accent:focus-visible,
 .btn--accent:hover:not(:disabled),
@@ -102,6 +107,7 @@
   transform: translateY(-1px);
 }
 
+/* Ghost/Outline — minimal, for low-priority or tertiary actions */
 .btn-ghost,
 .btn--ghost,
 .btn-outline {
@@ -109,7 +115,6 @@
   border: 1.5px solid var(--ts-color-primary);
   color: var(--ts-color-heading);
 }
-
 .btn-ghost:hover:not(:disabled),
 .btn-outline:hover:not(:disabled),
 .btn-ghost:focus-visible,
@@ -119,6 +124,7 @@
   color: var(--ts-color-heading);
 }
 
+/* Text Button — for inline actions, links, or disclosures */
 .btn-text {
   background: transparent;
   border: none;
@@ -127,13 +133,15 @@
   letter-spacing: 0.01em;
   color: var(--ts-color-primary);
 }
-
 .btn-text:hover:not(:disabled),
 .btn-text:focus-visible {
   text-decoration: underline;
   background: var(--ts-color-primary-soft);
 }
 
+/* =========================
+  Button Sizing
+  ========================= */
 .btn-sm,
 .btn--sm {
   padding-block: 0.5rem;
@@ -142,14 +150,12 @@
   min-inline-size: 2em;
   min-block-size: 2em;
 }
-
 .btn-lg,
 .btn--lg {
   padding-block: 1.05rem;
   padding-inline: 2rem;
   font-size: 1.1rem;
 }
-
 .btn-xl,
 .btn--xl {
   padding-block: 1.3rem;
@@ -157,24 +163,31 @@
   font-size: 1.2rem;
 }
 
+/* Full-width block button for mobile or forms */
 .btn-block,
 .btn--block {
   inline-size: 100%;
 }
 
-/* Container query for responsive buttons */
+/* =========================
+  Responsive & Container Queries
+  ========================= */
+
+/* Container query: stack buttons and expand to container width on small containers */
 @container (inline-size < 30rem) {
   .btn:not(.btn-icon-only),
   .button:not(.btn-icon-only) {
-    inline-size: 100%;
+   inline-size: 100%;
   }
-  
   .btn-group {
-    flex-direction: column;
-    inline-size: 100%;
+   flex-direction: column;
+   inline-size: 100%;
   }
 }
 
+/* =========================
+  Icon Buttons
+  ========================= */
 .btn-icon,
 .btn-icon-only {
   display: inline-flex;
@@ -184,37 +197,40 @@
   padding-block: 0.7rem;
   padding-inline: 1rem;
 }
-
 .btn-icon-only {
   padding: 0.6rem;
 }
 
+/* =========================
+  Button Groups
+  ========================= */
 .btn-group {
   display: inline-flex;
   gap: 0.5rem;
   container-type: inline-size;
   container-name: btn-group;
 }
-
 .btn-group > .btn,
 .btn-group > .button {
   flex: 1;
 }
 
-/* Remove legacy media query */
-
+/* =========================
+  Accessibility: Reduced Motion
+  ========================= */
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .button {
-    transition: none !important;
-    will-change: auto;
+   transition: none !important;
+   will-change: auto;
   }
-
   .btn:hover,
   .button:hover,
   .btn:focus-visible,
   .button:focus-visible {
-    transform: none !important;
-    box-shadow: none !important;
+   transform: none !important;
+   box-shadow: none !important;
   }
 }
+
+/* End of TCNA/NJ HIC Compliant Button Styles */

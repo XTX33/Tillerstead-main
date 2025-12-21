@@ -1,24 +1,41 @@
 (function () {
   'use strict';
 
+  /**
+   * Build a mailto: URL with encoded subject and body, omitting internal fields.
+   * Ensures CRLF line breaks for RFC 5322 compliance.
+   */
   const buildMailto = (formData) => {
-    const subject = encodeURIComponent('New Tillerstead project inquiry');
+    const subject = encodeURIComponent('Tillerstead Project Inquiry – TCNA/NJ HIC Compliant');
     const bodyLines = [];
     formData.forEach((value, key) => {
-      // Skip internal fields like form-name, honeypots, and hidden control fields
-      if (key === 'form-name' || key === 'bot-field' || key === '_trap' || /^_|trap/i.test(key)) return;
-      // Normalize line breaks to CRLF for email clients
-      const cleanValue = String(value).replace(/\r\n/g, '\n').replace(/\r/g, '\n').replace(/\n/g, '\r\n');
+      // Exclude internal/anti-spam fields
+      if (
+        key === 'form-name' ||
+        key === 'bot-field' ||
+        key === '_trap' ||
+        /^_|trap/i.test(key)
+      ) return;
+      // Normalize line breaks for email clients
+      const cleanValue = String(value)
+        .replace(/\r\n/g, '\n')
+        .replace(/\r/g, '\n')
+        .replace(/\n/g, '\r\n');
       bodyLines.push(`${key}: ${cleanValue}`);
     });
-    // Use double CRLF between fields for readability
+    // Double CRLF for readability
     const body = encodeURIComponent(bodyLines.join('\r\n\r\n'));
     return `mailto:info@tillerstead.com?subject=${subject}&body=${body}`;
   };
 
+  /**
+   * Display a status message with appropriate styling and ARIA attributes.
+   */
   const showStatus = (el, message, state = 'success') => {
     if (!el) return;
     el.textContent = message;
+    el.setAttribute('role', 'status');
+    el.setAttribute('aria-live', 'polite');
     el.classList.remove('sr-only', 'has-error', 'ts-form-error', 'ts-form-success');
     if (state === 'error') {
       el.classList.add('ts-form-error');
@@ -27,12 +44,34 @@
     }
   };
 
+  /**
+   * Encode form data for x-www-form-urlencoded POST.
+   */
   const encodeForm = (form) => {
     const data = new FormData(form);
     if (!data.get('form-name') && form.getAttribute('name')) {
       data.append('form-name', form.getAttribute('name'));
     }
     return { data, encoded: new URLSearchParams(data).toString() };
+  };
+
+  /**
+   * Validate required fields for accessibility and compliance.
+   * Returns an array of error messages.
+   */
+  const validateForm = (form) => {
+    const errors = [];
+    form.querySelectorAll('[required]').forEach((field) => {
+      if (!field.value.trim()) {
+        const label =
+          form.querySelector(`label[for="${field.id}"]`)?.textContent ||
+          field.getAttribute('aria-label') ||
+          field.name ||
+          'This field';
+        errors.push(`${label} is required.`);
+      }
+    });
+    return errors;
   };
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -45,7 +84,22 @@
         const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
         submitBtn?.setAttribute('disabled', 'true');
 
-        const statusEl = form.querySelector('[data-form-status]') || document.getElementById('form-status');
+        const statusEl =
+          form.querySelector('[data-form-status]') ||
+          document.getElementById('form-status');
+
+        // Validate required fields
+        const errors = validateForm(form);
+        if (errors.length) {
+          showStatus(
+            statusEl,
+            errors.join(' '),
+            'error'
+          );
+          submitBtn?.removeAttribute('disabled');
+          return;
+        }
+
         const { data, encoded } = encodeForm(form);
         const fallbackHref = buildMailto(data);
         const action = (form.getAttribute('action') || '').trim();
@@ -68,11 +122,11 @@
             submitted = true;
             showStatus(
               statusEl,
-              'Request received. I’ll review and reply shortly (usually within 1 business day).',
-              'success',
+              'Your request has been received. Tillerstead adheres to TCNA and NJ HIC standards—expect a detailed, expert reply within 1 business day.',
+              'success'
             );
             form.reset();
-            // If a success redirect is provided, navigate there via GET to avoid 405s
+            // Redirect if _next is provided
             const nextUrl = (new FormData(form)).get('_next');
             if (nextUrl) {
               setTimeout(() => { window.location.href = nextUrl; }, 250);
@@ -85,10 +139,9 @@
         if (!submitted) {
           showStatus(
             statusEl,
-            'We’ve opened your email app with your project details. If it did not open, please email info@tillerstead.com directly.',
-            'success',
+            'We’ve opened your email app with your project details. If your email client did not open, please contact info@tillerstead.com directly. All inquiries are handled per TCNA and NJ HIC requirements.',
+            'success'
           );
-          // Brief delay to allow message to display before navigation
           setTimeout(() => {
             window.location.href = fallbackHref;
           }, 500);
