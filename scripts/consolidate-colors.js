@@ -27,7 +27,7 @@ const COLOR_MAP = {
   '#022318': 'var(--color-brand-teal-950)',
   '#0d8066': 'var(--color-brand-teal-600)',
   '#084c3d': 'var(--color-brand-teal-800)',
-  
+
   // Whites & Grays
   '#ffffff': 'var(--ts-white)',
   '#FFFFFF': 'var(--ts-white)',
@@ -37,7 +37,7 @@ const COLOR_MAP = {
   '#000': 'var(--ts-color-ink)',
   '#222222': 'var(--ts-color-text)',
   '#181818': 'var(--ts-color-heading)',
-  
+
   // Slate/Stone
   '#e2e8f0': 'var(--color-slate-200)',
   '#E2E8F0': 'var(--color-slate-200)',
@@ -50,7 +50,7 @@ const COLOR_MAP = {
   '#94a3b8': 'var(--color-slate-400)',
   '#cbd5e1': 'var(--color-slate-300)',
   '#0f172a': 'var(--color-slate-900)',
-  
+
   // Golden/Yellow
   '#c99a3f': 'var(--color-golden-500)',
   '#fbbf24': 'var(--color-golden-400)',
@@ -58,28 +58,28 @@ const COLOR_MAP = {
   '#d97706': 'var(--color-golden-600)',
   '#b45309': 'var(--color-golden-700)',
   '#d6b45b': 'var(--color-golden-500)',
-  
+
   // Error/Alert Red
   '#b00': 'var(--color-alert-600)',
   '#d32f2f': 'var(--color-alert-500)',
   '#dc2626': 'var(--color-alert-600)',
   '#b91c1c': 'var(--color-alert-700)',
-  
+
   // Navy/Blue
   '#000080': 'var(--color-navy-800)',
   '#0057b8': 'var(--color-navy-600)',
   '#003a75': 'var(--color-navy-700)',
-  
+
   // Success Green
   '#10b981': 'var(--color-success-500)',
   '#059669': 'var(--color-success-600)',
   '#047857': 'var(--color-success-700)',
-  
+
   // Additional common colors
   '#666': 'var(--color-slate-500)',
   '#666666': 'var(--color-slate-500)',
   '#555555': 'var(--color-slate-600)',
-  
+
   // Navy specific
   '#12212c': 'var(--color-navy-900)',
 };
@@ -87,7 +87,7 @@ const COLOR_MAP = {
 // Files to process (glob patterns)
 const FILE_PATTERNS = [
   '**/*.css',
-  '**/*.scss', 
+  '**/*.scss',
   '**/*.html',
   '_includes/**/*.html',
   '_layouts/**/*.html',
@@ -114,9 +114,9 @@ function replaceColorsInFile(filePath, dryRun = false) {
   const content = fs.readFileSync(filePath, 'utf8');
   let newContent = content;
   let replacements = 0;
-  
+
   const colorsFound = findHexColors(content);
-  
+
   colorsFound.forEach(color => {
     const lowerColor = color.toLowerCase();
     if (COLOR_MAP[lowerColor]) {
@@ -129,27 +129,27 @@ function replaceColorsInFile(filePath, dryRun = false) {
       replacements++;
     }
   });
-  
+
   if (replacements > 0) {
     if (!dryRun) {
       fs.writeFileSync(filePath, newContent, 'utf8');
     }
     return { file: filePath, replacements, colorsFound };
   }
-  
+
   return null;
 }
 
 function processDirectory(dir, dryRun = false) {
   const results = [];
-  
+
   function walk(directory) {
     const files = fs.readdirSync(directory);
-    
+
     files.forEach(file => {
       const filePath = path.join(directory, file);
       const stat = fs.statSync(filePath);
-      
+
       // Skip excluded directories
       if (stat.isDirectory()) {
         if (!EXCLUDE_DIRS.includes(file)) {
@@ -157,7 +157,7 @@ function processDirectory(dir, dryRun = false) {
         }
         return;
       }
-      
+
       // Process CSS, SCSS, HTML files
       if (/\.(css|scss|html)$/.test(file)) {
         const result = replaceColorsInFile(filePath, dryRun);
@@ -167,7 +167,7 @@ function processDirectory(dir, dryRun = false) {
       }
     });
   }
-  
+
   walk(dir);
   return results;
 }

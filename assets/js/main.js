@@ -125,29 +125,28 @@
   const navClose = document.querySelector('[data-nav-close]');
   const navBackdrop = document.querySelector('[data-nav-overlay]');
   const navDrawer = document.getElementById('mobile-nav');
-  const navContainer = document.querySelector('[data-nav-container]');
+  const _navContainer = document.querySelector('[data-nav-container]');
 
-  if (navToggle && navDrawer && navBackdrop) {
-    function openNav() {
-      navToggle.setAttribute('aria-expanded', 'true');
-      navBackdrop.classList.add('is-open');
-      navDrawer.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      
-      // Focus first link in drawer
-      const firstLink = navDrawer.querySelector('.mobile-nav-link');
-      if (firstLink) {
-        setTimeout(() => firstLink.focus(), 300);
-      }
+  const openNav = () => {
+    navToggle.setAttribute('aria-expanded', 'true');
+    navBackdrop.classList.add('is-open');
+    navDrawer.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    // Focus first link in drawer
+    const firstLink = navDrawer.querySelector('.mobile-nav-link');
+    if (firstLink) {
+      setTimeout(() => firstLink.focus(), 300);
     }
+  };
 
-    function closeNav() {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navBackdrop.classList.remove('is-open');
-      navDrawer.classList.remove('is-open');
-      document.body.style.overflow = '';
-      
-      // Return focus to toggle
+  const closeNav = () => {
+    navToggle.setAttribute('aria-expanded', 'false');
+    navBackdrop.classList.remove('is-open');
+    navDrawer.classList.remove('is-open');
+    document.body.style.overflow = '';
+
+    // Return focus to toggle
       navToggle.focus();
     }
 

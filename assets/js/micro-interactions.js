@@ -49,21 +49,21 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
-        
+
         if (targetId === '#') return;
-        
+
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
           e.preventDefault();
-          
+
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: prefersReducedMotion ? 'auto' : 'smooth'
           });
-          
+
           // Update URL without jumping
           history.pushState(null, null, targetId);
         }
@@ -108,12 +108,12 @@
     // Auto-grow textareas
     document.querySelectorAll('textarea.auto-grow').forEach(textarea => {
       textarea.style.overflow = 'hidden';
-      
+
       const resize = () => {
         textarea.style.height = 'auto';
         textarea.style.height = textarea.scrollHeight + 'px';
       };
-      
+
       textarea.addEventListener('input', resize);
       resize(); // Initialize
     });
@@ -122,9 +122,9 @@
     document.querySelectorAll('.form-group').forEach(group => {
       const input = group.querySelector('input, textarea');
       const label = group.querySelector('label');
-      
+
       if (!input || !label) return;
-      
+
       const updateLabel = () => {
         if (input.value || document.activeElement === input) {
           label.classList.add('floating');
@@ -132,7 +132,7 @@
           label.classList.remove('floating');
         }
       };
-      
+
       input.addEventListener('focus', updateLabel);
       input.addEventListener('blur', updateLabel);
       input.addEventListener('input', updateLabel);
@@ -176,22 +176,22 @@
     if (prefersReducedMotion) return;
 
     const cards = document.querySelectorAll('.card, .service-card, .plan-card');
-    
+
     cards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 20;
         const rotateY = (centerX - x) / 20;
-        
+
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
       });
-      
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = '';
       });
