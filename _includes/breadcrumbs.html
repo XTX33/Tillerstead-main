@@ -1,8 +1,9 @@
 {%- comment -%}
 Tillerstead Breadcrumb Navigation
-• TCNA/NJ HIC-compliant, Schema.org BreadcrumbList
+• TCNA/NJ HIC-compliant, Schema.org BreadcrumbList structured data
 • Hidden on home/root-level/single pages, or if `breadcrumb: false`
-• All links valid, no dead ends, accessible, conversion-focused
+• Accessible navigation with ARIA landmarks and keyboard support
+• Conversion-optimized with clear, trustworthy paths
 {%- endcomment -%}
 
 {%- assign url = page.url | default: "/" -%}
@@ -28,14 +29,15 @@ Tillerstead Breadcrumb Navigation
     {%- endunless -%}
   {%- endfor -%}
 
-  <nav class="ts-breadcrumbs" aria-label="Breadcrumb Navigation for Tillerstead: TCNA/NJ HIC Compliant" role="navigation">
-    <ol class="ts-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList">
+  <nav class="ts-breadcrumbs" aria-label="Breadcrumb navigation" role="navigation">
+    <ol class="ts-breadcrumbs__list" itemscope itemtype="https://schema.org/BreadcrumbList" role="list">
       {%- assign position = 1 -%}
       <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a class="ts-breadcrumbs__link" href="{{ '/' | relative_url }}" itemprop="item">
-          <span itemprop="name">Home – Tillerstead NJ Licensed Contractor</span>
+        <a class="ts-breadcrumbs__link" href="{{ '/' | relative_url }}" itemprop="item" aria-label="Home">
+          <span itemprop="name">Home</span>
         </a>
         <meta itemprop="position" content="{{ position }}">
+        <span class="ts-breadcrumbs__separator" aria-hidden="true">/</span>
       </li>
       {%- assign position = position | plus: 1 -%}
 
@@ -53,11 +55,12 @@ Tillerstead Breadcrumb Navigation
         {%- assign crumb_href = current_path | append: "/" | relative_url -%}
         <li class="ts-breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
           {%- if is_last -%}
-            <span class="ts-breadcrumbs__current" aria-current="page" itemprop="name">{{ label }} – TCNA Standards Applied</span>
+            <span class="ts-breadcrumbs__current" aria-current="page" itemprop="name">{{ label }}</span>
           {%- else -%}
-            <a class="ts-breadcrumbs__link" href="{{ crumb_href }}" itemprop="item">
+            <a class="ts-breadcrumbs__link" href="{{ crumb_href }}" itemprop="item" aria-label="{{ label }}">
               <span itemprop="name">{{ label }}</span>
             </a>
+            <span class="ts-breadcrumbs__separator" aria-hidden="true">/</span>
           {%- endif -%}
           <meta itemprop="position" content="{{ position }}">
         </li>

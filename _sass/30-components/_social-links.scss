@@ -1,14 +1,15 @@
 /* ============================================
   Social Links Component
-  Accessible, TCNA/NJ HIC-compliant social pills
+  Modern, accessible social media links with hover effects
+  WCAG 2.1 AA compliant with proper focus states
   ============================================ */
 
 .social-links {
   --social-pill-size: 2.5rem;
-  --social-gap: var(--space-2, 0.75rem);
-  --social-border: var(--color-border-strong, rgb(12 40 54 / 0.2));
-  --social-bg: var(--ts-color-surface-elevated, rgb(255 255 255 / 0.9));
-  --social-icon-color: var(--color-text, #12212c);
+  --social-gap: 0.75rem;
+  --social-border: var(--ts-color-border-strong, rgba(12, 40, 54, 0.2));
+  --social-bg: var(--ts-color-surface-elevated, rgba(255, 255, 255, 0.9));
+  --social-icon-color: var(--ts-color-heading, #12212c);
 
   display: inline-flex;
   align-items: center;
@@ -45,17 +46,16 @@
   color: var(--social-icon-color);
   text-decoration: none;
   transition:
-   background var(--transition-fast, 120ms ease),
-   border-color var(--transition-fast, 120ms ease),
-   color var(--transition-fast, 120ms ease),
-   box-shadow var(--transition-fast, 120ms ease),
-   transform var(--transition-fast, 120ms ease);
+   background var(--transition-fast, 160ms ease),
+   border-color var(--transition-fast, 160ms ease),
+   color var(--transition-fast, 160ms ease),
+   box-shadow var(--transition-fast, 160ms ease),
+   transform var(--transition-fast, 160ms ease);
   outline: none;
 
-  /* Accessibility: Ensure sufficient contrast and focus visibility */
   &:focus-visible {
-   outline: 3px solid var(--ts-color-primary-bg);
-   outline-offset: 2px;
+   outline: 3px solid var(--ts-color-primary);
+   outline-offset: 3px;
   }
 }
 
@@ -64,42 +64,36 @@
   background: var(--ts-color-primary-soft);
   border-color: var(--ts-color-primary);
   color: var(--ts-color-primary);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px var(--shadow-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 154, 170, 0.15);
 }
 
 .social-icon {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: 1.2rem;
+  height: 1.2rem;
   display: block;
-
-  /* Accessibility: Hide decorative icons from assistive tech */
-  aria-hidden: true;
-  focusable: false;
 }
 
-/* Header context: High-contrast for navigation */
+/* Header context: High-contrast for navigation bar */
 .social-links--header {
-  --social-border: rgb(255 255 255 / 0.35);
-  --social-bg: rgb(255 255 255 / 0.08);
+  --social-border: rgba(255, 255, 255, 0.3);
+  --social-bg: rgba(255, 255, 255, 0.1);
   --social-icon-color: var(--ts-white, #ffffff);
 }
 
 .social-links--header .social-link:hover,
 .social-links--header .social-link:focus-visible {
-  background: rgb(255 255 255 / 0.2);
-  color: var(--ts-color-primary);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: var(--ts-white);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.2);
 }
 
-/* Drawer / stacked layout for mobile accessibility */
-.social-links--stacked .social-links__list {
-  flex-flow: row wrap;
-  justify-content: flex-start;
-}
-
+/* Drawer / mobile navigation context */
 .social-links--drawer {
   width: 100%;
   justify-content: flex-start;
+  padding: 0;
 
   .social-links__list {
    width: 100%;
@@ -107,14 +101,15 @@
   }
 
   .social-link {
-   --social-bg: var(--ts-color-surface-elevated, #ffffff);
-   --social-icon-color: var(--color-text, #12212c);
+   --social-bg: var(--ts-color-surface, #ffffff);
+   --social-icon-color: var(--ts-color-heading, #12212c);
+   --social-border: var(--ts-color-border-strong, rgba(12, 40, 54, 0.2));
   }
 }
 
-/* Footer context: Brand-compliant color and contrast */
+/* Footer context: Brand-compliant styling */
 .social-links--footer {
-  --social-border: rgba(255, 255, 255, 0.4);
+  --social-border: rgba(255, 255, 255, 0.35);
   --social-bg: rgba(255, 255, 255, 0.1);
   --social-icon-color: rgba(255, 255, 255, 0.9);
 
@@ -123,16 +118,39 @@
 
 .social-links--footer .social-link:hover,
 .social-links--footer .social-link:focus-visible {
-  background: #7fd1ff;
-  border-color: #7fd1ff;
-  color: #041828;
+  background: rgba(127, 209, 255, 0.25);
+  border-color: rgba(127, 209, 255, 0.6);
+  color: #7fd1ff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(127, 209, 255, 0.3);
+  box-shadow: 0 6px 16px rgba(127, 209, 255, 0.3);
 }
 
-/* Responsive: Reduce pill size for small containers */
+/* Responsive sizing */
 @container (inline-size < 30rem) {
   .social-links {
-   --social-pill-size: 2.2rem;
+   --social-pill-size: 2.25rem;
+   --social-gap: 0.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+   --social-pill-size: 2.25rem;
+  }
+
+  .social-icon {
+   width: 1.1rem;
+   height: 1.1rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .social-link {
+   transition: none;
+  }
+
+  .social-link:hover {
+   transform: none;
   }
 }
