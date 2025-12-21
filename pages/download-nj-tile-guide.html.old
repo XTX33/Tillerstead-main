@@ -1,0 +1,154 @@
+---
+layout: default
+title: Download Free NJ Homeowner's Tile Installation Guide
+description: Download Tillerstead’s expert NJ tile installation guide—25 pages on waterproofing, TCNA/ANSI standards, contractor vetting, and code compliance. Free PDF for New Jersey homeowners.
+permalink: /download/nj-tile-guide/
+body_class: page-download
+hero_eyebrow: "Free Download"
+hero_title: "NJ Homeowner's Tile Installation Guide"
+hero_summary: >
+  The definitive pre-project resource for New Jersey homeowners. Get our free 25-page PDF: waterproofing, material selection, TCNA/ANSI standards, contractor vetting, and NJ code compliance.
+---
+
+<section class="ts-section ts-surface">
+  <div class="container">
+    <div class="section-sidebar">
+      <div>
+        <h2>What’s Inside This Guide</h2>
+        
+        <div class="card">
+          <h3>📋 Chapter 1: Project Planning</h3>
+          <ul class="list-styled">
+            <li>Budget breakdowns for South Jersey tile work</li>
+            <li>Realistic timelines: standard vs. complex installs</li>
+            <li>Material selection: porcelain, ceramic, natural stone</li>
+            <li>Design trends for NJ homes</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>💧 Chapter 2: Waterproofing Standards</h3>
+          <ul class="list-styled">
+            <li>Understanding ANSI A118.10 & TCNA methods</li>
+            <li>Comparing Schluter, RedGard, and Hydroban</li>
+            <li>Common waterproofing failures—and prevention</li>
+            <li>Installer certifications to demand</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🔍 Chapter 3: Hiring a NJ Contractor</h3>
+          <ul class="list-styled">
+            <li>NJ Home Improvement Contractor licensing (HIC#)</li>
+            <li>10 essential vetting questions</li>
+            <li>Red flags: spotting non-compliance</li>
+            <li>Decoding estimates, contracts, and insurance</li>
+            <li>Warranty requirements under NJ law</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>🛠️ Chapter 4: Installation Best Practices</h3>
+          <ul class="list-styled">
+            <li>Substrate prep: TCNA-compliant methods</li>
+            <li>Large format tile: lippage and flatness</li>
+            <li>Heated floor system integration</li>
+            <li>Grout selection, sealing, and maintenance</li>
+            <li>Long-term care for tile assemblies</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card card-primary">
+          <h3>Download Your Free Guide</h3>
+          <p>Enter your email to receive instant access to the <strong>NJ Homeowner’s Tile Installation Guide</strong> (PDF). Tillerstead is a licensed NJ HIC contractor—your information is protected and never sold.</p>
+          
+          {% assign guide_endpoint = site.forms.guide_endpoint | default: site.forms.endpoint | default: 'https://formsubmit.co/f249670ee046b9a9dbc022194f773c35' %}
+          {% assign guide_redirect = site.forms.guide_redirect_path | default: '/download/nj-tile-guide/thank-you/' %}
+          {% assign guide_redirect_url = guide_redirect | absolute_url %}
+          <form 
+            class="form-group guide-download-form"
+            name="tile-guide-download"
+            method="POST"
+            action="{{ guide_endpoint }}"
+            accept-charset="UTF-8"
+            aria-label="Download NJ Tile Guide Form">
+            
+            <!-- FormSubmit Configuration -->
+            <input type="hidden" name="_subject" value="NJ Tile Guide - Download Request from Tillerstead.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="{{ guide_redirect_url }}">
+            <input type="hidden" name="_autoresponse" value="Thank you for downloading the NJ Homeowner's Tile Installation Guide! Your comprehensive guide to TCNA standards, waterproofing, and NJ contractor requirements is ready. Visit {{ guide_redirect_url }} to access your guide, or contact Tillerstead LLC at (609) 862-8808 for personalized project assistance.">
+
+            <p class="sr-only">
+              <label for="bot-field">Do not fill this field (anti-spam)</label>
+              <input id="bot-field" name="bot-field" type="text" tabindex="-1" autocomplete="off">
+            </p>
+
+            <div class="form-group">
+              <label for="guide-name">Full Name <span aria-hidden="true">*</span></label>
+              <input 
+                type="text" 
+                id="guide-name" 
+                name="name" 
+                required 
+                autocomplete="name"
+                placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="guide-email">Email Address <span aria-hidden="true">*</span></label>
+              <input 
+                type="email" 
+                id="guide-email" 
+                name="email" 
+                required 
+                autocomplete="email"
+                placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="guide-project">Project Type (optional)</label>
+              <select id="guide-project" name="project_type">
+                <option value="">Select one…</option>
+                <option>Bathroom remodel</option>
+                <option>Shower installation</option>
+                <option>Kitchen backsplash</option>
+                <option>Floor tile</option>
+                <option>Just researching</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guide-county">County (optional)</label>
+              <select id="guide-county" name="county">
+                <option value="">Select one…</option>
+                <option>Atlantic County</option>
+                <option>Ocean County</option>
+                <option>Cape May County</option>
+                <option>Other NJ County</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-accent btn-block">
+              📥 Download Free Guide
+            </button>
+
+            <div class="form-status sr-only" aria-live="polite" data-form-status></div>
+
+            <p class="form-help microcopy">
+              We respect your privacy. Your email is used only to deliver the guide and occasional expert tips. Unsubscribe anytime. No spam—ever.
+            </p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h4>💬 Have Questions?</h4>
+          <p>Ready to start? <a href="{{ '/contact/' | relative_url }}">Request a project estimate</a> or <a href="sms:+16098628808">text Tillerstead</a> for expert answers from a licensed NJ contractor.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
