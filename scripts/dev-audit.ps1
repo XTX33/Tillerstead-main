@@ -29,11 +29,11 @@ foreach ($f in $files) {
     $title = if ($titleMatch.Success) { $titleMatch.Groups[1].Value.Trim() } else { '' }
 
     # Meta description extraction
-    $metaDescMatch = [regex]::Match($html, '<meta\s+name=["'']description["'']\s+content=["'']([^"']+)["'']', 'IgnoreCase')
+    $metaDescMatch = [regex]::Match($html, '<meta\s+name=["\x27]description["\x27]\s+content=["\x27]([^"\']+)["\x27]', 'IgnoreCase')
     $metaDesc = if ($metaDescMatch.Success) { $metaDescMatch.Groups[1].Value.Trim() } else { '' }
 
     # Canonical link extraction
-    $canonicalMatch = [regex]::Match($html, '<link\s+rel=["'']canonical["'']\s+href=["'']([^"']+)["'']', 'IgnoreCase')
+    $canonicalMatch = [regex]::Match($html, '<link\s+rel=["\x27]canonical["\x27]\s+href=["\x27]([^"\']+)["\x27]', 'IgnoreCase')
     $canonical = if ($canonicalMatch.Success) { $canonicalMatch.Groups[1].Value.Trim() } else { '' }
 
     # <img> alt attribute check (must be present and descriptive)
