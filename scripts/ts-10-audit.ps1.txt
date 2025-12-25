@@ -18,7 +18,20 @@ $indexHtml = Get-TextFile (Join-Path $RepoRoot "index.html")
 $indexMd   = Get-TextFile (Join-Path $RepoRoot "index.md")
 
 $workflows = Get-ChildItem (Join-Path $RepoRoot ".github\workflows") -Filter *.yml -ErrorAction SilentlyContinue
+# Always rebuild _site before auditing (prevents stale/fragment output)
+Push-Location $RepoRoot
+try {
+  if (Test-Path ".\_site") { Remove-Item -Recurse -Force ".\_site" -ErrorAction SilentlyContinue }
 
+  if (Test-Path ".\Gemfile") {
+    Write-Host "🏗️  Building site with Jekyll (bundle exec jekyll build)..."
+    bundle exec jekyll build
+  } else {
+    Write-Host "⚠️  Gemfile not found; skipping Jekyll build."
+  }
+} finally {
+  Pop-Location
+}
 # Detect likely stack
 $stack = "unknown"
 if (Test-Path (Join-Path $RepoRoot "Gemfile")) { $stack = "jekyll" }
