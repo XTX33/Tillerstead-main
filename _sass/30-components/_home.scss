@@ -96,6 +96,7 @@
   flex-direction: column;
   gap: var(--ts-spacing-sm);
   margin-bottom: var(--ts-spacing-sm);
+  color: var(--ts-color-heading); /* Ensure logo mono variant has proper color */
 }
 
 .page-home .ts-hero__tagline {
