@@ -54,7 +54,14 @@ jobs:
           echo "✓ Build artifacts verified"
 
       - name: Copy CNAME to _site (for GitHub Pages)
-        run: cp CNAME _site/CNAME
+        run: |
+          if [ -f CNAME ]; then
+            cp CNAME _site/CNAME
+            echo "✓ CNAME copied"
+          else
+            echo "⚠ CNAME not found - creating from domain"
+            echo "tillerstead.com" > _site/CNAME
+          fi
 
       - name: Upload built site
         if: success()
