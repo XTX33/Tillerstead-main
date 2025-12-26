@@ -9,18 +9,25 @@ license:
   type: "Home Improvement Contractor"
   trades:
     - "Carpentry"
-    - "Ceramic Tile"
+    - "Bathroom Remodeling"
+    - "Tile Installation" 
+    - "General Contracting" 
+    - "Flooring"
+    - "Masonry"
+    - "Large-Format Tile"
+    - "Natural Stone"
     - "Waterproofing"
+  compliance: "Full compliance with NJ Consumer Fraud Act (N.J.S.A. 56:8-136 et seq.) and all TCNA installation standards."
+
   verified: true
   last_verified: "2024-06-01"
 
 business:
   legal_name: "Tillerstead LLC"
   trade_name: "Tillerstead"
-  owner: "Tyler (Owner-Operator)"
-  service_area: "South Jersey (Atlantic, Ocean, Cape May Counties)"
-  
-standards:
+  owner: "Devon Tyler - Owner-Operator"
+  service_area: "New Jersey (Primarily South Jersey)"
+  standards:
   tcna: "TCNA 2024 Handbook for Ceramic, Glass, and Stone Tile Installation"
   ansi:
     - "ANSI A108.10 (Waterproofing)"
@@ -37,9 +44,10 @@ insurance:
   general_liability: "$1M per occurrence / $2M aggregate"
   workers_comp: "Fully Compliant"
   coverage:
+    - "Surety Bond"
+    - "General Liability"
     - "Property Damage"
     - "Bodily Injury"
-    - "Completed Operations"
 
 warranty:
   workmanship_years: 2
@@ -50,7 +58,7 @@ warranty:
     - "Impact damage or homeowner modifications"
     - "Manufacturer material defects (covered by manufacturer warranty)"
 
-note: "Tillerstead LLC is a New Jersey-licensed home improvement contractor specializing in tile, waterproofing, and bathroom remodeling. All work is performed to TCNA 2024 standards and fully compliant with NJ HIC regulations. We provide transparent estimates, detailed scope documentation, and rigorous quality assurance—no shortcuts, no surprises."
+note: "Tillerstead LLC is a New Jersey Home Improvement Contractor specializing in Large Format Tile installation, waterproofing, and bathroom remodeling. All work is performed to TCNA 2024 standards and fully compliant with NJ HIC regulations. We provide transparent estimates, detailed scope documentation, and rigorous quality assurance—no shortcuts, no surprises."
 
 license_info: "NJ HIC #13VH10808800 · Fully Insured · TCNA 2024 Compliant · Serving South Jersey"
 
