@@ -4,6 +4,7 @@ Displays the Tillerstead logo using SVG sprite system
 Parameters:
 - variant: 'default' (colored) or 'mono' (currentColor)
 - symbol: 'logo-mark', 'logo-full', 'logo-stacked' (defaults to 'logo-mark')
+Smart behavior: Homepage → About, Other pages → Homepage
 {% endcomment %}
 
 {% assign variant = include.variant | default: 'default' %}
@@ -17,7 +18,7 @@ Parameters:
   {% assign symbol_id = symbol %}
 {% endif %}
 
-<a href="{{ '/' | relative_url }}" class="{{ link_class }}" aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Home">
+<a href="{{ '/' | relative_url }}" class="{{ link_class }}" data-logo-link aria-label="{{ site.title | default: 'Tillerstead LLC' }} - Home">
   <svg class="{{ svg_class }}" role="img" aria-label="{{ site.title | default: 'Tillerstead' }}">
     <use href="#{{ symbol_id }}"></use>
   </svg>
