@@ -24,7 +24,9 @@
 
     <!-- Center logo -->
     <div class="site-branding" data-logo>
-      {% include logo-header.html symbol="logo-horizontal" variant="default" link_class="ts-logo-link" svg_class="ts-logo" %}
+      <a href="{{ '/' | relative_url }}" class="ts-logo-link">
+        <img src="{{ '/assets/img/logo/tillerstead-logo-header-dark.svg' | relative_url }}" alt="{{ site.title }}" class="ts-logo">
+      </a>
     </div>
 
     <!-- Right side navigation -->
